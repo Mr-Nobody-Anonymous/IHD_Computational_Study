@@ -1,0 +1,33 @@
+VERVE-102 ABE8e Genomic Specificity & Off-Target Dossier
+=================================================================
+
+Target: GGGCAGCGCCACCCACAGGA PAM: TGG
+
+Gene: PCSK9 (On-Target) (Chr1p32.3)
+Sequence: GGGCAGCGCCACCCACAGGA PAM: TGG | Mismatches: 0
+CFD Score: 1.0 | Risk: ON-TARGET THERAPEUTIC
+
+Gene: PCSK1 (Convertase 1) (Chr5q15)
+Sequence: GGGCAGCGCCAGCGACAGGA PAM: AGG | Mismatches: 2
+CFD Score: 0.086125 | Risk: VERY LOW / BORDERLINE
+
+Gene: PCSK2 (Convertase 2) (Chr20p12)
+Sequence: GGGAAGCGCCACTCACACCA PAM: CGG | Mismatches: 4
+CFD Score: 0.000646 | Risk: NEGLIGIBLE (<0.1%)
+
+Gene: FURIN (PCSK3) (Chr15q26)
+Sequence: TGGCAGCACCACCGCCAGGA PAM: TGG | Mismatches: 4
+CFD Score: 0.001117 | Risk: NEGLIGIBLE (<0.1%)
+
+Gene: MBTPS1 (SKI-1 / S1P) (Chr16q24)
+Sequence: AGGCAGCGTCACCCAAAGGA PAM: AGG | Mismatches: 3
+CFD Score: 0.019414 | Risk: VERY LOW / BORDERLINE
+
+Gene: Intergenic Off-Target 1 (Chr8q21.1)
+Sequence: GGGCAGCGCCACCCACATGA PAM: GGG | Mismatches: 1
+CFD Score: 0.265 | Risk: POTENTIAL RISK (Deep-Seq Needed)
+
+Gene: Intergenic Off-Target 2 (Chr12p11.2)
+Sequence: GGGCAGCGCAACCCACAGGA PAM: TGG | Mismatches: 1
+CFD Score: 0.4 | Risk: POTENTIAL RISK (Deep-Seq Needed)
+

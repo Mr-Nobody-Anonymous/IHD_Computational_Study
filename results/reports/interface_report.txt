@@ -1,0 +1,34 @@
+PCSK9-LDLR Interface Analysis Report
+PDB: 3BPS | Cutoff: 5.0 Å
+
+TOP PCSK9 INTERFACE RESIDUES:
+   1. PHE-379: 70 contacts
+   2. THR-377: 46 contacts
+   3. CYS-378: 31 contacts
+   4. SER-153: 28 contacts
+   5. ILE-369: 24 contacts
+   6. ASP-238: 23 contacts
+   7. VAL-380: 20 contacts
+   8. ARG-194: 19 contacts
+   9. PRO-155: 18 contacts
+  10. ASP-374: 9 contacts
+  11. ILE-154: 8 contacts
+  12. SER-381: 6 contacts
+  13. SER-372: 5 contacts
+  14. CYS-375: 5 contacts
+  15. ALA-239: 3 contacts
+
+TOP LDLR INTERFACE RESIDUES:
+   1. LEU-298: 59 contacts
+   2. ASN-309: 41 contacts
+   3. ASP-310: 40 contacts
+   4. CYS-308: 36 contacts
+   5. ASN-301: 33 contacts
+   6. ASN-295: 29 contacts
+   7. VAL-307: 29 contacts
+   8. CYS-297: 15 contacts
+   9. ASP-299: 14 contacts
+  10. HIS-306: 14 contacts
+
+BINDING POCKET CENTER: 22.74, -30.50, -3.75
+BOX SIZE: 24.6 x 23.5 x 34.8

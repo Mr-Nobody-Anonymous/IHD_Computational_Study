@@ -1,0 +1,9 @@
+Mutation,ResID,WildType_AA,Mutant_AA,KD_uM,ddG_exp_kcal_mol,Assay_Method,Reference,Notes,ResName,Burial_3GCX_A2,Burial_3BPS_A2,Burial_3P5C_A2,Mean_Burial_A2,Std_Burial_A2
+D374A,374,D,A,2.5,0.82,SPR,Kwon et al. PNAS 2008,Alanine substitution removes negative charge / H-bond network (4-fold reduction),ASP,36.309177005349795,38.80715680798639,26.90367795149794,34.01,5.13
+F379A,379,F,A,100.0,3.0,SPR,Kwon et al. PNAS 2008,Essential hydrophobic anchor; binding virtually abolished (>150-fold loss),PHE,81.91517228469436,77.4313367878522,92.33821225509291,83.89,6.24
+I369A,369,I,A,14.8,1.87,SPR,Kwon et al. PNAS 2008,Hydrophobic core packing residue (23-fold loss),ILE,65.16160582382048,64.9100166121455,50.69522615250899,60.26,6.76
+R194A,194,R,A,12.0,1.75,SPR,Kwon et al. PNAS 2008,Key basic residue interacting with acidic EGF-A loop (19-fold loss),ARG,33.071120440334575,20.642456303957754,26.049497234944013,26.59,5.09
+T377A,377,T,A,5.7,1.31,SPR,Kwon et al. PNAS 2008,Interface polar contact (9-fold loss),THR,41.08191598060993,42.99347562655194,54.927914878641545,46.33,6.13
+D238A,238,D,A,4.2,1.13,SPR,Kwon et al. PNAS 2008,Salt-bridge partner near interface (6.7-fold loss),ASP,36.73729754421773,43.16627893046266,31.868996556423134,37.26,4.63
+V380A,380,V,A,2.1,0.71,SPR,Kwon et al. PNAS 2008,Adjacent hydrophobic residue (3.3-fold loss),VAL,28.29190716621415,37.46303424512963,27.04584025506062,30.93,4.64
+S153A,153,S,A,0.75,0.1,SPR,Kwon et al. PNAS 2008,N-terminal mature cleavage site; near-neutral effect (1.2-fold loss),SER,57.88674014362101,66.23988288933967,26.500108959217783,50.21,17.11

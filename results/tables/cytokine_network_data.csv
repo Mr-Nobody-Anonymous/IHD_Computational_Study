@@ -1,0 +1,66 @@
+Day,Regimen,IL1b_pg_mL,IL6_pg_mL,hsCRP_mg_L,MMP_Activity_pct
+0.0,"Untreated High Risk",14.50,8.20,3.80,100.0
+15.0,"Untreated High Risk",30.88,25.31,22.66,274.9
+30.0,"Untreated High Risk",46.46,41.30,42.73,499.0
+45.0,"Untreated High Risk",57.83,53.94,60.19,698.7
+60.0,"Untreated High Risk",64.77,62.12,72.57,841.8
+75.0,"Untreated High Risk",68.59,66.80,80.14,930.1
+90.0,"Untreated High Risk",70.57,69.29,84.33,979.5
+105.0,"Untreated High Risk",71.57,70.55,86.52,1005.6
+120.0,"Untreated High Risk",72.05,71.17,87.63,1018.7
+135.0,"Untreated High Risk",72.29,71.47,88.17,1025.2
+150.0,"Untreated High Risk",72.40,71.62,88.43,1028.4
+165.0,"Untreated High Risk",72.45,71.69,88.55,1029.9
+180.0,"Untreated High Risk",72.48,71.72,88.61,1030.6
+0.0,"High-Intensity Statin",14.50,8.20,3.80,100.0
+15.0,"High-Intensity Statin",30.07,25.03,22.58,273.4
+30.0,"High-Intensity Statin",37.36,35.27,38.71,448.1
+45.0,"High-Intensity Statin",37.22,37.05,44.93,518.3
+60.0,"High-Intensity Statin",35.10,35.40,44.54,515.8
+75.0,"High-Intensity Statin",33.27,33.46,42.31,491.6
+90.0,"High-Intensity Statin",32.12,32.11,40.37,469.7
+105.0,"High-Intensity Statin",31.47,31.33,39.12,455.3
+120.0,"High-Intensity Statin",31.14,30.91,38.41,447.0
+135.0,"High-Intensity Statin",30.97,30.70,38.04,442.6
+150.0,"High-Intensity Statin",30.89,30.59,37.86,440.4
+165.0,"High-Intensity Statin",30.85,30.54,37.77,439.3
+180.0,"High-Intensity Statin",30.83,30.52,37.72,438.8
+0.0,"Canakinumab (Anti-IL-1β, CANTOS)",14.50,8.20,3.80,100.0
+15.0,"Canakinumab (Anti-IL-1β, CANTOS)",8.92,12.77,16.73,190.4
+30.0,"Canakinumab (Anti-IL-1β, CANTOS)",7.24,7.30,10.70,124.9
+45.0,"Canakinumab (Anti-IL-1β, CANTOS)",8.69,8.19,9.75,115.3
+60.0,"Canakinumab (Anti-IL-1β, CANTOS)",9.72,9.33,10.98,128.1
+75.0,"Canakinumab (Anti-IL-1β, CANTOS)",10.29,10.02,12.03,139.8
+90.0,"Canakinumab (Anti-IL-1β, CANTOS)",10.59,10.39,12.65,147.0
+105.0,"Canakinumab (Anti-IL-1β, CANTOS)",10.74,10.58,12.98,150.8
+120.0,"Canakinumab (Anti-IL-1β, CANTOS)",10.81,10.68,13.14,152.8
+135.0,"Canakinumab (Anti-IL-1β, CANTOS)",10.84,10.72,13.23,153.8
+150.0,"Canakinumab (Anti-IL-1β, CANTOS)",10.86,10.74,13.26,154.3
+165.0,"Canakinumab (Anti-IL-1β, CANTOS)",10.87,10.75,13.28,154.5
+180.0,"Canakinumab (Anti-IL-1β, CANTOS)",10.87,10.76,13.29,154.6
+0.0,"Colchicine (NLRP3 Inhibitor)",14.50,8.20,3.80,100.0
+15.0,"Colchicine (NLRP3 Inhibitor)",25.74,22.91,21.67,259.9
+30.0,"Colchicine (NLRP3 Inhibitor)",22.79,23.78,29.27,334.8
+45.0,"Colchicine (NLRP3 Inhibitor)",18.42,19.41,26.00,299.8
+60.0,"Colchicine (NLRP3 Inhibitor)",16.58,16.88,22.07,257.2
+75.0,"Colchicine (NLRP3 Inhibitor)",16.12,16.06,20.27,236.6
+90.0,"Colchicine (NLRP3 Inhibitor)",16.10,15.93,19.77,230.3
+105.0,"Colchicine (NLRP3 Inhibitor)",16.17,15.98,19.73,229.7
+120.0,"Colchicine (NLRP3 Inhibitor)",16.23,16.05,19.80,230.3
+135.0,"Colchicine (NLRP3 Inhibitor)",16.27,16.09,19.86,231.0
+150.0,"Colchicine (NLRP3 Inhibitor)",16.29,16.12,19.90,231.5
+165.0,"Colchicine (NLRP3 Inhibitor)",16.30,16.13,19.93,231.8
+180.0,"Colchicine (NLRP3 Inhibitor)",16.31,16.14,19.94,231.9
+0.0,"Curative Combo (PCSK9 silencer + NLRP3i)",14.50,8.20,3.80,100.0
+15.0,"Curative Combo (PCSK9 silencer + NLRP3i)",16.40,17.37,18.99,222.1
+30.0,"Curative Combo (PCSK9 silencer + NLRP3i)",11.18,12.72,17.79,203.2
+45.0,"Curative Combo (PCSK9 silencer + NLRP3i)",6.52,7.80,12.09,139.6
+60.0,"Curative Combo (PCSK9 silencer + NLRP3i)",3.83,4.54,7.25,84.9
+75.0,"Curative Combo (PCSK9 silencer + NLRP3i)",2.52,2.86,4.39,51.9
+90.0,"Curative Combo (PCSK9 silencer + NLRP3i)",1.93,2.08,2.98,35.1
+105.0,"Curative Combo (PCSK9 silencer + NLRP3i)",1.67,1.72,2.32,27.2
+120.0,"Curative Combo (PCSK9 silencer + NLRP3i)",1.55,1.57,2.02,23.6
+135.0,"Curative Combo (PCSK9 silencer + NLRP3i)",1.50,1.50,1.89,22.0
+150.0,"Curative Combo (PCSK9 silencer + NLRP3i)",1.47,1.46,1.83,21.3
+165.0,"Curative Combo (PCSK9 silencer + NLRP3i)",1.46,1.45,1.80,20.9
+180.0,"Curative Combo (PCSK9 silencer + NLRP3i)",1.45,1.44,1.78,20.8

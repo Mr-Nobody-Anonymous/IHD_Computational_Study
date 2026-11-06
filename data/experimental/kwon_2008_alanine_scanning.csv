@@ -1,0 +1,11 @@
+Mutation,ResID,WildType_AA,Mutant_AA,KD_uM,ddG_exp_kcal_mol,Assay_Method,Reference,Notes
+WT,-,-,-,0.63,0.00,SPR,Kwon et al. PNAS 2008,Baseline wild-type PCSK9 binding to LDLR EGF-A
+D374Y,374,D,Y,0.025,-1.91,SPR,Kwon et al. PNAS 2008,Severe gain-of-function mutation causing Familial Hypercholesterolemia (~25-fold higher affinity)
+D374A,374,D,A,2.50,0.82,SPR,Kwon et al. PNAS 2008,Alanine substitution removes negative charge / H-bond network (4-fold reduction)
+F379A,379,F,A,100.00,3.00,SPR,Kwon et al. PNAS 2008,Essential hydrophobic anchor; binding virtually abolished (>150-fold loss)
+I369A,369,I,A,14.80,1.87,SPR,Kwon et al. PNAS 2008,Hydrophobic core packing residue (23-fold loss)
+R194A,194,R,A,12.00,1.75,SPR,Kwon et al. PNAS 2008,Key basic residue interacting with acidic EGF-A loop (19-fold loss)
+T377A,377,T,A,5.70,1.31,SPR,Kwon et al. PNAS 2008,Interface polar contact (9-fold loss)
+D238A,238,D,A,4.20,1.13,SPR,Kwon et al. PNAS 2008,Salt-bridge partner near interface (6.7-fold loss)
+V380A,380,V,A,2.10,0.71,SPR,Kwon et al. PNAS 2008,Adjacent hydrophobic residue (3.3-fold loss)
+S153A,153,S,A,0.75,0.10,SPR,Kwon et al. PNAS 2008,N-terminal mature cleavage site; near-neutral effect (1.2-fold loss)

@@ -1,0 +1,9 @@
+Rank,Compound,Type,dG_bind_kcal_mol,Est_Kd_uM,MW,LogP,TPSA,HBD,HBA,E_vdw,E_elec,E_hbond,dG_tors,HydrophobicContacts,Rationale
+1,PCSK9-Inh-D3,De Novo Macrocyclic Inhibitor,5.28,1000000.0,524.6,0.41,173.9,6,7,58.6,-21.11,-6.0,2.1,189,"Cyclic peptide mimetic: Emulates the Leu298-Asn309 beta-turn of LDLR EGF-A with constrained conformation to minimize entropic penalty"
+2,PCSK9-Inh-D1,De Novo Designed Small Molecule,17.47,1000000.0,403.3,5.46,66.4,2,3,56.15,-23.08,0.0,1.4,117,"Designed Biphenyl-Carboxylate: Terminal -COOH binds Arg194 guanidinium; bis-trifluoromethyl/fluoro head stacks into Phe379 pocket"
+3,Valsartan,Approved Drug (ARB),53.8,1000000.0,370.5,5.4,55.1,1,3,90.32,-9.76,-4.8,2.1,164,"Biphenyl-carboxylate scaffold capable of salt-bridging Arg194"
+4,PF-06446846,Preclinical Lead,65.82,1000000.0,315.8,4.0,55.4,1,3,90.63,-8.05,-1.2,0.7,111,"Pfizer PCSK9 oral translation inhibitor pharmacophore"
+5,Rosuvastatin,Approved Drug (Statin),68.7,1000000.0,481.5,2.4,140.9,3,8,100.81,-6.85,-3.6,4.2,174,"Potent polar head + fluorophenyl core with high H-bonding capacity"
+6,Ezetimibe,Approved Drug (Cholesterol Absorption),75.05,1000000.0,365.4,4.41,49.3,2,2,116.5,-9.84,-2.4,1.4,207,"Fluorinated diphenylazetidinone with hydrophobic match for Phe379 sub-pocket"
+7,SBC-115076,Preclinical Lead,81.31,1000000.0,246.7,3.3,42.0,1,2,109.99,-11.71,0.0,0.7,120,"Published small molecule known to disrupt PCSK9/LDLR EGF-A interaction"
+8,PCSK9-Inh-D2,De Novo Designed Small Molecule,90.81,1000000.0,453.5,3.15,116.1,2,6,138.22,-16.78,-4.8,1.75,186,"Quinazolinone Sulfonamide: Designed to bridge Asp238 and Arg194 simultaneously while inserting fluorobenzyl group into hydrophobic groove"

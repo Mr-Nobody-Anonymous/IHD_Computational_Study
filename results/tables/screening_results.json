@@ -1,0 +1,423 @@
+[
+  {
+    "name": "Anakinra_mimic",
+    "mw": 428.5,
+    "logp": 1.2,
+    "hbd": 5,
+    "hba": 8,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 100,
+    "combined_score": 100.0,
+    "flags": [],
+    "notes": "IL-1 receptor antagonist mimic \u2014 anti-inflammatory IHD target",
+    "smiles": "CC(C)C(NC(=O)C(Cc1ccccc1)N)C(=O)NC(C(=O)O)Cc1ccc(O)cc1"
+  },
+  {
+    "name": "Empagliflozin",
+    "mw": 450.9,
+    "logp": 1.6,
+    "hbd": 3,
+    "hba": 8,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 100,
+    "combined_score": 100.0,
+    "flags": [
+      "\u2713 Approved CV drug"
+    ],
+    "notes": "SGLT2 inhibitor \u2014 38% CV death reduction in EMPA-REG (diabetics)",
+    "smiles": "O=C1OC[C@@H]2[C@H](O)[C@@H](O)[C@H](O)[C@H]2c2ccc(Cc3ccc(OCC(F)(F)F)cc3)cc2"
+  },
+  {
+    "name": "Ezetimibe",
+    "mw": 409.4,
+    "logp": 3.9,
+    "hbd": 2,
+    "hba": 4,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 100,
+    "combined_score": 100.0,
+    "flags": [
+      "\u2713 Approved CV drug"
+    ],
+    "notes": "NPC1L1 inhibitor \u2014 blocks cholesterol absorption, adds 20% LDL reduction",
+    "smiles": "O=C1NC(c2ccc(O)cc2)C(c2ccc(F)cc2)[C@@H]1c1ccc(F)cc1"
+  },
+  {
+    "name": "Alirocumab_frag",
+    "mw": 402.8,
+    "logp": 4.5,
+    "hbd": 1,
+    "hba": 4,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 100,
+    "combined_score": 100.0,
+    "flags": [
+      "\u2713 PCSK9 pathway relevance"
+    ],
+    "notes": "Alirocumab pharmacophore \u2014 PCSK9 antibody mimic",
+    "smiles": "Cc1ccc(-n2nc(C(F)(F)F)cc2NC(=O)c2cccc(Cl)c2)cc1"
+  },
+  {
+    "name": "Inclisiran",
+    "mw": 337.3,
+    "logp": 1.5,
+    "hbd": 2,
+    "hba": 6,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 100,
+    "combined_score": 100.0,
+    "flags": [
+      "\u2713 PCSK9 pathway relevance"
+    ],
+    "notes": "GalNAc-siRNA delivery mimic \u2014 2 injections/year drops LDL 50%",
+    "smiles": "OCCN1CCN(CCOC(=O)Nc2ccc(C(F)(F)F)cc2)CC1"
+  },
+  {
+    "name": "Valsartan",
+    "mw": 435.5,
+    "logp": 3.6,
+    "hbd": 2,
+    "hba": 5,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 98.0,
+    "combined_score": 98.9,
+    "flags": [
+      "\u2713 Approved CV drug"
+    ],
+    "notes": "ARB \u2014 AT1 receptor blocker, reduces cardiac remodeling",
+    "smiles": "CCCC1=NC2=CC=CC=C2N1CC1=CC=C(C=C1)C1=CC=CC=C1C(=O)O"
+  },
+  {
+    "name": "Rosuvastatin",
+    "mw": 481.5,
+    "logp": 0.3,
+    "hbd": 4,
+    "hba": 10,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 96.0,
+    "combined_score": 97.8,
+    "flags": [
+      "\u2713 Approved CV drug"
+    ],
+    "notes": "HMG-CoA reductase \u2014 most potent statin, lowers LDL 55%",
+    "smiles": "CC(C)c1nc(N(C)S(=O)(=O)C)nc(-c2ccc(F)cc2)c1/C=C/[C@@H](O)C[C@@H](O)CC(=O)O"
+  },
+  {
+    "name": "Ramipril",
+    "mw": 416.5,
+    "logp": 1.2,
+    "hbd": 2,
+    "hba": 7,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 96.0,
+    "combined_score": 97.8,
+    "flags": [
+      "\u2713 Approved CV drug"
+    ],
+    "notes": "ACE inhibitor \u2014 cardioprotective, reduces remodeling post-MI",
+    "smiles": "CCOC(=O)[C@@H]1CCCN1C(=O)[C@@H](N[C@@H](C)Cc1ccccc1)CC(=O)O"
+  },
+  {
+    "name": "PF-06446846",
+    "mw": 357.8,
+    "logp": 3.5,
+    "hbd": 2,
+    "hba": 5,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 95.0,
+    "combined_score": 97.2,
+    "flags": [
+      "\u2713 PCSK9 pathway relevance"
+    ],
+    "notes": "Pfizer PCSK9 mRNA translation inhibitor \u2014 Phase I completed",
+    "smiles": "CC1(C)OC(=O)c2cc(NC(=O)c3cccc(Cl)c3)ccc21"
+  },
+  {
+    "name": "Berberine",
+    "mw": 336.4,
+    "logp": 1.8,
+    "hbd": 0,
+    "hba": 7,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 95.0,
+    "combined_score": 97.2,
+    "flags": [
+      "\u2713 PCSK9 pathway relevance"
+    ],
+    "notes": "Natural alkaloid \u2014 reduces PCSK9 gene expression by 50% in vitro",
+    "smiles": "COc1ccc2cc3c(cc2c1OC)C=CC(=[N+]3CCCC4=CC5=C(C=C4)OCO5)[O-]"
+  },
+  {
+    "name": "Quercetin",
+    "mw": 302.2,
+    "logp": 1.5,
+    "hbd": 5,
+    "hba": 7,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 95.0,
+    "combined_score": 97.2,
+    "flags": [
+      "\u2713 Anti-inflammatory IHD mechanism"
+    ],
+    "notes": "Flavonoid \u2014 anti-inflammatory, reduces ox-LDL uptake by macrophages",
+    "smiles": "O=c1c(O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12"
+  },
+  {
+    "name": "Clopidogrel",
+    "mw": 321.8,
+    "logp": 2.5,
+    "hbd": 1,
+    "hba": 4,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 95.0,
+    "combined_score": 97.2,
+    "flags": [
+      "\u2713 Approved CV drug"
+    ],
+    "notes": "P2Y12 inhibitor \u2014 antiplatelet after MI/stent",
+    "smiles": "COC(=O)[C@@H]1CCCN1Cc1cccc2ccccc12"
+  },
+  {
+    "name": "Ziltivekimab",
+    "mw": 434.5,
+    "logp": 4.1,
+    "hbd": 2,
+    "hba": 6,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 93.0,
+    "combined_score": 96.2,
+    "flags": [
+      "\u2713 Anti-inflammatory IHD mechanism"
+    ],
+    "notes": "Anti-IL-6 \u2014 RESCUE trial, reduces vascular inflammation",
+    "smiles": "O=C(O)c1ccc(-c2ccnc(NC(=O)c3cccc(Oc4ccccc4)c3)c2)cc1"
+  },
+  {
+    "name": "Atorvastatin",
+    "mw": 558.6,
+    "logp": 4.1,
+    "hbd": 3,
+    "hba": 7,
+    "drug_likeness": 95.0,
+    "pcsk9_affinity": 96.0,
+    "combined_score": 95.6,
+    "flags": [
+      "MW=559>500 (Ro5 violation)",
+      "\u2713 Approved CV drug"
+    ],
+    "notes": "HMG-CoA reductase inhibitor \u2014 gold standard LDL reduction",
+    "smiles": "CC(C)c1c(C(=O)Nc2ccccc2F)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC(O)CC(O)CC(=O)O"
+  },
+  {
+    "name": "Ticagrelor",
+    "mw": 522.6,
+    "logp": 2.5,
+    "hbd": 3,
+    "hba": 7,
+    "drug_likeness": 95.0,
+    "pcsk9_affinity": 93.0,
+    "combined_score": 93.9,
+    "flags": [
+      "MW=523>500 (Ro5 violation)",
+      "\u2713 Approved CV drug"
+    ],
+    "notes": "Reversible P2Y12 \u2014 faster onset than clopidogrel",
+    "smiles": "C[C@@H]1CCCC[C@H]1NC(=O)Nc1nc(-c2nnc(SCCC#N)c2SC2CCCC2)c(F)cc1F"
+  },
+  {
+    "name": "SBC-115076",
+    "mw": 261.7,
+    "logp": 2.9,
+    "hbd": 2,
+    "hba": 3,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 86.0,
+    "combined_score": 92.3,
+    "flags": [
+      "\u2713 PCSK9 pathway relevance"
+    ],
+    "notes": "Small molecule PCSK9 inhibitor \u2014 preclinical, disrupts EGF-A binding",
+    "smiles": "CC1=CC(=C(C=C1)NC(=O)c2ccncc2)Cl"
+  },
+  {
+    "name": "Colchicine",
+    "mw": 399.4,
+    "logp": 1.3,
+    "hbd": 1,
+    "hba": 7,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 85.0,
+    "combined_score": 91.8,
+    "flags": [
+      "\u2713 Anti-inflammatory IHD mechanism"
+    ],
+    "notes": "COLCOT trial: 23% reduction in CV events \u2014 IL-1\u03b2/NLRP3 pathway",
+    "smiles": "COc1cc2c(c(OC)c1OC)-c1ccc(=O)cc1[C@@H](NC(C)=O)CC2"
+  },
+  {
+    "name": "Resveratrol",
+    "mw": 228.2,
+    "logp": 2.8,
+    "hbd": 3,
+    "hba": 3,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 85.0,
+    "combined_score": 91.8,
+    "flags": [
+      "\u2713 Anti-inflammatory IHD mechanism"
+    ],
+    "notes": "Polyphenol \u2014 SIRT1 activation, anti-atherogenic in models",
+    "smiles": "Oc1ccc(/C=C/c2cc(O)cc(O)c2)cc1"
+  },
+  {
+    "name": "Simvastatin",
+    "mw": 418.6,
+    "logp": 4.7,
+    "hbd": 1,
+    "hba": 6,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 80.0,
+    "combined_score": 89.0,
+    "flags": [],
+    "notes": "HMG-CoA reductase \u2014 classic statin",
+    "smiles": "CCC(C)(C)C(=O)O[C@@H]1C[C@@H](C)C=C2C=C[C@H](C)[C@H](CC[C@@H]3C[C@@H](O)CC(=O)O3)[C@H]21"
+  },
+  {
+    "name": "Lomitapide",
+    "mw": 363.3,
+    "logp": 5.2,
+    "hbd": 1,
+    "hba": 3,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 80.0,
+    "combined_score": 89.0,
+    "flags": [
+      "logP=5.2>5 (lipophilic)",
+      "\u2713 PCSK9 pathway relevance"
+    ],
+    "notes": "MTP inhibitor \u2014 reduces ApoB/LDL in homozygous FH",
+    "smiles": "O=C(Cc1ccc(C(F)(F)F)cc1)Nc1ccc(C(F)(F)F)cc1"
+  },
+  {
+    "name": "Evolocumab_frag",
+    "mw": 296.4,
+    "logp": 1.0,
+    "hbd": 3,
+    "hba": 5,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 76.0,
+    "combined_score": 86.8,
+    "flags": [
+      "\u2713 PCSK9 pathway relevance"
+    ],
+    "notes": "Evolocumab pharmacophore fragment \u2014 PCSK9 antibody mimic probe",
+    "smiles": "CC(C)(C)NCC(O)c1ccc(OCCN2CCOCC2)cc1"
+  },
+  {
+    "name": "Aspirin",
+    "mw": 180.2,
+    "logp": 1.2,
+    "hbd": 1,
+    "hba": 4,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 73.0,
+    "combined_score": 85.2,
+    "flags": [
+      "\u2713 Approved CV drug"
+    ],
+    "notes": "COX-1 inhibitor \u2014 antiplatelet, secondary prevention standard of care",
+    "smiles": "CC(=O)Oc1ccccc1C(=O)O"
+  },
+  {
+    "name": "Nicotinamide",
+    "mw": 122.1,
+    "logp": -0.4,
+    "hbd": 2,
+    "hba": 2,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 66.0,
+    "combined_score": 81.3,
+    "flags": [],
+    "notes": "Niacin analog \u2014 raises HDL, reduces VLDL production",
+    "smiles": "NC(=O)c1ccncc1"
+  },
+  {
+    "name": "Canakinumab",
+    "mw": 518.6,
+    "logp": 1.8,
+    "hbd": 7,
+    "hba": 9,
+    "drug_likeness": 85.0,
+    "pcsk9_affinity": 78.0,
+    "combined_score": 81.2,
+    "flags": [
+      "MW=519>500 (Ro5 violation)",
+      "HBD=7>5",
+      "\u2713 Anti-inflammatory IHD mechanism"
+    ],
+    "notes": "Anti-IL-1\u03b2 antibody \u2014 CANTOS trial, 15% MI reduction (small molecule mimic)",
+    "smiles": "CC(C)CC1NC(=O)C(Cc2ccc(O)cc2)NC(=O)C(N)CCCNC(=N)N"
+  },
+  {
+    "name": "Doxycycline",
+    "mw": 444.4,
+    "logp": -0.2,
+    "hbd": 7,
+    "hba": 11,
+    "drug_likeness": 80.0,
+    "pcsk9_affinity": 81.0,
+    "combined_score": 80.6,
+    "flags": [
+      "HBD=7>5",
+      "HBA=11>10"
+    ],
+    "notes": "Antibiotic \u2014 reduces MMP activity in plaque, prevents rupture",
+    "smiles": "OC1=C(O)C(=O)[C@@]2(O)C(=O)C3=C(O)c4c(ccc(N(C)C)c4O)[C@@H]3[C@@H]2[C@@H]1N(C)C"
+  },
+  {
+    "name": "Metformin",
+    "mw": 129.2,
+    "logp": -1.4,
+    "hbd": 3,
+    "hba": 2,
+    "drug_likeness": 100,
+    "pcsk9_affinity": 58.0,
+    "combined_score": 76.9,
+    "flags": [
+      "\u2713 PCSK9 pathway relevance"
+    ],
+    "notes": "Diabetes drug \u2014 also activates AMPK, reduces PCSK9 expression",
+    "smiles": "CN(C)C(=N)NC(=N)N"
+  },
+  {
+    "name": "Semaglutide",
+    "mw": 283.5,
+    "logp": 5.2,
+    "hbd": 1,
+    "hba": 2,
+    "drug_likeness": 85.0,
+    "pcsk9_affinity": 55.0,
+    "combined_score": 68.5,
+    "flags": [
+      "logP=5.2>5 (lipophilic)"
+    ],
+    "notes": "GLP-1 agonist simplified \u2014 26% MACE reduction in SELECT trial",
+    "smiles": "CCCCCCCCCCCCCCCCCC(=O)N"
+  },
+  {
+    "name": "Inclisiran_analog",
+    "mw": 591.7,
+    "logp": 7.2,
+    "hbd": 1,
+    "hba": 7,
+    "drug_likeness": 70.0,
+    "pcsk9_affinity": 60.0,
+    "combined_score": 64.5,
+    "flags": [
+      "MW=592>500 (Ro5 violation)",
+      "logP=7.2>5 (lipophilic)"
+    ],
+    "notes": "siRNA delivery lipid analog \u2014 models inclisiran delivery vehicle",
+    "smiles": "CCCCCCCCCCCCCC(=O)OCC(COP(=O)(O)O)OC(=O)CCCCCCCCCCCCC"
+  }
+]

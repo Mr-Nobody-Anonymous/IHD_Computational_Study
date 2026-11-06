@@ -1,0 +1,22 @@
+PCSK9-LDLR Interface Contact Report (PDB: 3BPS)
+Total Contacts (<5.0 A): 317
+
+Top Contact Residues:
+   1. PHE379: 70 contacts (Min dist: 2.75 A)
+   2. THR377: 46 contacts (Min dist: 2.54 A)
+   3. CYS378: 31 contacts (Min dist: 3.27 A)
+   4. SER153: 28 contacts (Min dist: 3.11 A)
+   5. ILE369: 24 contacts (Min dist: 3.59 A)
+   6. ASP238: 23 contacts (Min dist: 2.88 A)
+   7. VAL380: 20 contacts (Min dist: 3.44 A)
+   8. ARG194: 19 contacts (Min dist: 2.95 A)
+   9. PRO155: 18 contacts (Min dist: 3.65 A)
+  10. ASP374: 9 contacts (Min dist: 3.44 A)
+  11. ILE154: 8 contacts (Min dist: 3.89 A)
+  12. SER381: 6 contacts (Min dist: 4.58 A)
+  13. SER372: 5 contacts (Min dist: 3.77 A)
+  14. CYS375: 5 contacts (Min dist: 3.47 A)
+  15. ALA239: 3 contacts (Min dist: 4.05 A)
+
+Docking Grid Center: X=22.74, Y=-30.50, Z=-3.75
+Box Size:           X=24.6, Y=23.5, Z=34.8

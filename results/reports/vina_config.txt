@@ -1,0 +1,20 @@
+# AutoDock Vina config — PCSK9 EGF-A binding pocket
+# Generated from PDB 3BPS interface analysis
+# Target: PCSK9 Chain A vs LDLR EGF-A Chain B
+
+receptor = pcsk9_receptor.pdbqt
+ligand   = ligand.pdbqt
+out      = docking_results.pdbqt
+log      = docking_log.txt
+
+center_x = 22.74
+center_y = -30.50
+center_z = -3.75
+
+size_x   = 24.6
+size_y   = 23.5
+size_z   = 34.8
+
+exhaustiveness = 16
+num_modes      = 10
+energy_range   = 3

@@ -1,0 +1,107 @@
+[
+  {
+    "gene": "PCSK9 (On-Target)",
+    "chr": "Chr1p32.3",
+    "sequence": "GGGCAGCGCCACCCACAGGA",
+    "pam": "TGG",
+    "mismatches": 0,
+    "mismatch_details": [],
+    "cfd_score": 1.0,
+    "risk_category": "ON-TARGET THERAPEUTIC",
+    "tissue": "Liver, Kidney",
+    "consequence": "Permanent loss-of-function; therapeutic LDL drop"
+  },
+  {
+    "gene": "PCSK1 (Convertase 1)",
+    "chr": "Chr5q15",
+    "sequence": "GGGCAGCGCCAGCGACAGGA",
+    "pam": "AGG",
+    "mismatches": 2,
+    "mismatch_details": [
+      "C->G@pos12",
+      "C->G@pos14"
+    ],
+    "cfd_score": 0.086125,
+    "risk_category": "VERY LOW / BORDERLINE",
+    "tissue": "Neuroendocrine, Pancreas",
+    "consequence": "Endocrine hormone processing"
+  },
+  {
+    "gene": "PCSK2 (Convertase 2)",
+    "chr": "Chr20p12",
+    "sequence": "GGGAAGCGCCACTCACACCA",
+    "pam": "CGG",
+    "mismatches": 4,
+    "mismatch_details": [
+      "C->A@pos4",
+      "C->T@pos13",
+      "G->C@pos18",
+      "G->C@pos19"
+    ],
+    "cfd_score": 0.000646,
+    "risk_category": "NEGLIGIBLE (<0.1%)",
+    "tissue": "Brain, Islets",
+    "consequence": "Glucagon/insulin processing"
+  },
+  {
+    "gene": "FURIN (PCSK3)",
+    "chr": "Chr15q26",
+    "sequence": "TGGCAGCACCACCGCCAGGA",
+    "pam": "TGG",
+    "mismatches": 4,
+    "mismatch_details": [
+      "G->T@pos1",
+      "G->A@pos8",
+      "C->G@pos14",
+      "A->C@pos15"
+    ],
+    "cfd_score": 0.001117,
+    "risk_category": "NEGLIGIBLE (<0.1%)",
+    "tissue": "Ubiquitous",
+    "consequence": "Essential general convertase"
+  },
+  {
+    "gene": "MBTPS1 (SKI-1 / S1P)",
+    "chr": "Chr16q24",
+    "sequence": "AGGCAGCGTCACCCAAAGGA",
+    "pam": "AGG",
+    "mismatches": 3,
+    "mismatch_details": [
+      "G->A@pos1",
+      "C->T@pos9",
+      "C->A@pos16"
+    ],
+    "cfd_score": 0.019414,
+    "risk_category": "VERY LOW / BORDERLINE",
+    "tissue": "Liver, General",
+    "consequence": "Sterol regulation"
+  },
+  {
+    "gene": "Intergenic Off-Target 1",
+    "chr": "Chr8q21.1",
+    "sequence": "GGGCAGCGCCACCCACATGA",
+    "pam": "GGG",
+    "mismatches": 1,
+    "mismatch_details": [
+      "G->T@pos18"
+    ],
+    "cfd_score": 0.265,
+    "risk_category": "POTENTIAL RISK (Deep-Seq Needed)",
+    "tissue": "Non-coding intergenic",
+    "consequence": "No known transcript"
+  },
+  {
+    "gene": "Intergenic Off-Target 2",
+    "chr": "Chr12p11.2",
+    "sequence": "GGGCAGCGCAACCCACAGGA",
+    "pam": "TGG",
+    "mismatches": 1,
+    "mismatch_details": [
+      "C->A@pos10"
+    ],
+    "cfd_score": 0.4,
+    "risk_category": "POTENTIAL RISK (Deep-Seq Needed)",
+    "tissue": "Non-coding intronic",
+    "consequence": "Intron of uncharacterized lncRNA"
+  }
+]

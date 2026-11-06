@@ -1,0 +1,21 @@
+PCSK9-LDLR Interface SASA Analysis (PDB: 3BPS)
+Total Interface BSA: 591.48 A^2
+PCSK9 Buried Area:   2676.02 A^2
+LDLR Buried Area:    639.03 A^2
+
+PCSK9 Residues by Buried Area:
+  PHE379: 77.43 A^2 (99.4% buried)
+  SER153: 66.24 A^2 (39.1% buried)
+  ILE369: 64.91 A^2 (94.9% buried)
+  ASP238: 43.17 A^2 (56.9% buried)
+  THR377: 42.99 A^2 (60.5% buried)
+  ASP374: 38.81 A^2 (35.9% buried)
+  VAL380: 37.46 A^2 (79.9% buried)
+  CYS378: 36.97 A^2 (100.0% buried)
+  PRO155: 22.95 A^2 (92.4% buried)
+  ARG194: 20.64 A^2 (45.0% buried)
+  ASP367: 13.50 A^2 (24.9% buried)
+  SER381: 13.50 A^2 (31.7% buried)
+  CYS375: 12.54 A^2 (26.2% buried)
+  ARG237: 8.20 A^2 (7.0% buried)
+  ALA239: 5.16 A^2 (95.9% buried)
