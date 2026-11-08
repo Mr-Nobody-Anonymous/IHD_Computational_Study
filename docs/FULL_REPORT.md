@@ -46,15 +46,16 @@ this study, because no combination has been trialled.
 | `results/hypotheses/` | 10 |
 | `results/recombine/` | 13 |
 | `results/reports/` | 5 |
+| `results/revival/` | 9 |
 | `results/resolution/` | 9 |
 | `results/solutions/` | 34 |
 | `results/tables/` | 10 |
 | `results/upgrade/` | 10 |
 
 **Input registries:** 47 therapies · 48 trial anchors · 19 populations
-**Documentation:** 19 documents (plus this report)
-**Code:** 33 modules in `src/ihd_solutions/`
-**Tests:** 32 test files
+**Documentation:** 20 documents (plus this report)
+**Code:** 34 modules in `src/ihd_solutions/`
+**Tests:** 33 test files
 
 ---
 
@@ -1304,6 +1305,64 @@ compositions. No cure is declared.
 
 ---
 
+## F.13 What ATLAS-5 was missing — the control arm (`revival`)
+
+Full account: [`revival_correction.md`](revival_correction.md).
+Artefacts: `results/revival/` (9).
+
+A deep literature search was run to find what the composition lacks. **The deficiency is
+not a mechanism and cannot be composed in:** every part of ATLAS-5 rests on one
+uncontrolled observation — BioVAT-HF's +3.9 LVEF points at three months, in 16 patients,
+with no control group. Charging that correctly removes the design.
+
+| # | Deficiency | Evidence |
+|---|---|---|
+| 1 | **No contemporaneous control** | REVIVED-BCIS2 OMT arm gained **+3.4 pp at 6 months unaided** (n=353); +3.9 (90% CI 0.9–6.8) is not distinguishable |
+| 2 | **A second patch trial was null** | AATS LB8, n=8: LVEF 28.7 → 33.0% at 52 weeks, **p = 0.156** |
+| 3 | **Endpoint does not track outcomes** | STICH, 10 years, n=601: LVEF rose irrespective of treatment assignment; **no association with death** |
+| 4 | **Viability does not identify benefit** | REVIVED: non-viable extent predicted prognosis, viable did not |
+| 5 | **Transmurality decides recovery** | no LGE 91%, >75% transmural 8% |
+
+### The ladder
+
+| rung | step | P(target) | of original |
+|---|---|---|---|
+| 0 | as published | **97.92%** | 100.0% |
+| 1 | − unaided gain (+3.4 pp) | **57.56%** | 58.8% |
+| 2 | − unaided gain (+1.1 pp) | **73.32%** | 74.9% |
+
+**Attribution loss: 40.36 pp.** Re-searching all 64 compositions under the correction does
+**not** select ATLAS-5 — it selects `retry_redundancy + maturation`, the frugal alternative,
+at **55.93%**. **No composition is robust.** The correct report is the best available
+design with `robust_set_exists = False`.
+
+The design is robust at exactly **one** comparator value: zero — the assumption under test.
+At 1.1, 2.25 and 3.4 pp it fails.
+
+### The second deficiency, exposed by correcting the first
+
+The corrected model still claims a median **+20.6 pp**, which is **3.0× the largest LVEF
+gain any remuscularisation approach has measured in a human** (+6.9 pp, BioVAT at a mean
+17 months). The surrogate-threshold comparison is therefore crossed **by construction**,
+and is labelled `comparison_usable = False` rather than reported as a pass.
+
+### The temptation that is not a gain
+
+Restricting to patients without transmural scar raises conditional recovery to 91% and is
+claimed as **zero population-level gain** — the same trap the recombination search already
+rejected for response-guided selection (−3.52 pp). A test enforces the zero.
+
+**Four bugs were caught in the correction itself**, two of them optimistic in the wrong
+direction: flooring the comparator at zero rented its mean up to 4.16 pp (over-subtraction
+dressed as conservatism); and drawing a zero comparator as noise made the uncorrected rung
+disagree with the published figure. Tests now enforce that a correction may only ever
+**lower** an estimate, that the zero rung reproduces the published number to 1e-12, and
+that no re-search may manufacture a robust design.
+
+**Randomised proof: 0.00%.** No cure is declared. Nothing here is tuned to reach a target.
+
+---
+
 # PART G — THE HONESTY LEDGER
 
 Every retraction and correction made during this study, in order. This section
@@ -1337,6 +1396,10 @@ exists because a report that only shows final numbers hides how they were reache
 | 24 | Composing every mechanism is the best composite | A negative-effect part drags the stack down | Selection beats stacking by **3.52 pp** |
 | 25 | The strongest composite needs an unprecedented modification | Conflated the price of admissibility with the price of cheapness | It needed **none**; admissibility costs 0.05 pp (noise) |
 | 26 | Dose escalation is a construct-scale projection | Pre-dated BioVAT-HF's reported maximum dose | **800M cells given to 16 of 20 patients**; the 1.75x above it stays unvalidated |
+| 27 | BioVAT's +3.9 pp is the graft's effect | Single-arm study; REVIVED's OMT arm gained +3.4 pp unaided at 6 months | **Attribution loss 40.36 pp**; ATLAS-5 falls 97.92% -> 57.56% |
+| 28 | ATLAS-5 is the best composition | Selected on an uncontrolled baseline | Re-search under correction selects the **frugal** design; **no composition robust** |
+| 29 | The corrected gain still clears the surrogate threshold | The model claims 3.0x the largest human LVEF gain ever measured | Comparison **unusable**, labelled not passed |
+| 30 | Stratifying to no-scar patients improves the result | Raises the conditional rate to 91% and excludes everyone else | **Zero** population-level gain, enforced by test |
 
 **Implementation bugs found and fixed:** run-in pinned responders to the threshold
 instead of keeping their achieved value; gate threshold computed at 24 months but
@@ -1364,9 +1427,9 @@ clearance and graft mass, not durability; pytest collected a library function na
 
 | Check | Result |
 |---|---|
-| Test suite | **1060 passed** (917 s) |
-| Coverage of `ihd_solutions` | **98.74%** (`recombine.py` **100%**, `atlas4.py` 99%, `gap_solutions.py` 99%) |
-| Lint (`ruff`) | clean, 66 files formatted |
+| Test suite | **1102 passed** (416 s) |
+| Coverage of `ihd_solutions` | **98.68%** (`recombine.py` **100%**, `revival.py` **100%**, `atlas4.py` 99%) |
+| Lint (`ruff`) | clean, 68 files formatted |
 | Registry validation | **47 therapies / 48 anchors / 19 populations** |
 | Evidence artefacts hash-verified | **33**, **0 mismatches** |
 | Cures declared | **0** |
@@ -1389,6 +1452,7 @@ python run_solutions.py atlas3          # ATLAS-3 (graft retry+loop) -> results/
 python run_solutions.py atlas4          # ATLAS-4 (precedent + grid) -> results/atlas4/
 python run_solutions.py gap-solutions   # designs for the 6 gaps    -> results/gap_solutions/
 python run_solutions.py recombine       # ATLAS-5 mechanism composition -> results/recombine/
+python run_solutions.py revival         # control-arm correction        -> results/revival/
 python run_solutions.py validate        # registries only
 ```
 
@@ -1437,8 +1501,10 @@ require; an invented architecture that makes plaque clearance robust in simulati
 at a stated price; a second that does the same for the graft and shows the missing
 step is *repeatability plus measurement*, not potency; a third composite assembled from
 the measured load-bearing parts of the first two, which is stronger and simpler than
-either and refuses 14.08 pp of double-counted benefit; and a documented record of
-twenty-six claims that were tested and withdrawn. **The retractions are part of the
+either and refuses 14.08 pp of double-counted benefit - then charged for the control
+arm it never had, and withdrawn when the charge was found to dissolve it; and a documented
+record of
+thirty claims that were tested and withdrawn. **The retractions are part of the
 result.**
 
 ---

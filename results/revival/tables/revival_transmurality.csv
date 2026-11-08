@@ -1,0 +1,5 @@
+transmurality_band,conditional_recovery,usable_fraction_of_scar,raises_conditional_probability,population_level_gain_claimed,reason,status
+no_lge,0.91,0.91,True,0.0,"stratification: excluded patients are not made better by being excluded, so no population-level probability may be raised",recombination_natural_history_corrected_unvalidated
+lge_1_50,0.44,0.44,True,0.0,"stratification: excluded patients are not made better by being excluded, so no population-level probability may be raised",recombination_natural_history_corrected_unvalidated
+lge_51_75,0.43,0.43,True,0.0,"stratification: excluded patients are not made better by being excluded, so no population-level probability may be raised",recombination_natural_history_corrected_unvalidated
+lge_over_75,0.08,0.08,False,0.0,"stratification: excluded patients are not made better by being excluded, so no population-level probability may be raised",recombination_natural_history_corrected_unvalidated

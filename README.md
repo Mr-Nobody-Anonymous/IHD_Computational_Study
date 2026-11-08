@@ -270,6 +270,22 @@ registry), so ATLAS-3 was never beyond precedent. Randomised proof: **zero**.
 python run_solutions.py recombine      # -> results/recombine/ (13 artefacts)
 ```
 
+[`docs/revival_correction.md`](docs/revival_correction.md) then asks the question that
+matters: **is the effect ATLAS-5 is built on actually there?** It is not. Every part rests
+on one **uncontrolled** observation - BioVAT-HF's +3.9 LVEF points in 16 patients, no
+control group. REVIVED-BCIS2's guideline-therapy arm gained **+3.4 points at six months
+unaided**, and a second iPSC patch trial (AATS LB8, n=8) was **null** (p=0.156).
+Subtracting the unaided gain costs **40.36 pp**: ATLAS-5 falls from 97.92% to **57.56%**,
+re-searching all 64 compositions selects the *frugal* design instead, and **no composition
+is robust**. Correcting the control arm also exposes a second deficiency - the corrected
+model still claims **3.0x the largest human LVEF gain ever measured**, so its
+surrogate-threshold comparison is labelled unusable rather than passed. **There was nothing
+to add: what was missing was evidence, and evidence cannot be composed.**
+
+```bash
+python run_solutions.py revival        # -> results/revival/ (9 artefacts)
+```
+
 - **Hazard ratio — solved as procurement.** All 19 populations close by exploratory credit.
   One PCSK9-editing outcomes trial unlocks **17 of 19**. No new biology needed.
 - **Clearance — solved as an engineering spec.** Correction: no *single* module suffices
@@ -358,6 +374,7 @@ IHD_Computational_Study/
 │   ├── atlas4_precedent_search.md                # ATLAS-4: literature search, 3 corrections, all 360 designs tested
 │   ├── gap_solutions.md                          # designs + power calculations for the six open gaps
 │   ├── mechanism_recombination.md                # ATLAS-5: mechanism ablation, overlaps, all 64 compositions
+│   ├── revival_correction.md                     # what ATLAS-5 was missing: the control arm, and what it costs
 │   ├── FULL_REPORT.md                            # consolidated report: all agents, compounds, experiments, results
 │   ├── FULL_REPORT_chemical_index.csv            # 95 entities, source-tagged, QA-flagged
 │   ├── scientific_methodology_and_limitations.md # Critical reality check & assumptions
