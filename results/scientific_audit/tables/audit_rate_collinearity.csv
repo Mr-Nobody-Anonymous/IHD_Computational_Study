@@ -1,0 +1,8 @@
+first,second,correlation,status
+k_nfkb_act,k_nfkb_deg,-0.9613078483806603,scientific_audit_no_model_change
+k_nfkb_deg,k_il1b_deg,0.975771405148986,scientific_audit_no_model_change
+k_nfkb_deg,k_il6_deg,0.9829411000723568,scientific_audit_no_model_change
+k_nlrp3_deg,k_crp_deg,0.9763064403284378,scientific_audit_no_model_change
+k_il1b_prod,k_il6_prod,0.9868252288525242,scientific_audit_no_model_change
+k_il1b_prod,k_crp_prod,0.9580279798810866,scientific_audit_no_model_change
+k_il6_prod,k_crp_prod,0.9877177727124189,scientific_audit_no_model_change

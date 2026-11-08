@@ -1,0 +1,4 @@
+parameter,objective_span,verdict,status
+k_crp_prod,3.2834802877583535,unidentified - the optimum is at the edge of the swept range,scientific_audit_no_model_change
+k_il6_prod,3.28348028775835,unidentified - the optimum is at the edge of the swept range,scientific_audit_no_model_change
+k_nfkb_act,3.283192164859873,unidentified - the optimum is at the edge of the swept range,scientific_audit_no_model_change

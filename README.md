@@ -286,6 +286,104 @@ to add: what was missing was evidence, and evidence cannot be composed.**
 python run_solutions.py revival        # -> results/revival/ (9 artefacts)
 ```
 
+[`docs/scientific_audit.md`](docs/scientific_audit.md) answers an external critique of the
+whole study. Most of it was right, and is now **measured**: every numeric constant carries
+an enforced provenance record (a missing one fails the build), and **32 of 92 are
+hypothetical**. The legacy 14-rate cytokine network turns out to be **exactly
+non-identifiable** - the cascade is linear in its rates, so doubling one production rate
+and doubling another produce the same trajectory to machine precision. **0 of 14 rates are
+jointly identifiable**, so no Bayesian posterior is reported; they are declared fixed
+assumptions. Verification is separated from validation on a five-rung ladder, and the
+highest rung this repository reaches is **convergence** - four of six modules have no
+external validation at all. What the critique asked for and is **not** delivered (GPU
+molecular dynamics, 3D CFD/FSI, genome-wide off-target model) is listed in
+`audit_not_done.csv` with the reason. **No GPU moves a result from convergence to
+interventional.**
+
+```bash
+python run_solutions.py scientific-audit # -> results/scientific_audit/ (8 artefacts)
+```
+
+[`docs/unanswered_questions.md`](docs/unanswered_questions.md) asks the harder follow-up:
+**what can this study not answer at all, and what does each gap cost?** Thirteen gaps are
+registered and classified as *in principle* (only a randomised human comparison can settle
+it), *in practice* (needs a GPU or a dataset this environment lacks), *analytic* (closable
+here with arithmetic and not yet done), or *epistemic* (a number cannot settle it). Six are
+arithmetic that had not been done: **neither uncontrolled patch trial could have detected
+its own reported effect** - n=8 cannot resolve 4.3 pp and n=20 cannot resolve 3.9 pp - and
+the composite adverse-event risk across three stacked exposures is **15.6%**, not the 5.5%
+quoted. One item is an open defect in this study's **own** viability table, reported rather
+than tuned away. The only remaining upgrade that needs no GPU and no patients is an
+external validation set, and it is **not done**.
+
+```bash
+python run_solutions.py unanswered      # -> results/unanswered/ (6 artefacts)
+```
+
+[`docs/simulation_frontier.md`](docs/simulation_frontier.md) asks whether simulation alone can
+find the solution. **It cannot, and the reason is not compute.** The inflammatory model
+cannot rank the four mechanisms it is asked to choose between - they differ by **0.000252
+mg/L**, one part in five million - and **LDL lowering and NF-kB inhibition turn out to be the
+same perturbation**, identical to machine precision. Choosing which experiment to run
+requires knowing which mechanism matters, which is what the experiment is for. **0 of 8
+transfer checks pass.** What simulation *can* hand over is an experiment specification: the
+measurement, at what resolution, that would discriminate - which is worth a laboratory's
+time, and is not the same thing as a cure.
+
+```bash
+python run_solutions.py frontier         # -> results/frontier/ (7 artefacts)
+```
+
+[`docs/literature_register.md`](docs/literature_register.md) maps each of those eight gate
+items to the established method that addresses it - the ICH E9(R1) estimand framework,
+T-optimal design, structural and practical identifiability (DAISY/SIAN/STRIKE-GOLDD), TRIPOD+AI
+external validation, Prentice surrogate validation, and sloppy-model analysis - and records
+what happened when each was applied. **All eight were solved methodologically; none is closed
+by having the method available; 8 still fail.** The search also corrected one of my own
+conclusions: the inflammatory model **can** rank its mechanisms, at **9.954 mg/L** on a CRP
+time course around day 22 versus **0.000252 mg/L** at the terminal point I had read - a
+**39,507x** difference produced by a better design rather than by more compute. What the
+repository lacks is a time course, not a ranking capability.
+
+```bash
+python run_solutions.py interventions    # -> results/interventions/ (6 artefacts)
+```
+
+### Which candidate is actually the best one
+
+The question the work above never answers directly. [`docs/candidates.md`](docs/candidates.md)
+ranks seven candidates - four external, three from this repository - by the criterion the
+transfer gate already sets: **outcome evidence, randomised, in humans.**
+
+| rank | candidate | evidence | result |
+|---|---|---|---|
+| 1 | **deep LDL-C lowering, approved agents** | CTT meta-analysis, 170,000 patients | **22% RRR per 1 mmol/L LDL-C** |
+| 2 | low-dose colchicine | COLCOT, LoDoCo2, CLEAR SYNERGY | ~9 fewer MI + 8 fewer strokes/1,000; **no mortality effect** |
+| 3 | IL-6 inhibition (ziltivekimab) | **ZEUS, n=6,385** | **HR 0.99 (0.88-1.11)** despite hsCRP -64% - **refuted** |
+| 4 | oral PCSK9 inhibitor (enlicitide) | CORALreef Lipids | LDL-C -56%, approved 2026; outcomes trial n=14,500 pending |
+| 5 | base editing (VERVE-102) | Heart-2, open-label n=35 | LDL-C -62% |
+| 6 | iPSC cardiomyocyte patch | BioVAT-HF, n=20 | LVEF +3.9 pp, below the +6 pp threshold |
+| 7 | **this repository's combined architecture** | none | zero human exposures - **last** |
+
+Two findings matter more than the ranking itself.
+
+**The inflammatory arm is refuted, not merely uncertain.** ZEUS suppressed IL-6 by 76% and
+hsCRP by 64% in 6,385 high-risk patients and moved three-point MACE by nothing (0.99,
+0.88-1.11); serious infections rose 20% vs 18%; HERMES and ATHENA were then stopped for
+futility. This repository's cascade intervenes at exactly that step and `calibration.py` uses
+CRP as its target. The model gets the marker dynamics right and says nothing about events.
+CRP is demoted from *mechanism of benefit* to *marker dynamics*: the calibration work stands
+as a demonstration of non-identifiability and **no longer as a proxy for benefit**.
+
+**The repository's own architecture ranks last**, because a construct with no clinical data
+cannot outrank an approved drug. The best answer here is deliberately unglamorous: the thing
+already known to work. Nothing in the table is a cure - the top entry slows a process and
+reduces events; it does not reverse disease.
+
+```bash
+python run_solutions.py candidates       # -> results/candidates/ (6 artefacts)
+```
+
 - **Hazard ratio — solved as procurement.** All 19 populations close by exploratory credit.
   One PCSK9-editing outcomes trial unlocks **17 of 19**. No new biology needed.
 - **Clearance — solved as an engineering spec.** Correction: no *single* module suffices
@@ -375,6 +473,11 @@ IHD_Computational_Study/
 │   ├── gap_solutions.md                          # designs + power calculations for the six open gaps
 │   ├── mechanism_recombination.md                # ATLAS-5: mechanism ablation, overlaps, all 64 compositions
 │   ├── revival_correction.md                     # what ATLAS-5 was missing: the control arm, and what it costs
+│   ├── scientific_audit.md                       # provenance, identifiability, verification vs validation
+│   ├── unanswered_questions.md                   # what cannot be answered, and what each gap costs
+│   ├── simulation_frontier.md                    # can simulation pick a winner? no - and why
+│   ├── literature_register.md                    # what the literature solves per gate item
+│   ├── candidates.md                             # best IHD candidate, ranked by outcome evidence
 │   ├── FULL_REPORT.md                            # consolidated report: all agents, compounds, experiments, results
 │   ├── FULL_REPORT_chemical_index.csv            # 95 entities, source-tagged, QA-flagged
 │   ├── scientific_methodology_and_limitations.md # Critical reality check & assumptions

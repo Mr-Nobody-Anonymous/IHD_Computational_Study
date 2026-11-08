@@ -1,5 +1,22 @@
 """
 ================================================================================
+NON-USABLE - LEGACY DEMONSTRATION SCRIPT. KEPT FOR REPRODUCIBILITY ONLY.
+================================================================================
+This script is OUTSIDE the tested package (`src/ihd_solutions/`) and outside the
+test suite. It has no validation, no provenance records and no uncertainty
+propagation. Its numbers must NOT be quoted as findings and must NOT be fed into
+the validated pipeline.
+
+See `docs/scientific_audit.md` for what each script can and cannot support.
+================================================================================
+
+What it can support: a reproduction target. The cascade is exactly linear in its
+14 rates, and 0 of 14 are jointly identifiable (see
+`ihd_solutions.calibration`). It is used in the scientific audit as a HARD TEST
+CASE for the identifiability machinery, not as a model of inflammation.
+What it CANNOT support: any calibrated statement about cytokine dynamics. The
+rates are assumptions; six of them share a single degree of freedom.
+================================================================================
 SCRIPT 4: Vascular Immune & Cytokine Network Simulation
 ================================================================================
 Models the 180-day dynamics of the vascular inflammatory signaling cascade:
@@ -17,6 +34,20 @@ Outputs:
 - results/tables/cytokine_network_data.csv
 ================================================================================
 """
+
+# ------------------------------------------------------------------------------
+# This script is legacy. Shout if someone runs it, so its output is never mistaken
+# for a validated result. `python -W ignore src/0N_*.py` silences it deliberately.
+# ------------------------------------------------------------------------------
+import warnings as _warnings
+
+_warnings.warn(
+    "NON-USABLE LEGACY SCRIPT: untested, unvalidated, no provenance. "
+    "Numbers are NOT findings. See docs/scientific_audit.md.",
+    UserWarning,
+    stacklevel=2,
+)
+
 
 import os, sys
 if hasattr(sys.stdout, 'reconfigure'):

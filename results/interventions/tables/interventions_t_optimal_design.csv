@@ -1,0 +1,7 @@
+observable,best_day,best_absolute_spread,level_at_best_day,relative_spread,terminal_spread,terminal_ratio_to_best,is_readout,circular_warning
+crp,22.5,9.953929691595938,20.826131561401787,0.47795384669729557,0.000251951568259301,2.5311768925997404e-05,True,
+il6,15.25,9.019123583821491,16.740189814348028,0.5387706880175991,9.837453869465662e-05,1.090732794382826e-05,False,"this species IS the perturbation; its separation is circular, not independent evidence about mechanism"
+il1b,180.0,36.23878846868731,45.298500949852425,0.7999997286622212,36.23878846868731,1.0,False,"this species IS the perturbation; its separation is circular, not independent evidence about mechanism"
+casp1,180.0,1.7995923474867799,2.699388964774199,0.666666557124832,1.7995923474867799,1.0,False,"this species IS the perturbation; its separation is circular, not independent evidence about mechanism"
+nlrp3,180.0,1.1998618165107973,2.0997586605915117,0.5714284403393248,1.1998618165107973,1.0,False,"this species IS the perturbation; its separation is circular, not independent evidence about mechanism"
+mmp,180.0,187.40220803416685,562.1537969201349,0.33336465760951006,187.40220803416685,1.0,True,

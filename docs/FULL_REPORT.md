@@ -47,15 +47,16 @@ this study, because no combination has been trialled.
 | `results/recombine/` | 13 |
 | `results/reports/` | 5 |
 | `results/revival/` | 9 |
+| `results/scientific_audit/` | 8 |
 | `results/resolution/` | 9 |
 | `results/solutions/` | 34 |
 | `results/tables/` | 10 |
 | `results/upgrade/` | 10 |
 
 **Input registries:** 47 therapies · 48 trial anchors · 19 populations
-**Documentation:** 20 documents (plus this report)
-**Code:** 34 modules in `src/ihd_solutions/`
-**Tests:** 33 test files
+**Documentation:** 24 documents (plus this report)
+**Code:** 42 modules in `src/ihd_solutions/`
+**Tests:** 37 test files
 
 ---
 
@@ -1363,6 +1364,327 @@ that no re-search may manufacture a robust design.
 
 ---
 
+## F.14 Scientific audit — four checks the critique asked for (`scientific-audit`)
+
+Full account: [`scientific_audit.md`](scientific_audit.md).
+Artefacts: `results/scientific_audit/` (8).
+
+A detailed external critique identified six problems. Most were correct and are now
+measured rather than argued; two described a state that had already moved. **No model was
+changed and no biology established.**
+
+### Parameter provenance, enforced
+
+Every numeric module constant must declare unit, source, population, class
+(`measured`/`estimated`/`hypothetical`) and support type. A missing record **fails the
+build**.
+
+| | |
+|---|---|
+| constants found | **92** |
+| registered | **92** |
+| unregistered | **0** |
+| values disagreeing with code | **0** |
+| measured / estimated / **hypothetical** | 41 / 19 / **32** |
+| earning human efficacy credit | **12** |
+
+Two structural guards: a hypothetical parameter may not claim human measurement, and
+`credit_ceiling()` takes the **minimum** across a chain so one assumed multiplier collapses
+credit regardless of the real measurements beside it. A parameter can be measured and still
+not support the claim — the maturation ratio is measured in humans but supports `mechanism`,
+not `efficacy`, because its study was single-arm.
+
+### Calibration feasibility — 0 of 14 rates identifiable
+
+The legacy 14-rate cytokine network was re-implemented and verified against the original
+(day-180 CRP **88.613** mg/L).
+
+| measure | value |
+|---|---|
+| independent observables | 2 |
+| rates "recovered" one-at-a-time | 12 of 14 |
+| collinear pairs (\|r\| >= 0.95) | 7 of 91 |
+| **rates jointly identified** | **0 of 14** |
+
+Every production rate has elasticity exactly **+1.0000** and every degradation rate
+**-0.99**: the cascade is linear in its rates, so doubling `k_crp_prod` changes the output
+by exactly +100% and doubling `k_il6_prod` gives the **same trajectory to machine
+precision**. This is an exact symmetry, not a statistical one, so no CRP measurement can
+separate them. **No Bayesian posterior is reported** — it would be a prior with a decimal
+point. All 14 rates are held fixed and declared assumptions.
+
+### Verification is not validation
+
+A five-rung ladder (`unit` -> `convergence` -> `internal` -> `external` ->
+`interventional`) with enforcement: claiming a rung without its requirement raises.
+Convergence is never reported as validation. **The highest rung this repository occupies is
+`convergence`**; 4 of 6 listed modules have no external validation at all.
+
+### What was not done
+
+Recorded in `audit_not_done.csv` with reasons: GPU molecular dynamics (no GPU, and a short
+run would fail the critique's own replica requirement), 3D CFD/FSI (no solver, no meshed
+geometry), a genome-wide off-target model (no reference genome), Bayesian posteriors (the
+rates are unidentifiable), and a calibrated virtual cohort.
+
+**The critique is right that this repository has more treatment architectures than
+validated underlying models. No amount of GPU time moves a result from `convergence` to
+`interventional`.** Randomised proof: 0.00%. No cure is declared.
+
+---
+
+## F.15 What this study cannot answer (`unanswered`)
+
+Full account: [`unanswered_questions.md`](unanswered_questions.md).
+Artefacts: `results/unanswered/` (6).
+
+`scientific_audit.md` asks what is missing from the code. This asks the harder follow-up:
+of the questions the study needs answered, which are unanswerable without a laboratory, and
+what does leaving each one open cost? **13 gaps registered; 6 closable here with
+arithmetic; 7 that no computation can close.**
+
+| class | meaning | count |
+|---|---|---|
+| in principle | only a randomised human comparison can settle it | 1 |
+| in practice | computable, but needs a GPU / reference genome / meshed geometry | 3 |
+| analytic | closable here with arithmetic, **not yet done** | 6 |
+| epistemic | a number cannot settle it at all | 3 |
+
+### The causal chain, with the missing link marked
+
+```
+target engagement  ->  mechanism  ->  surrogate  ->  outcome
+     MEASURED          INFERRED      MEASURED     NOT MEASURED
+   LDL -78 mg/dL     base editing   LVEF +3.9 pp   (uncontrolled)
+```
+
+Simulating the links on **either side** of a missing link more precisely does not supply
+the missing link; it supplies a more precise version of the assumption that it exists.
+STICH found LVEF change unrelated to death, and surrogate R2 = 0.59 leaves **41% of
+outcome variance outside the model by construction**.
+
+### Neither patch trial could detect its own result
+
+At the registered SD of 5 pp:
+
+| study | n | observed | minimum detectable |
+|---|---|---|---|
+| BioVAT-HF | 20 | +3.9 pp | **4.43 pp** |
+| AATS LB8 | 8 | +4.3 pp | **7.00 pp** |
+| REVIVED OMT arm | 700 | +3.4 pp | 0.75 pp |
+
+Both uncontrolled trials reported effects **smaller than the smallest difference they could
+have found**. Resolving 3.9 pp needs **26 per arm**; 3.4 pp needs **34**; 1.0 pp needs 393.
+
+### Three more arithmetic gaps, now quantified
+
+- **Selection is not effect.** In a correctly controlled comparison the effect returns to
+  the population average; the single-arm readout inflates it **7.6x**. Population gain 0%.
+- **Composite adverse-event risk** across three stacked exposures at 5.5% each is **15.6%**
+  (`1 - (1-r)^n`), not the 5.5% quoted.
+- **The winner of a 400-candidate grid is biased upward by ~4.6 pp** at measurement SD 2 pp
+  and true spread 8 pp - larger than the effect being sought.
+
+### An open defect in this study's own table
+
+`revival.TRANSMURALITY_RECOVERY` is monotone, so a casual check passes. The defect is the
+step size: recovery moves **0.44 -> 0.43** across the mid-wall boundary, where viability is
+largely lost, while scoring 0.91 at zero scar. A 1%-scarred segment and a 75%-scarred one
+are assigned almost identical recovery. **Not fixed here** - repair needs the segment counts
+behind the pooled estimate, and inventing a corrected curve is the practice this repository
+forbids. The direction is stated; the values are not.
+
+### The only item that would move the evidence ladder
+
+**External validation**, which needs no GPU, no imaging and no patients - only a published
+dataset not used to fit any registered constant. It is `NOT DONE`. Splitting data already
+used to fit the constants would be internal validation wearing the wrong label.
+
+---
+
+## F.16 The simulation-first frontier (`frontier`)
+
+Full account: [`simulation_frontier.md`](simulation_frontier.md). Artefacts:
+`results/frontier/` (7).
+
+The question: *"find the solution in simulation only, then transfer to the lab."* What must
+hold before a simulation result is worth a laboratory's time? **8 checks; 0 pass. Transfer
+authorised: NO.**
+
+### The model cannot rank the mechanisms it is asked to choose between
+
+| mechanism (halved) | terminal CRP (mg/L) |
+|---|---|
+| untreated | 88.6134 |
+| LDL lowering **or** NF-kB inhibition | 44.3508 |
+| NLRP3 | 44.3070 |
+| caspase-1 | 44.3067 |
+| IL-1b | 44.3067 |
+| IL-6 | 44.3067 |
+
+The four distinct anti-inflammatory targets differ by **0.000252 mg/L**, one part in five
+million. Separating them needs **66 billion patients per arm**. This is structural, not a
+resolution problem: each parameter is a multiplicative factor on a linear chain, so the
+chain product is invariant to which factor is adjusted. **More compute cannot fix it.**
+
+**And LDL lowering and NF-kB inhibition are the same perturbation** - max difference over
+all species and times is exactly **0.000e+00**, because `oxldl_factor` multiplies
+`k_nfkb_act` and nothing else. Comparing them is comparing a parameter with itself.
+
+### Why this blocks the plan specifically
+
+Choosing **which** experiment to run requires knowing which mechanism matters, which is what
+the experiment is for. That circularity is why a simulation cannot terminate in "the
+solution", however much compute it gets.
+
+### The gate
+
+| requirement | state |
+|---|---|
+| a pre-specified endpoint, effect size and population defining "the solution" | **FAIL** - never specified |
+| the model can rank the candidate mechanisms | **FAIL** - 0.000252 mg/L apart |
+| the model distinguishes the interventions it compares | **FAIL** - LDL = NF-kB |
+| parameters are determined by data rather than chosen | **FAIL** - 0 of 14 rates |
+| at least one external validation | **FAIL** - 0 of 7 targets present |
+| predictions are falsifiable | **FAIL** - no test asserts a contradictable quantity |
+| uncertainty is propagated to the hypothetical parameters | **FAIL** |
+| a stated comparator | **FAIL** - REVIVED OMT moves LVEF +3.4 pp unaided |
+
+### What it CAN hand over
+
+An **experiment specification**, not a cure: serial cytokine time courses (>=6 points),
+randomised dose-response to an NLRP3/IL-1b inhibitor, paired serial cap/LDL imaging, and a
+randomised cell-therapy arm (>=26 per arm for LVEF, an outcome endpoint for survival).
+Plus five things a laboratory cannot produce - MDE for any proposed trial, redundancy
+between shared pathways, and arithmetic limits on what a trial of a given size could show.
+
+**Simulation cannot find "the solution" - a model cannot choose the experiment that would
+tell you whether the model is right.** What it can do is rule things out, bound what a
+trial could show, and specify the measurement that would discriminate.
+
+---
+
+## F.17 The literature behind each gate item, and a correction to F.16 (`interventions`)
+
+Full account: [`literature_register.md`](literature_register.md). Artefacts:
+`results/interventions/` (6).
+
+Every one of the eight transfer-gate items maps to an established method. The search found
+that **all eight were "solved" methodologically, and none is closed by having the method
+available**. Outcome here: **8 applied, 0 resolved, 8 still failed.**
+
+### A CORRECTION TO F.16
+
+F.16 reported that the inflammatory model **cannot rank** the four mechanisms, because they
+differ by 0.000252 mg/L in terminal CRP. That number is right; **the conclusion was too
+strong.** The reading used the day-180 terminal value of an **unobserved** species at a
+**design-chosen** horizon. Applying T-optimal design (Atkinson & Fedorov 1975; Box & Hill
+1967) to the same model over time:
+
+| reading | separation | patients per arm |
+|---|---|---|
+| terminal CRP, day 180 | 0.000252 mg/L | 66,000,000,000 |
+| **CRP time course, day 22** | **9.954 mg/L** | **6.9** |
+
+**39,507x from a better design, not from more compute.** The correct statement is that the
+model ranks the mechanisms *through a time course of CRP or IL-6*, and only through that.
+What the repository lacks is a time course, not a capability. (The mechanism *nodes*
+separate by more absolutely, but only because they are the perturbed quantity - that is
+circular and the table flags it.)
+
+### The eight instruments
+
+| gate item | instrument | source | here |
+|---|---|---|---|
+| pre-specified endpoint/population | estimand framework | ICH E9(R1) 2019 | still fails - 2 of 5 attributes stated |
+| rank the mechanisms | T-optimality | Atkinson & Fedorov 1975 | corrected; still fails on data held |
+| distinguish interventions | structural identifiability | DAISY, SIAN, STRIKE-GOLDD | still fails - identical parameters |
+| parameters from data | profile likelihood | Raue et al. 2009 | still fails - infinite CI is correct |
+| external validation | TRIPOD+AI / REMARK | Collins 2024; McShane 2005 | still fails - a split is not validation |
+| falsifiable predictions | surrogate validation | Prentice 1989; R2 0.59, STE +6 pp | still fails - effect below the threshold |
+| uncertainty propagated | sloppy models | Gutenkunst et al. 2007 | still fails - defence requires item 5 |
+| stated comparator | reproducibility | Tiwari et al. 2021 | still fails - comparator named, never subtracted |
+
+### The one honest defence the literature offers, and why it is incomplete
+
+Gutenkunst et al. show sensitivity spectra are sloppy in **every** systems-biology model
+examined, and conclude that the response is to **validate predictions rather than pin
+parameters**. That is a real defence of this repository's position - and it requires the
+second half, prediction validation, which has not been done. Doing the first half without
+the second is the worst of both: unidentifiable parameters *and* unvalidated predictions.
+
+**The literature settles the methods. It does not settle this study's data, population,
+endpoint choice, or intercurrent-event policy.**
+
+---
+
+## F.18 Which IHD candidate the evidence actually supports (`candidates`)
+
+Full account: [`candidates.md`](candidates.md). Artefacts: `results/candidates/` (6).
+
+F.1 to F.17 asked how **this** architecture performs and what would have to hold for it to be
+believable. None of them asked the question a reader actually has: **compared with everything
+else on the table, in the literature and in this repository, which candidate is best?** That
+question needs a rule before it needs an answer, and the transfer gate already supplies one -
+item 1 demands an outcome endpoint, item 6 a randomised comparison.
+
+### The rule
+
+| rank | tier | count |
+|---|---|---|
+| 1 | randomised outcome evidence, positive | 2 |
+| 2 | randomised outcome evidence, neutral or refuted | 1 |
+| 3 | randomised evidence on a surrogate only | 2 |
+| 4 | uncontrolled evidence on a surrogate | 1 |
+| 5 | mechanism or magnitude claim with no clinical outcome data | 1 |
+
+Two invariants are enforced in code, and both were violated by the first draft:
+
+- **a refutation is never counted as a benefit** - ZEUS was initially stored as
+  `effect = 1 - 0.99 = 0.01`, which reads as a 1% win;
+- **magnitudes are never compared across units** - a 3.9 pp LVEF gain and a 0.22 relative
+  risk reduction are not the same quantity.
+
+### The ranking
+
+| rank | candidate | best evidence | n | outcome? | result |
+|---|---|---|---|---|---|
+| 1 | deep LDL-C lowering, approved agents | CTT meta-analysis | 170,000 | yes | **22% RRR per 1 mmol/L LDL-C** |
+| 2 | low-dose colchicine 0.5 mg | COLCOT, LoDoCo2, CLEAR SYNERGY | 21,425 | yes | ~9 fewer MI + 8 fewer strokes/1,000; **no CV-mortality effect** |
+| 3 | IL-6 inhibition (ziltivekimab) | **ZEUS**, NCT05021835 | 6,385 | yes, **refuted** | **HR 0.99 (0.88-1.11)** despite hsCRP -64% |
+| 4 | oral PCSK9 inhibitor (enlicitide) | CORALreef Lipids | 2,909 | surrogate | LDL-C -56%; approved 16 Jul 2026; outcomes trial n=14,500 pending |
+| 5 | base editing (VERVE-102) | Heart-2, open-label | 35 | surrogate | LDL-C -62% at 1.0 mg/kg |
+| 6 | iPSC cardiomyocyte patch | BioVAT-HF; AATS LB8 | 20 | surrogate | LVEF +3.9 pp, below the +6 pp threshold |
+| 7 | **this repository's combined architecture** | none | **0** | surrogate | own corrected estimate 57.56%, `robust_set_exists=False` |
+
+### The two results that cost this repository something
+
+**ZEUS refutes the inflammatory arm at scale.** ZEUS randomised 6,385 patients with ASCVD,
+chronic kidney disease and hsCRP >= 2 mg/L to ziltivekimab. Target engagement was
+demonstrated - hsCRP fell 64%, IL-6 fell 76% - and three-point MACE was **0.99 (0.88-1.11)**.
+Serious infections were 20% vs 18%. HERMES and ATHENA were then **stopped for futility** in
+September 2026. The repository's cascade (oxLDL -> NF-kB -> NLRP3 -> IL-1b -> IL-6 -> CRP)
+intervenes at exactly that step, and `calibration.py` uses CRP as its target.
+
+The model is not wrong. The **inference** it was licensed to make only conditionally is now
+refuted: *that moving the cascade moves the outcome*. `calibration.py`'s result stands as a
+demonstration of structural non-identifiability and is **no longer usable as a proxy for
+benefit**. The inflammatory arm is demoted from "mechanism of benefit" to "marker dynamics".
+
+**The repository's own architecture ranks last.** Not because the rule is unkind but because
+the rule is the rule: a construct with zero human exposures cannot outrank an approved agent
+with 170,000 patients behind it. Putting it first would be measuring novelty.
+
+### What the ranking does not license
+
+It is not a treatment recommendation for any individual, and **nothing in it is a cure**. The
+top entry slows a process and reduces events; it does not reverse disease, remove scar or
+restore myocardium. The ranking is by **endpoint strength, not effect size** - a small effect
+on events outranks a large effect on a surrogate, deliberately - and it is time-stamped: a
+positive ARTEMIS or CORALreef Outcomes result would move it.
+
+---
+
 # PART G — THE HONESTY LEDGER
 
 Every retraction and correction made during this study, in order. This section
@@ -1400,6 +1722,22 @@ exists because a report that only shows final numbers hides how they were reache
 | 28 | ATLAS-5 is the best composition | Selected on an uncontrolled baseline | Re-search under correction selects the **frugal** design; **no composition robust** |
 | 29 | The corrected gain still clears the surrogate threshold | The model claims 3.0x the largest human LVEF gain ever measured | Comparison **unusable**, labelled not passed |
 | 30 | Stratifying to no-scar patients improves the result | Raises the conditional rate to 91% and excludes everyone else | **Zero** population-level gain, enforced by test |
+| 31 | "Too many invented parameters" — everything is undocumented | The package's constants are mostly cited human values; the fault is narrower | **32 of 92 registered as hypothetical**, typed and enforced |
+| 32 | The cytokine rates could be calibrated with Bayesian inference | 0 of 14 are jointly identifiable; the cascade is linear in its rates | **All 14 held fixed** as declared assumptions; no posterior reported |
+| 33 | The legacy scripts are the study | Five root-level scripts; the analysis is 34 modules elsewhere | Legacy labelled NON-USABLE for scores, candidate list for CRISPR |
+| 34 | "Do more computation and the efficacy question gets closer" | Simulating around a missing causal link does not supply it | **41% of outcome variance** outside the model; drop to 0.00% proof |
+| 35 | The patch trials showed a benefit | Both observed effects below their own minimum detectable difference | **n=8 cannot resolve 4.3 pp; n=20 cannot resolve 3.9 pp** |
+| 36 | Selecting responsive patients helps patients | Re-orders patients; moves none of them | **0% population gain**; single-arm readout inflated 7.6x |
+| 37 | More simulation gets closer to "the solution" | The model cannot rank the mechanisms it must choose between | **0.000252 mg/L apart; 66 billion per arm** |
+| 38 | The model compares LDL lowering with anti-inflammation | LDL lowering and NF-kB inhibition are algebraically identical here | **Difference exactly 0.0**; it is a parameter against itself |
+| 39 | "Simulation first, lab second" terminates in a cure | Choosing the experiment requires the experiment's result | **0 of 8 transfer checks pass** |
+| 40 | The inflammatory model cannot rank its mechanisms | True only of the terminal value at a design-chosen horizon of an unobserved species | **9.954 mg/L over time vs 0.000252 terminal; 39,507x** |
+| 41 | Sloppy parameters are an acceptable excuse | The literature's defence requires validating predictions, not just reporting sloppiness | **Defence accepted, second half not done** |
+| 42 | Lowering CRP is a route to fewer events | ZEUS (n=6,385) moved hsCRP 64% and IL-6 76% with **HR 0.99** | Marker dynamics demoted; **CRP is not a surrogate for benefit** |
+| 43 | The inflammatory arm is a mechanism of benefit | Target engaged, outcome unmoved; HERMES/ATHENA stopped for futility | **Refuted at scale**; the arm is "marker dynamics" |
+| 44 | This repository's architecture is the best candidate | Compared novelty with evidence | Ranks **7 of 7**; zero human exposures |
+| 45 | A refuted trial's HR can stand in as a benefit | `effect = 1 - HR` turned 0.99 into "1% better" | Store the **measured HR** with `direction`; add a `direction` key |
+| 46 | Effects can be ranked by magnitude | 3.9 pp LVEF and 0.22 RRR are different units | Every effect carries an `effect_unit`; magnitude ranks only inside a unit |
 
 **Implementation bugs found and fixed:** run-in pinned responders to the threshold
 instead of keeping their achieved value; gate threshold computed at 24 months but
@@ -1453,6 +1791,11 @@ python run_solutions.py atlas4          # ATLAS-4 (precedent + grid) -> results/
 python run_solutions.py gap-solutions   # designs for the 6 gaps    -> results/gap_solutions/
 python run_solutions.py recombine       # ATLAS-5 mechanism composition -> results/recombine/
 python run_solutions.py revival         # control-arm correction        -> results/revival/
+python run_solutions.py scientific-audit # provenance/identifiability    -> results/scientific_audit/
+python run_solutions.py unanswered       # what cannot be answered       -> results/unanswered/
+python run_solutions.py frontier         # can simulation pick a winner  -> results/frontier/
+python run_solutions.py interventions    # literature per gate item      -> results/interventions/
+python run_solutions.py candidates       # best IHD candidate, ranked    -> results/candidates/
 python run_solutions.py validate        # registries only
 ```
 
@@ -1504,7 +1847,7 @@ the measured load-bearing parts of the first two, which is stronger and simpler 
 either and refuses 14.08 pp of double-counted benefit - then charged for the control
 arm it never had, and withdrawn when the charge was found to dissolve it; and a documented
 record of
-thirty claims that were tested and withdrawn. **The retractions are part of the
+forty-one claims that were tested and withdrawn. **The retractions are part of the
 result.**
 
 ---

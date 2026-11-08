@@ -1,5 +1,22 @@
 """
 ================================================================================
+NON-USABLE - LEGACY DEMONSTRATION SCRIPT. KEPT FOR REPRODUCIBILITY ONLY.
+================================================================================
+This script is OUTSIDE the tested package (`src/ihd_solutions/`) and outside the
+test suite. It has no validation, no provenance records and no uncertainty
+propagation. Its numbers must NOT be quoted as findings and must NOT be fed into
+the validated pipeline.
+
+See `docs/scientific_audit.md` for what each script can and cannot support.
+================================================================================
+
+What it can support: nothing clinical.
+What it CANNOT support: a vulnerability or rupture prediction. The cap thickness
+is hardcoded (`cap_thickness[0] = 180 um`), the 300 kPa rupture threshold is now
+registered as HYPOTHETICAL, and the four regimens are compared using MMP
+activities (1.00 / 0.70 / 0.45 / 0.15) that have NO source. This is the single
+largest concentration of invented parameters in the repository.
+================================================================================
 SCRIPT 3: Coronary Plaque Biomechanics & Vulnerability Dynamics
 ================================================================================
 Models the 60-month progression of human coronary atherogenesis, fibrous cap
@@ -14,6 +31,20 @@ Outputs:
 - results/tables/plaque_biomechanics_timeline.csv
 ================================================================================
 """
+
+# ------------------------------------------------------------------------------
+# This script is legacy. Shout if someone runs it, so its output is never mistaken
+# for a validated result. `python -W ignore src/0N_*.py` silences it deliberately.
+# ------------------------------------------------------------------------------
+import warnings as _warnings
+
+_warnings.warn(
+    "NON-USABLE LEGACY SCRIPT: untested, unvalidated, no provenance. "
+    "Numbers are NOT findings. See docs/scientific_audit.md.",
+    UserWarning,
+    stacklevel=2,
+)
+
 
 import os, sys, math
 if hasattr(sys.stdout, 'reconfigure'):

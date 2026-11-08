@@ -159,6 +159,36 @@ def build_parser() -> argparse.ArgumentParser:
     revival.add_argument("--output-dir", type=Path, default=Path("results/revival"))
     revival.add_argument("--draws", type=int, default=2500)
 
+    audit_sci = subparsers.add_parser(
+        "scientific-audit",
+        help="provenance, calibration feasibility, identifiability, verification vs validation",
+    )
+    audit_sci.add_argument("--output-dir", type=Path, default=Path("results/scientific_audit"))
+
+    unanswered = subparsers.add_parser(
+        "unanswered",
+        help="what this study cannot answer, with the cost of each gap quantified",
+    )
+    unanswered.add_argument("--output-dir", type=Path, default=Path("results/unanswered"))
+
+    frontier = subparsers.add_parser(
+        "frontier",
+        help="what must hold before a simulation result is worth a lab's time",
+    )
+    frontier.add_argument("--output-dir", type=Path, default=Path("results/frontier"))
+
+    interventions = subparsers.add_parser(
+        "interventions",
+        help="what the literature says about each transfer-gate item, and what happened here",
+    )
+    interventions.add_argument("--output-dir", type=Path, default=Path("results/interventions"))
+
+    candidates = subparsers.add_parser(
+        "candidates",
+        help="which IHD candidate the evidence actually supports, ranked by outcome evidence",
+    )
+    candidates.add_argument("--output-dir", type=Path, default=Path("results/candidates"))
+
     subparsers.add_parser("validate", help="validate all input registries and exit")
     return parser
 
@@ -174,6 +204,51 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _dispatch(args: argparse.Namespace) -> int:
+    if args.command == "candidates":
+        from ihd_solutions.candidates import write_candidate_report
+
+        summary = write_candidate_report(str(args.output_dir))
+        for key, value in summary.items():
+            print(f"{key}: {value}")
+        print((args.output_dir / "candidate_report.txt").read_text())
+        return 0
+
+    if args.command == "interventions":
+        from ihd_solutions.interventions import write_intervention_report
+
+        summary = write_intervention_report(str(args.output_dir))
+        for key, value in summary.items():
+            print(f"{key}: {value}")
+        print((args.output_dir / "intervention_report.txt").read_text())
+        return 0
+
+    if args.command == "frontier":
+        from ihd_solutions.simulation_frontier import write_frontier_report
+
+        summary = write_frontier_report(args.output_dir)
+        for key, value in summary.items():
+            print(f"{key}: {value}")
+        print((args.output_dir / "frontier_report.txt").read_text())
+        return 0
+
+    if args.command == "unanswered":
+        from ihd_solutions.gaps import write_gap_report
+
+        summary = write_gap_report(args.output_dir)
+        for key, value in summary.items():
+            print(f"{key}: {value}")
+        print((args.output_dir / "gap_report.txt").read_text())
+        return 0
+
+    if args.command == "scientific-audit":
+        from ihd_solutions.scientific_audit import run_scientific_audit
+
+        summary = run_scientific_audit(args.output_dir)
+        for key, value in summary.items():
+            print(f"{key}: {value}")
+        print((args.output_dir / "reports" / "scientific_audit_report.txt").read_text())
+        return 0
+
     if args.command == "revival":
         from ihd_solutions.revival import run_revival_study
 

@@ -1,0 +1,131 @@
+==============================================================================
+BEST IHD CANDIDATE - RANKED BY OUTCOME EVIDENCE
+==============================================================================
+
+WHAT THIS MODULE IS
+  A ranking of IHD candidates by a stated evidence rule: randomised outcome evidence
+  first, surrogates after, mechanisms last. Every entry cites its trial and its effect.
+
+WHAT IT IS NOT
+  A treatment recommendation for any individual, and not a cure for anything. The top
+  entry slows a process; it does not reverse disease.
+
+THE HEADLINE
+  The best-supported candidate is deep LDL-C lowering with approved agents - the
+  unglamorous answer. The repository's own novel architecture ranks last, because it has
+  no clinical data, and its inflammatory arm has been refuted at scale by ZEUS.
+
+  ranked candidates            7
+  backed by outcome evidence   2
+  refuted by outcome evidence  1
+  best candidate               Deep LDL-C lowering to guideline target with approved agents
+  second                       low-dose colchicine - the only anti-inflammatory with a positive outcome signal and a guideline place, and notably NOT an IL-6 inhibitor
+  quantitative effect          22% relative reduction in major vascular events per 1 mmol/L LDL-C reduction
+
+------------------------------------------------------------------------------
+THE RULE - STATED BEFORE THE ANSWER
+------------------------------------------------------------------------------
+  Candidates are ranked by the strength of OUTCOME evidence, because that is the
+  criterion the transfer gate already sets: item 1 demands an outcome rather than
+  a surrogate, item 6 a randomised comparison. Within a tier, a refutation is
+  never counted as a win, and magnitudes are compared only inside a shared unit.
+
+  1. randomised outcome evidence, positive  [2]
+  2. randomised outcome evidence, neutral or refuted  [1]
+  3. randomised evidence on a surrogate only  [2]
+  4. uncontrolled evidence on a surrogate  [1]
+  5. mechanism or magnitude claim with no clinical outcome data  [1]
+
+------------------------------------------------------------------------------
+THE RANKING
+------------------------------------------------------------------------------
+  1. Deep LDL-C lowering to guideline target with approved agents
+     tier     : randomised outcome evidence, positive
+     trial    : CTT meta-analysis + FOURIER/ODYSSEY; oral PCSK9 inhibitor now approved  (n=170,000)
+     endpoint : outcome
+     effect   : 22.0% relative reduction in major vascular events per 1 mmol/L LDL-C  (benefit)
+     result   : 22% relative risk reduction per 1 mmol/L LDL-C reduction, reproducible across statins, ezetimibe and PCSK9 inhibitors
+     licenses : the strongest quantitative claim available in IHD: lowering LDL-C by a given amount lowers event rate by a predictable proportion, and the effect is additive with baseline risk
+     does not : it does not reverse established scar or restore myocardium; it slows the process. It also does not remove residual risk - roughly two thirds of events in treated patients are not prevented
+
+  2. Low-dose colchicine 0.5 mg daily
+     tier     : randomised outcome evidence, positive
+     trial    : COLCOT, LoDoCo2, CLEAR SYNERGY; Cochrane review 2025  (n=21,425)
+     endpoint : outcome
+     effect   : 1.7% absolute risk difference at 1 year  (benefit)
+     result   : about 9 fewer myocardial infarctions and 8 fewer strokes per 1,000 treated; no effect on cardiovascular mortality; CLEAR SYNERGY neutral in acute coronary syndrome
+     licenses : guideline backing: ESC 2024 chronic coronary syndrome Class IIa Level A; ACC/AHA Class IIb. The only anti-inflammatory with a positive outcome signal and a guideline place
+     does not : it does not reduce cardiovascular mortality, it is a Class IIa or IIb recommendation rather than Class I, the recent large ACS trial was neutral, and gastrointestinal adverse events increase
+
+  3. IL-6 ligand inhibition (ziltivekimab)
+     tier     : randomised outcome evidence, neutral or refuted
+     trial    : ZEUS (NCT05021835), plus HERMES and ATHENA stopped for futility  (n=6,385)
+     endpoint : outcome
+     effect   : HR 0.99  (neutral)
+     result   : NEUTRAL: HR 0.99 (95% CI 0.88-1.11) despite hsCRP falling 64% and IL-6 falling 76%; serious infections 20% vs 18%
+     licenses : a refutation, in 6,385 patients, of the proposition that suppressing IL-6 and CRP in high-risk ASCVD reduces events. Target engagement was demonstrated and benefit was not
+     does not : it does not prove inflammation is irrelevant - the population had advanced disease and the intervention was downstream. It does show that lowering the marker is not sufficient
+
+  4. Oral PCSK9 inhibitor (enlicitide, Lipfendra)
+     tier     : randomised evidence on a surrogate only
+     trial    : CORALreef Lipids and HeFH; CORALreef Outcomes running  (n=2,909)
+     endpoint : surrogate
+     effect   : 56.0% relative LDL-C reduction  (benefit)
+     result   : LDL-C -56% vs placebo at week 24, sustained to week 52; FDA approved 16 July 2026
+     licenses : attains injectable-antibody LDL-C lowering as a once-daily tablet, which is the adherence problem solved without an irreversible edit
+     does not : the outcome trial has completed enrolment and not reported; approval rests on the surrogate, exactly as the transfer gate warns
+
+  5. VERVE-102 in vivo PCSK9 base editing
+     tier     : randomised evidence on a surrogate only
+     trial    : Heart-2 (NCT06164730), phase 1b, open-label, single ascending dose  (n=35)
+     endpoint : surrogate
+     effect   : 62.0% relative LDL-C reduction  (benefit)
+     result   : LDL-C -62% at 1.0 mg/kg (-78 mg/dL), PCSK9 -88%, durable to 18 months, no treatment-related serious adverse events
+     licenses : the largest durable LDL-C reduction from a single intervention, on a mechanism that already has outcome support through other agents
+     does not : its own outcome benefit is unproven and the edit is irreversible. An approved oral PCSK9 inhibitor now produces a similar LDL-C reduction without a permanent edit, which removes most of the practical case for the editing route
+
+  6. iPSC-derived cardiomyocyte patch (BioVAT / AATS)
+     tier     : uncontrolled evidence on a surrogate
+     trial    : BioVAT-HF (NCT04396899); AATS late-breaking LB8  (n=20)
+     endpoint : surrogate
+     effect   : +3.9 percentage points of LVEF  (benefit)
+     result   : LVEF +3.9 pp (90% CI 0.9-6.8) uncontrolled; second trial n=8 +4.3 pp, p=0.156. Both below the 6 pp surrogate threshold
+     licenses : a signal worth testing in a randomised trial with an outcome endpoint, and nothing beyond that
+     does not : it cannot separate a real effect from natural history or regression to the mean: 20 patients, no control, and an effect below the threshold at which LVEF change predicts mortality benefit
+
+  7. Combined architecture (cell patch + base editing + OMT)
+     tier     : mechanism or magnitude claim with no clinical outcome data
+     trial    : none - never administered together in a controlled setting  (n=0)
+     endpoint : surrogate
+     effect   : not estimable - no controlled comparison  (none)
+     result   : no clinical data; this repository's own corrected estimate is 57.56% and not robust (robust_set_exists=False)
+     licenses : a hypothesis, and an ordered experiment list
+     does not : it cannot claim the sum of its parts. The repository measured 15 pairwise interactions and refused 14.08 pp of double-counted benefit, and the wider re-search found no robust composition
+
+------------------------------------------------------------------------------
+THE REPOSITORY'S INFLAMMATORY ARM HAS BEEN REFUTED AT SCALE
+------------------------------------------------------------------------------
+  trial                      ZEUS, NCT05021835
+  n                          6,385
+  hazard ratio               0.99 (0.88-1.11)
+  hsCRP reduction            64%
+  IL-6 reduction             76%
+
+  Our model would have predicted the marker fall correctly. It has nothing to
+  say about events, and the trial now says the marker fall was not enough.
+  Refuted inference: that a mechanism which moves a marker therefore moves the outcome
+  Action: demote the inflammatory model from 'mechanism of benefit' to 'marker dynamics', and stop using CRP as a proxy for benefit anywhere
+  Safety: serious infections were more frequent with IL-6 inhibition (20% vs 18%), so the intervention was not even free
+
+------------------------------------------------------------------------------
+CONSEQUENCE FOR THE CALIBRATION WORK
+------------------------------------------------------------------------------
+  still valid as        a demonstration of structural non-identifiability
+  no longer valid as    a proxy for treatment benefit
+  evidence              ZEUS, n=6385, HR 0.99 (0.88-1.11), hsCRP -64%
+  a marker can be strongly prognostic and still be causally irrelevant to treatment benefit; ZEUS separates those two roles for CRP
+
+------------------------------------------------------------------------------
+WHAT THIS IS NOT
+------------------------------------------------------------------------------
+  no candidate here is a cure. None reverses established coronary disease or restores infarcted myocardium. The best-supported option slows progression and reduces events; it does not undo the disease

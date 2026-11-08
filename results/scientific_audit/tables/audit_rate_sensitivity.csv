@@ -1,0 +1,15 @@
+rate,nominal,elasticity,moves_output,verdict,status
+k_crp_prod,0.4,0.9999999999999162,True,sensitive,scientific_audit_no_model_change
+k_il6_prod,0.35,0.9999999999995796,True,sensitive,scientific_audit_no_model_change
+k_il1b_prod,0.25,0.9999999999955221,True,sensitive,scientific_audit_no_model_change
+k_casp1_act,0.15,0.9999999578819111,True,sensitive,scientific_audit_no_model_change
+k_nlrp3_syn,0.12,0.9999943134651318,True,sensitive,scientific_audit_no_model_change
+k_nfkb_act,0.08,0.9990057564322122,True,sensitive,scientific_audit_no_model_change
+k_il6_deg,0.2,-0.9899050174819025,True,sensitive,scientific_audit_no_model_change
+k_il1b_deg,0.18,-0.9898754446969179,True,sensitive,scientific_audit_no_model_change
+k_crp_deg,0.15,-0.9898092284073299,True,sensitive,scientific_audit_no_model_change
+k_casp1_deg,0.1,-0.989529503889711,True,sensitive,scientific_audit_no_model_change
+k_nlrp3_deg,0.08,-0.9891842783098059,True,sensitive,scientific_audit_no_model_change
+k_nfkb_deg,0.05,-0.9860582335038751,True,sensitive,scientific_audit_no_model_change
+k_mmp_prod,0.18,0.0,False,"inert - cannot be fitted, and cannot have caused the result",scientific_audit_no_model_change
+k_mmp_deg,0.12,0.0,False,"inert - cannot be fitted, and cannot have caused the result",scientific_audit_no_model_change
