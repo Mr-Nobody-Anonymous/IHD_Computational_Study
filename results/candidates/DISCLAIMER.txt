@@ -1,0 +1,12 @@
+WHAT THIS MODULE IS
+  A ranking of IHD candidates by a stated evidence rule: randomised outcome evidence
+  first, surrogates after, mechanisms last. Every entry cites its trial and its effect.
+
+WHAT IT IS NOT
+  A treatment recommendation for any individual, and not a cure for anything. The top
+  entry slows a process; it does not reverse disease.
+
+THE HEADLINE
+  The best-supported candidate is deep LDL-C lowering with approved agents - the
+  unglamorous answer. The repository's own novel architecture ranks last, because it has
+  no clinical data, and its inflammatory arm has been refuted at scale by ZEUS.

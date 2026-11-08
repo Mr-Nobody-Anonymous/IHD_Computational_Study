@@ -60,6 +60,8 @@ SUPPORTS = (
     "arithmetic",  # a conversion or definition
     "design",  # a protocol or study-design constant
     "ceiling",  # a bound derived from evidence
+    "refutation",  # a result that removes a claim other work depends on
+    "safety",  # a harm or adverse-event quantity
 )
 
 #: Populations a measurement can come from. Only the first earns human efficacy credit.
@@ -665,6 +667,160 @@ REGISTRY: dict[str, Provenance] = {
         "relative perturbation applied to each mechanism when building the discrimination "
         "table; identical for every mechanism so the comparison is like-for-like",
         "a design choice",
+    ),
+    # ------------------------------------------------------------ candidates
+    "CTT_RRR_PER_MMOL": Provenance(
+        0.22,
+        "relative risk reduction",
+        "measured",
+        "efficacy",
+        "human",
+        "Cholesterol Treatment Trialists' meta-analysis: 22% relative reduction in major "
+        "vascular events per 1.0 mmol/L (38.7 mg/dL) reduction in LDL-C, reproduced across "
+        "the statin trials and extended by ezetimibe and the PCSK9 programmes",
+        "the most reproduced quantitative relationship in cardiovascular prevention; a "
+        "class-level average, not a claim about any single agent",
+    ),
+    "ZEUS_HR": Provenance(
+        0.99,
+        "hazard ratio",
+        "measured",
+        "refutation",
+        "human",
+        "ZEUS (NCT05021835), n=6,385, ziltivekimab 15 mg monthly vs placebo: hazard ratio "
+        "for cardiovascular death, myocardial infarction or stroke = 0.99 (95% CI "
+        "0.88-1.11); reported 2026",
+        "a point estimate at unity: the trial excludes a benefit larger than ~12% but is "
+        "not evidence of no effect at smaller sizes",
+    ),
+    "ZEUS_CI_LOW": Provenance(
+        0.88,
+        "hazard ratio",
+        "measured",
+        "refutation",
+        "human",
+        "ZEUS lower 95% confidence bound for the three-point major adverse cardiovascular "
+        "event endpoint",
+        "the smallest benefit still compatible with the data",
+    ),
+    "ZEUS_CI_HIGH": Provenance(
+        1.11,
+        "hazard ratio",
+        "measured",
+        "refutation",
+        "human",
+        "ZEUS upper 95% confidence bound for the three-point major adverse cardiovascular "
+        "event endpoint",
+        "harm at this magnitude cannot be excluded",
+    ),
+    "ZEUS_N": Provenance(
+        6385.0,
+        "patients",
+        "measured",
+        "refutation",
+        "human",
+        "ZEUS randomised population: established atherosclerotic disease with chronic "
+        "kidney disease and high-sensitivity CRP at or above 2 mg/L",
+        "a population selected precisely for inflammation, so a null here is the strongest "
+        "available test of the inflammatory hypothesis",
+    ),
+    "ZEUS_CRP_REDUCTION": Provenance(
+        0.64,
+        "fraction",
+        "measured",
+        "refutation",
+        "human",
+        "ZEUS: 64% reduction in high-sensitivity CRP at the achieved dose",
+        "the marker moved; the outcome did not",
+    ),
+    "ZEUS_IL6_REDUCTION": Provenance(
+        0.76,
+        "fraction",
+        "measured",
+        "refutation",
+        "human",
+        "ZEUS: 76% reduction in interleukin-6, i.e. the ligand itself was suppressed, not "
+        "merely its downstream marker",
+        "removes the escape route that the drug failed to engage its target",
+    ),
+    "ZEUS_SERIOUS_INFECTION": Provenance(
+        0.20,
+        "proportion",
+        "measured",
+        "safety",
+        "human",
+        "ZEUS serious infection rate in the ziltivekimab arm",
+        "the refuted mechanism was not even free of harm",
+    ),
+    "ZEUS_SERIOUS_INFECTION_CONTROL": Provenance(
+        0.18,
+        "proportion",
+        "measured",
+        "safety",
+        "human",
+        "ZEUS serious infection rate in the placebo arm",
+        "the comparator, recorded separately so the difference cannot be quoted as a "
+        "ratio invented from a single number",
+    ),
+    "LVEF_SURROGATE_THRESHOLD_PP": Provenance(
+        6.0,
+        "percentage points",
+        "measured",
+        "ceiling",
+        "human",
+        "surrogate threshold effect for left-ventricular ejection fraction: the change in "
+        "LVEF at which a mortality benefit becomes plausible, from the heart-failure "
+        "surrogate literature",
+        "a threshold, not a guarantee: clearing it is necessary, not sufficient",
+    ),
+    "ENLICITIDE_LDL_REDUCTION": Provenance(
+        0.56,
+        "fraction",
+        "measured",
+        "efficacy",
+        "human",
+        "CORALreef Lipids (n=2,909): oral PCSK9 inhibitor enlicitide lowered LDL-C 56% "
+        "placebo-adjusted at week 24; approved 2026 on the surrogate",
+        "a surrogate endpoint; no outcome trial has reported",
+    ),
+    "VERVE102_LDL_REDUCTION": Provenance(
+        0.62,
+        "fraction",
+        "measured",
+        "efficacy",
+        "human",
+        "Heart-2 (NCT06164730), phase 1b open-label, n=35: base editing VERVE-102 lowered "
+        "LDL-C 62% at 1.0 mg/kg",
+        "open-label and uncontrolled: the number includes regression to the mean, "
+        "background therapy and selection",
+    ),
+    "VERVE102_N": Provenance(
+        35.0,
+        "patients",
+        "measured",
+        "efficacy",
+        "human",
+        "Heart-2 open-label cohort size at the 1.0 mg/kg dose level",
+        "below any threshold at which an event effect could be estimated",
+    ),
+    "CORALREEF_OUTCOMES_N": Provenance(
+        14500.0,
+        "patients",
+        "measured",
+        "design",
+        "human",
+        "CORALreef Outcomes planned enrolment for the oral PCSK9 inhibitor outcome trial",
+        "the size of the trial that would settle the question, not a result",
+    ),
+    "MIN_OUTCOME_TRIAL_N": Provenance(
+        1000.0,
+        "patients per arm",
+        "estimated",
+        "design",
+        "none",
+        "a candidate is called supported by outcome evidence only at or above this "
+        "randomised size, because below it a null and a modest benefit are not separable",
+        "a design threshold chosen here, not a published quantity",
     ),
     # ------------------------------------------------------- simulation frontier
     "CRP_ASSAY_CV": Provenance(

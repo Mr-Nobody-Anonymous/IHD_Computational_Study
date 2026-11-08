@@ -1618,6 +1618,73 @@ endpoint choice, or intercurrent-event policy.**
 
 ---
 
+## F.18 Which IHD candidate the evidence actually supports (`candidates`)
+
+Full account: [`candidates.md`](candidates.md). Artefacts: `results/candidates/` (6).
+
+F.1 to F.17 asked how **this** architecture performs and what would have to hold for it to be
+believable. None of them asked the question a reader actually has: **compared with everything
+else on the table, in the literature and in this repository, which candidate is best?** That
+question needs a rule before it needs an answer, and the transfer gate already supplies one -
+item 1 demands an outcome endpoint, item 6 a randomised comparison.
+
+### The rule
+
+| rank | tier | count |
+|---|---|---|
+| 1 | randomised outcome evidence, positive | 2 |
+| 2 | randomised outcome evidence, neutral or refuted | 1 |
+| 3 | randomised evidence on a surrogate only | 2 |
+| 4 | uncontrolled evidence on a surrogate | 1 |
+| 5 | mechanism or magnitude claim with no clinical outcome data | 1 |
+
+Two invariants are enforced in code, and both were violated by the first draft:
+
+- **a refutation is never counted as a benefit** - ZEUS was initially stored as
+  `effect = 1 - 0.99 = 0.01`, which reads as a 1% win;
+- **magnitudes are never compared across units** - a 3.9 pp LVEF gain and a 0.22 relative
+  risk reduction are not the same quantity.
+
+### The ranking
+
+| rank | candidate | best evidence | n | outcome? | result |
+|---|---|---|---|---|---|
+| 1 | deep LDL-C lowering, approved agents | CTT meta-analysis | 170,000 | yes | **22% RRR per 1 mmol/L LDL-C** |
+| 2 | low-dose colchicine 0.5 mg | COLCOT, LoDoCo2, CLEAR SYNERGY | 21,425 | yes | ~9 fewer MI + 8 fewer strokes/1,000; **no CV-mortality effect** |
+| 3 | IL-6 inhibition (ziltivekimab) | **ZEUS**, NCT05021835 | 6,385 | yes, **refuted** | **HR 0.99 (0.88-1.11)** despite hsCRP -64% |
+| 4 | oral PCSK9 inhibitor (enlicitide) | CORALreef Lipids | 2,909 | surrogate | LDL-C -56%; approved 16 Jul 2026; outcomes trial n=14,500 pending |
+| 5 | base editing (VERVE-102) | Heart-2, open-label | 35 | surrogate | LDL-C -62% at 1.0 mg/kg |
+| 6 | iPSC cardiomyocyte patch | BioVAT-HF; AATS LB8 | 20 | surrogate | LVEF +3.9 pp, below the +6 pp threshold |
+| 7 | **this repository's combined architecture** | none | **0** | surrogate | own corrected estimate 57.56%, `robust_set_exists=False` |
+
+### The two results that cost this repository something
+
+**ZEUS refutes the inflammatory arm at scale.** ZEUS randomised 6,385 patients with ASCVD,
+chronic kidney disease and hsCRP >= 2 mg/L to ziltivekimab. Target engagement was
+demonstrated - hsCRP fell 64%, IL-6 fell 76% - and three-point MACE was **0.99 (0.88-1.11)**.
+Serious infections were 20% vs 18%. HERMES and ATHENA were then **stopped for futility** in
+September 2026. The repository's cascade (oxLDL -> NF-kB -> NLRP3 -> IL-1b -> IL-6 -> CRP)
+intervenes at exactly that step, and `calibration.py` uses CRP as its target.
+
+The model is not wrong. The **inference** it was licensed to make only conditionally is now
+refuted: *that moving the cascade moves the outcome*. `calibration.py`'s result stands as a
+demonstration of structural non-identifiability and is **no longer usable as a proxy for
+benefit**. The inflammatory arm is demoted from "mechanism of benefit" to "marker dynamics".
+
+**The repository's own architecture ranks last.** Not because the rule is unkind but because
+the rule is the rule: a construct with zero human exposures cannot outrank an approved agent
+with 170,000 patients behind it. Putting it first would be measuring novelty.
+
+### What the ranking does not license
+
+It is not a treatment recommendation for any individual, and **nothing in it is a cure**. The
+top entry slows a process and reduces events; it does not reverse disease, remove scar or
+restore myocardium. The ranking is by **endpoint strength, not effect size** - a small effect
+on events outranks a large effect on a surrogate, deliberately - and it is time-stamped: a
+positive ARTEMIS or CORALreef Outcomes result would move it.
+
+---
+
 # PART G — THE HONESTY LEDGER
 
 Every retraction and correction made during this study, in order. This section
@@ -1666,6 +1733,11 @@ exists because a report that only shows final numbers hides how they were reache
 | 39 | "Simulation first, lab second" terminates in a cure | Choosing the experiment requires the experiment's result | **0 of 8 transfer checks pass** |
 | 40 | The inflammatory model cannot rank its mechanisms | True only of the terminal value at a design-chosen horizon of an unobserved species | **9.954 mg/L over time vs 0.000252 terminal; 39,507x** |
 | 41 | Sloppy parameters are an acceptable excuse | The literature's defence requires validating predictions, not just reporting sloppiness | **Defence accepted, second half not done** |
+| 42 | Lowering CRP is a route to fewer events | ZEUS (n=6,385) moved hsCRP 64% and IL-6 76% with **HR 0.99** | Marker dynamics demoted; **CRP is not a surrogate for benefit** |
+| 43 | The inflammatory arm is a mechanism of benefit | Target engaged, outcome unmoved; HERMES/ATHENA stopped for futility | **Refuted at scale**; the arm is "marker dynamics" |
+| 44 | This repository's architecture is the best candidate | Compared novelty with evidence | Ranks **7 of 7**; zero human exposures |
+| 45 | A refuted trial's HR can stand in as a benefit | `effect = 1 - HR` turned 0.99 into "1% better" | Store the **measured HR** with `direction`; add a `direction` key |
+| 46 | Effects can be ranked by magnitude | 3.9 pp LVEF and 0.22 RRR are different units | Every effect carries an `effect_unit`; magnitude ranks only inside a unit |
 
 **Implementation bugs found and fixed:** run-in pinned responders to the threshold
 instead of keeping their achieved value; gate threshold computed at 24 months but
@@ -1723,6 +1795,7 @@ python run_solutions.py scientific-audit # provenance/identifiability    -> resu
 python run_solutions.py unanswered       # what cannot be answered       -> results/unanswered/
 python run_solutions.py frontier         # can simulation pick a winner  -> results/frontier/
 python run_solutions.py interventions    # literature per gate item      -> results/interventions/
+python run_solutions.py candidates       # best IHD candidate, ranked    -> results/candidates/
 python run_solutions.py validate        # registries only
 ```
 

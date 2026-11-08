@@ -349,6 +349,41 @@ repository lacks is a time course, not a ranking capability.
 python run_solutions.py interventions    # -> results/interventions/ (6 artefacts)
 ```
 
+### Which candidate is actually the best one
+
+The question the work above never answers directly. [`docs/candidates.md`](docs/candidates.md)
+ranks seven candidates - four external, three from this repository - by the criterion the
+transfer gate already sets: **outcome evidence, randomised, in humans.**
+
+| rank | candidate | evidence | result |
+|---|---|---|---|
+| 1 | **deep LDL-C lowering, approved agents** | CTT meta-analysis, 170,000 patients | **22% RRR per 1 mmol/L LDL-C** |
+| 2 | low-dose colchicine | COLCOT, LoDoCo2, CLEAR SYNERGY | ~9 fewer MI + 8 fewer strokes/1,000; **no mortality effect** |
+| 3 | IL-6 inhibition (ziltivekimab) | **ZEUS, n=6,385** | **HR 0.99 (0.88-1.11)** despite hsCRP -64% - **refuted** |
+| 4 | oral PCSK9 inhibitor (enlicitide) | CORALreef Lipids | LDL-C -56%, approved 2026; outcomes trial n=14,500 pending |
+| 5 | base editing (VERVE-102) | Heart-2, open-label n=35 | LDL-C -62% |
+| 6 | iPSC cardiomyocyte patch | BioVAT-HF, n=20 | LVEF +3.9 pp, below the +6 pp threshold |
+| 7 | **this repository's combined architecture** | none | zero human exposures - **last** |
+
+Two findings matter more than the ranking itself.
+
+**The inflammatory arm is refuted, not merely uncertain.** ZEUS suppressed IL-6 by 76% and
+hsCRP by 64% in 6,385 high-risk patients and moved three-point MACE by nothing (0.99,
+0.88-1.11); serious infections rose 20% vs 18%; HERMES and ATHENA were then stopped for
+futility. This repository's cascade intervenes at exactly that step and `calibration.py` uses
+CRP as its target. The model gets the marker dynamics right and says nothing about events.
+CRP is demoted from *mechanism of benefit* to *marker dynamics*: the calibration work stands
+as a demonstration of non-identifiability and **no longer as a proxy for benefit**.
+
+**The repository's own architecture ranks last**, because a construct with no clinical data
+cannot outrank an approved drug. The best answer here is deliberately unglamorous: the thing
+already known to work. Nothing in the table is a cure - the top entry slows a process and
+reduces events; it does not reverse disease.
+
+```bash
+python run_solutions.py candidates       # -> results/candidates/ (6 artefacts)
+```
+
 - **Hazard ratio — solved as procurement.** All 19 populations close by exploratory credit.
   One PCSK9-editing outcomes trial unlocks **17 of 19**. No new biology needed.
 - **Clearance — solved as an engineering spec.** Correction: no *single* module suffices
@@ -442,6 +477,7 @@ IHD_Computational_Study/
 │   ├── unanswered_questions.md                   # what cannot be answered, and what each gap costs
 │   ├── simulation_frontier.md                    # can simulation pick a winner? no - and why
 │   ├── literature_register.md                    # what the literature solves per gate item
+│   ├── candidates.md                             # best IHD candidate, ranked by outcome evidence
 │   ├── FULL_REPORT.md                            # consolidated report: all agents, compounds, experiments, results
 │   ├── FULL_REPORT_chemical_index.csv            # 95 entities, source-tagged, QA-flagged
 │   ├── scientific_methodology_and_limitations.md # Critical reality check & assumptions

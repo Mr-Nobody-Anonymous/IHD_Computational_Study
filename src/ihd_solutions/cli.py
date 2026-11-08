@@ -183,6 +183,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     interventions.add_argument("--output-dir", type=Path, default=Path("results/interventions"))
 
+    candidates = subparsers.add_parser(
+        "candidates",
+        help="which IHD candidate the evidence actually supports, ranked by outcome evidence",
+    )
+    candidates.add_argument("--output-dir", type=Path, default=Path("results/candidates"))
+
     subparsers.add_parser("validate", help="validate all input registries and exit")
     return parser
 
@@ -198,6 +204,15 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _dispatch(args: argparse.Namespace) -> int:
+    if args.command == "candidates":
+        from ihd_solutions.candidates import write_candidate_report
+
+        summary = write_candidate_report(str(args.output_dir))
+        for key, value in summary.items():
+            print(f"{key}: {value}")
+        print((args.output_dir / "candidate_report.txt").read_text())
+        return 0
+
     if args.command == "interventions":
         from ihd_solutions.interventions import write_intervention_report
 
