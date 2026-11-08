@@ -697,7 +697,8 @@ def gap_register() -> pd.DataFrame:
             ),
             cost_value=float(
                 resolution.loc[
-                    resolution["study"].str.startswith("AATS"), "min_detectable_difference_pp"
+                    resolution["study"].str.startswith("AATS", na=False),
+                    "min_detectable_difference_pp",
                 ].iloc[0]
             ),
             cost_units="pp minimum detectable difference at n=8",

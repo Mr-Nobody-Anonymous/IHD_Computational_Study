@@ -226,13 +226,13 @@ def test_external_validation_needs_no_laboratory():
 def test_each_patch_trial_observed_less_than_it_could_have_detected():
     frame = G.trial_resolution_floor()
     studies = frame.loc[frame["study"].notna()]
-    patch = studies.loc[studies["study"].str.contains("BioVAT|AATS")]
+    patch = studies.loc[studies["study"].str.contains("BioVAT|AATS", na=False)]
     assert patch["effect_below_own_floor"].all()
 
 
 def test_the_large_trial_is_not_flagged():
     frame = G.trial_resolution_floor()
-    big = frame.loc[frame["study"].str.contains("REVIVED")].iloc[0]
+    big = frame.loc[frame["study"].str.contains("REVIVED", na=False)].iloc[0]
     assert big["effect_below_own_floor"] is False or not big["effect_below_own_floor"]
 
 
