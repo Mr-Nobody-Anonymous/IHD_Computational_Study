@@ -44,6 +44,7 @@ this study, because no combination has been trialled.
 | `results/gap_solutions/` | 10 |
 | `results/gaps/` | 9 |
 | `results/hypotheses/` | 10 |
+| `results/recombine/` | 13 |
 | `results/reports/` | 5 |
 | `results/resolution/` | 9 |
 | `results/solutions/` | 34 |
@@ -51,9 +52,9 @@ this study, because no combination has been trialled.
 | `results/upgrade/` | 10 |
 
 **Input registries:** 47 therapies · 48 trial anchors · 19 populations
-**Documentation:** 18 documents
-**Code:** 32 modules in `src/ihd_solutions/`
-**Tests:** 31 test files
+**Documentation:** 19 documents (plus this report)
+**Code:** 33 modules in `src/ihd_solutions/`
+**Tests:** 32 test files
 
 ---
 
@@ -906,7 +907,7 @@ Three verdicts:
 
 | factor | multiplier | evidence | level |
 |---|---|---|---|
-| dose_escalation | 1.75 | BioVAT max 800M cells; human-scale EHT patch 450M cells; ~1400M input estimated for a 300 g heart | human construct / clinical |
+| dose_escalation | 1.75 | BioVAT-HF max dose 20 EHM units = 800M iPSC-CMs in 16 of 20 patients (NEJM 2026, doi:10.1056/NEJMoa2513525); human dose precedent, 1.75x escalation above it unvalidated | human dose precedent; escalation unvalidated |
 | endothelial_co_delivery | 2 | EC+CM co-transplant raised primate EF 8.9 pp vs 1.9 pp CM alone; 10-fold larger grafts in rodents | primate + rodent |
 | epicardial_stromal_co_delivery | 2.6 | epicardial co-delivery doubled CM proliferation, 2.6-fold graft size | rodent / construct |
 | proliferation_induction | 2 | CCND2-overexpressing hiPSC-CMs replaced >50% of scar at 6 months; CHIR/FGF1 patches 4-fold engraftment | rodent / construct |
@@ -1225,6 +1226,84 @@ gap 6 a trial design. No cure is declared.
 
 ---
 
+## F.12 Mechanism recombination — ATLAS-5 (`recombine`)
+
+Full account: [`mechanism_recombination.md`](mechanism_recombination.md).
+Artefacts: `results/recombine/` (13).
+
+The previous arms were ablated, so the load-bearing part of each was already known. This
+turn decomposed them into **eight transferable mechanisms**, measured each alone and in
+every pair, and composed only the parts that earned their cost.
+
+**Three rules make the composition honest.** Interactions are measured so two mechanisms
+doing the same job are not both credited. Two of the eight parts are *constraints* that
+lower the reported probability, and the search may not switch them off — otherwise it
+would buy a better answer by deleting the honesty that produced it. And every precedent
+axis is charged separately.
+
+| mechanism | standalone | leave-one-out | verdict |
+|---|---|---|---|
+| `maturation` (human EHM series) | **+40.04 pp** | +25.12 pp | kept |
+| `retry_redundancy` | +20.52 pp | +3.20 pp | kept |
+| `cumulative_operator` | 0.00 pp | +0.08 pp | kept (interaction only) |
+| `response_guided_selection` | +0.08 pp | **−3.52 pp** | **dropped** |
+| `feedback` | 0.00 pp | 0.00 pp | **dropped — inert** |
+| `viability_reporter` | 0.00 pp | 0.00 pp | **dropped — inert, costs a genetic mod** |
+
+**The overlap that mattered.** Maturation and retry redundancy both push toward the same
+recoverable-scar ceiling. Credited additively they would claim **61.20 pp**; the measured
+joint gain is **47.12 pp**. **14.08 pp of that sum was the same biology counted twice.**
+Conversely `retry_redundancy` + `cumulative_operator` is genuinely **synergistic
+(+10.48 pp)**: adding increments differs from replacing them only when there is more than
+one dose.
+
+**Response-guided selection is a trial-design lever, not a therapy.** Vrtovec's screen
+concentrates responders up to 2.34x, but it *excludes patients*. Over the whole population,
+using the central swept assumption rather than the maximum: 42.5% pass x 58.2% respond =
+**24.7% of all patients**, against 33.3% unscreened. Fewer people benefit, so the effect is
+**−3.52 pp** and the mechanism is excluded. Enrichment shrinks the trial needed to detect
+an effect; it does not increase the number who get one.
+
+**Naive stacking is worse than selecting.** All 64 subsets, constraints held on:
+
+| design | mechanisms | P(target) | risk-adjusted |
+|---|---|---|---|
+| everything on | 6 | 94.40% | 89.48% |
+| **ATLAS-5 (selected)** | **3** | **97.92%** | **92.53%** |
+| constraints only | 0 | 51.68% | 49.10% |
+
+Switching everything on is **3.52 pp worse**. Recombination is a selection problem, not an
+accumulation problem.
+
+**ATLAS-5** = `retry_redundancy` + `cumulative_operator` + `maturation`, four doses
+available, **no feedback loop and no reporter cassette — zero genetic modifications**.
+Mean doses *actually used* is **1.10**, because maturation makes the first dose succeed
+often enough that retries are rarely invoked.
+
+| comparison | value |
+|---|---|
+| best single mechanism | 90.60% |
+| gain over best single | **+6.55 pp** |
+| ATLAS-4 best admissible | 89.60% |
+| **gain over ATLAS-4** | **+7.55 pp** |
+| price of admissibility | 0.05 pp (sampling noise) |
+
+The reporter buys 0.05 pp — noise — for a genetic modification with no cardiac precedent,
+so it is dropped. The graft arm is now **inside precedent on every axis it controls**; the
+clearance arm's 1.87x potency breach is carried forward and **not forgiven**.
+
+**Robustness is 50%, not 97.92%.** The maturation ratio is measured in EHM patches while
+the factor stack comes from animal work; multiplying them is an unvalidated transfer. Over
+36 scenarios (multiplier x translation penalty x doses) only **18 are robust with margin**.
+And a **declared blind spot**: increments clamp at the ceiling, so above **1.25x** the model
+cannot resolve a larger multiplier at all — it cannot represent the full 1.77x. The
+maturation credit is what the model can resolve, not the full human ratio.
+
+Randomised proof for the composition: **0.00%**. Zero saturation artefacts in 64
+compositions. No cure is declared.
+
+---
+
 # PART G — THE HONESTY LEDGER
 
 Every retraction and correction made during this study, in order. This section
@@ -1253,6 +1332,11 @@ exists because a report that only shows final numbers hides how they were reache
 | 19 | A viability reporter has never been imaged in humans | Confused "not in a cardiac graft" with "not in humans" | hNIS imaged in **myeloma and ovarian-cancer patients** |
 | 20 | PCSK9-editing durability is assumed | Pre-dated the Heart-2 readout | **Measured** to 18 months through hepatocyte turnover |
 | 21 | Redundancy buys the potency gap down to 1.56x | The cheap point used 4 node paths, itself beyond precedent | Both axes must be precedented: **1.87x** |
+| 22 | Interaction of −14.15 pp is "additive" | Verdict compared a probability difference against percentage-point cutoffs | Tolerance in probability units; **3 overlaps, 1 synergy** |
+| 23 | Response-guided selection is a therapy benefit | Reported the screened-in subset, hiding the patients the screen excludes | Whole population: **−3.52 pp**; a trial-design lever only |
+| 24 | Composing every mechanism is the best composite | A negative-effect part drags the stack down | Selection beats stacking by **3.52 pp** |
+| 25 | The strongest composite needs an unprecedented modification | Conflated the price of admissibility with the price of cheapness | It needed **none**; admissibility costs 0.05 pp (noise) |
+| 26 | Dose escalation is a construct-scale projection | Pre-dated BioVAT-HF's reported maximum dose | **800M cells given to 16 of 20 patients**; the 1.75x above it stays unvalidated |
 
 **Implementation bugs found and fixed:** run-in pinned responders to the threshold
 instead of keeping their achieved value; gate threshold computed at 24 months but
@@ -1280,9 +1364,9 @@ clearance and graft mass, not durability; pytest collected a library function na
 
 | Check | Result |
 |---|---|
-| Test suite | **956 passed** |
-| Coverage of `ihd_solutions` | **98.64%** (`atlas4.py` 99%, `gap_solutions.py` 99%) |
-| Lint (`ruff`) | clean, 65 files formatted |
+| Test suite | **1060 passed** (917 s) |
+| Coverage of `ihd_solutions` | **98.74%** (`recombine.py` **100%**, `atlas4.py` 99%, `gap_solutions.py` 99%) |
+| Lint (`ruff`) | clean, 66 files formatted |
 | Registry validation | **47 therapies / 48 anchors / 19 populations** |
 | Evidence artefacts hash-verified | **33**, **0 mismatches** |
 | Cures declared | **0** |
@@ -1304,6 +1388,7 @@ python run_solutions.py upgrade         # ATLAS-2 (the fix)         -> results/u
 python run_solutions.py atlas3          # ATLAS-3 (graft retry+loop) -> results/atlas3/
 python run_solutions.py atlas4          # ATLAS-4 (precedent + grid) -> results/atlas4/
 python run_solutions.py gap-solutions   # designs for the 6 gaps    -> results/gap_solutions/
+python run_solutions.py recombine       # ATLAS-5 mechanism composition -> results/recombine/
 python run_solutions.py validate        # registries only
 ```
 
@@ -1350,8 +1435,10 @@ failed against PCSK9; an evidence-graded map of which agents help which populati
 and where the evidence runs out; a quantified specification of what a cure would
 require; an invented architecture that makes plaque clearance robust in simulation
 at a stated price; a second that does the same for the graft and shows the missing
-step is *repeatability plus measurement*, not potency; and a documented record of
-twenty-one claims that were tested and withdrawn. **The retractions are part of the
+step is *repeatability plus measurement*, not potency; a third composite assembled from
+the measured load-bearing parts of the first two, which is stronger and simpler than
+either and refuses 14.08 pp of double-counted benefit; and a documented record of
+twenty-six claims that were tested and withdrawn. **The retractions are part of the
 result.**
 
 ---

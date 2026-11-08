@@ -308,10 +308,13 @@ REMUSCULARISATION_FACTORS: tuple[Factor, ...] = (
     Factor(
         "dose_escalation",
         1.75,
-        "BioVAT maximal dose 800M cells; human-scale EHT patches built at 450M cells and "
-        "~1400M input estimated necessary for a 300 g heart",
-        "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.120.047904",
-        "human_construct_animal_transplant",
+        "BioVAT-HF maximal dose: 20 EHM units = 800M iPSC-CMs, given to 16 of 20 "
+        "patients (NEJM 2026, doi:10.1056/NEJMoa2513525). That is now a HUMAN dose "
+        "precedent, not a construct-scale estimate; the earlier 450M/1400M figure was "
+        "an engineering projection for a 300 g heart. The 1.75x escalation headroom "
+        "above the demonstrated human dose remains unvalidated.",
+        "https://www.nejm.org/doi/abs/10.1056/NEJMoa2513525",
+        "human_dose_precedent_escalation_unvalidated",
     ),
     Factor(
         "endothelial_co_delivery",

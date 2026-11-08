@@ -59,6 +59,7 @@ from ihd_solutions.gap_solver import (
     REMUSCULARISATION_FACTORS,
     SCAR_RECOVERABLE_LVEF_PP,
 )
+from ihd_solutions.precedent import max_precedented_doses
 from ihd_solutions.units import require_fraction, require_positive
 
 ATLAS3_TAG = "atlas3_invented_architecture_unvalidated"
@@ -74,8 +75,12 @@ DISCLAIMER = (
 #: Multiplier the graft must deliver to recover the target LVEF gain.
 REQUIRED_MULTIPLIER = CRITERION_THRESHOLD / BASELINE_SCAR_FRACTION
 
-#: Retry redundancy beyond this has no precedent in any published graft programme.
-MAX_PRECEDENTED_ATTEMPTS = 2
+#: Retry redundancy beyond this has no precedent in any published dosing programme.
+#: CORRECTED from 2 to the registry value (4): CATO (NCT06145035) randomises patients to
+#: four intravenous doses and HOPE-2 gave four. The original 2 was never checked against
+#: the literature, which made this module label its own three-attempt design "beyond
+#: precedent" when it was not. See ihd_solutions.precedent.
+MAX_PRECEDENTED_ATTEMPTS = max_precedented_doses()
 
 #: A specification must not move when the sampling budget moves. At small N the
 #: 2-SE margin is wide enough to reject a two-attempt design that is genuinely
@@ -468,16 +473,19 @@ def maximum_tolerable_correlation(
 
 
 def precedented_option(draws: int = 4000, seed: int = 20261107) -> GraftResult:
-    """The best design that stays inside the published attempt limit.
+    """The CHEAPEST robust design inside the published attempt limit.
 
-    Reported beside the shipped three-attempt construct so the precedent breach is
-    visibly a purchase of headroom, not a requirement of feasibility.
+    Reported beside the shipped three-attempt construct so the extra attempt is visibly
+    a purchase of headroom, not a requirement of feasibility. This used to return the
+    attempt limit itself; with the limit corrected to 4 that would have compared three
+    attempts against a strictly better four-attempt design and called the difference a
+    cost. The decision-relevant comparison is against the fewest attempts that work.
     """
     draws = max(int(draws), MIN_SPECIFICATION_DRAWS)
     fields = {f: getattr(ATLAS3, f) for f in ATLAS3.__dataclass_fields__}
-    return evaluate_graft(
-        GraftUpgrades(**{**fields, "attempts": MAX_PRECEDENTED_ATTEMPTS}), draws, seed
-    )
+    fewest = minimum_robust_attempts(ATLAS3, draws=draws, seed=seed)
+    attempts = min(fewest, MAX_PRECEDENTED_ATTEMPTS) if fewest else MAX_PRECEDENTED_ATTEMPTS
+    return evaluate_graft(GraftUpgrades(**{**fields, "attempts": attempts}), draws, seed)
 
 
 def joint_capability_probability(draws: int = 2000, seed: int = 20261107) -> dict[str, float]:
@@ -593,19 +601,21 @@ def atlas3_report(
         "  Attempts stop as soon as the target is met, so a first-attempt responder is",
         "  not exposed to further procedures. The risk is still real and cumulative.",
         "",
-        "THE PRECEDENTED OPTION: THE THIRD ATTEMPT BUYS HEADROOM, NOT FEASIBILITY",
-        f"  {MAX_PRECEDENTED_ATTEMPTS} attempts (within precedent)      P {100 * precedented.probability_of_target:6.2f}%"
+        "THE CHEAPEST PRECEDENTED OPTION: EXTRA ATTEMPTS BUY HEADROOM, NOT FEASIBILITY",
+        f"  precedented attempt limit          {MAX_PRECEDENTED_ATTEMPTS} (CORRECTED from 2; CATO and HOPE-2 give four)",
+        f"  ATLAS-3's {full.attempts} attempts               WITHIN precedent",
+        f"  {precedented.attempts} attempts (cheapest robust)       P {100 * precedented.probability_of_target:6.2f}%"
         f"   adverse {100 * precedented.cumulative_adverse_risk:5.2f}%",
         f"  robust with 2-SE margin            {'YES' if precedented.robust_with_margin else 'no'}",
         f"  fewest attempts clearing the bar   {minimum if minimum is not None else 'none in range'}",
         "",
-        "  Two attempts already clear the bar, and repeat dosing has precedent. So the",
-        "  number of procedures is not what breaks precedent here, and it is not the",
-        "  invention. The invention is the closed loop: a measured engraftment signal",
-        "  that decides whether to retry. The third attempt is optional headroom - it",
+        "  Fewer attempts already clear the bar, and repeat dosing has ample precedent.",
+        "  So the number of procedures is not what breaks precedent here, and it is not",
+        "  the invention. The invention is the closed loop: a measured engraftment signal",
+        "  that decides whether to retry. The extra attempt is optional headroom - it",
         f"  lifts {100 * precedented.probability_of_target:.1f}% to {100 * full.probability_of_target:.1f}% - bought with",
         f"  {100 * (full.cumulative_adverse_risk - precedented.cumulative_adverse_risk):+.2f} pp more adverse-event risk.",
-        "  The two-attempt margin is thin, so it is reported, not relied upon.",
+        "  The cheaper option has a thinner margin, so it is reported, not relied upon.",
         "",
         "THE FALSIFIER: REDUNDANCY ONLY COUNTS IF ATTEMPTS ARE INDEPENDENT",
         "  correlation   P(target)   gain vs single attempt",

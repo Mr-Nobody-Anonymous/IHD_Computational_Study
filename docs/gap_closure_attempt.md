@@ -123,7 +123,7 @@ twice, and reaching +20 points means replacing **80% of the scar**.
 
 | Factor | Multiplier | Precedent | Species |
 |---|---|---|---|
-| Dose escalation | ×1.75 | 800M delivered vs ~1400M input estimated for a 300 g heart; human-scale patches built at 450M | construct/animal |
+| Dose escalation | ×1.75 | 20 EHM units = 800M iPSC-CMs in 16 of 20 patients (BioVAT-HF, NEJM 2026); escalation above it unvalidated | human dose precedent |
 | **Endothelial co-delivery** | **×2.0** | EC+CM raised primate EF **+8.9 pts vs +1.9** for CM alone; preformed microvessels gave 10× larger grafts | **primate** |
 | **Epicardial/stromal co-delivery** | **×2.6** | Doubled CM proliferation, **2.6-fold greater graft size**, improved systolic function | rodent |
 | Proliferation induction | ×2.0 | CCND2-overexpressing CMs replaced **>50% of scar** at 6 months; CHIR/FGF patches gave 4× engraftment | rodent |

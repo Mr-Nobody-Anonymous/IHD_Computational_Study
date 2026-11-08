@@ -249,6 +249,27 @@ not a mega-trial. Three gaps need no new biology at all.
 python run_solutions.py gap-solutions  # -> results/gap_solutions/ (10 artefacts)
 ```
 
+[`docs/mechanism_recombination.md`](docs/mechanism_recombination.md) takes the **successful
+part of each architecture** and composes them. Eight mechanisms were extracted, each
+measured alone and in every pair, and only the parts that earned their cost were kept.
+**Maturation and retry redundancy overlap by 14.08 pp** - crediting both additively would
+count the same biology twice - while **retry + cumulative dosing is genuinely synergistic
+(+10.48 pp)**. Two parts turned out **inert**: the feedback loop and the reporter cassette
+it exists to enable, which removes the design's only genetic modification.
+**Response-guided selection is a trial-design lever, not a therapy**: the screen
+concentrates responders but excludes patients, so over the whole population it is
+**-3.52 pp**. Consequently **switching everything on is 3.52 pp worse than selecting**.
+The result, **ATLAS-5**, keeps three mechanisms, reaches **97.92%** (risk-adjusted
+**92.53%**) against ATLAS-4's 89.60%, and uses **1.10 procedures on average** because
+maturation makes the first dose usually sufficient. Honest limits: only **18 of 36**
+assumption scenarios are robust, and the model **cannot resolve maturation above 1.25x**
+at all. The ATLAS-3 precedent limit was also corrected in code (**2 -> 4**, from the
+registry), so ATLAS-3 was never beyond precedent. Randomised proof: **zero**.
+
+```bash
+python run_solutions.py recombine      # -> results/recombine/ (13 artefacts)
+```
+
 - **Hazard ratio — solved as procurement.** All 19 populations close by exploratory credit.
   One PCSK9-editing outcomes trial unlocks **17 of 19**. No new biology needed.
 - **Clearance — solved as an engineering spec.** Correction: no *single* module suffices
@@ -336,6 +357,7 @@ IHD_Computational_Study/
 │   ├── atlas3_graft.md                           # ATLAS-3: fixes the graft by retry + feedback, not potency
 │   ├── atlas4_precedent_search.md                # ATLAS-4: literature search, 3 corrections, all 360 designs tested
 │   ├── gap_solutions.md                          # designs + power calculations for the six open gaps
+│   ├── mechanism_recombination.md                # ATLAS-5: mechanism ablation, overlaps, all 64 compositions
 │   ├── FULL_REPORT.md                            # consolidated report: all agents, compounds, experiments, results
 │   ├── FULL_REPORT_chemical_index.csv            # 95 entities, source-tagged, QA-flagged
 │   ├── scientific_methodology_and_limitations.md # Critical reality check & assumptions

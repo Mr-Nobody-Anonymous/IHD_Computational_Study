@@ -2,9 +2,16 @@
 
 > **SUPERSEDED IN PART BY [`atlas4_precedent_search.md`](atlas4_precedent_search.md).**
 > A literature search found three errors here, and ATLAS-4 corrects them:
-> 1. **The precedent limit was wrong.** This document says two doses is the precedented
->    maximum and calls three "beyond precedent". CATO (NCT06145035) and HOPE-2 both give
->    **four** doses in humans. Three was never beyond precedent.
+> 1. **The precedent limit was wrong — now corrected in the code, not just here.**
+>    This document says two doses is the precedented maximum and calls three "beyond
+>    precedent". CATO (NCT06145035) and HOPE-2 both give **four** doses in humans. Three
+>    was never beyond precedent. `MAX_PRECEDENTED_ATTEMPTS` now reads
+>    `max_precedented_doses()` from the registry (**4**), so `ATLAS3.beyond_precedent`
+>    is `False`. `precedented_option()` was also rewritten: it used to return the limit
+>    itself, which after the correction would have compared three attempts against a
+>    strictly better four and called the difference a cost. It now returns the
+>    **cheapest robust** design within the limit — **2 attempts, P = 82.50%, adverse
+>    7.42%** — against ATLAS-3's three at **93.1%** for **+0.95 pp** more risk.
 > 2. **The retry operator was wrong.** Best-of-k is used below. Every published
 >    repeat-dose study reports **cumulative** increments instead, and shows that
 >    splitting a fixed total dose beats giving it at once — which best-of-k cannot
@@ -15,6 +22,10 @@
 > A consequence: the "measure independence above ≈0.71" specification in §4 is a
 > property of the wrong operator. Under cumulative dosing ~91% of the gain survives
 > full correlation. The numbers below are retained as the historical record.
+>
+> **SUPERSEDED FURTHER BY [`mechanism_recombination.md`](mechanism_recombination.md).**
+> ATLAS-5 keeps this arm's retry redundancy, replaces its operator, drops its feedback
+> loop and reporter cassette as measured-inert, and adds graft maturation.
 
 > **ATLAS-3 IS AN INVENTED, UNTRIALLED CONSTRUCT.** Staged repeatable grafting with a
 > measurable feedback signal does not exist. Nothing in this document is a therapy, a

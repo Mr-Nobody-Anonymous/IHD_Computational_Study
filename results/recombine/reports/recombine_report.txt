@@ -1,0 +1,178 @@
+RECOMBINATION: composing the load-bearing part of every architecture
+==========================================================================
+THIS IS A COMPOSITION OF UNVALIDATED MECHANISMS, NOT A THERAPY AND NOT A RESULT. Each part is borrowed from an architecture that was itself invented or from another group's animal or early-phase human work. Interactions are measured so overlaps are not double-counted, honesty constraints cannot be switched off to inflate the answer, and every precedent axis is charged separately. No cure is declared.
+
+THE CATALOGUE
+  mechanisms available               8
+  searchable benefits                6
+  non-negotiable constraints         2
+
+  Constraints LOWER the number. The search may not switch them off, because
+  that would buy a better answer by deleting the honesty that produced it.
+
+LEAVE-ONE-OUT: what each part actually carries
+  mechanism                     kind         contribution
+  maturation                    benefit       +25.12 pp
+  retry_redundancy              benefit        +3.20 pp
+  cumulative_operator           benefit        +0.08 pp
+  feedback                      benefit        +0.00 pp
+  viability_reporter            benefit        +0.00 pp
+  headroom_gating               constraint     +0.00 pp
+  human_tempering               constraint     -0.24 pp
+  response_guided_selection     benefit        -3.52 pp
+
+  A negative contribution on a constraint is the size of the honesty being
+  purchased, not a defect. Anything at zero is decoration and should be dropped.
+
+  INERT in this composition: feedback, viability_reporter, headroom_gating
+
+STANDALONE: what each part does on its own (constraints held on)
+  mechanism                     gain      risk-adjusted   graft breach
+  maturation                     +40.04 pp   +38.04 pp     none
+  retry_redundancy               +20.52 pp   +17.22 pp     none
+  response_guided_selection       +0.08 pp    +0.08 pp     none
+  cumulative_operator             +0.00 pp    +0.00 pp     none
+  viability_reporter              +0.00 pp    +0.00 pp     genetic_modification
+  feedback                        +0.00 pp    +0.00 pp     none
+
+  Leave-one-out is measured against a near-saturated base, where a part can look
+  inert only because no headroom is left. This is the other direction, and the
+  two together are what licenses dropping a part.
+
+INTERACTIONS: measured, so overlaps are not double-counted
+  pair                                          both    sum-of-parts   interaction
+  retry_redundancy + maturation                +47.12   +61.20       -14.08 pp  overlapping
+  retry_redundancy + response_guided_selection +14.72   +23.04        -8.32 pp  overlapping
+  response_guided_selection + maturation       +41.28   +42.96        -1.68 pp  overlapping
+  retry_redundancy + viability_reporter        +20.64   +20.64        +0.00 pp  additive
+  cumulative_operator + viability_reporter      +0.00    +0.00        +0.00 pp  additive
+  cumulative_operator + feedback                +0.00    +0.00        +0.00 pp  additive
+  cumulative_operator + response_guided_selection  +2.40    +2.40        +0.00 pp  additive
+  retry_redundancy + feedback                  +20.64   +20.64        +0.00 pp  additive
+  feedback + maturation                        +40.56   +40.56        +0.00 pp  additive
+  cumulative_operator + maturation             +40.56   +40.56        +0.00 pp  additive
+  feedback + response_guided_selection          +2.40    +2.40        +0.00 pp  additive
+  feedback + viability_reporter                 +0.00    +0.00        +0.00 pp  additive
+  viability_reporter + maturation              +40.56   +40.56        +0.00 pp  additive
+  viability_reporter + response_guided_selection  +2.40    +2.40        +0.00 pp  additive
+  retry_redundancy + cumulative_operator       +31.12   +20.64       +10.48 pp  synergistic
+
+  3 pair(s) OVERLAP. Crediting both at full strength would
+  double-count the same biology. The strongest overlap is
+  retry_redundancy + response_guided_selection at -8.32 pp.
+
+EXHAUSTIVE COMPOSITION SEARCH
+  compositions tested                64
+  robust with margin                 33
+  saturation artefacts (P = 100%)     0
+  admissible after every filter      16
+  robust set exists                  True
+
+  RECOMMENDED - ATLAS-5 (highest risk-adjusted among admissible):
+    mechanisms      retry_redundancy|cumulative_operator|maturation
+    count           3 of 6
+    P(target)       97.15%
+    risk-adjusted   91.75%
+    genetic mods    0
+    adverse risk    5.55%
+
+  FRUGAL ALTERNATIVE (fewest parts, still robust):
+    mechanisms      maturation
+    P(target)       90.60%
+    risk-adjusted   86.07%
+    adverse risk    5.00%
+
+DOES THE SELECTION SURVIVE ITS OWN ASSUMPTIONS?
+  scenarios swept                    36
+  robust with margin                 18
+  fraction robust                    0.500
+
+  The maturation ratio comes from epicardial EHM patches; the factor stack comes
+  from other groups' animal work. Multiplying them is an UNVALIDATED TRANSFER and
+  the largest assumption in the selection, so it is swept from 1.00x to
+  1.77x rather than asserted at its point estimate.
+
+  MODEL BLIND SPOT: above 1.25x the probability
+  stops changing, because increments clamp at the recoverable-scar
+  ceiling. The model cannot distinguish that from the full 1.77x,
+  so the maturation credit is what this model can resolve, not the full ratio.
+
+ATLAS-5 AT THE REPORTED DRAW COUNT
+  P(target)                           97.92%
+  risk-adjusted                       92.53%
+  mean doses actually used             1.10
+  cumulative adverse risk             5.50%
+  saturated fraction                  79.5%
+
+  The mean dose count is barely above one: maturation makes the FIRST dose
+  succeed often enough that the retry machinery is rarely invoked. That is why
+  the composite is cheap in practice and not only on paper.
+
+NAIVE STACKING VERSUS SELECTION
+  design                    mechanisms                        P(target)  risk-adj
+  everything_on             cumulative_operator|feedback|maturation|response_guided_selection|retry_redundancy|viability_reporter  94.40%    89.48%
+  selected_composition      cumulative_operator|maturation|retry_redundancy  97.92%    92.53%
+  constraints_only          (none)                             51.68%    49.10%
+
+  Switching EVERYTHING on is 3.52 pp WORSE than selecting.
+  A mechanism with a negative population effect drags the whole stack down.
+  This is the concrete reason the search was worth running: recombination is
+  a selection problem, not an accumulation problem.
+
+FULL COMPOSITION (everything on)
+  P(target)                           94.40%
+  median gain                         25.00 pp
+  saturated fraction                  78.6%
+  cumulative adverse risk             5.22%
+  risk-adjusted                       89.48%
+  saturation artefact                no
+
+BOTH ARMS TOGETHER
+  graft                               96.40%
+  clearance                           90.40%
+  joint, assuming independence        87.15%
+  randomised proof                    0.00%
+
+  The joint is a product and so assumes the arms are independent. The measured
+  bed coupling says they are not, so this is optimistic and labelled as such.
+
+THE BILL, EVERY AXIS CHARGED SEPARATELY
+  axis                        value      limit    beyond precedent
+  doses                         4.000     4.000   no
+  clearance_potency_cap         2.400     1.284   YES
+  clearance_redundant_paths     3.000     3.000   no
+  genetic_modifications         0.000     0.000   no
+
+  A breach on one axis may not be paid for with an unflagged breach on another.
+  That trap was already caught once in the gap-5 trade-off and is charged here.
+
+VERDICT (computed, not asserted)
+  strongest composition anywhere      97.20%   (retry_redundancy|cumulative_operator|feedback|viability_reporter|maturation)
+  best single mechanism               90.60%
+  selected admissible                 97.15%   (3 mechanism(s))
+  gain over best single mechanism     +6.55 pp
+  ATLAS-4 best admissible (reference) 89.60%
+  gain over ATLAS-4                   +7.55 pp
+  strongest ADMISSIBLE                97.15%   (retry_redundancy|cumulative_operator|maturation)
+  price of admissibility               0.05 pp
+  price of cheapness                   0.00 pp
+  risk-adjusted, selected             91.75%
+  risk-adjusted, strongest admissible  91.75%
+
+  COMPOSING ADDS 6.55 pp over the best single mechanism,
+  and the gain survives charging procedural risk. So the composite
+  is genuinely better, not merely more complicated. What recombination also
+  did was DELETE: the inert and overlapping parts were dropped rather than
+  carried along for the sake of the architecture.
+
+  Admissibility costs NOTHING here beyond sampling noise: the strongest
+  composition overall is admissible too, so no precedent filter removed it.
+
+  The clearance arm paired with all of this still sits above the precedented
+  potency cap. That breach is charged in the ledger and is not forgiven by
+  anything the graft arm achieved.
+
+  None of this creates evidence. Every mechanism is borrowed from an invented
+  architecture or from someone else's animal or early-phase human work. Randomised
+  proof for the composition is zero and no simulation can change that. This is a
+  sharper specification of what to test, not a cure.

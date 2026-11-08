@@ -1,2 +1,2 @@
 required_multiplier,product_of_published_maxima,minimum_robust_attempts,precedented_attempt_limit,precedented_option_probability,precedented_option_robust,maximum_tolerable_correlation,joint_probability_optimistic,status
-5.128205128205129,18.2,2,2,0.825,True,0.7103919982910156,0.7719575,atlas3_invented_architecture_unvalidated
+5.128205128205129,18.2,2,4,0.825,True,0.7103919982910156,0.7719575,atlas3_invented_architecture_unvalidated

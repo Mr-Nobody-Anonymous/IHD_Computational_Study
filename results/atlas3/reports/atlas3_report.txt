@@ -17,7 +17,7 @@ RESULT
   ATLAS-3 (3 staged attempts)         P  93.10%   median 25.00 pp
   robust at 80%                      YES
   robust with 2-SE margin            YES
-  attempts beyond precedent          YES  (precedented limit 2)
+  attempts beyond precedent          no  (precedented limit 4)
 
 WHAT IT COST
   median attempts actually used      2.00
@@ -27,18 +27,20 @@ WHAT IT COST
   Attempts stop as soon as the target is met, so a first-attempt responder is
   not exposed to further procedures. The risk is still real and cumulative.
 
-THE PRECEDENTED OPTION: THE THIRD ATTEMPT BUYS HEADROOM, NOT FEASIBILITY
-  2 attempts (within precedent)      P  82.50%   adverse  7.42%
+THE CHEAPEST PRECEDENTED OPTION: EXTRA ATTEMPTS BUY HEADROOM, NOT FEASIBILITY
+  precedented attempt limit          4 (CORRECTED from 2; CATO and HOPE-2 give four)
+  ATLAS-3's 3 attempts               WITHIN precedent
+  2 attempts (cheapest robust)       P  82.50%   adverse  7.42%
   robust with 2-SE margin            YES
   fewest attempts clearing the bar   2
 
-  Two attempts already clear the bar, and repeat dosing has precedent. So the
-  number of procedures is not what breaks precedent here, and it is not the
-  invention. The invention is the closed loop: a measured engraftment signal
-  that decides whether to retry. The third attempt is optional headroom - it
+  Fewer attempts already clear the bar, and repeat dosing has ample precedent.
+  So the number of procedures is not what breaks precedent here, and it is not
+  the invention. The invention is the closed loop: a measured engraftment signal
+  that decides whether to retry. The extra attempt is optional headroom - it
   lifts 82.5% to 93.1% - bought with
   +0.95 pp more adverse-event risk.
-  The two-attempt margin is thin, so it is reported, not relied upon.
+  The cheaper option has a thinner margin, so it is reported, not relied upon.
 
 THE FALSIFIER: REDUNDANCY ONLY COUNTS IF ATTEMPTS ARE INDEPENDENT
   correlation   P(target)   gain vs single attempt
@@ -72,8 +74,8 @@ LEVER ABLATION
 ATTEMPTS: success against the safety price
   1 attempts  P  49.60%  adverse  5.00%  risk-adjusted  47.12%  precedented
   2 attempts  P  82.50%  adverse  7.42%  risk-adjusted  76.37%  precedented
-  3 attempts  P  93.10%  adverse  8.38%  risk-adjusted  85.30%  BEYOND PRECEDENT
-  4 attempts  P  96.92%  adverse  8.81%  risk-adjusted  88.38%  BEYOND PRECEDENT
+  3 attempts  P  93.10%  adverse  8.38%  risk-adjusted  85.30%  precedented
+  4 attempts  P  96.92%  adverse  8.81%  risk-adjusted  88.38%  precedented
   6 attempts  P  99.55%  adverse  9.13%  risk-adjusted  90.46%  BEYOND PRECEDENT
 
   Fewest attempts reaching the bar with margin: 2.
@@ -117,8 +119,7 @@ The graft gap closes in simulation under staged retry with feedback, which
 identifies the missing step precisely: a remuscularisation modality that can
 be repeated AND MEASURED. Repeat dosing already has precedent; the missing
 piece is the feedback signal that decides whether to repeat. It is not more
-potency - the published factors
-already exceed the requirement 3.55-fold.
+potency - the published factors already exceed the requirement 3.55-fold.
 
 Three things must be demonstrated before any of this is real:
   1. Independence of retry outcomes. Correlated failures erase the entire gain,

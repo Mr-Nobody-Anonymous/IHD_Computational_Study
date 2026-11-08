@@ -1,0 +1,5 @@
+axis,value,precedented_limit,beyond_precedent,status
+doses,4.0,4.0,False,recombine_mechanism_composition_unvalidated
+clearance_potency_cap,2.4,1.284,True,recombine_mechanism_composition_unvalidated
+clearance_redundant_paths,3.0,3.0,False,recombine_mechanism_composition_unvalidated
+genetic_modifications,0.0,0.0,False,recombine_mechanism_composition_unvalidated

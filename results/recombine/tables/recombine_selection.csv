@@ -1,0 +1,2 @@
+admissible,robust_set_exists,selected,cheapest,status
+16,True,"{'mechanisms': 'retry_redundancy|cumulative_operator|maturation', 'count': 3, 'probability_of_target': 0.9715, 'risk_adjusted_probability': 0.9175440033835719, 'genetic_modifications': 0, 'cumulative_adverse_risk': 0.055538853954120615}","{'mechanisms': 'maturation', 'count': 1, 'probability_of_target': 0.906, 'risk_adjusted_probability': 0.8607, 'genetic_modifications': 0, 'cumulative_adverse_risk': 0.050000000000000044}",recombine_mechanism_composition_unvalidated

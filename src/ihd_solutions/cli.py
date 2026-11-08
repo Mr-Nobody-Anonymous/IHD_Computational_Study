@@ -146,6 +146,12 @@ def build_parser() -> argparse.ArgumentParser:
     solutions.add_argument("--output-dir", type=Path, default=Path("results/gap_solutions"))
     solutions.add_argument("--draws", type=int, default=1200)
 
+    recombine = subparsers.add_parser(
+        "recombine", help="compose the load-bearing mechanism of each arm and test overlaps"
+    )
+    recombine.add_argument("--output-dir", type=Path, default=Path("results/recombine"))
+    recombine.add_argument("--draws", type=int, default=2500)
+
     subparsers.add_parser("validate", help="validate all input registries and exit")
     return parser
 
@@ -161,6 +167,15 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _dispatch(args: argparse.Namespace) -> int:
+    if args.command == "recombine":
+        from ihd_solutions.recombine import run_recombine_study
+
+        summary = run_recombine_study(args.output_dir, draws=args.draws)
+        print(summary["disclaimer"])
+        print()
+        print((args.output_dir / "reports" / "recombine_report.txt").read_text())
+        print(f"Wrote {summary['outputs']} artefacts to {summary['output_dir']}")
+        return 0
     if args.command == "gap-solutions":
         from ihd_solutions.gap_solutions import run_gap_solutions_study
 

@@ -138,10 +138,9 @@ def test_precedented_dose_limit_is_four():
     assert P.max_precedented_doses() == 4
 
 
-def test_atlas3_limit_was_too_low():
-    """The correction, pinned: ATLAS-3 used 2, the literature supports 4."""
-    assert ATLAS3_LIMIT == 2
-    assert P.max_precedented_doses() > ATLAS3_LIMIT
+def test_atlas3_limit_has_been_corrected_to_the_registry():
+    """The correction is now applied in code, not just documented."""
+    assert ATLAS3_LIMIT == P.max_precedented_doses() == 4
 
 
 def test_measurement_anchor_is_the_published_correlation():

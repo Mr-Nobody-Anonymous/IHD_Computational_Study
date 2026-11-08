@@ -1,0 +1,4 @@
+design,mechanisms,probability_of_target,risk_adjusted_probability,mean_doses_used,cumulative_adverse_risk,median_gain_pp,status
+everything_on,cumulative_operator|feedback|maturation|response_guided_selection|retry_redundancy|viability_reporter,0.944,0.8947599316378613,1.0444,0.0521610893666723,25.0,recombine_mechanism_composition_unvalidated
+selected_composition,cumulative_operator|maturation|retry_redundancy,0.9792,0.9253098293447556,1.1036,0.05503489650249627,25.0,recombine_mechanism_composition_unvalidated
+constraints_only,(none),0.5168,0.49096,1.0,0.050000000000000044,20.394049711138095,recombine_mechanism_composition_unvalidated

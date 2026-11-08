@@ -215,10 +215,21 @@ def test_removing_redundancy_returns_to_the_single_graft(single):
 # ------------------------------------------------------------- the safety bill
 
 
-def test_three_attempts_is_beyond_precedent(staged):
-    assert MAX_PRECEDENTED_ATTEMPTS == 2
-    assert ATLAS3.attempts > MAX_PRECEDENTED_ATTEMPTS
-    assert staged.beyond_precedent
+def test_three_attempts_is_within_precedent(staged):
+    """CORRECTED: the limit is 4 (CATO, HOPE-2), so three was never beyond precedent."""
+    assert MAX_PRECEDENTED_ATTEMPTS == 4
+    assert ATLAS3.attempts <= MAX_PRECEDENTED_ATTEMPTS
+    assert not staged.beyond_precedent
+
+
+def test_the_limit_comes_from_the_registry():
+    from ihd_solutions.precedent import max_precedented_doses
+
+    assert max_precedented_doses() == MAX_PRECEDENTED_ATTEMPTS
+
+
+def test_six_attempts_is_still_beyond_precedent():
+    assert GraftUpgrades(attempts=6).beyond_precedent
 
 
 def test_two_attempts_stays_within_precedent():
@@ -293,7 +304,9 @@ def test_the_specification_does_not_move_with_the_sampling_budget():
 
 def test_precedented_option_is_robust_and_cheaper(staged):
     option = precedented_option(draws=4000)
-    assert option.attempts == MAX_PRECEDENTED_ATTEMPTS
+    # The cheapest ROBUST design, not the attempt limit itself.
+    assert option.attempts < ATLAS3.attempts
+    assert option.attempts <= MAX_PRECEDENTED_ATTEMPTS
     assert not option.beyond_precedent
     assert option.robust_with_margin
     assert option.cumulative_adverse_risk < staged.cumulative_adverse_risk
@@ -393,7 +406,8 @@ def test_report_states_the_limits(study):
     assert "not a cure" in text
     assert "MAXIMUM TOLERABLE CORRELATION" in text
     assert "BEYOND PRECEDENT" in text
-    assert "THE PRECEDENTED OPTION" in text
+    assert "THE CHEAPEST PRECEDENTED OPTION" in text
+    assert "CORRECTED from 2" in text
     assert "Randomised proof remains zero." in text
 
 
