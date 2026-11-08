@@ -165,6 +165,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     audit_sci.add_argument("--output-dir", type=Path, default=Path("results/scientific_audit"))
 
+    unanswered = subparsers.add_parser(
+        "unanswered",
+        help="what this study cannot answer, with the cost of each gap quantified",
+    )
+    unanswered.add_argument("--output-dir", type=Path, default=Path("results/unanswered"))
+
     subparsers.add_parser("validate", help="validate all input registries and exit")
     return parser
 
@@ -180,6 +186,15 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _dispatch(args: argparse.Namespace) -> int:
+    if args.command == "unanswered":
+        from ihd_solutions.gaps import write_gap_report
+
+        summary = write_gap_report(args.output_dir)
+        for key, value in summary.items():
+            print(f"{key}: {value}")
+        print((args.output_dir / "gap_report.txt").read_text())
+        return 0
+
     if args.command == "scientific-audit":
         from ihd_solutions.scientific_audit import run_scientific_audit
 

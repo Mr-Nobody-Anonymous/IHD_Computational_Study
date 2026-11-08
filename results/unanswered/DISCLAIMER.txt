@@ -1,0 +1,11 @@
+WHAT THIS MODULE IS
+  An accounting of what the study cannot answer, with the cost of each gap quantified
+  where a cost can be quantified and declared not estimable where it cannot.
+
+WHAT IT IS NOT
+  A simulation, a model change, or a claim. No result in this repository is improved by
+  it. Every gap listed remains open after it runs.
+
+THE ONE SENTENCE
+  The lab is not the only thing missing. Four of the gaps below are pure arithmetic that
+  nobody had done yet, and one is a defect in this study's own viability table.

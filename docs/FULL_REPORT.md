@@ -54,9 +54,9 @@ this study, because no combination has been trialled.
 | `results/upgrade/` | 10 |
 
 **Input registries:** 47 therapies · 48 trial anchors · 19 populations
-**Documentation:** 21 documents (plus this report)
-**Code:** 39 modules in `src/ihd_solutions/`
-**Tests:** 34 test files
+**Documentation:** 22 documents (plus this report)
+**Code:** 40 modules in `src/ihd_solutions/`
+**Tests:** 35 test files
 
 ---
 
@@ -1381,11 +1381,11 @@ build**.
 
 | | |
 |---|---|
-| constants found | **73** |
-| registered | **73** |
+| constants found | **92** |
+| registered | **92** |
 | unregistered | **0** |
 | values disagreeing with code | **0** |
-| measured / estimated / **hypothetical** | 35 / 11 / **27** |
+| measured / estimated / **hypothetical** | 41 / 19 / **32** |
 | earning human efficacy credit | **12** |
 
 Two structural guards: a hypothetical parameter may not claim human measurement, and
@@ -1433,6 +1433,75 @@ validated underlying models. No amount of GPU time moves a result from `converge
 
 ---
 
+## F.15 What this study cannot answer (`unanswered`)
+
+Full account: [`unanswered_questions.md`](unanswered_questions.md).
+Artefacts: `results/unanswered/` (6).
+
+`scientific_audit.md` asks what is missing from the code. This asks the harder follow-up:
+of the questions the study needs answered, which are unanswerable without a laboratory, and
+what does leaving each one open cost? **13 gaps registered; 6 closable here with
+arithmetic; 7 that no computation can close.**
+
+| class | meaning | count |
+|---|---|---|
+| in principle | only a randomised human comparison can settle it | 1 |
+| in practice | computable, but needs a GPU / reference genome / meshed geometry | 3 |
+| analytic | closable here with arithmetic, **not yet done** | 6 |
+| epistemic | a number cannot settle it at all | 3 |
+
+### The causal chain, with the missing link marked
+
+```
+target engagement  ->  mechanism  ->  surrogate  ->  outcome
+     MEASURED          INFERRED      MEASURED     NOT MEASURED
+   LDL -78 mg/dL     base editing   LVEF +3.9 pp   (uncontrolled)
+```
+
+Simulating the links on **either side** of a missing link more precisely does not supply
+the missing link; it supplies a more precise version of the assumption that it exists.
+STICH found LVEF change unrelated to death, and surrogate R2 = 0.59 leaves **41% of
+outcome variance outside the model by construction**.
+
+### Neither patch trial could detect its own result
+
+At the registered SD of 5 pp:
+
+| study | n | observed | minimum detectable |
+|---|---|---|---|
+| BioVAT-HF | 20 | +3.9 pp | **4.43 pp** |
+| AATS LB8 | 8 | +4.3 pp | **7.00 pp** |
+| REVIVED OMT arm | 700 | +3.4 pp | 0.75 pp |
+
+Both uncontrolled trials reported effects **smaller than the smallest difference they could
+have found**. Resolving 3.9 pp needs **26 per arm**; 3.4 pp needs **34**; 1.0 pp needs 393.
+
+### Three more arithmetic gaps, now quantified
+
+- **Selection is not effect.** In a correctly controlled comparison the effect returns to
+  the population average; the single-arm readout inflates it **7.6x**. Population gain 0%.
+- **Composite adverse-event risk** across three stacked exposures at 5.5% each is **15.6%**
+  (`1 - (1-r)^n`), not the 5.5% quoted.
+- **The winner of a 400-candidate grid is biased upward by ~4.6 pp** at measurement SD 2 pp
+  and true spread 8 pp - larger than the effect being sought.
+
+### An open defect in this study's own table
+
+`revival.TRANSMURALITY_RECOVERY` is monotone, so a casual check passes. The defect is the
+step size: recovery moves **0.44 -> 0.43** across the mid-wall boundary, where viability is
+largely lost, while scoring 0.91 at zero scar. A 1%-scarred segment and a 75%-scarred one
+are assigned almost identical recovery. **Not fixed here** - repair needs the segment counts
+behind the pooled estimate, and inventing a corrected curve is the practice this repository
+forbids. The direction is stated; the values are not.
+
+### The only item that would move the evidence ladder
+
+**External validation**, which needs no GPU, no imaging and no patients - only a published
+dataset not used to fit any registered constant. It is `NOT DONE`. Splitting data already
+used to fit the constants would be internal validation wearing the wrong label.
+
+---
+
 # PART G — THE HONESTY LEDGER
 
 Every retraction and correction made during this study, in order. This section
@@ -1470,9 +1539,12 @@ exists because a report that only shows final numbers hides how they were reache
 | 28 | ATLAS-5 is the best composition | Selected on an uncontrolled baseline | Re-search under correction selects the **frugal** design; **no composition robust** |
 | 29 | The corrected gain still clears the surrogate threshold | The model claims 3.0x the largest human LVEF gain ever measured | Comparison **unusable**, labelled not passed |
 | 30 | Stratifying to no-scar patients improves the result | Raises the conditional rate to 91% and excludes everyone else | **Zero** population-level gain, enforced by test |
-| 31 | "Too many invented parameters" — everything is undocumented | The package's constants are mostly cited human values; the fault is narrower | **27 of 73 registered as hypothetical**, typed and enforced |
+| 31 | "Too many invented parameters" — everything is undocumented | The package's constants are mostly cited human values; the fault is narrower | **32 of 92 registered as hypothetical**, typed and enforced |
 | 32 | The cytokine rates could be calibrated with Bayesian inference | 0 of 14 are jointly identifiable; the cascade is linear in its rates | **All 14 held fixed** as declared assumptions; no posterior reported |
 | 33 | The legacy scripts are the study | Five root-level scripts; the analysis is 34 modules elsewhere | Legacy labelled NON-USABLE for scores, candidate list for CRISPR |
+| 34 | "Do more computation and the efficacy question gets closer" | Simulating around a missing causal link does not supply it | **41% of outcome variance** outside the model; drop to 0.00% proof |
+| 35 | The patch trials showed a benefit | Both observed effects below their own minimum detectable difference | **n=8 cannot resolve 4.3 pp; n=20 cannot resolve 3.9 pp** |
+| 36 | Selecting responsive patients helps patients | Re-orders patients; moves none of them | **0% population gain**; single-arm readout inflated 7.6x |
 
 **Implementation bugs found and fixed:** run-in pinned responders to the threshold
 instead of keeping their achieved value; gate threshold computed at 24 months but
@@ -1527,6 +1599,7 @@ python run_solutions.py gap-solutions   # designs for the 6 gaps    -> results/g
 python run_solutions.py recombine       # ATLAS-5 mechanism composition -> results/recombine/
 python run_solutions.py revival         # control-arm correction        -> results/revival/
 python run_solutions.py scientific-audit # provenance/identifiability    -> results/scientific_audit/
+python run_solutions.py unanswered       # what cannot be answered       -> results/unanswered/
 python run_solutions.py validate        # registries only
 ```
 
@@ -1578,7 +1651,7 @@ the measured load-bearing parts of the first two, which is stronger and simpler 
 either and refuses 14.08 pp of double-counted benefit - then charged for the control
 arm it never had, and withdrawn when the charge was found to dissolve it; and a documented
 record of
-thirty-three claims that were tested and withdrawn. **The retractions are part of the
+thirty-six claims that were tested and withdrawn. **The retractions are part of the
 result.**
 
 ---

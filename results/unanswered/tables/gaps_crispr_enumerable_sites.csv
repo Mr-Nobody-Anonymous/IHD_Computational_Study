@@ -1,0 +1,7 @@
+max_mismatches,p_site,expected_genome_wide_sites,legacy_screen_coverage_fraction,what_it_would_take
+0,9.094947017729282e-13,0.005638867150992155,1241.384095876129,nothing at this mismatch depth; no site is expected
+1,5.547917680814862e-11,0.34397089621052146,20.350558948789,nothing at this mismatch depth; no site is expected
+2,1.610715116839856e-09,9.986433724407107,0.7009509293484636,"a reference genome, an editing-window model and BE-Hive-style calibration data"
+3,2.9604962037410587e-08,183.55076463194564,0.03813658861098366,"a reference genome, an editing-window model and BE-Hive-style calibration data"
+4,3.865316102746874e-07,2396.495983703062,0.0029209312461202673,"a reference genome, an editing-window model and BE-Hive-style calibration data"
+5,3.813027433352545e-06,23640.77008678578,0.0002960986454461022,"a reference genome, an editing-window model and BE-Hive-style calibration data"

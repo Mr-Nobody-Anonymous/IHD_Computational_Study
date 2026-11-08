@@ -288,7 +288,7 @@ python run_solutions.py revival        # -> results/revival/ (9 artefacts)
 
 [`docs/scientific_audit.md`](docs/scientific_audit.md) answers an external critique of the
 whole study. Most of it was right, and is now **measured**: every numeric constant carries
-an enforced provenance record (a missing one fails the build), and **27 of 73 are
+an enforced provenance record (a missing one fails the build), and **32 of 92 are
 hypothetical**. The legacy 14-rate cytokine network turns out to be **exactly
 non-identifiable** - the cascade is linear in its rates, so doubling one production rate
 and doubling another produce the same trajectory to machine precision. **0 of 14 rates are
@@ -302,6 +302,22 @@ interventional.**
 
 ```bash
 python run_solutions.py scientific-audit # -> results/scientific_audit/ (8 artefacts)
+```
+
+[`docs/unanswered_questions.md`](docs/unanswered_questions.md) asks the harder follow-up:
+**what can this study not answer at all, and what does each gap cost?** Thirteen gaps are
+registered and classified as *in principle* (only a randomised human comparison can settle
+it), *in practice* (needs a GPU or a dataset this environment lacks), *analytic* (closable
+here with arithmetic and not yet done), or *epistemic* (a number cannot settle it). Six are
+arithmetic that had not been done: **neither uncontrolled patch trial could have detected
+its own reported effect** - n=8 cannot resolve 4.3 pp and n=20 cannot resolve 3.9 pp - and
+the composite adverse-event risk across three stacked exposures is **15.6%**, not the 5.5%
+quoted. One item is an open defect in this study's **own** viability table, reported rather
+than tuned away. The only remaining upgrade that needs no GPU and no patients is an
+external validation set, and it is **not done**.
+
+```bash
+python run_solutions.py unanswered      # -> results/unanswered/ (6 artefacts)
 ```
 
 - **Hazard ratio — solved as procurement.** All 19 populations close by exploratory credit.
@@ -394,6 +410,7 @@ IHD_Computational_Study/
 │   ├── mechanism_recombination.md                # ATLAS-5: mechanism ablation, overlaps, all 64 compositions
 │   ├── revival_correction.md                     # what ATLAS-5 was missing: the control arm, and what it costs
 │   ├── scientific_audit.md                       # provenance, identifiability, verification vs validation
+│   ├── unanswered_questions.md                   # what cannot be answered, and what each gap costs
 │   ├── FULL_REPORT.md                            # consolidated report: all agents, compounds, experiments, results
 │   ├── FULL_REPORT_chemical_index.csv            # 95 entities, source-tagged, QA-flagged
 │   ├── scientific_methodology_and_limitations.md # Critical reality check & assumptions

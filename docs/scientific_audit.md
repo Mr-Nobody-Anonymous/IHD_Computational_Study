@@ -19,7 +19,7 @@ Most of it. Specifically, and these are now measured rather than argued:
 
 | Critique | Verified? | Evidence |
 |---|---|---|
-| Parameters are manually invented and drive the outcome | **YES** | **27 of 73** are hypothetical. The plaque model assigns MMP activity 1.0 / 0.70 / 0.45 / 0.15 to four regimens with no source at all |
+| Parameters are manually invented and drive the outcome | **YES** | **32 of 92** are hypothetical (27 of 73 before the unanswered-question audit added its own). The plaque model assigns MMP activity 1.0 / 0.70 / 0.45 / 0.15 to four regimens with no source at all |
 | The inflammatory rates are uncalibrated assumptions | **YES, and worse** | 0 of 14 rates are jointly identifiable. See §3 |
 | The CRISPR screen cannot establish genome-wide safety | **YES** | It is 7 hand-written candidate loci, not a genome-wide search |
 | ATLAS assumes additive combination | **YES** | Full query in `index 6`; `revival.py` already withdrew ATLAS-5 for a different, larger reason |
@@ -68,13 +68,13 @@ INTERVENTIONAL with more compute**, and the plan does not say what would.
 A missing record raises, and `test_every_numeric_constant_is_registered` fails the build.
 This is the difference between documentation and a constraint.
 
-**Result: 73 of 73 registered, 0 unregistered, 0 values disagreeing with the code.**
+**Result: 92 of 92 registered, 0 unregistered, 0 values disagreeing with the code.**
 
 | class | count |
 |---|---|
-| measured | 35 |
-| estimated | 11 |
-| **hypothetical** | **27** |
+| measured | 41 |
+| estimated | 19 |
+| **hypothetical** | **32** |
 
 Two guards are enforced structurally:
 
@@ -84,7 +84,7 @@ Two guards are enforced structurally:
 And one that matters for the whole study: **a parameter can be measured and still not
 support the claim being made.** `BIOVAT_LVEF_GAIN_3MO_PP` is `measured`, population
 `human`, but supports `mechanism`, not `efficacy` — because it comes from a single-arm
-study with no control. `earns_efficacy_credit` is `False` for it. Only **12** of 73
+study with no control. `earns_efficacy_credit` is `False` for it. Only **12** of 92
 parameters earn efficacy credit.
 
 `credit_ceiling()` takes the **minimum** across an input chain, not an average, so one

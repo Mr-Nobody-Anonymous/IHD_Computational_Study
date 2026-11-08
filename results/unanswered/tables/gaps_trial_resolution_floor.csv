@@ -1,0 +1,8 @@
+study,n_per_arm,observed_effect_pp,min_detectable_difference_pp,effect_below_own_floor,sd_assumed_pp,note,target_effect_pp,n_per_arm_required,total_patients_two_arms
+BioVAT-HF (phase 1-2),20.0,3.9,4.429694829281415,True,5.0,"NEJM 2026; single arm, no control",,,
+AATS LB8 (patch),8.0,4.3,7.0039625,True,5.0,"n=8; LVEF 28.7->33.0, p=0.156",,,
+REVIVED-BCIS2 OMT arm,700.0,3.4,0.7487550864232195,False,5.0,large; gain not attributable to the graft,,,
+,,,,,,,3.9,26.0,52.0
+,,,,,,,3.4,34.0,68.0
+,,,,,,,2.0,99.0,198.0
+,,,,,,,1.0,393.0,786.0

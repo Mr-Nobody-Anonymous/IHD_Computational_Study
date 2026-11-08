@@ -8,16 +8,16 @@ No cure is declared, no efficacy claim is made, and no therapy is proposed.
 
 1. PARAMETER PROVENANCE
 ------------------------------------------------------------------------------
-  constants in the package        73
-  registered                      73
+  constants in the package        92
+  registered                      92
   UNREGISTERED                    0   (a test fails the build on this)
   values disagreeing with code    0
   by class:
-    estimated       11
-    hypothetical    27
-    measured        35
+    estimated       19
+    hypothetical    32
+    measured        41
 
-  27 of 73 parameters are HYPOTHETICAL. That is the
+  32 of 92 parameters are HYPOTHETICAL. That is the
   critique's first problem, measured rather than argued. They are now typed as
   such, so downstream code can branch on the distinction instead of trusting a
   decimal point.

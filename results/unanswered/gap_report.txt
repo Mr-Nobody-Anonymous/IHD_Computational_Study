@@ -1,0 +1,136 @@
+==============================================================================
+WHAT THIS STUDY CANNOT ANSWER
+==============================================================================
+
+WHAT THIS MODULE IS
+  An accounting of what the study cannot answer, with the cost of each gap quantified
+  where a cost can be quantified and declared not estimable where it cannot.
+
+WHAT IT IS NOT
+  A simulation, a model change, or a claim. No result in this repository is improved by
+  it. Every gap listed remains open after it runs.
+
+THE ONE SENTENCE
+  The lab is not the only thing missing. Four of the gaps below are pure arithmetic that
+  nobody had done yet, and one is a defect in this study's own viability table.
+
+  gaps registered            13
+  with a quantified cost     7
+  no computation can close   7
+
+------------------------------------------------------------------------------
+IN PRINCIPLE  (1)
+------------------------------------------------------------------------------
+  No computation can settle it. Only a randomised human comparison can, and it costs money and patients rather than compute.
+
+  [randomised_outcome_data] Does the architecture reduce death or heart-failure hospitalisation compared with guideline therapy?
+      state : no randomised outcome data exists for this architecture
+      cost  : the entire efficacy claim rests on an unmeasured link; STICH found LVEF change unrelated to death, so the surrogate cannot stand in
+      closes: a randomised trial with a mortality or HF-hospitalisation endpoint
+
+------------------------------------------------------------------------------
+IN PRACTICE  (3)
+------------------------------------------------------------------------------
+  Computable, but needs a resource this environment does not have: a GPU, a reference genome, a meshed geometry, or an imaging cohort.
+
+  [genome_wide_offtarget] Is base editing at this locus safe across the whole genome?
+      state : needs a reference genome, an editing-window model and calibration data
+      cost  : the screen covers 3.81% of the sites reachable at three mismatches; the two hand-written lists agree on 4 of 10  (0.03814 fraction of enumerable sites screened)
+      closes: a genome-wide editor-specific activity model benchmarked on BE data
+
+  [molecular_dynamics] Is the PCSK9-LDLR interface stable, and what does binding cost?
+      state : no GPU, no force field, no trajectories, no replica sampling
+      cost  : static SASA and contacts only; no binding free energy, no conformational stability, no force-field sensitivity
+      closes: multi-replica GPU MD with free-energy estimation and convergence
+
+  [three_d_plaque] Does the plaque prediction hold across real geometry and flow?
+      state : no CFD solver and no meshed coronary geometry
+      cost  : wall shear stress, deformation and stress distribution are unmodelled; the 0D hoop-stress model cannot speak to them
+      closes: 3D CFD/FSI on imaging-derived geometry with mesh convergence
+
+------------------------------------------------------------------------------
+ANALYTIC  (6)
+------------------------------------------------------------------------------
+  Closable here, with arithmetic, and NOT YET DONE. These are omissions, not excuses, and they are the first thing that should be built.
+
+  [trial_resolution] Could the existing trials have detected the effect they reported?
+      state : arithmetic; not yet reported. Both patch trials observed effects smaller than their own minimum detectable difference
+      cost  : n=8 cannot resolve 4.3 pp; n=20 cannot resolve 3.9 pp. 26-34 patients per arm would be needed  (7.004 pp minimum detectable difference at n=8)
+      closes: reporting the MDE next to every effect, which costs nothing
+
+  [selection_is_not_effect] Does choosing responsive patients improve the result for anyone?
+      state : simulated above: selection re-orders patients and returns the population average in a correctly controlled comparison
+      cost  : the single-arm readout is inflated by roughly an order of magnitude relative to the effect a controlled trial would measure  (7.505 x inflation of the single-arm readout)
+      closes: comparing selected-treated against selected-untreated
+
+  [composite_adverse_events] What is a patient's total risk across all exposures in the architecture?
+      state : each exposure is charged separately and never summed
+      cost  : three independent exposures at 5.5% each give a 15.6% composite; the figure quoted is 5.5%  (0.1561 composite probability of any adverse event)
+      closes: 1 - (1 - r)^n, plus the correlation structure that would lower it
+
+  [winner_curse] Is the best of 400 scored designs really the best?
+      state : selection bias in a large grid; mitigated by the held-out split but never quantified
+      cost  : a 400-candidate grid inflates its winner by several pp, which is larger than the effect being sought  (5.505 pp of upward bias on the reported winner)
+      closes: re-scoring the winner out of sample, which is already done
+
+  [external_validation] Does the model predict data it was not built from?
+      state : no held-out dataset is present, and splitting data already used to fit the constants would be internal validation mislabelled
+      cost  : the repository cannot leave the convergence rung
+      closes: a published dataset not used for any registered constant
+
+  [transmurality_table_internal_contradiction] Is the viability table monotone in scar burden, as physiology requires?
+      state : OPEN DEFECT: recovery moves 0.44 -> 0.43 across the mid-wall boundary while scoring 0.91 at zero scar, so 75% scar looks recoverable
+      cost  : flatters the intervention wherever the selected population is described as having recoverable substrate  (0.01 recovery change across the mid-wall boundary)
+      closes: the segment counts behind the pooled estimate, or the source table
+
+------------------------------------------------------------------------------
+EPISTEMIC  (3)
+------------------------------------------------------------------------------
+  A number cannot settle it. These are judgements about what the numbers mean, and they are dangerous precisely because they look like findings.
+
+  [what_the_numbers_mean] What does a converged LVEF prediction imply for a living patient?
+      state : no amount of computation converts a surrogate into an outcome
+      cost  : surrogate R2 of 0.59 against mortality means 41% of outcome variance is outside the model by construction  (0.41 fraction of outcome variance not explained)
+      closes: nothing computable; only outcome data can
+      and   : the mapping from an imaging surrogate to survival is an empirical fact about patients, not a property of the model
+
+  [prior_over_success] Should the programme continue at all?
+      state : requires a prior over counterfactual programme outcomes, which no registry contains
+      cost  : the recommendation flips inside a plausible prior range, so it is prior-dominated and must be reported as a range with conditions
+      closes: nothing; the honest output is the sensitivity range
+      and   : a prior over 'would this have worked if it were true' is a judgement, and there is no data that could supply it
+
+  [honest_denominator] How many patients have actually received this architecture?
+      state : no denominator exists; the trials are uncontrolled and unpooled
+      cost  : 28 patients implanted across two trials, 20 of 20 reporting an event in one and 0 of 8 in the other - which is a denominator problem, not a safety signal
+      closes: a registry with a defined denominator and adjudicated events
+      and   : single-arm trials do not produce comparable denominators, so a pooled rate would be a statistic about the trials, not about the therapy
+
+==============================================================================
+AN OPEN DEFECT IN THIS STUDY
+==============================================================================
+  revival.TRANSMURALITY_RECOVERY
+  recovery at no scar        0.91
+  recovery at 1-50% scar     0.44
+  recovery at 51-75% scar    0.43
+  step across mid-wall       0.010
+  step that would be needed  > 0.091
+  contradiction detected     True
+  repair required            LOWER the 51-75% band, which crosses the mid-wall boundary and cannot share a value with the sub-50% band
+  blocked by                 the source is a pooled segment-level estimate; assigning corrected band values without the underlying segment counts would be invention
+
+==============================================================================
+THE MOST USEFUL ARITHMETIC IN THIS FILE
+==============================================================================
+  BioVAT-HF (phase 1-2)      n=20   observed  3.9 pp  MDE 4.43 pp  <-- BELOW ITS OWN FLOOR
+  AATS LB8 (patch)           n=8    observed  4.3 pp  MDE 7.00 pp  <-- BELOW ITS OWN FLOOR
+  REVIVED-BCIS2 OMT arm      n=700  observed  3.4 pp  MDE 0.75 pp
+
+  patients per arm needed to resolve a given effect:
+     3.9 pp ->   26 per arm  (52 in total)
+     3.4 pp ->   34 per arm  (68 in total)
+     2.0 pp ->   99 per arm  (198 in total)
+     1.0 pp ->  393 per arm  (786 in total)
+
+  None of those trials could have resolved the effect it reported. That is
+  arithmetic available without a laboratory, and it took until now to state.
