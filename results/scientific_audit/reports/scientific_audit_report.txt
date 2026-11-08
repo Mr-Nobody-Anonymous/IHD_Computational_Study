@@ -1,0 +1,99 @@
+SCIENTIFIC AUDIT - FOUR CHECKS THE CRITIQUE ASKED FOR
+==============================================================================
+
+THIS AUDIT CHANGES NO MODEL AND ESTABLISHES NO BIOLOGY.
+Several of its answers are negative and are reported as such.
+No cure is declared, no efficacy claim is made, and no therapy is proposed.
+
+
+1. PARAMETER PROVENANCE
+------------------------------------------------------------------------------
+  constants in the package        73
+  registered                      73
+  UNREGISTERED                    0   (a test fails the build on this)
+  values disagreeing with code    0
+  by class:
+    estimated       11
+    hypothetical    27
+    measured        35
+
+  27 of 73 parameters are HYPOTHETICAL. That is the
+  critique's first problem, measured rather than argued. They are now typed as
+  such, so downstream code can branch on the distinction instead of trusting a
+  decimal point.
+
+2. CALIBRATION FEASIBILITY (legacy cytokine network, 14 rates)
+------------------------------------------------------------------------------
+  independent observables          2
+  identifiable upper bound         2
+  rates recovered one-at-a-time    12 of 14
+  collinear pairs |r| >= 0.95      7 of 91
+  rates JOINTLY identified         0
+  rates inert to the observable    ['k_mmp_prod', 'k_mmp_deg']
+
+  One-at-a-time recovery passes 12 of 14; the joint test rejects all 14. The
+  difference is the whole point: scanning a rate alone measures how much the
+  OUTPUT moves, not what the DATA identify. Every production rate has elasticity
+  exactly +1.0000 and every degradation rate -1.0000, so the model determines a
+  SCALING, not a set of rates.
+
+  The degeneracy is exact, not statistical. The cascade is linear in its rates, so
+  doubling k_crp_prod changes terminal CRP by exactly +100%, and doubling
+  k_il6_prod produces the SAME trajectory to machine precision. Six production
+  rates share one degree of freedom between them, and no measurement of CRP can
+  separate them.
+
+  Consequence: a Bayesian posterior for these rates would be a prior with a
+  decimal point. None is reported. The rates are held FIXED and declared
+  assumptions, which is what they always were.
+
+3. IDENTIFIABILITY - PROFILE CHECK
+------------------------------------------------------------------------------
+  parameter         objective span  verdict
+  k_crp_prod                3.2835  unidentified - the optimum is at the edge of the swept range
+  k_il6_prod                3.2835  unidentified - the optimum is at the edge of the swept range
+  k_nfkb_act                3.2832  unidentified - the optimum is at the edge of the swept range
+
+4. VERIFICATION VERSUS VALIDATION
+------------------------------------------------------------------------------
+  highest rung this repo occupies  CONVERGENCE
+  4 of 6 listed modules have NO external validation (inflammation.py, plaque.py, recombine.py, revival.py). The highest rung this repository can occupy is convergence, which licenses arithmetic stability and nothing about biology.
+
+  A passing test suite says the code does what it was written to do. It says
+  nothing about whether the biology is right. Four of six listed modules have no
+  external validation at all, and no module reaches the interventional rung.
+
+5. WHAT THIS AUDIT DID NOT DO
+------------------------------------------------------------------------------
+  GPU molecular dynamics of the PCSK9-LDLR complex
+    why not:  requires a GPU node and OpenMM/GROMACS plus multi-microsecond sampling; no GPU is available in this environment, and a short run would not support the convergence or replica requirements the critique itself sets
+    instead:  the static contact analysis remains, flagged as static; it cannot report binding free energy, conformational stability or force-field sensitivity
+
+  3D CFD and fluid-structure interaction of coronary plaque
+    why not:  needs OpenFOAM or SimVascular plus a meshed coronary geometry; neither the solver nor an imaging-derived geometry is available here
+    instead:  the 0D hoop-stress model, with its assumed 300 kPa rupture threshold now registered as HYPOTHETICAL rather than presented as a criterion
+
+  genome-wide base-editor off-target assessment
+    why not:  needs a reference genome, an editor-specific activity model and BE-Hive-style calibration data; the repo contains seven hand-written candidate loci
+    instead:  the seven-locus screen is retained and relabelled: it is a candidate list, NOT a genome-wide safety assessment
+
+  Bayesian posterior distributions for the cytokine rates
+    why not:  the audit shows 0 of 14 rates are jointly identifiable, so a posterior would report a prior with a decimal point
+    instead:  feasibility analysis, collinearity measurement and an explicit list of rates held fixed as assumptions
+
+  virtual patient cohort with adherence and competing risks
+    why not:  partially present in risk.py and population.py, but the cohort is not calibrated to an external registry
+    instead:  trial-level normalisation, which is stated as trial-level
+
+6. THE ONE THING THAT CANNOT BE FIXED COMPUTATIONALLY
+------------------------------------------------------------------------------
+  Every check above is reproducible and cheap. None of them moves a single result
+  from the CONVERGENCE rung to the INTERVENTIONAL one, because that step needs a
+  randomised human comparison and no simulation supplies it.
+
+  The critique is right that the repository has more treatment architectures than
+  validated underlying models. This audit makes that visible, which is the most
+  a computational study can do about it.
+
+KEY
+==============================================================================

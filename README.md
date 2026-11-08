@@ -286,6 +286,24 @@ to add: what was missing was evidence, and evidence cannot be composed.**
 python run_solutions.py revival        # -> results/revival/ (9 artefacts)
 ```
 
+[`docs/scientific_audit.md`](docs/scientific_audit.md) answers an external critique of the
+whole study. Most of it was right, and is now **measured**: every numeric constant carries
+an enforced provenance record (a missing one fails the build), and **27 of 73 are
+hypothetical**. The legacy 14-rate cytokine network turns out to be **exactly
+non-identifiable** - the cascade is linear in its rates, so doubling one production rate
+and doubling another produce the same trajectory to machine precision. **0 of 14 rates are
+jointly identifiable**, so no Bayesian posterior is reported; they are declared fixed
+assumptions. Verification is separated from validation on a five-rung ladder, and the
+highest rung this repository reaches is **convergence** - four of six modules have no
+external validation at all. What the critique asked for and is **not** delivered (GPU
+molecular dynamics, 3D CFD/FSI, genome-wide off-target model) is listed in
+`audit_not_done.csv` with the reason. **No GPU moves a result from convergence to
+interventional.**
+
+```bash
+python run_solutions.py scientific-audit # -> results/scientific_audit/ (8 artefacts)
+```
+
 - **Hazard ratio — solved as procurement.** All 19 populations close by exploratory credit.
   One PCSK9-editing outcomes trial unlocks **17 of 19**. No new biology needed.
 - **Clearance — solved as an engineering spec.** Correction: no *single* module suffices
@@ -375,6 +393,7 @@ IHD_Computational_Study/
 │   ├── gap_solutions.md                          # designs + power calculations for the six open gaps
 │   ├── mechanism_recombination.md                # ATLAS-5: mechanism ablation, overlaps, all 64 compositions
 │   ├── revival_correction.md                     # what ATLAS-5 was missing: the control arm, and what it costs
+│   ├── scientific_audit.md                       # provenance, identifiability, verification vs validation
 │   ├── FULL_REPORT.md                            # consolidated report: all agents, compounds, experiments, results
 │   ├── FULL_REPORT_chemical_index.csv            # 95 entities, source-tagged, QA-flagged
 │   ├── scientific_methodology_and_limitations.md # Critical reality check & assumptions

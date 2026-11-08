@@ -1,5 +1,20 @@
 """
 ================================================================================
+NON-USABLE - LEGACY DEMONSTRATION SCRIPT. KEPT FOR REPRODUCIBILITY ONLY.
+================================================================================
+This script is OUTSIDE the tested package (`src/ihd_solutions/`) and outside the
+test suite. It has no validation, no provenance records and no uncertainty
+propagation. Its numbers must NOT be quoted as findings and must NOT be fed into
+the validated pipeline.
+
+See `docs/scientific_audit.md` for what each script can and cannot support.
+================================================================================
+
+What it can support: relative SASA burial and interface contact identity.
+What it CANNOT support: a binding free energy. Three PDB structures are averaged
+against one literature source and the difference is reported as dG; that is not
+an energy calculation and no force field was used.
+================================================================================
 SCRIPT 1: Multi-Structure Interface Variability & Experimental SPR Benchmark
 ================================================================================
 Objectives:
@@ -17,6 +32,20 @@ Objectives:
    - results/tables/experimental_vs_computational_correlation.csv
 ================================================================================
 """
+
+# ------------------------------------------------------------------------------
+# This script is legacy. Shout if someone runs it, so its output is never mistaken
+# for a validated result. `python -W ignore src/0N_*.py` silences it deliberately.
+# ------------------------------------------------------------------------------
+import warnings as _warnings
+
+_warnings.warn(
+    "NON-USABLE LEGACY SCRIPT: untested, unvalidated, no provenance. "
+    "Numbers are NOT findings. See docs/scientific_audit.md.",
+    UserWarning,
+    stacklevel=2,
+)
+
 
 import os, sys, math
 if hasattr(sys.stdout, 'reconfigure'):

@@ -159,6 +159,12 @@ def build_parser() -> argparse.ArgumentParser:
     revival.add_argument("--output-dir", type=Path, default=Path("results/revival"))
     revival.add_argument("--draws", type=int, default=2500)
 
+    audit_sci = subparsers.add_parser(
+        "scientific-audit",
+        help="provenance, calibration feasibility, identifiability, verification vs validation",
+    )
+    audit_sci.add_argument("--output-dir", type=Path, default=Path("results/scientific_audit"))
+
     subparsers.add_parser("validate", help="validate all input registries and exit")
     return parser
 
@@ -174,6 +180,15 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _dispatch(args: argparse.Namespace) -> int:
+    if args.command == "scientific-audit":
+        from ihd_solutions.scientific_audit import run_scientific_audit
+
+        summary = run_scientific_audit(args.output_dir)
+        for key, value in summary.items():
+            print(f"{key}: {value}")
+        print((args.output_dir / "reports" / "scientific_audit_report.txt").read_text())
+        return 0
+
     if args.command == "revival":
         from ihd_solutions.revival import run_revival_study
 

@@ -1,0 +1,7 @@
+module,verified,validated,blocker,max_reportable_rung,can_claim_efficacy,status
+editing.py,"unit tests, floors, monotonicity",PARTIAL - HEART-2 reductions are measured human values,no genome-wide off-target model; 7 candidate loci only,convergence,no,scientific_audit_no_model_change
+inflammation.py,"unit tests, conservation, positivity","NO - reaction rates are asserted, not fitted",no calibration step exists; see the inflammation work order,convergence,no,scientific_audit_no_model_change
+plaque.py,"unit tests, monotonicity, saturation bounds","NO - calibrated to a regression grid, not to longitudinal imaging",no longitudinal plaque imaging dataset is ingested,convergence,no,scientific_audit_no_model_change
+recombine.py,"86 tests, 100% coverage, budget-stable specification",NO - every mechanism is invented or borrowed from animal work,no randomised human test of the composition exists,convergence,no,scientific_audit_no_model_change
+regression.py,"unit tests, grid bounds",PARTIAL - calibrated on trial-level rates,calibration and evaluation share the same grid,convergence,no,scientific_audit_no_model_change
+revival.py,"42 tests, 100% coverage, monotone correction, zero rung exact",NO - correction rests on one external trial arm,"the control arm is borrowed, not randomised alongside the graft",convergence,no,scientific_audit_no_model_change

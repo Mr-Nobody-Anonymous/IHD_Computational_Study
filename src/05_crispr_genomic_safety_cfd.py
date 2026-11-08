@@ -1,5 +1,19 @@
 """
 ================================================================================
+NON-USABLE - LEGACY DEMONSTRATION SCRIPT. KEPT FOR REPRODUCIBILITY ONLY.
+================================================================================
+This script is OUTSIDE the tested package (`src/ihd_solutions/`) and outside the
+test suite. It has no validation, no provenance records and no uncertainty
+propagation. Its numbers must NOT be quoted as findings and must NOT be fed into
+the validated pipeline.
+
+See `docs/scientific_audit.md` for what each script can and cannot support.
+================================================================================
+
+What it can support: a CANDIDATE-LIST screen of seven hand-written loci.
+What it CANNOT support: a genome-wide off-target safety assessment. Seven loci
+is not a genome. The CFD section is a 0D/1D approximation, not a 3D solver.
+================================================================================
 SCRIPT 5: CRISPR Base-Editing Genomic Specificity & CFD Scoring
 ================================================================================
 Evaluates off-target mismatch tolerance for the VERVE-102 ABE8e guide RNA
@@ -13,6 +27,20 @@ Outputs:
 - results/reports/verve102_genomic_safety_report.txt
 ================================================================================
 """
+
+# ------------------------------------------------------------------------------
+# This script is legacy. Shout if someone runs it, so its output is never mistaken
+# for a validated result. `python -W ignore src/0N_*.py` silences it deliberately.
+# ------------------------------------------------------------------------------
+import warnings as _warnings
+
+_warnings.warn(
+    "NON-USABLE LEGACY SCRIPT: untested, unvalidated, no provenance. "
+    "Numbers are NOT findings. See docs/scientific_audit.md.",
+    UserWarning,
+    stacklevel=2,
+)
+
 
 import os, sys, json
 if hasattr(sys.stdout, 'reconfigure'):

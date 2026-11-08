@@ -1,0 +1,74 @@
+module,name,value_in_code,value_in_registry,kind,supports,population,earns_efficacy_credit,unit,source,registered,values_agree,status
+atlas.py,ATLAS_POTENCY,1.284,1.284,measured,ceiling,human,False,fold above central,precedented potency cap from the catalogued agents' central estimates,True,True,scientific_audit_no_model_change
+atlas.py,ATLAS_CLEARANCE_MONTHS,24.0,24.0,hypothetical,design,none,False,months,clearing horizon used throughout the ATLAS series,True,True,scientific_audit_no_model_change
+atlas.py,ATLAS_GRAFT_DELAY_MONTHS,24.0,24.0,hypothetical,design,none,False,months,delay before the graft arm begins,True,True,scientific_audit_no_model_change
+atlas3.py,MIN_SPECIFICATION_DRAWS,4000.0,4000.0,hypothetical,design,none,False,draws,floor on the sampling budget so a specification cannot move with it,True,True,scientific_audit_no_model_change
+atlas3.py,DEFAULT_PER_ATTEMPT_RISK,0.05,0.05,hypothetical,design,none,False,probability per procedure,assumed procedural risk per graft attempt,True,True,scientific_audit_no_model_change
+atlas3.py,FEEDBACK_MAX_UPLIFT,0.5,0.5,hypothetical,mechanism,none,False,fraction,bounded aggregate feedback uplift,True,True,scientific_audit_no_model_change
+atlas4.py,NON_VIABILITY_SIGNAL_QUALITY,0.0,0.0,hypothetical,mechanism,none,False,quality,signal quality when no viability reporter is present,True,True,scientific_audit_no_model_change
+calibration.py,DAYS,180.0,180.0,hypothetical,design,none,False,days,legacy cytokine network simulation horizon (src/04),True,True,scientific_audit_no_model_change
+calibration.py,DT,0.25,0.25,hypothetical,design,none,False,days,legacy cytokine network time step (src/04),True,True,scientific_audit_no_model_change
+cure.py,CRITERION_THRESHOLD,0.8,0.8,hypothetical,design,none,False,fraction,this study's bar for 'criterion met',True,True,scientific_audit_no_model_change
+cure.py,MAX_SINGLE_AGENT_RISK_NORMALISATION,0.4,0.4,estimated,ceiling,human,False,fraction of RRR,no single agent returns event risk to a low-risk reference,True,True,scientific_audit_no_model_change
+cure.py,MIN_SCENARIO_RR,0.1,0.1,hypothetical,ceiling,none,False,rate ratio,floor so a scenario cannot claim implausible risk reduction,True,True,scientific_audit_no_model_change
+discovery.py,NORMALISATION_LVEF_GAIN_PP,25.0,25.0,hypothetical,ceiling,human,False,LVEF percentage points,"same ceiling as SCAR_RECOVERABLE_LVEF_PP, used for normalisation",True,True,scientific_audit_no_model_change
+editing.py,HEART2_PCSK9_KNOCKDOWN,0.88,0.88,measured,efficacy,human,True,fraction,"VERVE-102 Heart-2, NEJM 2026: -88% PCSK9 at 1.0 mg/kg",True,True,scientific_audit_no_model_change
+editing.py,HEART2_LDL_REDUCTION,0.62,0.62,measured,efficacy,human,True,fraction,VERVE-102 Heart-2: -62% LDL-C,True,True,scientific_audit_no_model_change
+editing.py,MAX_LDL_REDUCTION,0.75,0.75,hypothetical,ceiling,none,False,fraction,internal cap on any modelled LDL reduction,True,True,scientific_audit_no_model_change
+evidence_audit.py,REFERENCE_RISK,0.0198,0.0198,estimated,design,human,False,annual probability,low-risk reference event rate used to normalise risk,True,True,scientific_audit_no_model_change
+evidence_audit.py,ROBUSTNESS_BAR,0.8,0.8,hypothetical,design,none,False,fraction,"same bar, restated for the evidence audit",True,True,scientific_audit_no_model_change
+gap_solutions.py,BIOVAT_MAX_EHM_UNITS,20.0,20.0,measured,design,human,False,EHM units,BioVAT-HF maximum tested dose,True,True,scientific_audit_no_model_change
+gap_solutions.py,BIOVAT_CARDIOMYOCYTES_PER_UNIT,40000000.0,40000000.0,estimated,design,human,False,cells per EHM unit,BioVAT-HF: ~34M iPSC-CM + 6M stromal per patch,True,True,scientific_audit_no_model_change
+gap_solutions.py,BIOVAT_LVEF_GAIN_3MO_PP,3.9,3.9,measured,mechanism,human,False,LVEF percentage points,"BioVAT-HF, NEJM 2026, doi:10.1056/NEJMoa2513525",True,True,scientific_audit_no_model_change
+gap_solutions.py,BIOVAT_LVEF_GAIN_17MO_PP,6.9,6.9,measured,mechanism,human,False,LVEF percentage points,"BioVAT-HF, NEJM 2026, mean 17-month follow-up",True,True,scientific_audit_no_model_change
+gap_solutions.py,BIOVAT_WALL_GAIN_3MO_MM,4.5,4.5,measured,mechanism,human,False,mm,"BioVAT-HF, NEJM 2026, least-squares mean target wall thickness",True,True,scientific_audit_no_model_change
+gap_solutions.py,BIOVAT_WALL_GAIN_12MO_MM,2.9,2.9,measured,mechanism,human,False,mm,"BioVAT-HF, NEJM 2026, mean 17-month target wall thickness",True,True,scientific_audit_no_model_change
+gap_solutions.py,BIOVAT_BASELINE_LVEF_PCT,24.0,24.0,measured,design,human,False,percent,BioVAT-HF baseline mean LVEF (enrolment <=35%),True,True,scientific_audit_no_model_change
+gap_solutions.py,BIOVAT_N_AT_MAX_DOSE,16.0,16.0,measured,design,human,False,patients,BioVAT-HF: 16 of 20 received 20 EHM units,True,True,scientific_audit_no_model_change
+gap_solutions.py,REQUIRED_LVEF_GAIN_PP,20.0,20.0,hypothetical,ceiling,human,False,LVEF percentage points,this study's criterion for functional normalisation (cure.py CRITERION_THRESHOLD),True,True,scientific_audit_no_model_change
+gap_solutions.py,RETRY_RESPONDERS,10.0,10.0,measured,mechanism,human,False,of 30 patients,repeat-dose human series: 10 of 30 patients responded to a second dose,True,True,scientific_audit_no_model_change
+gap_solutions.py,RETRY_TOTAL,30.0,30.0,measured,design,human,False,patients,denominator of the repeat-dose responder count,True,True,scientific_audit_no_model_change
+gap_solutions.py,CATO_TOTAL_N,60.0,60.0,measured,design,human,False,participants,"CATO, NCT06145035: 20 per arm, three arms",True,True,scientific_audit_no_model_change
+gap_solutions.py,CATO_ARMS,3.0,3.0,measured,design,human,False,arms,"CATO: two active arms plus control, so two active-versus-control comparisons",True,True,scientific_audit_no_model_change
+gap_solutions.py,VERVE_LDL_ABS_REDUCTION_MG_DL,78.0,78.0,measured,efficacy,human,True,mg/dL,VERVE-102 Heart-2 absolute LDL-C reduction,True,True,scientific_audit_no_model_change
+gap_solutions.py,VERVE_LDL_PCT_REDUCTION,0.62,0.62,measured,efficacy,human,True,fraction,VERVE-102 Heart-2,True,True,scientific_audit_no_model_change
+gap_solutions.py,VERVE_PCSK9_PCT_REDUCTION,0.88,0.88,measured,efficacy,human,True,fraction,VERVE-102 Heart-2,True,True,scientific_audit_no_model_change
+gap_solutions.py,VERVE_DURABILITY_MONTHS,18.0,18.0,measured,efficacy,human,True,months,VERVE-102 Heart-2: durable to 18 months through hepatocyte turnover,True,True,scientific_audit_no_model_change
+gap_solutions.py,MG_DL_PER_MMOL_L,38.67,38.67,measured,arithmetic,human,False,mg/dL per mmol/L,standard lipid conversion (Friedewald-era); exact value 38.67,True,True,scientific_audit_no_model_change
+gap_solutions.py,CTT_RR_PER_MMOL_L,0.78,0.78,measured,efficacy,human,True,rate ratio per mmol/L,CTT meta-analysis: RR 0.78 per 1 mmol/L LDL-C reduction,True,True,scientific_audit_no_model_change
+gap_solutions.py,PRECEDENTED_POTENCY_CAP,1.284,1.284,measured,ceiling,human,False,fold above central,"same bound as ATLAS_POTENCY, restated for the gap solutions",True,True,scientific_audit_no_model_change
+gap_solver.py,SOURCE_REDUCTION_PRECEDENT_CENTRAL,0.35,0.35,estimated,ceiling,human,False,fraction,central estimate of achievable plaque source reduction within precedent,True,True,scientific_audit_no_model_change
+gap_solver.py,SOURCE_REDUCTION_PRECEDENT_MAX,0.5,0.5,estimated,ceiling,human,False,fraction,upper bound of achievable source reduction within precedent,True,True,scientific_audit_no_model_change
+gap_solver.py,SCAR_RECOVERABLE_LVEF_PP,25.0,25.0,hypothetical,ceiling,human,False,LVEF percentage points,this study's assumption that the whole contractile deficit is 25 pp,True,True,scientific_audit_no_model_change
+identifiability.py,SENSITIVITY_FLOOR,1e-06,1e-06,hypothetical,design,none,False,elasticity,elasticity below which a parameter is called inert,True,True,scientific_audit_no_model_change
+identifiability.py,COLLINEARITY_CEILING,0.95,0.95,hypothetical,design,none,False,correlation,|r| above which two parameters are called non-separable,True,True,scientific_audit_no_model_change
+identifiability.py,PROFILE_RISE_FRACTION,0.05,0.05,hypothetical,design,none,False,fraction of objective span,rise required on both sides of a profile minimum to call it identified,True,True,scientific_audit_no_model_change
+lipids.py,LDL_FLOOR_MG_DL,10.0,10.0,hypothetical,ceiling,none,False,mg/dL,numerical floor on modelled LDL-C,True,True,scientific_audit_no_model_change
+lipids.py,APOB_FLOOR_MG_DL,15.0,15.0,hypothetical,ceiling,none,False,mg/dL,numerical floor on modelled apoB,True,True,scientific_audit_no_model_change
+lipids.py,LPA_FLOOR_NMOL_L,2.0,2.0,hypothetical,ceiling,none,False,nmol/L,numerical floor on modelled Lp(a),True,True,scientific_audit_no_model_change
+lipids.py,HSCRP_FLOOR_MG_L,0.2,0.2,hypothetical,ceiling,none,False,mg/L,numerical floor on modelled hsCRP,True,True,scientific_audit_no_model_change
+plaque.py,CAP_THRESHOLD_UM,65.0,65.0,measured,mechanism,human,False,micrometres,histological thin-cap fibroatheroma definition (<65 um),True,True,scientific_audit_no_model_change
+plaque.py,STRESS_THRESHOLD_KPA,300.0,300.0,hypothetical,ceiling,in_vitro,False,kPa,assumed peak cap stress for rupture in the simplified model,True,True,scientific_audit_no_model_change
+recombine.py,RESPONSE_GUIDED_RATE,0.582481,0.582481,estimated,mechanism,human,False,fraction of screened-in patients,"central row of the swept enrichment table (SD 4 pp, cutoff 37.5 pp), anchored on Vrtovec's responder analysis",True,True,scientific_audit_no_model_change
+recombine.py,RESPONSE_GUIDED_PASS,0.424708,0.424708,estimated,design,human,False,fraction of all patients,fraction passing the baseline-severity screen at the central row,True,True,scientific_audit_no_model_change
+recombine.py,INTERACTION_TOLERANCE,0.005,0.005,hypothetical,design,none,False,probability units,"half a percentage point, the noise floor for an interaction verdict",True,True,scientific_audit_no_model_change
+recombine.py,MIN_SPECIFICATION_DRAWS,2000.0,2000.0,hypothetical,design,none,False,draws,same guard for the recombination search,True,True,scientific_audit_no_model_change
+recombine.py,ATLAS4_BEST_ADMISSIBLE,0.896,0.896,measured,ceiling,none,False,probability,"ATLAS-4's best admissible point, read from results/atlas4, pinned by test",True,True,scientific_audit_no_model_change
+regression.py,CALIBRATION_HORIZON_YEARS,2.0,2.0,estimated,design,human,False,years,horizon over which the regression grid is calibrated against trial data,True,True,scientific_audit_no_model_change
+regression.py,DEFAULT_CALCIFICATION_FRACTION,0.25,0.25,hypothetical,mechanism,none,False,fraction of plaque,default calcification fraction when none is supplied,True,True,scientific_audit_no_model_change
+revival.py,NATURAL_HISTORY_PP,3.4,3.4,measured,efficacy,human,True,LVEF percentage points,"REVIVED-BCIS2 OMT arm, +3.4 pp at 6 months, n=353",True,True,scientific_audit_no_model_change
+revival.py,LVEF_CHANGE_SD_PP,5.0,5.0,estimated,design,human,False,LVEF percentage points,between-patient SD of MRI LVEF change; reuse of the gap-4 sweep family,True,True,scientific_audit_no_model_change
+revival.py,AATS_LB8_GAIN_PP,4.3,4.3,measured,mechanism,human,False,LVEF percentage points,"AATS LB8, n=8 ischaemic cardiomyopathy: 28.7% -> 33.0% at 52 weeks",True,True,scientific_audit_no_model_change
+revival.py,AATS_LB8_P_VALUE,0.156,0.156,measured,mechanism,human,False,p,AATS LB8 reported p=0.156 for the LVEF change,True,True,scientific_audit_no_model_change
+revival.py,AATS_LB8_N,8.0,8.0,measured,design,human,False,patients,AATS LB8 enrolment,True,True,scientific_audit_no_model_change
+revival.py,SURROGATE_STE_MORTALITY_PP,8.0,8.0,measured,efficacy,human,True,LVEF percentage points,2026 HF surrogate meta-analysis: 8 pp mean LVEF increase predicts a mortality benefit; R^2=0.59 across 69 comparisons,True,True,scientific_audit_no_model_change
+revival.py,SURROGATE_STE_HF_HOSP_PP,2.0,2.0,measured,efficacy,human,True,LVEF percentage points,"same meta-analysis: 2 pp for HF hospitalisation, R^2=0.86 in HFrEF",True,True,scientific_audit_no_model_change
+revival.py,LARGEST_HUMAN_OBSERVATION_PP,6.9,6.9,measured,ceiling,human,False,LVEF percentage points,BioVAT-HF at a mean 17 months: the largest LVEF gain any remuscularisation approach has measured in a human,True,True,scientific_audit_no_model_change
+revival.py,SURROGATE_R2_MORTALITY,0.59,0.59,measured,efficacy,human,True,R squared,"trial-level R^2 between LVEF change and mortality benefit, 69 comparisons",True,True,scientific_audit_no_model_change
+revival.py,SURROGATE_R2_MORTALITY_HFREF,0.49,0.49,measured,efficacy,human,True,R squared,"same, restricted to HFrEF, 56 comparisons",True,True,scientific_audit_no_model_change
+units.py,MG_DL_PER_MMOL_L,38.67,38.67,measured,arithmetic,human,False,mg/dL per mmol/L,standard lipid conversion (Friedewald-era); exact value 38.67,True,True,scientific_audit_no_model_change
+units.py,DAYS_PER_YEAR,365.25,365.25,measured,arithmetic,none,False,days,"Julian year, adopted so leap days do not drift the horizon",True,True,scientific_audit_no_model_change
+units.py,Z_95,1.959963984540054,1.959963984540054,measured,arithmetic,none,False,z,standard normal 97.5th percentile,True,True,scientific_audit_no_model_change
+upgrade.py,MAX_PRECEDENTED_PATHS,3.0,3.0,estimated,design,human,False,node paths,the largest redundant-path count reached by a precedented agent set,True,True,scientific_audit_no_model_change
+upgrade.py,DEFAULT_SOURCE_REQUIRED,0.223,0.223,estimated,ceiling,human,False,fraction,source reduction needed for 80% clearance with perfect modules,True,True,scientific_audit_no_model_change
+upgrade.py,SOLVED_MONTHS,60.0,60.0,hypothetical,design,none,False,months,horizon at which ATLAS-2 is reported solved,True,True,scientific_audit_no_model_change

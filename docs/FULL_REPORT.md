@@ -47,15 +47,16 @@ this study, because no combination has been trialled.
 | `results/recombine/` | 13 |
 | `results/reports/` | 5 |
 | `results/revival/` | 9 |
+| `results/scientific_audit/` | 8 |
 | `results/resolution/` | 9 |
 | `results/solutions/` | 34 |
 | `results/tables/` | 10 |
 | `results/upgrade/` | 10 |
 
 **Input registries:** 47 therapies · 48 trial anchors · 19 populations
-**Documentation:** 20 documents (plus this report)
-**Code:** 34 modules in `src/ihd_solutions/`
-**Tests:** 33 test files
+**Documentation:** 21 documents (plus this report)
+**Code:** 39 modules in `src/ihd_solutions/`
+**Tests:** 34 test files
 
 ---
 
@@ -1363,6 +1364,75 @@ that no re-search may manufacture a robust design.
 
 ---
 
+## F.14 Scientific audit — four checks the critique asked for (`scientific-audit`)
+
+Full account: [`scientific_audit.md`](scientific_audit.md).
+Artefacts: `results/scientific_audit/` (8).
+
+A detailed external critique identified six problems. Most were correct and are now
+measured rather than argued; two described a state that had already moved. **No model was
+changed and no biology established.**
+
+### Parameter provenance, enforced
+
+Every numeric module constant must declare unit, source, population, class
+(`measured`/`estimated`/`hypothetical`) and support type. A missing record **fails the
+build**.
+
+| | |
+|---|---|
+| constants found | **73** |
+| registered | **73** |
+| unregistered | **0** |
+| values disagreeing with code | **0** |
+| measured / estimated / **hypothetical** | 35 / 11 / **27** |
+| earning human efficacy credit | **12** |
+
+Two structural guards: a hypothetical parameter may not claim human measurement, and
+`credit_ceiling()` takes the **minimum** across a chain so one assumed multiplier collapses
+credit regardless of the real measurements beside it. A parameter can be measured and still
+not support the claim — the maturation ratio is measured in humans but supports `mechanism`,
+not `efficacy`, because its study was single-arm.
+
+### Calibration feasibility — 0 of 14 rates identifiable
+
+The legacy 14-rate cytokine network was re-implemented and verified against the original
+(day-180 CRP **88.613** mg/L).
+
+| measure | value |
+|---|---|
+| independent observables | 2 |
+| rates "recovered" one-at-a-time | 12 of 14 |
+| collinear pairs (\|r\| >= 0.95) | 7 of 91 |
+| **rates jointly identified** | **0 of 14** |
+
+Every production rate has elasticity exactly **+1.0000** and every degradation rate
+**-0.99**: the cascade is linear in its rates, so doubling `k_crp_prod` changes the output
+by exactly +100% and doubling `k_il6_prod` gives the **same trajectory to machine
+precision**. This is an exact symmetry, not a statistical one, so no CRP measurement can
+separate them. **No Bayesian posterior is reported** — it would be a prior with a decimal
+point. All 14 rates are held fixed and declared assumptions.
+
+### Verification is not validation
+
+A five-rung ladder (`unit` -> `convergence` -> `internal` -> `external` ->
+`interventional`) with enforcement: claiming a rung without its requirement raises.
+Convergence is never reported as validation. **The highest rung this repository occupies is
+`convergence`**; 4 of 6 listed modules have no external validation at all.
+
+### What was not done
+
+Recorded in `audit_not_done.csv` with reasons: GPU molecular dynamics (no GPU, and a short
+run would fail the critique's own replica requirement), 3D CFD/FSI (no solver, no meshed
+geometry), a genome-wide off-target model (no reference genome), Bayesian posteriors (the
+rates are unidentifiable), and a calibrated virtual cohort.
+
+**The critique is right that this repository has more treatment architectures than
+validated underlying models. No amount of GPU time moves a result from `convergence` to
+`interventional`.** Randomised proof: 0.00%. No cure is declared.
+
+---
+
 # PART G — THE HONESTY LEDGER
 
 Every retraction and correction made during this study, in order. This section
@@ -1400,6 +1470,9 @@ exists because a report that only shows final numbers hides how they were reache
 | 28 | ATLAS-5 is the best composition | Selected on an uncontrolled baseline | Re-search under correction selects the **frugal** design; **no composition robust** |
 | 29 | The corrected gain still clears the surrogate threshold | The model claims 3.0x the largest human LVEF gain ever measured | Comparison **unusable**, labelled not passed |
 | 30 | Stratifying to no-scar patients improves the result | Raises the conditional rate to 91% and excludes everyone else | **Zero** population-level gain, enforced by test |
+| 31 | "Too many invented parameters" — everything is undocumented | The package's constants are mostly cited human values; the fault is narrower | **27 of 73 registered as hypothetical**, typed and enforced |
+| 32 | The cytokine rates could be calibrated with Bayesian inference | 0 of 14 are jointly identifiable; the cascade is linear in its rates | **All 14 held fixed** as declared assumptions; no posterior reported |
+| 33 | The legacy scripts are the study | Five root-level scripts; the analysis is 34 modules elsewhere | Legacy labelled NON-USABLE for scores, candidate list for CRISPR |
 
 **Implementation bugs found and fixed:** run-in pinned responders to the threshold
 instead of keeping their achieved value; gate threshold computed at 24 months but
@@ -1453,6 +1526,7 @@ python run_solutions.py atlas4          # ATLAS-4 (precedent + grid) -> results/
 python run_solutions.py gap-solutions   # designs for the 6 gaps    -> results/gap_solutions/
 python run_solutions.py recombine       # ATLAS-5 mechanism composition -> results/recombine/
 python run_solutions.py revival         # control-arm correction        -> results/revival/
+python run_solutions.py scientific-audit # provenance/identifiability    -> results/scientific_audit/
 python run_solutions.py validate        # registries only
 ```
 
@@ -1504,7 +1578,7 @@ the measured load-bearing parts of the first two, which is stronger and simpler 
 either and refuses 14.08 pp of double-counted benefit - then charged for the control
 arm it never had, and withdrawn when the charge was found to dissolve it; and a documented
 record of
-thirty claims that were tested and withdrawn. **The retractions are part of the
+thirty-three claims that were tested and withdrawn. **The retractions are part of the
 result.**
 
 ---

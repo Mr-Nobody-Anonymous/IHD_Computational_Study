@@ -1,5 +1,20 @@
 """
 ================================================================================
+NON-USABLE - LEGACY DEMONSTRATION SCRIPT. KEPT FOR REPRODUCIBILITY ONLY.
+================================================================================
+This script is OUTSIDE the tested package (`src/ihd_solutions/`) and outside the
+test suite. It has no validation, no provenance records and no uncertainty
+propagation. Its numbers must NOT be quoted as findings and must NOT be fed into
+the validated pipeline.
+
+See `docs/scientific_audit.md` for what each script can and cannot support.
+================================================================================
+
+What it can support: interface residue identity and burial fractions (e.g. PHE379
+99.4% buried), which are geometric facts from the coordinates.
+What it CANNOT support: any claim about affinity, dynamics or the effect of a
+variant. It is a static snapshot of one conformer.
+================================================================================
 SCRIPT 2: PCSK9–LDLR Interface Contact & Salt-Bridge Mapping
 ================================================================================
 Analyzes the atomic interaction network between human PCSK9 and LDLR EGF-A
@@ -10,6 +25,20 @@ from high-resolution crystallographic coordinates (PDB 3BPS and 3GCX):
 4. Exports interface contact reports and AutoDock Vina configuration
 ================================================================================
 """
+
+# ------------------------------------------------------------------------------
+# This script is legacy. Shout if someone runs it, so its output is never mistaken
+# for a validated result. `python -W ignore src/0N_*.py` silences it deliberately.
+# ------------------------------------------------------------------------------
+import warnings as _warnings
+
+_warnings.warn(
+    "NON-USABLE LEGACY SCRIPT: untested, unvalidated, no provenance. "
+    "Numbers are NOT findings. See docs/scientific_audit.md.",
+    UserWarning,
+    stacklevel=2,
+)
+
 
 import os, sys
 if hasattr(sys.stdout, 'reconfigure'):
