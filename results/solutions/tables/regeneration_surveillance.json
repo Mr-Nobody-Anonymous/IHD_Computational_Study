@@ -1,0 +1,13 @@
+{
+  "approval_type": "conditional_time_limited",
+  "confirmation_target_cases": 75,
+  "confirmation_window_years": 7,
+  "mechanism_emphasised": "paracrine",
+  "remuscularization_proven": false,
+  "required_monitoring": [
+    "ventricular arrhythmia surveillance",
+    "tumorigenicity surveillance",
+    "immunological monitoring and graft persistence",
+    "all-case post-marketing registry with functional endpoints"
+  ]
+}

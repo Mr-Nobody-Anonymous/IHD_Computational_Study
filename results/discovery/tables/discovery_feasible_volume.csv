@@ -1,0 +1,9 @@
+capability,bound_low,bound_high,required,passing_window,passing_fraction,bound_set,status,feasible_volume
+driver_durability,0.0,1.0,0.8,0.19999999999999996,0.19999999999999996,demonstrated,in_silico_specification_not_evidence,0.0
+substrate_removal,0.0,0.431,0.8,0.0,0.0,demonstrated,in_silico_specification_not_evidence,0.0
+lvef_gain_pp,0.0,3.9,20.0,0.0,0.0,demonstrated,in_silico_specification_not_evidence,0.0
+hazard_ratio,0.36,1.0,0.2978723143105733,0.0,0.0,demonstrated,in_silico_specification_not_evidence,0.0
+driver_durability,0.0,1.0,0.8,0.19999999999999996,0.19999999999999996,conceivable,in_silico_specification_not_evidence,0.00036862440457059476
+substrate_removal,0.0,0.835,0.8,0.03499999999999992,0.041916167664670566,conceivable,in_silico_specification_not_evidence,0.00036862440457059476
+lvef_gain_pp,0.0,25.0,20.0,5.0,0.2,conceivable,in_silico_specification_not_evidence,0.00036862440457059476
+hazard_ratio,0.1,1.0,0.2978723143105733,0.1978723143105733,0.21985812701174812,conceivable,in_silico_specification_not_evidence,0.00036862440457059476

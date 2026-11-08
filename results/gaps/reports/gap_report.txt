@@ -1,0 +1,86 @@
+Attempting to close the three capability gaps
+==========================================================================
+GAP-CLOSURE SCENARIO - a modelled path to a capability target, not evidence that the path works. Precedent bounds are animal or mechanistic unless stated. Closing a gap here does not make a cure.
+
+VERDICTS
+  Stack hazard ratio: closed_already
+    mechanism: Node-disjoint composite; target HR recomputed per baseline rather than applied universally
+    requirement: closed in 2 of 19 populations in strict mode: stable_ccs, lifetime_exposure
+  Substrate clearance: closable_within_precedent
+    mechanism: Add a source-reduction module (ER-stress/CHOP): the plateau is a constant apoptosis source, not a payload limit
+    requirement: perfect modules: >=0.223 source reduction for 80% at 24 months; central modules: >=0.989 at 24 months (exceeds the 0.50 precedent bound) or >=0.338 over a much longer horizon
+  Remuscularisation: closable_within_precedent
+    mechanism: Stack precedented multipliers on scar replacement fraction, which saturates at 1.0; all multipliers are animal or construct-level
+    requirement: minimum set: endothelial_co_delivery, epicardial_stromal_co_delivery
+
+GAP 3 - HAZARD RATIO: already closed, but the target was population-specific
+The 0.298 figure came from a 13.93% baseline. A higher baseline needs a lower
+HR to leave the same share of excess risk, so it must be recomputed:
+  stable_ccs                   need HR<=0.298  achieved 0.282  CLOSED
+  lifetime_exposure            need HR<=1.000  achieved 1.000  already at reference
+  secondary_post_mi            need HR<=0.257  achieved 0.309  needs 16.4% more
+  hefh_primary                 need HR<=0.355  achieved 0.464  needs 23.1% more
+  t2d_ascvd                    need HR<=0.267  achieved 0.351  needs 23.1% more
+  ascvd_obesity_no_diabetes    need HR<=0.298  achieved 0.403  needs 25.5% more
+  post_mi_hscrp_high           need HR<=0.248  achieved 0.368  needs 31.7% more
+  statin_intolerant_ascvd      need HR<=0.267  achieved 0.398  needs 32.0% more
+
+GAP 2 - SUBSTRATE CLEARANCE: the plateau was structural, not a payload limit
+With every module perfect the loop still stalls at 83.5%, because a constant
+apoptosis source keeps regenerating debris. The analytic steady state matches
+the simulation exactly, which is how the cause was identified. None of the six
+REVERT-1 modules touches that source. Adding one that does (ER-stress/CHOP):
+
+  source reduction   24 mo   36 mo   60 mo   asymptote   within precedent
+       0.00         74.9%   80.4%   82.3%     83.5%      yes
+       0.20         79.5%   84.2%   85.8%     87.0%      yes
+       0.35         82.7%   86.8%   88.3%     89.5%      yes
+       0.50         85.8%   89.4%   90.8%     92.0%      yes
+       0.65         88.7%   91.9%   93.2%     94.4%      NO
+       0.80         91.5%   94.3%   95.6%     96.8%      NO
+  precedent bound: CHOP deletion cut lesional apoptosis ~35% and plaque
+  necrosis ~50% in Apoe/Ldlr-null mice; it does not abolish apoptosis, so
+  strengths above 0.50 are unprecedented.
+
+  That table assumes PERFECT modules. With central strengths the same module
+  delivers much less, which is the honest caveat:
+
+  source reduction   24 mo   60 mo   asymptote   meets 80%   within precedent
+       0.00         43.8%   62.4%     66.8%      no          yes
+       0.20         51.0%   71.8%     75.0%      no          yes
+       0.35         56.5%   77.8%     80.4%      yes          yes
+       0.50         62.0%   83.0%     85.2%      yes          yes
+       0.65         67.6%   87.5%     89.6%      yes          NO
+       0.80         73.1%   91.5%     93.5%      yes          NO
+  So clearance closes in two years only with near-perfect delivery; at central
+  strengths it needs a far longer horizon. Delivery efficiency and time are
+  jointly binding - consistent with the gate dominating the sensitivity.
+
+GAP 1 - REMUSCULARISATION: decomposes, but every factor is animal-level
+BioVAT's +3.9 points is 15.6% of the 25-point deficit. Primate grafts occupy
+10-17% of scar area - an independent measurement that matches. So LVEF gain
+is modelled as proportional to the fraction of scar replaced, which saturates.
+
+  factors                              scar replaced   LVEF gain   meets +20
+  endothelial_co_delivery;epicardia...      81.1%       20.3   YES
+  epicardial_stromal_co_delivery;pr...      81.1%       20.3   YES
+  dose_escalation;endothelial_co_de...     100.0%       25.0   YES
+  dose_escalation;endothelial_co_de...     100.0%       25.0   YES
+  dose_escalation;epicardial_stroma...     100.0%       25.0   YES
+  endothelial_co_delivery;epicardia...     100.0%       25.0   YES
+  dose_escalation;endothelial_co_de...     100.0%       25.0   YES
+  none                                      15.6%        3.9   no
+  dose_escalation                           27.3%        6.8   no
+  endothelial_co_delivery                   31.2%        7.8   no
+
+WHAT THIS DOES AND DOES NOT ESTABLISH
+- Hazard ratio: closed in 2 of 19 populations. Real, and it needed no new biology.
+- Clearance: closable by adding a module aimed at the apoptotic source, at a
+  strength inside the animal precedent. This is a design change, not tuning.
+- Remuscularisation: the arithmetic closes by stacking published multipliers,
+  but every one is rodent, primate or construct-level. Saturation means the
+  factors cannot be multiplied indefinitely, and chronic-injury efficacy is
+  unproven - most primate work treats two weeks after infarction, not the
+  years-old scar of an advanced heart-failure patient.
+- None of this is evidence. Closing a gap in a model is a reason to run an
+  experiment, not a reason to believe the result.

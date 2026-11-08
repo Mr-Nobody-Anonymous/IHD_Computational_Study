@@ -1,0 +1,30 @@
+{
+  "adenine_positions": [
+    3,
+    4,
+    6,
+    8,
+    10,
+    13,
+    14,
+    17
+  ],
+  "adenines_in_window": [
+    4,
+    6,
+    8
+  ],
+  "bystander_positions": [
+    4,
+    8
+  ],
+  "intended_position": 6,
+  "interpretation": "sequence-level bystander risk only; not an editing-outcome prediction",
+  "n_bystanders": 2,
+  "pam": "TGG",
+  "provenance": "synthetic_example_not_a_clinical_guide",
+  "spacer": "GCAATACAGATCAACGATCG",
+  "warning": "This spacer is a synthetic teaching example. It is not the VERVE-102 guide and must not be used for any experimental or clinical purpose.",
+  "window_end": 8,
+  "window_start": 4
+}

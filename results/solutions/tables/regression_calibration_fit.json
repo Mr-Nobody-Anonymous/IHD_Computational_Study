@@ -1,0 +1,16 @@
+{
+  "calcification_fraction_assumed": 0.25,
+  "caveats": [
+    "cross-trial fit: different populations, modalities and durations",
+    "calcified volume never regresses in the model, matching the imaging trials",
+    "the calcification transfer fraction is an assumption, not a measurement",
+    "projections beyond 2 years are extrapolations"
+  ],
+  "longest_calibration_followup_years": 2.0,
+  "noncalcified_decay_intercept": 0.3343396520877293,
+  "noncalcified_decay_slope": -0.002670176756042054,
+  "pav_intercept_pp_per_year": -1.688019440171921,
+  "pav_r_squared": 0.8098897585630949,
+  "pav_slope_pp_per_year_per_mg_dl": 0.022822991766081754,
+  "regression_threshold_ldl_mg_dl": 73.96135692782225
+}

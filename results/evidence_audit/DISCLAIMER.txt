@@ -1,0 +1,1 @@
+SCENARIO SIMULATION, NOT CLINICAL PREDICTION. This audit propagates the confidence intervals reported by the source trials, plus adherence and baseline-rate uncertainty. It does not establish that any mechanism transports to a new population, and it declares no cures.

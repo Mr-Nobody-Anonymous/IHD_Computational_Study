@@ -1,0 +1,82 @@
+Resolving the three residual gaps, step by step
+==========================================================================
+RESIDUAL-GAP RESOLUTION - scenario arithmetic producing operating points and evidence requirements, never efficacy evidence. The chronic-injury haircut and the potency multiplier are assumptions, not measurements.
+
+STEP 1 - HAZARD RATIO: an evidence-maturity gap, not a biology gap
+  populations closing by mode: {'exploratory': 11, 'surrogate': 6, 'strict': 2}
+  Agents whose evidence would have to mature, ranked by populations unlocked:
+    verve102_base_editing          unlocks 17  RANDOMIZED_SURROGATE -> RANDOMIZED_OUTCOMES
+    smoking_cessation              unlocks 15  OBSERVATIONAL -> RANDOMIZED_OUTCOMES
+    canakinumab_tet2_guided        unlocks 11  OBSERVATIONAL -> RANDOMIZED_OUTCOMES
+    retatrutide                    unlocks  6  RANDOMIZED_SURROGATE -> RANDOMIZED_OUTCOMES
+    obicetrapib                    unlocks  4  RANDOMIZED_SURROGATE -> RANDOMIZED_OUTCOMES
+    diet_ldl_lowering              unlocks  2  RANDOMIZED_SURROGATE -> RANDOMIZED_OUTCOMES
+  3 further agents enter only because the greedy ordering
+  changes when others gain credit; they already hold outcomes-tier proof and
+  are NOT evidence gaps.
+  So the residual 16-32% is bought by outcomes trials, not new mechanisms.
+
+STEP 2 - CLEARANCE: a correction, then an operating point
+  The earlier phrase 'near-perfect delivery' was imprecise. Potentiating any
+  single module to its maximum reaches only:
+    crystal_solubilisation      63.3%  (+6.8 pp over central)
+    efferocytosis_gain          62.3%  (+5.8 pp over central)
+    gate_specificity            62.3%  (+5.8 pp over central)
+    resolution                  60.0%  (+3.5 pp over central)
+  None reaches 80%. It is joint performance across all
+  modules, so the solver searches one uniform potency multiplier:
+
+  source   horizon   min potency   admissible
+    0.00       24m   unreachable   no
+    0.00       36m         1.627   yes
+    0.00       60m         1.403   yes
+    0.00      120m         1.332   yes
+    0.20       24m   unreachable   no
+    0.20       36m         1.302   yes
+    0.20       60m         1.156   yes
+    0.20      120m         1.101   yes
+    0.35       24m         1.426   yes
+    0.35       36m         1.152   yes
+    0.35       60m         1.041   yes
+    0.35      120m         1.000   yes
+    0.50       24m         1.284   yes
+    0.50       36m         1.058   yes
+    0.50       60m         1.000   yes
+    0.50      120m         1.000   yes
+  Cheapest admissible point: source reduction 0.50, 24 months, every module at 1.28x its central strength.
+
+STEP 3 - REMUSCULARISATION: replacing luck with margin
+  The nominal x5.2 against x5.13 has no margin. Each factor is now drawn
+  from Uniform(1, published effect), then a chronic-injury haircut is applied.
+
+  factors                                nominal   median   P(+20)   robust
+  dose_escalation;endothelial_co_deli...      25.0     14.8   26.8%   no
+  endothelial_co_delivery;epicardial_...      25.0     10.9    7.8%   no
+  dose_escalation;epicardial_stromal_...      25.0     10.1    4.3%   no
+  dose_escalation;endothelial_co_deli...      25.0     10.1    4.3%   no
+  dose_escalation;endothelial_co_deli...      25.0      8.5    0.6%   no
+  none                                         3.9      2.9    0.0%   no
+  endothelial_co_delivery                      7.8      4.2    0.0%   no
+  dose_escalation                              6.8      3.9    0.0%   no
+  NO factor combination is robust at 80%. The nominal two-factor
+  answer was arithmetic luck: under uncertainty it almost never clears.
+
+  Dependence on the chronic-injury translation assumption:
+    haircut floor 1.00 -> NO robust set; best is 4 factors, best P=51.1%
+    haircut floor 0.75 -> NO robust set; best is 4 factors, best P=38.6%
+    haircut floor 0.50 -> NO robust set; best is 4 factors, best P=26.0%
+    haircut floor 0.25 -> NO robust set; best is 4 factors, best P=17.8%
+
+WHAT THE THREE STEPS ACTUALLY CHANGE
+1. The hazard residual becomes a named list of outcomes trials. That is
+   procurable, and it is the only residual that needs no new biology.
+2. The clearance residual becomes a single number: how much better than
+   central every module must be at once. That is an engineering spec, and
+   it is demanding - no single lever substitutes for the others.
+3. The remuscularisation residual is NOT solved. The earlier two-factor
+   answer clears only on nominal point estimates; under uncertainty it
+   almost never reaches the target, and even all four factors together do
+   not clear 80% probability. This retracts the previous 'closable on paper'.
+
+None of this is evidence. Each step converts a vague shortfall into a
+costed requirement that an experiment or a trial could address.

@@ -1,0 +1,1 @@
+SIMULATION-ONLY DISCOVERY - outputs a candidate specification, never a cure. The randomised_proof criterion is excluded because no simulation can satisfy it. Nothing here is evidence, a therapy, or a recommendation.

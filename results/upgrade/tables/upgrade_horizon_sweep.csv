@@ -1,0 +1,16 @@
+horizon_months,max_potency,probability_of_target,median_clearance_pct,eligible_fraction,unconditional_probability,robust,beyond_precedent_potency,status
+24.0,1.284,0.0,42.996096586413366,0.555,0.0,False,False,atlas2_invented_architecture_unvalidated
+24.0,1.5,0.0045045045045045045,54.46181535989443,0.555,0.0025,False,True,atlas2_invented_architecture_unvalidated
+24.0,2.0,0.11711711711711711,70.90022551070632,0.555,0.065,False,True,atlas2_invented_architecture_unvalidated
+24.0,2.5,0.28378378378378377,77.13784042041465,0.555,0.1575,False,True,atlas2_invented_architecture_unvalidated
+24.0,3.0,0.47297297297297297,79.74851670610292,0.555,0.2625,False,True,atlas2_invented_architecture_unvalidated
+60.0,1.284,0.08558558558558559,67.43637625278711,0.555,0.04750000000000001,False,False,atlas2_invented_architecture_unvalidated
+60.0,1.5,0.3153153153153153,76.96022517242932,0.555,0.17500000000000002,False,True,atlas2_invented_architecture_unvalidated
+60.0,2.0,0.7657657657657657,81.00766434808901,0.555,0.425,False,True,atlas2_invented_architecture_unvalidated
+60.0,2.5,0.9234234234234234,81.45782762143426,0.555,0.5125000000000001,True,True,atlas2_invented_architecture_unvalidated
+60.0,3.0,0.9819819819819819,82.05041049933001,0.555,0.545,True,True,atlas2_invented_architecture_unvalidated
+120.0,1.284,0.18468468468468469,73.44675500384596,0.555,0.10250000000000001,False,False,atlas2_invented_architecture_unvalidated
+120.0,1.5,0.4774774774774775,79.53758156356695,0.555,0.265,False,True,atlas2_invented_architecture_unvalidated
+120.0,2.0,0.8603603603603603,81.147559726019,0.555,0.47750000000000004,True,True,atlas2_invented_architecture_unvalidated
+120.0,2.5,0.9819819819819819,81.67973836055835,0.555,0.545,True,True,atlas2_invented_architecture_unvalidated
+120.0,3.0,0.9819819819819819,82.17679539140556,0.555,0.545,True,True,atlas2_invented_architecture_unvalidated

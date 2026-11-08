@@ -1,0 +1,6 @@
+attempts,probability_of_target,median_gain_pp,mean_attempts_stopped_at,cumulative_adverse_risk,risk_adjusted_probability,robust,robust_with_margin,beyond_precedent,status
+1,0.496,19.923711487385575,1.0,0.050000000000000044,0.47119999999999995,False,False,False,atlas3_invented_architecture_unvalidated
+2,0.825,25.0,2.0,0.07424449692799806,0.7637482900344016,True,True,False,atlas3_invented_architecture_unvalidated
+3,0.931,25.0,2.0,0.08376345759488735,0.85301622097916,True,True,False,atlas3_invented_architecture_unvalidated
+4,0.96925,25.0,2.0,0.08812375095920477,0.8838360543827907,True,True,False,atlas3_invented_architecture_unvalidated
+6,0.9955,25.0,2.0,0.09132208872074221,0.9045888606785012,True,True,True,atlas3_invented_architecture_unvalidated

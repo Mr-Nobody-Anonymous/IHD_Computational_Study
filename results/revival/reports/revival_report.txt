@@ -1,0 +1,130 @@
+CORRECTION FOR WHAT THE LITERATURE SAYS THE COMPOSITION IS MISSING
+==============================================================================
+
+THIS IS A CORRECTION TO A COMPOSITION OF UNVALIDATED MECHANISMS, NOT A THERAPY AND NOT A RESULT. The correction subtracts a documented control-arm effect from an uncontrolled observation. It removes attribution; it does not add evidence. Randomised proof for any design here is zero. No cure is declared.
+
+WHAT THE SEARCH FOUND (each item is a documented deficiency, not a knob)
+------------------------------------------------------------------------------
+  no_contemporaneous_control
+    REVIVED-BCIS2 OMT arm gained +3.4 LVEF points at 6 months unaided; BioVAT-HF's +3.9 (90% CI 0.9-6.8) is not distinguishable from it
+    Perera et al., NEJM 2022 (REVIVED-BCIS2); doi:10.1056/NEJMoa2207899
+    charged as: attribution
+
+  second_trial_null
+    AATS LB8: 8 ischaemic cardiomyopathy patients, LVEF 28.7 -> 33.0 at 52 weeks, p = 0.156 - no significant change despite the same intervention class
+    AATS 2025 late-breaking LB8 (allogeneic iPSC-CM patches)
+    charged as: replication
+
+  surrogate_not_linked_in_this_population
+    STICH: LVEF increase occurred only with viability, irrespective of treatment assignment, and was NOT associated with subsequent death over 10 years in ischaemic cardiomyopathy
+    Panza et al., NEJM 2019; doi:10.1056/NEJMoa1807365
+    charged as: endpoint validity
+
+  viability_does_not_identify_benefit
+    REVIVED: viability testing did not select patients who gained from revascularisation; extent of NON-viable myocardium predicted prognosis
+    Perera et al., JAMA Cardiol 2023 (REVIVED viability substudy)
+    charged as: mechanism access
+
+  transmurality_not_viability_decides_recovery
+    segments with no LGE recover in 91%, 51-75% transmurality in 43%, >75% in 8% - our population has established scar
+    Kim et al., Circulation 2000; AJR 2005 segmental recovery tables
+    charged as: population definition
+
+THE LADDER: WHAT SURVIVES THE CORRECTION
+------------------------------------------------------------------------------
+  rung  step                                    P(target)  of original
+     0  as published (no control group)            97.92%       100.0%
+     1  minus unaided gain, upper range (+3.4 pp)     57.56%        58.8%
+     2  minus unaided gain, lower range (+1.1 pp)     73.32%        74.9%
+     3  second uncontrolled patch trial               n/a          n/a
+
+  ATTRIBUTION LOSS: 40.36 pp of the reported
+  probability was what the guideline therapy arm achieved unaided.
+
+  *** ATLAS-5 IS NO LONGER ROBUST ONCE THE CONTROL ARM IS SUBTRACTED. ***
+  It does not clear the 80% bar. The reported 97.92% was carried by an
+  uncontrolled baseline, not by the mechanisms.
+
+IS THE COMPOSITION STILL THE RIGHT ONE?
+------------------------------------------------------------------------------
+  NO. Re-searching under the corrected accounting selects a DIFFERENT set:
+    retry_redundancy|maturation
+  ATLAS-5 was an artefact of the missing control arm.
+  NO composition is robust after the correction. The correct report is the
+  best available design with robust_set_exists = False.
+  Still beats ATLAS-4's 89.60% best admissible: no.
+
+SENSITIVITY: THE COMPARATOR IS SWEPT, NOT CHOSEN
+------------------------------------------------------------------------------
+   unaided gain (pp)  P(target)   median gain   robust
+                0.00     96.40%        25.00       yes
+                1.10     71.92%        22.93        no
+                2.25     63.92%        21.78        no
+                3.40     55.12%        20.63        no
+
+  Robust at some comparators and not others. The design's status is
+  conditional on a quantity that was never randomised, which is the point.
+
+DOES THE ENDPOINT STILL MEAN ANYTHING?
+------------------------------------------------------------------------------
+  endpoint                  STE      raw  corrected       link
+  all cause mortality      8.0   24.40     20.68     ABSENT
+  HF hospitalisation       2.0   24.40     20.68 established
+
+  UNUSABLE COMPARISON, for a reason worth stating plainly:
+    the corrected median gain is ~20.6 pp,
+    which is 3.0x the largest LVEF gain
+    ANY remuscularisation approach has measured in a human (+6.9 pp,
+    BioVAT-HF at a mean 17 months).
+
+  The surrogate threshold is therefore crossed by construction, not by
+  prediction. An STE comparison against a model that operates outside the
+  measured range is not a pass. It is the second deficiency: even after
+  removing the unaided gain, this model claims several times more effect
+  than anything observed in a human.
+
+  The all-cause mortality link is ABSENT in this population (STICH, 10-year
+  follow-up, n=601). An LVEF increase that does not track death is a
+  biomarker, not a benefit. Any design that optimises it must say so.
+
+THE TEMPTATION THAT IS NOT A GAIN
+------------------------------------------------------------------------------
+  transmurality  conditional recovery  population gain
+  no_lge                          91%               0%
+  lge_1_50                        44%               0%
+  lge_51_75                       43%               0%
+  lge_over_75                      8%               0%
+
+  Restricting to patients without transmural scar raises the conditional
+  probability and is claimed as ZERO population-level gain. Excluding patients
+  does not make anyone better - the same trap the recombination search already
+  had to reject for response-guided selection.
+
+THE BILL, UNCHANGED BY CORRECTION
+------------------------------------------------------------------------------
+  doses                           4.000    4.000    no
+  clearance_potency_cap           2.400    1.284   YES
+  clearance_redundant_paths       3.000    3.000    no
+  genetic_modifications           0.000    0.000    no
+
+  Subtracting an unaided effect changes attribution, not precedent. ATLAS-5
+  was already inside precedent on every axis the graft arm controls; it stays
+  there. The clearance arm's potency breach is still carried and still not
+  forgiven.
+
+WHAT THIS CORRECTION IS
+------------------------------------------------------------------------------
+  It is not a mechanism. No recombination could supply what was missing,
+  because what was missing was a CONTROL ARM, and a control arm is evidence,
+  not an assumption. The correction moves the estimate from 'what the
+  intervention achieved' to 'what the intervention achieved that the guideline
+  therapy did not'. That is the honest quantity, and it is smaller.
+
+  The gap is not closeable in simulation. It is closeable by randomising the
+  graft against guideline therapy with an OUTCOME endpoint - which is the
+  Phase 3 that BioVAT's investigators have already announced.
+
+  Randomised proof for anything in this study: 0.00%.
+
+KEY
+==============================================================================

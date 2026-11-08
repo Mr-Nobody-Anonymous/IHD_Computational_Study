@@ -1,0 +1,4 @@
+construct,probability_of_target,status
+single_dose,0.496,atlas4_precedent_corrected_unvalidated
+atlas4_human_tempered,0.82975,atlas4_precedent_corrected_unvalidated
+atlas4_animal_optimistic,1.0,atlas4_precedent_corrected_unvalidated

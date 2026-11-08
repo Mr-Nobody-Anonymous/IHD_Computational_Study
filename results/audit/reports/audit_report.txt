@@ -1,0 +1,68 @@
+ATLAS-1 SELF-AUDIT: does its own operating point survive uncertainty?
+===================================================================
+THIS IS A SELF-AUDIT OF AN INVENTED CONSTRUCT, NOT EVIDENCE. It retracts a nominal pass by the same standard used to retract an earlier one. Module strengths and the distributions over them are assumptions.
+
+THE ERROR BEING CORRECTED
+The resolution step solved for 1.284x potency at source reduction 0.50 and
+24 months, reaching 80.01% clearance. ATLAS-1 scored that as a burden-reversal
+pass. But 80.01% is a point estimate at central module strengths. An earlier
+remuscularisation pass was retracted for exactly this reason; clearance had
+never been given the same test. It has now.
+
+RESULT AT THE CLAIMED OPERATING POINT
+  nominal clearance       80.01%
+  median clearance         1.83%
+  5th-95th percentile    -38.29% to  41.69%
+  P(clearance >= 80%)      0.00%
+  robust                 NO
+
+  The nominal pass does not survive. Burden reversal is retracted.
+
+WHAT POTENCY WOULD ACTUALLY BE NEEDED
+  potency   median    P(>=80%)   robust
+    1.284    1.83%     0.00%   no
+    1.500   11.53%     0.00%   no
+    2.000   29.82%     0.36%   no
+    3.000   50.58%     4.12%   no
+    5.000   67.51%    14.16%   no
+   10.000   76.84%    30.36%   no
+   20.000   78.84%    41.48%   no
+   50.000   79.87%    49.20%   no
+
+  With source reduction uncertain on [0, 0.50], perfect modules
+  still need source >= 0.2230 to reach 80% at 24 months.
+  So as potency tends to infinity the probability ceiling is only 55.4%.
+  No potency makes clearance robust while the source term is uncertain.
+
+  If source reduction were *guaranteed* at 0.50, robustness would need  17.7x potency -- not 1.284x.
+
+THE SECOND ERROR: THE TWO ARMS ARE NOT INDEPENDENT
+Bed quality is derived from clearance, and the graft's translation floor is
+derived from bed quality. Scoring the graft against a nominal 80% cleared bed
+assumed phase 1 worked. Scored jointly:
+
+  coupling   median bed   coupled P   decoupled P   overstated by
+      0.00        0.023       27.32%         27.32%    +0.00 pp
+      0.25        0.023       28.08%         33.68%    +5.60 pp
+      0.50        0.023       28.76%         39.16%   +10.40 pp
+      0.75        0.023       29.32%         45.12%   +15.80 pp
+      1.00        0.023       30.32%         50.60%   +20.28 pp
+
+  Sequencing cannot prepare a bed that phase 1 fails to clear. The idea is
+  sound in structure and worthless in practice until clearance itself is robust.
+
+CORRECTED SCORECARD
+  burden_reversal          nominal 0.800 (pass)   P(target)  0.00%   robust NO
+  myocardial_restoration   nominal 0.609 (fail)   P(target) 28.76%   robust NO
+
+VERDICT
+ATLAS-1 does not reach 3 of 5 criteria. Under the same distributional standard
+applied to every other construct it reaches 2 of 5, the same as its
+predecessors. It remains the best candidate on construction quality -- every
+arm is load-bearing and its one new idea is falsifiable -- but the claim that
+it advances the criterion count is withdrawn.
+
+The corrected ranking of open problems is: clearance under delivery
+uncertainty first, remuscularisation second, randomised proof third.
+The highest-leverage real-world action is unchanged and needs no new biology:
+the PCSK9-editing outcomes trial.

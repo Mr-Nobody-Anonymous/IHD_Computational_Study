@@ -1,0 +1,5 @@
+reverted_capability,reverted_to,still_candidate,indispensable,blocking_after_revert,worst_score,status
+driver_durability,1.0,True,False,none,0.835,in_silico_specification_not_evidence
+substrate_removal,0.431,False,True,burden_reversal,0.431,in_silico_specification_not_evidence
+lvef_gain_pp,3.9,False,True,myocardial_restoration,0.156,in_silico_specification_not_evidence
+hazard_ratio,0.36,False,True,risk_normalisation,0.7257652355517958,in_silico_specification_not_evidence

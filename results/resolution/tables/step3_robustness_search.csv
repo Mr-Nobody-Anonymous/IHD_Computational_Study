@@ -1,0 +1,17 @@
+n_factors,factors,nominal_gain_pp,median_gain_pp,p05_gain_pp,probability_of_target,robust_at_80pct,chronic_penalty_low,status
+0,none,3.9,2.9306473071167165,2.0449727028837077,0.0,False,0.5,residual_resolution_scenario_not_evidence
+1,dose_escalation,6.825,3.892320252747991,2.497242205924009,0.0,False,0.5,residual_resolution_scenario_not_evidence
+1,endothelial_co_delivery,7.8,4.219050673190344,2.595520766332717,0.0,False,0.5,residual_resolution_scenario_not_evidence
+1,epicardial_stromal_co_delivery,10.14,5.042150576092698,2.785203361730965,0.0,False,0.5,residual_resolution_scenario_not_evidence
+1,proliferation_induction,7.8,4.219050673190344,2.595520766332717,0.0,False,0.5,residual_resolution_scenario_not_evidence
+2,dose_escalation;endothelial_co_delivery,13.65,5.758737807059424,3.3337638651758104,0.0,False,0.5,residual_resolution_scenario_not_evidence
+2,dose_escalation;epicardial_stromal_co_delivery,17.745,6.81889626044406,3.6029535982396075,0.0,False,0.5,residual_resolution_scenario_not_evidence
+2,dose_escalation;proliferation_induction,13.65,5.758737807059424,3.3337638651758104,0.0,False,0.5,residual_resolution_scenario_not_evidence
+2,endothelial_co_delivery;epicardial_stromal_co_delivery,20.28,7.425314873867757,3.816411400078086,0.0,False,0.5,residual_resolution_scenario_not_evidence
+2,endothelial_co_delivery;proliferation_induction,15.6,6.246751408256204,3.517990096636387,0.0,False,0.5,residual_resolution_scenario_not_evidence
+2,epicardial_stromal_co_delivery;proliferation_induction,20.28,7.396220075601193,3.839317749964298,0.0,False,0.5,residual_resolution_scenario_not_evidence
+3,endothelial_co_delivery;epicardial_stromal_co_delivery;proliferation_induction,25.0,10.880148568921786,5.128906276869163,0.078,False,0.5,residual_resolution_scenario_not_evidence
+3,dose_escalation;epicardial_stromal_co_delivery;proliferation_induction,25.0,10.086410677282403,4.85839342517397,0.0435,False,0.5,residual_resolution_scenario_not_evidence
+3,dose_escalation;endothelial_co_delivery;epicardial_stromal_co_delivery,25.0,10.094973653085635,4.864848970590001,0.043,False,0.5,residual_resolution_scenario_not_evidence
+3,dose_escalation;endothelial_co_delivery;proliferation_induction,25.0,8.522217460017547,4.457386820004841,0.00575,False,0.5,residual_resolution_scenario_not_evidence
+4,dose_escalation;endothelial_co_delivery;epicardial_stromal_co_delivery;proliferation_induction,25.0,14.807537456375123,6.682656273440568,0.268,False,0.5,residual_resolution_scenario_not_evidence

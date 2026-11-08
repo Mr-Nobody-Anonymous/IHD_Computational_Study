@@ -1,0 +1,10 @@
+# Dependencies for the ihd_solutions simulation package and its test suite.
+# The original numbered scripts in src/ additionally need requirements.txt
+# (biopython, rdkit); nothing in ihd_solutions imports them.
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+matplotlib>=3.7
+pytest>=7.4
+pytest-cov>=4.1
+ruff>=0.6

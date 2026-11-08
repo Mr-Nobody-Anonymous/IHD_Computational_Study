@@ -1,0 +1,3 @@
+construct,horizon_months,probability_of_target,median_clearance_pct,eligible_fraction,unconditional_probability,median_potency_used,robust,robust_with_margin,monte_carlo_standard_error,status
+atlas1_baseline,24.0,0.0,1.5762042605546533,1.0,0.0,1.284,False,False,0.0,atlas2_invented_architecture_unvalidated
+atlas2_solved,60.0,0.86125,81.15763182754152,1.0,0.86125,2.0285714285714285,True,True,0.01222182665868732,atlas2_invented_architecture_unvalidated

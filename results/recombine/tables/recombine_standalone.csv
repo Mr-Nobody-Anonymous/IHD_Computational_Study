@@ -1,0 +1,7 @@
+mechanism,origin,cost_axis,probability_empty,probability_alone,standalone_gain_pp,risk_adjusted_gain_pp,graft_breaches,status
+retry_redundancy,ATLAS-3 / ATLAS-4,attempts_and_procedural_risk,0.5168,0.722,20.519999999999992,17.221732221760895,none,recombine_mechanism_composition_unvalidated
+cumulative_operator,ATLAS-4 (corrected from ATLAS-3),mechanism_assumption,0.5168,0.5168,0.0,0.0,none,recombine_mechanism_composition_unvalidated
+feedback,ATLAS-3 / ATLAS-4,requires_reporter,0.5168,0.5168,0.0,0.0,none,recombine_mechanism_composition_unvalidated
+viability_reporter,"gap 3 (hNIS, already imaged in patients)",genetic_modification,0.5168,0.5168,0.0,0.0,genetic_modification,recombine_mechanism_composition_unvalidated
+response_guided_selection,gap 2 (Vrtovec responder analysis),screening_burden,0.5168,0.5176,0.07999999999999119,0.07599999999999274,none,recombine_mechanism_composition_unvalidated
+maturation,gap 1 (human EHM series),time_and_conditioning,0.5168,0.9172,40.04,38.038,none,recombine_mechanism_composition_unvalidated

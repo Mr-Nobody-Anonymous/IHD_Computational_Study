@@ -1,0 +1,6 @@
+gate_paths,probability_of_target,median_clearance_pct,median_potency_used,robust,beyond_precedent,status
+1,0.3275,71.25096492894772,2.8,False,False,atlas2_invented_architecture_unvalidated
+2,0.8075,81.10987340450222,2.0285714285714285,True,False,atlas2_invented_architecture_unvalidated
+3,0.8475,81.10003356641053,2.0285714285714285,True,False,atlas2_invented_architecture_unvalidated
+4,0.8525,81.15631492233568,2.0285714285714285,True,True,atlas2_invented_architecture_unvalidated
+6,0.865,81.12625507991211,1.7714285714285714,True,True,atlas2_invented_architecture_unvalidated

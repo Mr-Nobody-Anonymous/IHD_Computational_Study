@@ -1,0 +1,84 @@
+SOLUTIONS TO THE SIX OPEN GAPS
+==========================================================================
+THESE ARE EXPERIMENTAL DESIGNS AND POWER CALCULATIONS, NOT RESULTS. Sample sizes and detectable differences are arithmetic under stated assumptions; if an assumption is wrong the design is wrong. Efficacy is nowhere claimed. External findings are other people's, tagged by design and species. No cure is declared.
+
+THE SEARCH OVERTURNED THREE OF MY SIX CLAIMS
+  gap 1: narrowed           (OVERSTATED)
+  gap 2: still_open         (stands)
+  gap 3: narrowed           (OVERSTATED)
+  gap 4: awaiting_readout   (stands)
+  gap 5: still_open         (stands)
+  gap 6: narrowed           (OVERSTATED)
+
+GAP 1 - remuscularisation already happened in a human. The gap is magnitude.
+  demonstrated at 3 months           +3.9 pp LVEF
+  demonstrated at ~17 months         +6.9 pp LVEF
+  required                           +20.0 pp
+  3_month_effect       needs  5.13x  =  102.6 EHM units  = 4.10 billion cardiomyocytes
+  17_month_effect      needs  2.90x  =   58.0 EHM units  = 2.32 billion cardiomyocytes
+
+  Maturation alone buys 1.77x and closes 43.5% of the mass requirement.
+  But wall thickness FELL -1.6 mm while LVEF ROSE +3.0 pp.
+  Function improved as mass declined. That points at maturation and mechanical
+  entrainment, not bulk - so mass scaling is probably the wrong lever and the
+  units above are an upper bound.
+
+GAP 2 - response-guided retry: no new molecule, just an entry rule.
+  baseline responder rate            10/30 = 33.3%
+  best swept enrichment              2.34x at LVEF <= 36.0 pp
+  enriched responder rate            77.9%
+  fraction passing the screen        27.5%
+  The SD behind this is unreported, so the whole table is swept. It is a range,
+  not a promise.
+
+GAP 3 - the reporter already works in humans; put it in the graft.
+  Human NIS imaged in patients: 123I SPECT/CT positive in 8 of 32 myeloma
+  patients; NIS expression confirmed in 3 ovarian-cancer patients across repeat
+  cycles. hNIS is human-derived and beat HSV1-tk for cardiac contrast.
+  The graft is already an engineered GMP iPSC line, so this is a manufacturing
+  change. Block native uptake with perchlorate; watch for reporter silencing.
+
+GAP 4 - the trial meant to answer this may not be able to.
+  CATO has 20 per arm, 2 comparisons vs control.
+  At SD 6 pp it can detect only 5.85 pp.
+  Power for a 3 pp increment:        25.5%
+  Power for a 5 pp increment:        65.3%
+  Arm size needed for 3 pp:          77
+
+  So a null CATO cannot distinguish 'no effect' from 'too small to see here'.
+  Pre-register that interpretation now, pool prospectively, and power the
+  successor with the gap-2 enrichment rule.
+
+GAP 5 - buy the potency requirement down with redundancy.
+  cheapest robust point: cap 2.400x, 3 node paths, 3 gate paths
+  P(target) 89.25%, precedent gap 1.87x
+  potency precedent gap reduced      1.87x (was 2.18x at the ATLAS-2 cap)
+
+  A cheaper-looking point exists at cap 2.000x with 4 node paths, but that
+  redundancy is ITSELF beyond precedent. Paying for a potency breach with an
+  unflagged redundancy breach is not a saving, so it is excluded above.
+
+GAP 6 - durability is measured; power the outcomes trial on it.
+  VERVE-102 at 1.0 mg/kg: -78 mg/dL = 2.02 mmol/L, durable 18 months
+  full CTT slope:   assumed HR 0.606, 125 events, ~1389 patients at 3%/yr over 3 yr
+  half CTT slope:   assumed HR 0.778, 500 events, ~5556 patients
+
+  These are event counts under an imported statin slope, NOT a claim that
+  editing delivers them. Testing that translation is the point of the trial.
+
+WHAT CHANGED IN THE ANSWER
+  Before: six open gaps, the deepest being that nothing regrows heart muscle.
+  After:  human remuscularisation is proven, the reporter is proven in humans,
+          and PCSK9-editing durability is measured. Three of six were wrong or
+          overstated.
+
+  What is genuinely left is narrower and mostly arithmetic:
+    - roughly 2.9x more graft effect than demonstrated, and maturation may
+      supply part of it for free
+    - an entry rule nobody has tried, using a signal already in the clinic
+    - a reporter cassette already imaged in patients, never put in a heart
+    - a readout that may be underpowered, and a successor design if so
+    - an outcomes trial needing on the order of a hundred-odd events
+
+None of this is a cure. Every number above is design arithmetic under stated
+assumptions, and every external finding belongs to someone else.

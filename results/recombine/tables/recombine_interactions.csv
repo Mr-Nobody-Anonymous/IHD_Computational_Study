@@ -1,0 +1,16 @@
+first,second,gain_first_pp,gain_second_pp,gain_both_pp,sum_of_parts_pp,interaction_pp,verdict,status
+retry_redundancy,cumulative_operator,20.639999999999997,0.0,31.119999999999997,20.639999999999997,10.48,synergistic,recombine_mechanism_composition_unvalidated
+retry_redundancy,feedback,20.639999999999997,0.0,20.639999999999997,20.639999999999997,0.0,additive,recombine_mechanism_composition_unvalidated
+retry_redundancy,viability_reporter,20.639999999999997,0.0,20.639999999999997,20.639999999999997,0.0,additive,recombine_mechanism_composition_unvalidated
+retry_redundancy,response_guided_selection,20.639999999999997,2.399999999999997,14.720000000000006,23.039999999999992,-8.319999999999988,overlapping,recombine_mechanism_composition_unvalidated
+retry_redundancy,maturation,20.639999999999997,40.56,47.12,61.199999999999996,-14.079999999999998,overlapping,recombine_mechanism_composition_unvalidated
+cumulative_operator,feedback,0.0,0.0,0.0,0.0,0.0,additive,recombine_mechanism_composition_unvalidated
+cumulative_operator,viability_reporter,0.0,0.0,0.0,0.0,0.0,additive,recombine_mechanism_composition_unvalidated
+cumulative_operator,response_guided_selection,0.0,2.399999999999997,2.399999999999997,2.399999999999997,0.0,additive,recombine_mechanism_composition_unvalidated
+cumulative_operator,maturation,0.0,40.56,40.56,40.56,0.0,additive,recombine_mechanism_composition_unvalidated
+feedback,viability_reporter,0.0,0.0,0.0,0.0,0.0,additive,recombine_mechanism_composition_unvalidated
+feedback,response_guided_selection,0.0,2.399999999999997,2.399999999999997,2.399999999999997,0.0,additive,recombine_mechanism_composition_unvalidated
+feedback,maturation,0.0,40.56,40.56,40.56,0.0,additive,recombine_mechanism_composition_unvalidated
+viability_reporter,response_guided_selection,0.0,2.399999999999997,2.399999999999997,2.399999999999997,0.0,additive,recombine_mechanism_composition_unvalidated
+viability_reporter,maturation,0.0,40.56,40.56,40.56,0.0,additive,recombine_mechanism_composition_unvalidated
+response_guided_selection,maturation,2.399999999999997,40.56,41.28,42.96,-1.6799999999999982,overlapping,recombine_mechanism_composition_unvalidated

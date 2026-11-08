@@ -1,0 +1,17 @@
+potency_multiplier,source_uncertain,horizon_months,median_clearance_pct,p05_clearance_pct,probability_of_target,robust_at_80pct,status
+1.284,True,24.0,1.82911552559053,-38.28988024690476,0.0,False,atlas_invented_hypothesis_unvalidated
+1.5,True,24.0,11.52606142954562,-34.061165286912875,0.0,False,atlas_invented_hypothesis_unvalidated
+2.0,True,24.0,29.817031610148025,-22.933757230816056,0.0036,False,atlas_invented_hypothesis_unvalidated
+3.0,True,24.0,50.583945699330755,-5.95936949599805,0.0412,False,atlas_invented_hypothesis_unvalidated
+5.0,True,24.0,67.51177244046875,8.507494611898911,0.1416,False,atlas_invented_hypothesis_unvalidated
+10.0,True,24.0,76.84123801812727,26.110396457331248,0.3036,False,atlas_invented_hypothesis_unvalidated
+20.0,True,24.0,78.83813132695387,49.487085443170805,0.4148,False,atlas_invented_hypothesis_unvalidated
+50.0,True,24.0,79.87313832990122,67.9501352462207,0.492,False,atlas_invented_hypothesis_unvalidated
+1.284,False,24.0,12.050029714816102,-25.60019167291911,0.0,False,atlas_invented_hypothesis_unvalidated
+1.5,False,24.0,22.070187272994783,-21.171575306991315,0.0004,False,atlas_invented_hypothesis_unvalidated
+2.0,False,24.0,40.34853541476354,-9.889563961185676,0.0184,False,atlas_invented_hypothesis_unvalidated
+3.0,False,24.0,59.600698660928195,8.722642275504503,0.1372,False,atlas_invented_hypothesis_unvalidated
+5.0,False,24.0,75.73703337929699,22.40249027850742,0.3784,False,atlas_invented_hypothesis_unvalidated
+10.0,False,24.0,83.99149847881675,38.12926055047284,0.6588,False,atlas_invented_hypothesis_unvalidated
+20.0,False,24.0,85.802496612593,60.60757838484743,0.826,True,atlas_invented_hypothesis_unvalidated
+50.0,False,24.0,85.802496612593,76.03391708509704,0.9296,True,atlas_invented_hypothesis_unvalidated

@@ -1,0 +1,3 @@
+criterion,nominal_score,nominal_passes,probability_of_target,robust_passes,status
+burden_reversal,0.8001119533331376,True,0.0,False,atlas_invented_hypothesis_unvalidated
+myocardial_restoration,0.609274871565401,False,0.2876,False,atlas_invented_hypothesis_unvalidated

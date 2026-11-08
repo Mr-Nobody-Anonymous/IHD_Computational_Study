@@ -1,0 +1,6 @@
+bed_coupling,translation_floor,probability_of_target,probability_without_sequencing,sequencing_gain_pp_probability,median_gain_pp,robust_at_80pct,status
+0.0,0.5,0.268,0.268,0.0,14.807537456375123,False,atlas_invented_hypothesis_unvalidated
+0.25,0.625,0.3235,0.268,5.549999999999999,16.192384678140833,False,atlas_invented_hypothesis_unvalidated
+0.5,0.75,0.387,0.268,11.899999999999999,17.634775752667796,False,atlas_invented_hypothesis_unvalidated
+0.75,0.875,0.45175,0.268,18.374999999999996,18.923441281724852,False,atlas_invented_hypothesis_unvalidated
+1.0,1.0,0.5095,0.268,24.149999999999995,20.18994730617127,False,atlas_invented_hypothesis_unvalidated

@@ -1,0 +1,7 @@
+source_reduction,modules,removal_24m_pct,removal_36m_pct,removal_60m_pct,asymptotic_removal_pct,analytic_ceiling_pct,months_to_target,meets_target,within_precedent,status
+0.0,central,43.77306378132012,52.877363113413075,62.35164155349862,66.80204209512938,,,False,True,gap_closure_scenario_not_evidence
+0.2,central,51.034816692101195,62.3250288404035,71.80816876079805,75.0381007830354,,,False,True,gap_closure_scenario_not_evidence
+0.35,central,56.51693822898515,69.10997319654982,77.78658176040723,80.4079403200093,,113.5,True,True,gap_closure_scenario_not_evidence
+0.5,central,62.029736757026654,75.52071638877035,82.96658401427435,85.2317749513611,,45.0,True,True,gap_closure_scenario_not_evidence
+0.65,central,67.56501155087757,81.43691145171272,87.50889048711963,89.59075330127096,,34.5,True,False,gap_closure_scenario_not_evidence
+0.8,central,73.10027719524726,86.75386601896697,91.54273063527334,93.53815453837115,,28.5,True,False,gap_closure_scenario_not_evidence

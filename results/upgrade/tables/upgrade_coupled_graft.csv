@@ -1,0 +1,4 @@
+bed_coupling,median_bed_quality,graft_probability,graft_probability_unsequenced,sequencing_gain_pp,median_gain_pp,eligible_fraction,graft_robust,status
+0.0,1.0,0.27875,0.27875,0.0,15.00654849413971,1.0,False,atlas2_invented_architecture_unvalidated
+0.5,1.0,0.39125,0.27875,11.249999999999998,17.79117939794756,1.0,False,atlas2_invented_architecture_unvalidated
+1.0,1.0,0.52125,0.27875,24.25,20.652320934714794,1.0,False,atlas2_invented_architecture_unvalidated

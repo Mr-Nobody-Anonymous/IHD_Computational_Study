@@ -1,0 +1,7 @@
+population_id,regimen,baseline_risk_pct,treated_risk_pct,reference_risk_pct,excess_risk_remaining_fraction
+secondary_post_mi,aspirin_secondary_prevention + bp_intensification + colchicine + statin_high_intensity,20.148378124062283,8.229012722343183,1.9801326693244699,0.3439451579728171
+post_mi_pci,alirocumab + aspirin_secondary_prevention + statin_high_intensity,22.119921692859517,12.301474306000541,1.9801326693244699,0.5124850923023428
+stable_ccs,aspirin_secondary_prevention + bp_intensification + colchicine + statin_high_intensity,13.929202357494225,5.0859273452857785,1.9801326693244699,0.25991937088091627
+ascvd_ckd_inflammation,aspirin_secondary_prevention + bp_intensification + statin_high_intensity,25.918177931828225,17.108564038763323,1.9801326693244699,0.6319827372511418
+hefh_primary,aspirin_secondary_prevention + bp_intensification + statin_high_intensity,9.516258196404042,4.533643444887684,1.9801326693244699,0.33883601943567404
+ischemic_cm_heart_failure,aspirin_secondary_prevention + bp_intensification + statin_high_intensity,32.96799539643607,27.97113042192212,1.9801326693244699,0.8387476729673858

@@ -1,0 +1,6 @@
+feedback_learning,probability_of_target,probability_without_feedback,feedback_gain_pp,robust,status
+0.0,0.88475,0.88475,0.0,True,atlas3_invented_architecture_unvalidated
+0.25,0.914,0.88475,2.925,True,atlas3_invented_architecture_unvalidated
+0.5,0.931,0.88475,4.625000000000002,True,atlas3_invented_architecture_unvalidated
+0.75,0.944,0.88475,5.924999999999992,True,atlas3_invented_architecture_unvalidated
+1.0,0.95525,0.88475,7.050000000000001,True,atlas3_invented_architecture_unvalidated

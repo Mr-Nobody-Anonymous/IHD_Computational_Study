@@ -1,0 +1,6 @@
+criterion,kind,audited,reason,caveat,status
+durable_driver_control,structural_flag,False,"mechanism presence, not an effect size; no interval to propagate",presence is not evidence of lifetime durability in humans,evidence_layer_uncertainty_audit
+burden_reversal,capped_policy_credit,False,"ceiling 0.60, below the 0.80 threshold regardless of uncertainty","ceiling is a policy choice, not a measurement",evidence_layer_uncertainty_audit
+myocardial_restoration,capped_policy_credit,False,"ceiling 0.50, below the 0.80 threshold regardless of uncertainty","ceiling is a policy choice, not a measurement",evidence_layer_uncertainty_audit
+risk_normalisation,effect_estimate,True,derived from trial hazard ratios and efficacy intervals,"propagates sampling uncertainty, not transportability",evidence_layer_uncertainty_audit
+randomised_proof,structural_zero,False,an untrialled combination earns zero regardless of uncertainty,no simulation can supply it,evidence_layer_uncertainty_audit

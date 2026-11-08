@@ -1,0 +1,131 @@
+ATLAS-3: applying the variance fix to the last open biology gap
+==============================================================
+ATLAS-3 IS AN INVENTED, UNTRIALLED CONSTRUCT. Staged repeatable grafting with a measurable feedback signal does not exist. Redundancy is modelled as retry, not as extra treated area; attempt independence is an assumption swept to zero benefit; and every extra procedure is charged an adverse-event risk. Nothing here is a therapy, a result, or a recommendation.
+
+WHY THE GRAFT IS A VARIANCE PROBLEM, NOT A CAPABILITY PROBLEM
+  required delivered multiplier      5.128x
+  product of all published maxima    18.200x  (3.55x the requirement)
+  single graft, perfect bed          P(target) 49.60%
+
+  Capability is not the shortfall. Even with zero chronic-injury penalty and
+  every factor available at its published maximum, one graft is a coin flip.
+  This is the same variance failure that broke clearance, and ATLAS-2 fixed
+  clearance with redundancy and feedback. Neither has been applied here.
+
+RESULT
+  single attempt (today)             P  49.60%   median 19.92 pp
+  ATLAS-3 (3 staged attempts)         P  93.10%   median 25.00 pp
+  robust at 80%                      YES
+  robust with 2-SE margin            YES
+  attempts beyond precedent          no  (precedented limit 4)
+
+WHAT IT COST
+  median attempts actually used      2.00
+  cumulative adverse-event risk      8.38%
+  risk-adjusted success              85.30%
+
+  Attempts stop as soon as the target is met, so a first-attempt responder is
+  not exposed to further procedures. The risk is still real and cumulative.
+
+THE CHEAPEST PRECEDENTED OPTION: EXTRA ATTEMPTS BUY HEADROOM, NOT FEASIBILITY
+  precedented attempt limit          4 (CORRECTED from 2; CATO and HOPE-2 give four)
+  ATLAS-3's 3 attempts               WITHIN precedent
+  2 attempts (cheapest robust)       P  82.50%   adverse  7.42%
+  robust with 2-SE margin            YES
+  fewest attempts clearing the bar   2
+
+  Fewer attempts already clear the bar, and repeat dosing has ample precedent.
+  So the number of procedures is not what breaks precedent here, and it is not
+  the invention. The invention is the closed loop: a measured engraftment signal
+  that decides whether to retry. The extra attempt is optional headroom - it
+  lifts 82.5% to 93.1% - bought with
+  +0.95 pp more adverse-event risk.
+  The cheaper option has a thinner margin, so it is reported, not relied upon.
+
+THE FALSIFIER: REDUNDANCY ONLY COUNTS IF ATTEMPTS ARE INDEPENDENT
+  correlation   P(target)   gain vs single attempt
+     0.00        88.48%   +38.88 pp
+     0.25        89.30%   +35.05 pp
+     0.50        81.38%   +25.08 pp
+     0.75        64.95%   +11.10 pp
+     1.00        50.95%    +0.00 pp
+  At correlation 1.00 the gain is +0.00 pp: three attempts that
+  share a failure mode are one attempt. Whether real retries are independent
+  is the single most important unmeasured quantity in this construct.
+
+  MAXIMUM TOLERABLE CORRELATION: about 0.71 (spread +/-0.02 across seeds).
+  Retry outcomes must be at least this independent to stay robust. That is the number
+  to measure in a real study, and a chronic poorly-vascularised scar is exactly
+  the kind of shared failure mode that would violate it.
+
+THE SECOND FALSIFIER: FEEDBACK
+  learning 0.00   P  88.48%   gain  +0.00 pp
+  learning 0.25   P  91.40%   gain  +2.92 pp
+  learning 0.50   P  93.10%   gain  +4.63 pp
+  learning 0.75   P  94.40%   gain  +5.92 pp
+  learning 1.00   P  95.53%   gain  +7.05 pp
+
+LEVER ABLATION
+  drop retry_redundancy   P  49.60% (+43.50 pp)  LOAD-BEARING
+  drop independence       P  66.50% (+26.60 pp)  LOAD-BEARING
+  drop feedback           P  88.48% ( +4.63 pp)  LOAD-BEARING
+  drop measurement        P  88.48% ( +4.63 pp)  LOAD-BEARING
+
+ATTEMPTS: success against the safety price
+  1 attempts  P  49.60%  adverse  5.00%  risk-adjusted  47.12%  precedented
+  2 attempts  P  82.50%  adverse  7.42%  risk-adjusted  76.37%  precedented
+  3 attempts  P  93.10%  adverse  8.38%  risk-adjusted  85.30%  precedented
+  4 attempts  P  96.92%  adverse  8.81%  risk-adjusted  88.38%  precedented
+  6 attempts  P  99.55%  adverse  9.13%  risk-adjusted  90.46%  BEYOND PRECEDENT
+
+  Fewest attempts reaching the bar with margin: 2.
+
+SAFETY: where another attempt stops being worth it
+  per-attempt risk  0.00%  1 attempts  risk-adjusted  51.75%
+  per-attempt risk  0.00%  2 attempts  risk-adjusted  82.35%
+  per-attempt risk  0.00%  3 attempts  risk-adjusted  92.45%
+  per-attempt risk  2.00%  1 attempts  risk-adjusted  50.71%
+  per-attempt risk  2.00%  2 attempts  risk-adjusted  79.92%
+  per-attempt risk  2.00%  3 attempts  risk-adjusted  89.35%
+  per-attempt risk  5.00%  1 attempts  risk-adjusted  49.16%
+  per-attempt risk  5.00%  2 attempts  risk-adjusted  76.32%
+  per-attempt risk  5.00%  3 attempts  risk-adjusted  84.78%
+  per-attempt risk 10.00%  1 attempts  risk-adjusted  46.58%
+  per-attempt risk 10.00%  2 attempts  risk-adjusted  70.44%
+  per-attempt risk 10.00%  3 attempts  risk-adjusted  77.39%
+  per-attempt risk 20.00%  1 attempts  risk-adjusted  41.40%
+  per-attempt risk 20.00%  2 attempts  risk-adjusted  59.16%
+  per-attempt risk 20.00%  3 attempts  risk-adjusted  63.43%
+
+BOTH ARMS TOGETHER
+  clearance (ATLAS-2)                 83.50%
+  graft (ATLAS-3)                     92.45%
+  joint, assuming independence        77.20%
+  randomised proof                    0.00%
+
+  The joint is optimistic: the graft lands in the bed clearance prepared, so
+  the arms are not truly independent. Even taken at face value it is one
+  number for two of five criteria, with proof still absent.
+
+VALUE OF INFORMATION, RECOMPUTED AGAINST THE CURRENT STATE
+The original discovery VOI ranked substrate removal first (0.1839). That was
+computed before ATLAS-2 existed and is stale. Recomputed:
+
+  substrate_removal  P now  83.50%  VOI gain +15.25 pp  [ATLAS-2 (redundancy + titration, 60 months)]
+  lvef_gain_pp       P now  92.45%  VOI gain  +6.30 pp  [ATLAS-3 (retry redundancy + feedback)]
+
+VERDICT
+The graft gap closes in simulation under staged retry with feedback, which
+identifies the missing step precisely: a remuscularisation modality that can
+be repeated AND MEASURED. Repeat dosing already has precedent; the missing
+piece is the feedback signal that decides whether to repeat. It is not more
+potency - the published factors already exceed the requirement 3.55-fold.
+
+Three things must be demonstrated before any of this is real:
+  1. Independence of retry outcomes. Correlated failures erase the entire gain,
+     and a chronic poorly-vascularised scar is exactly a shared failure mode.
+  2. A measurable engraftment signal good enough to guide a retry.
+  3. Acceptable cumulative procedural risk across repeated grafting.
+
+Randomised proof remains zero. ATLAS-3 is a specification of the experiment
+to run, not a cure and not a therapy.

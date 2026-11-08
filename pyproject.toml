@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ihd-solutions"
+version = "1.0.0"
+description = "Evidence-anchored simulation and testing of candidate solutions for ischaemic heart disease"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-cov>=4.1", "ruff>=0.5"]
+
+[project.scripts]
+ihd-solutions = "ihd_solutions.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+    "slow: integration tests that run the full simulation pipeline",
+]
+filterwarnings = ["error::RuntimeWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+# The numbered scripts under src/ are the original study scripts and are left untouched.
+exclude = ["src/0*.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501", "B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["SIM117"]
+"run_solutions.py" = ["E402"]
+
+[tool.coverage.run]
+source = ["ihd_solutions"]
+omit = ["*/__main__.py"]
+
+[tool.coverage.report]
+exclude_lines = ["pragma: no cover", "if __name__ == .__main__.:"]

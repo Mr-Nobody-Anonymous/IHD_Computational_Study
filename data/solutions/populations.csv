@@ -1,0 +1,20 @@
+population_id,label,baseline_annual_mace_rate,baseline_rate_ci_low,baseline_rate_ci_high,ldl_c_mg_dl,apob_mg_dl,hscrp_mg_l,systolic_bp_mmhg,lp_a_nmol_l,has_ascvd,has_diabetes,has_ckd,has_heart_failure,is_secondary_prevention,notes
+secondary_post_mi,Post-myocardial-infarction secondary prevention,0.045,0.038,0.053,100,90,2.5,135,50,True,False,False,False,True,Residual risk on background therapy; scenario baseline not a patient estimate
+post_mi_pci,Early post-MI treated with PCI,0.05,0.042,0.059,95,88,3.0,132,50,True,False,False,False,True,CLEAR SYNERGY-like population for colchicine
+post_mi_hscrp_high,Post-MI with hsCRP at least 2 mg/L,0.05,0.042,0.059,100,90,4.2,134,55,True,False,False,False,True,CANTOS-like inflammatory enrichment
+stable_ccs,Stable chronic coronary syndrome,0.03,0.025,0.036,95,85,2.0,132,45,True,False,False,False,True,LoDoCo2 and FOURIER-like chronic population
+ascvd_ckd_inflammation,ASCVD with chronic kidney disease and inflammation,0.06,0.051,0.07,90,85,4.5,138,60,True,False,True,False,True,ZEUS-like population
+statin_intolerant_ascvd,ASCVD with documented statin intolerance,0.04,0.034,0.047,150,125,2.4,134,50,True,False,False,False,True,CLEAR Outcomes-like population
+t2d_ascvd,Type 2 diabetes with established ASCVD,0.04,0.034,0.047,95,90,2.6,136,45,True,True,False,False,True,EMPA-REG-like population
+ascvd_obesity_no_diabetes,ASCVD with obesity and without diabetes,0.03,0.025,0.036,100,92,3.0,133,45,True,False,False,False,True,SELECT-like population
+ascvd_high_triglycerides,ASCVD with elevated triglycerides on statin,0.04,0.034,0.047,85,88,2.4,132,50,True,False,False,False,True,REDUCE-IT-like population
+ascvd_high_lpa,ASCVD with elevated lipoprotein(a),0.04,0.034,0.047,90,85,2.2,130,180,True,False,False,False,True,Lp(a)-lowering outcome trials are ongoing
+hefh_primary,Heterozygous familial hypercholesterolaemia,0.02,0.016,0.025,190,150,1.8,128,70,False,False,False,False,True,High lifelong LDL burden; Heart-2 enrolled HeFH and high-risk participants
+ischemic_cm_heart_failure,Ischaemic cardiomyopathy with severe heart failure,0.08,0.068,0.094,90,85,3.2,120,50,True,False,False,True,True,Regenerative and heart-failure therapies; composite endpoints differ from MACE
+any_ascvd,Generic atherosclerotic disease reference,0.035,0.029,0.042,110,95,2.4,134,50,True,False,False,False,True,Used only for per-unit meta-analytic anchors
+ascvd_tet2_chip,ASCVD with TET2 clonal haematopoiesis,0.055,0.035,0.08,95,85,4.5,138,60,True,False,False,False,True,CHIP confers ~1.7-2x ASCVD risk; CANTOS exploratory TET2 subgroup. Genotype-guided anti-inflammatory hypothesis.
+advanced_ischemic_hf,"Advanced ischaemic HF, LVEF <=35%",0.07,0.05,0.095,85,75,3.5,120,50,True,False,False,True,True,BioVAT-HF / SALVADOR-HF target population; MACE rate excludes HF hospitalisation.
+refractory_angina_no_option,"Refractory angina, no revascularisation option",0.045,0.03,0.065,95,85,2.8,135,55,True,False,False,False,True,CD34 cell therapy and coronary sinus reducer population; symptom-driven burden.
+severe_hypertriglyceridaemia,Severe hypertriglyceridaemia (TG >=500 mg/dL),0.03,0.018,0.048,110,110,3.0,132,50,True,True,False,False,False,"APOC3-targeted therapy population; dominant risk is pancreatitis, not MACE."
+lifetime_exposure,Primordial prevention: lifelong LDL-C exposure scenario,0.004,0.002,0.008,160,115,1.2,125,50,False,False,False,False,False,Scenario population for the Mendelian-randomisation lifetime model only. Not a trial population; no treatment anchor is transportable here.
+non_ischemic_cardiomyopathy,Non-ischaemic cardiomyopathy (exclusion control),0.03,0.02,0.045,95,80,2.5,118,40,False,False,False,True,False,Holds the GenePHIT/AB-1002 anchor. Deliberately non-ischaemic: proves that a heart-failure gene therapy tested only in non-ischaemic disease earns no credit in IHD.

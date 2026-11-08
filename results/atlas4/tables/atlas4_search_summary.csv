@@ -1,0 +1,2 @@
+configurations_tested,robust,robust_with_margin,within_precedent,saturation_artefacts,admissible,reaching_certainty,best_admissible,status
+360,176,160,288,48,8,48,"{'mode': 'cumulative', 'doses': 4, 'failure_correlation': 0.5, 'feedback_learning': 1.0, 'repeat_responder_probability': 0.3333333333333333, 'probability_of_target': 0.896, 'risk_adjusted_probability': 0.826461615796029}",atlas4_precedent_corrected_unvalidated

@@ -1,0 +1,123 @@
+ATLAS-4: what the literature already did, and what is actually still missing
+============================================================================
+ATLAS-4 IS A SIMULATION OF UNVALIDATED ARCHITECTURES. Repeat cell dosing is precedented and feasible in humans, but its efficacy is not established: the one randomised blinded repeat-dose trial with a functional primary endpoint was null. The cumulative-dosing mechanism is anchored to rodent and porcine work, and the cells involved do not regenerate myocardium. Nothing here is a therapy, a result, or a recommendation, and no cure is declared.
+
+WHAT THE SEARCH CHANGED
+  precedents recorded                12
+  precedented dose limit             4 (was 2 in ATLAS-3)
+  ATLAS-3's 3 attempts               WITHIN precedent, not beyond it
+  retry operator                     cumulative, not best-of-k
+  mechanism                      paracrine; these cells do not regenerate myocardium
+
+  2 positive human repeat-dose reports (yao_2011, gu_2011), but the one randomised blinded trial with a functional primary endpoint (vrtovec_remedium) was NULL versus single dosing. Repeat dosing is precedented and feasible; its efficacy in humans is not established.
+
+THE OPERATOR CONTRAST (same draws, human-tempered repeat response)
+  doses  best-of-k   cumulative   difference
+    1      49.60%      49.60%     +0.00 pp
+    2      60.52%      64.40%     +3.88 pp
+    3      67.85%      75.12%     +7.27 pp
+    4      74.12%      82.97%     +8.85 pp
+    6      83.70%      93.03%     +9.33 pp
+
+RESULT
+  single dose                        P  49.60%
+  ATLAS-4 (human-tempered)           P  82.97%   median 25.00 pp
+  robust with 2-SE margin            YES
+  beyond precedent                   no
+  cumulative adverse risk             7.98%
+  risk-adjusted success               76.35%
+
+  Same design with rodent optimism   P 100.00%   (saturated 55.8%)
+  The gap between those two lines is the translation assumption, stated not buried.
+
+EXHAUSTIVE SEARCH: EVERY COMBINATION TESTED
+  configurations                     360
+  robust                             176
+  robust with margin                 160
+  within precedent                   288
+  saturation artefacts (P = 100%)     48
+  admissible after all filters       8
+
+  Points that read 100% are reported and then EXCLUDED. A model that can be
+  made certain is a model that has stopped describing the problem.
+
+  best admissible point:
+    mode cumulative, 4 doses, correlation 0.50, learning 1.00, repeat response 0.33
+    P 89.60%, risk-adjusted 82.65%
+
+THE INDEPENDENCE REQUIREMENT WAS OPERATOR-SPECIFIC
+  mode          correlation   P(target)   gain vs single dose
+  best_of         0.00       74.12%    +24.52 pp
+  best_of         0.25       77.55%    +23.30 pp
+  best_of         0.50       75.85%    +19.55 pp
+  best_of         0.75       67.70%    +13.85 pp
+  best_of         1.00       59.72%     +8.77 pp
+  cumulative      0.00       82.97%    +33.38 pp
+  cumulative      0.25       85.35%    +31.10 pp
+  cumulative      0.50       86.15%    +29.85 pp
+  cumulative      0.75       85.05%    +31.20 pp
+  cumulative      1.00       81.20%    +30.25 pp
+
+  Gain retained at correlation 1.00: best-of-k 35.8%, cumulative 90.6%.
+
+  Best-of-k loses most of its benefit when doses are correlated, because
+  correlated attempts are close to one attempt; what survives is the feedback
+  uplift on later attempts, not the redundancy. Cumulative dosing keeps almost
+  all of it: a patient whose biology is consistently favourable accumulates
+  consistently favourable increments. ATLAS-3's headline 'measure independence
+  above 0.71' was a property of the wrong operator, not of the biology.
+
+THE MEASUREMENT FALSIFIER
+  modality                 quality   viability-specific   gain vs no feedback
+  reporter_gene_pet         0.78   yes                 +0.40 pp
+  iron_oxide_mri            0.00   no                  +0.00 pp
+  acute_retention_only      0.00   no                  +0.00 pp
+
+  Iron-oxide MRI and acute retention gain exactly nothing: iron signal survives
+  cell death and retention does not predict engraftment. Only a viability-specific
+  signal can close a feedback loop. That is a published finding, not a modelling
+  convenience.
+
+CAN EVERY CRITERION REACH 100%? MEASURED, NOT ASSERTED
+  criterion                    catalogue ceiling   at 100%   meets 0.8
+  durable_driver_control        1.000          YES       YES
+  burden_reversal               0.600          no        no
+  myocardial_restoration        0.500          no        no
+  risk_normalisation            0.061          no        no
+  randomised_proof              1.000          YES       YES
+
+  What blocks each one:
+    durable_driver_control: Reachable. One-time editing already scores 1.0 for a catalogued agent; the open item is a verified guide sequence and human durability follow-up.
+    burden_reversal: Capped by regression biology: partial plaque regression is limited to 0.6 for any single agent. ATLAS-2 reaches the burden target in simulation only by an invented 2.80x potency cap at 60 months.
+    myocardial_restoration: Capped at 0.5 for any myocardial claim without human remuscularisation evidence. ATLAS-4 raises the simulated probability but cannot raise the score, because the score is an evidence cap, not a probability.
+    risk_normalisation: Capped at 0.4 per single agent: no single therapy returns event risk to a low-risk reference. This is a property of the effect sizes, not a search failure.
+    randomised_proof: Reachable only for the exact regimen randomised. Proof reaches 1.0 for outcomes-tier catalogued agents, but does not transfer to an untested combination, so every invented architecture here scores 0.
+
+VERDICT ON 'KEEP GOING UNTIL ALL ARE 100%'
+That target is not reachable, and the reason is structural rather than a
+failure to search hard enough:
+
+  1. Two criteria already reach 1.0 for catalogued agents, so they were never
+     the binding constraint.
+  2. Myocardial restoration and single-agent risk normalisation are capped by
+     explicit evidence rules (0.5 and 0.4). Raising them means deleting the
+     rules, which would manufacture the number without producing evidence.
+  3. Randomised proof attaches to the exact regimen tested. It cannot be
+     inherited by an untested combination, so every architecture in this
+     repository scores zero on it no matter how well it simulates.
+  4. Any operating point that does read 100% in the graft model is a saturation
+     artefact and is excluded above.
+
+WHAT IS ACTUALLY STILL MISSING (and not already done by someone else)
+  Repeat dosing: DONE by others - CATO is randomising patients to four doses now.
+  Engraftment measurement: DONE in animals - reporter-gene PET predicts function.
+  Cumulative benefit: DONE in rats and pigs - and it is not regeneration.
+  Response-guided retry timing: PROPOSED in print in 2019, still NOT TESTED.
+  A viability-specific signal in humans: NOT DONE - the animal signal needs a
+    reporter gene the cells must be engineered to carry.
+
+So the genuinely open item is narrower than ATLAS-3 claimed: not 'repeat the
+dose', which is already in trial, but 'measure engraftment in a human well
+enough to decide when to repeat'. That is the experiment worth running.
+
+No cure is declared. Randomised proof for every architecture here remains zero.
