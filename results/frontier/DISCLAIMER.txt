@@ -1,0 +1,17 @@
+WHAT THIS MODULE IS
+  A frontier map: the requirements that must all hold before a simulation result is
+  worth a laboratory's time, checked one by one. Seven of eight fail.
+
+WHAT IT IS NOT
+  A model change, a tuning exercise, or a claim. No result here is improved.
+
+THE CENTRAL RESULT
+  The inflammatory model cannot rank the four downstream mechanisms it is asked to choose
+  between - they differ by 0.000252 mg/L. Choosing which experiment to run requires
+  knowing which mechanism matters, which is what the experiment is for. That circularity
+  is why a simulation cannot terminate in "the solution", however much compute it gets.
+
+WHAT IT CAN DO INSTEAD
+  State precisely which measurement would discriminate, at what resolution, in what
+  population. That is an experiment specification, and it is the correct output of a
+  simulation-first programme.

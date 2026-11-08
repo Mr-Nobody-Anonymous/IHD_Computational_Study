@@ -1,0 +1,6 @@
+deliverable,what_it_settles,why_a_lab_cannot,caveat
+falsifiable prediction with a stated resolution,"which measurement would refute the mechanism, and how precise","a lab must first choose what to measure, and that is the question","the prediction is about the model, not the patient"
+minimum detectable difference for a proposed trial,whether a planned study can answer its own question at all,a lab learns this only after the study is over,"requires an assumed between-patient SD, which is swept"
+identification of redundant mechanisms,which combinations cannot add benefit because they share a pathway,a lab would have to run the combination to discover this,redundancy is a property of THIS model's structure
+arithmetic limits on what any trial of this size could show,whether a published result is distinguishable from noise,"it is arithmetic, and nobody runs it",none - this one is pure arithmetic and is the strongest deliverable
+an ordered list of experiments by information per cost,which measurement would collapse the most uncertainty,a lab cannot try every experiment; simulation can rank them,the ranking is only as good as the assumed structure

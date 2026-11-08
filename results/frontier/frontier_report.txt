@@ -1,0 +1,117 @@
+==============================================================================
+THE SIMULATION-FIRST FRONTIER
+==============================================================================
+
+WHAT THIS MODULE IS
+  A frontier map: the requirements that must all hold before a simulation result is
+  worth a laboratory's time, checked one by one. Seven of eight fail.
+
+WHAT IT IS NOT
+  A model change, a tuning exercise, or a claim. No result here is improved.
+
+THE CENTRAL RESULT
+  The inflammatory model cannot rank the four downstream mechanisms it is asked to choose
+  between - they differ by 0.000252 mg/L. Choosing which experiment to run requires
+  knowing which mechanism matters, which is what the experiment is for. That circularity
+  is why a simulation cannot terminate in "the solution", however much compute it gets.
+
+WHAT IT CAN DO INSTEAD
+  State precisely which measurement would discriminate, at what resolution, in what
+  population. That is an experiment specification, and it is the correct output of a
+  simulation-first programme.
+
+------------------------------------------------------------------------------
+1. CAN THE MODEL NAME A WINNER?
+------------------------------------------------------------------------------
+  untreated                          final CRP  88.6134   reduction  0.00%
+  ldl_lowering_or_nfkb_inhibition    final CRP  44.3508   reduction 49.95%
+  nlrp3_inflammasome                 final CRP  44.3070   reduction 50.00%
+  caspase1                           final CRP  44.3067   reduction 50.00%
+  il1b                               final CRP  44.3067   reduction 50.00%
+  il6                                final CRP  44.3067   reduction 50.00%
+
+  four downstream mechanisms differ by 0.000252 mg/L
+  as a fraction of the value:            4.87e-06
+  patients per arm to separate them:     66,093,675,293
+  structurally blind:                    True
+
+  LDL lowering and NF-kB inhibition are the same perturbation:
+    max difference over all species and times =
+    0.000e+00
+
+------------------------------------------------------------------------------
+2. WHAT DATA WOULD MAKE EACH MODEL FALSIFIABLE
+------------------------------------------------------------------------------
+  validation targets listed                 7
+  present in data/                          0
+  independent observables available         1
+  independent observables needed            14
+
+------------------------------------------------------------------------------
+3. THE TRANSFER GATE
+------------------------------------------------------------------------------
+  checks passed  0 of 8
+
+  [FAIL] solution_is_defined
+         requires : a pre-specified endpoint, effect size and population defining what counts as 'the solution'
+         evidence : the repository reports LVEF gains, CRP values and hazard ratios, but has never pre-specified which of these, at what threshold, in whom, would constitute success
+         if failed: without a definition, any result can be narrated as success after the fact; this is the single most important missing item
+
+  [FAIL] model_identifies_a_winner
+         requires : the model can rank the candidate mechanisms it is asked to choose between
+         evidence : four downstream mechanisms differ by 0.000252 mg/L; separating them needs 66,093,675,293 patients per arm
+         if failed: the simulation cannot select what to test; it can only exclude what is structurally impossible
+
+  [FAIL] mechanisms_are_distinguishable
+         requires : the model distinguishes the interventions it claims to compare
+         evidence : LDL lowering and NF-kB inhibition are the same perturbation to machine precision (max difference 0.0e+00)
+         if failed: any 'LDL drug versus anti-inflammatory drug' comparison in this model is a parameter compared with itself
+
+  [FAIL] parameters_are_identified
+         requires : the fitted parameters are determined by the data rather than chosen
+         evidence : 0 of 14 cytokine rates are jointly identifiable; 32 of 92 registered parameters are hypothetical
+         if failed: a laboratory would be testing the modeller's assumptions, not the hypothesis; a negative result would be uninterpretable
+
+  [FAIL] at_least_one_external_validation
+         requires : the model predicts data it was not built from
+         evidence : 0 of 7 validation targets are present in data/
+         if failed: the repository sits at CONVERGENCE and cannot claim predictive validity; a converged wrong answer is still wrong
+
+  [FAIL] predictions_are_falsifiable
+         requires : each prediction carries a number that would show it to be false
+         evidence : every current test asserts the code does what it was written to do; none asserts a quantity that external data could contradict
+         if failed: no laboratory outcome can refute the model, so any result would be absorbed as consistent
+
+  [FAIL] uncertainty_is_propagated
+         requires : the output carries an interval that includes parameter uncertainty
+         evidence : the interval reported is over seeds and scenarios; it does not include uncertainty in the 32 hypothetical parameters, because they have no distribution to propagate
+         if failed: the reported interval is narrower than the true one, and its width is a property of the sampler rather than of the evidence
+
+  [FAIL] the_comparator_is_defined
+         requires : the transfer has a stated comparator, not just an intervention
+         evidence : REVIVED's guideline-therapy arm moves LVEF by +3.4 pp on its own; the architecture has never been compared against it in this repository
+         if failed: a laboratory or trial reading of the result cannot separate the intervention from the background therapy everyone receives anyway
+
+------------------------------------------------------------------------------
+4. WHAT SIMULATION CAN HAND OVER
+------------------------------------------------------------------------------
+  1. serial IL-6 and CRP time course under a defined stimulus
+     resolves : whether the chain structure is right at all
+     needs    : >= 6 time points, inter-individual SD reported
+
+  2. randomised dose-response to an NLRP3 or IL-1b inhibitor
+     resolves : the mechanism attribution, which the model cannot supply
+     needs    : >= 3 doses, placebo, randomised
+
+  3. paired serial cap thickness and LDL in the same patients
+     resolves : whether cap thinning follows LDL as the model assumes
+     needs    : >= 2 time points, >= 200 patients
+
+  4. randomised cell-therapy arm against guideline therapy
+     resolves : the entire efficacy question
+     needs    : >= 26 per arm for LVEF; an outcome endpoint for survival
+
+==============================================================================
+TRANSFER AUTHORISED: NO
+==============================================================================
+  First item to fix: define what 'the solution' means, before any more modelling

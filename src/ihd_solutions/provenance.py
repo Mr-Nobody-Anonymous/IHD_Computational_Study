@@ -626,6 +626,56 @@ REGISTRY: dict[str, Provenance] = {
         "ATLAS-4's best admissible point, read from results/atlas4, pinned by test",
         "a MODEL OUTPUT, not an external measurement; it is a reference point only",
     ),
+    # ------------------------------------------------------- simulation frontier
+    "CRP_ASSAY_CV": Provenance(
+        0.10,
+        "coefficient of variation",
+        "estimated",
+        "arithmetic",
+        "human",
+        "high-sensitivity CRP within-assay CV; clinical assays quote 5-10% and the upper "
+        "end is used so the resolution requirement is not flattered",
+        "ESTIMATED from the quoted assay range, not measured for a specific platform",
+    ),
+    "CRP_PATIENT_CV": Provenance(
+        0.30,
+        "coefficient of variation",
+        "estimated",
+        "arithmetic",
+        "human",
+        "between-patient CV of CRP, chosen generous because a smaller value would make the "
+        "resolution requirement look easier than it is",
+        "ESTIMATED and deliberately conservative; the ranking conclusion is robust to it",
+    ),
+    "STRUCTURAL_BLINDNESS": Provenance(
+        1e-3,
+        "fraction of the observable",
+        "estimated",
+        "design",
+        "none",
+        "a separation below one part in a thousand of the observable is called structural, "
+        "because it is below any plausible assay resolution",
+        "a design threshold, not a measurement",
+    ),
+    "FRONTIER_POWER_Z": Provenance(
+        2.801585,
+        "z",
+        "estimated",
+        "arithmetic",
+        "none",
+        "two-arm 80% power, two-sided 5% z-sum (same value as POWER_Z_TOTAL, kept separate "
+        "so the frontier module reads alone)",
+        "closed-form",
+    ),
+    "FRONTIER_STEP": Provenance(
+        0.50,
+        "fraction",
+        "estimated",
+        "design",
+        "none",
+        "relative perturbation applied to each mechanism when building the effect table",
+        "a design choice; it is applied identically to every mechanism",
+    ),
     # ------------------------------------------------------- unanswered-question audit
     "POWER_Z_TOTAL": Provenance(
         2.801585,

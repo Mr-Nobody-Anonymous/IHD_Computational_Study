@@ -320,6 +320,20 @@ external validation set, and it is **not done**.
 python run_solutions.py unanswered      # -> results/unanswered/ (6 artefacts)
 ```
 
+[`docs/simulation_frontier.md`](docs/simulation_frontier.md) asks whether simulation alone can
+find the solution. **It cannot, and the reason is not compute.** The inflammatory model
+cannot rank the four mechanisms it is asked to choose between - they differ by **0.000252
+mg/L**, one part in five million - and **LDL lowering and NF-kB inhibition turn out to be the
+same perturbation**, identical to machine precision. Choosing which experiment to run
+requires knowing which mechanism matters, which is what the experiment is for. **0 of 8
+transfer checks pass.** What simulation *can* hand over is an experiment specification: the
+measurement, at what resolution, that would discriminate - which is worth a laboratory's
+time, and is not the same thing as a cure.
+
+```bash
+python run_solutions.py frontier         # -> results/frontier/ (7 artefacts)
+```
+
 - **Hazard ratio — solved as procurement.** All 19 populations close by exploratory credit.
   One PCSK9-editing outcomes trial unlocks **17 of 19**. No new biology needed.
 - **Clearance — solved as an engineering spec.** Correction: no *single* module suffices
@@ -411,6 +425,7 @@ IHD_Computational_Study/
 │   ├── revival_correction.md                     # what ATLAS-5 was missing: the control arm, and what it costs
 │   ├── scientific_audit.md                       # provenance, identifiability, verification vs validation
 │   ├── unanswered_questions.md                   # what cannot be answered, and what each gap costs
+│   ├── simulation_frontier.md                    # can simulation pick a winner? no - and why
 │   ├── FULL_REPORT.md                            # consolidated report: all agents, compounds, experiments, results
 │   ├── FULL_REPORT_chemical_index.csv            # 95 entities, source-tagged, QA-flagged
 │   ├── scientific_methodology_and_limitations.md # Critical reality check & assumptions

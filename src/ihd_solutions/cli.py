@@ -171,6 +171,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     unanswered.add_argument("--output-dir", type=Path, default=Path("results/unanswered"))
 
+    frontier = subparsers.add_parser(
+        "frontier",
+        help="what must hold before a simulation result is worth a lab's time",
+    )
+    frontier.add_argument("--output-dir", type=Path, default=Path("results/frontier"))
+
     subparsers.add_parser("validate", help="validate all input registries and exit")
     return parser
 
@@ -186,6 +192,15 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _dispatch(args: argparse.Namespace) -> int:
+    if args.command == "frontier":
+        from ihd_solutions.simulation_frontier import write_frontier_report
+
+        summary = write_frontier_report(args.output_dir)
+        for key, value in summary.items():
+            print(f"{key}: {value}")
+        print((args.output_dir / "frontier_report.txt").read_text())
+        return 0
+
     if args.command == "unanswered":
         from ihd_solutions.gaps import write_gap_report
 

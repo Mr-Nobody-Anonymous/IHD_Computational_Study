@@ -54,9 +54,9 @@ this study, because no combination has been trialled.
 | `results/upgrade/` | 10 |
 
 **Input registries:** 47 therapies · 48 trial anchors · 19 populations
-**Documentation:** 22 documents (plus this report)
-**Code:** 40 modules in `src/ihd_solutions/`
-**Tests:** 35 test files
+**Documentation:** 23 documents (plus this report)
+**Code:** 41 modules in `src/ihd_solutions/`
+**Tests:** 36 test files
 
 ---
 
@@ -1502,6 +1502,68 @@ used to fit the constants would be internal validation wearing the wrong label.
 
 ---
 
+## F.16 The simulation-first frontier (`frontier`)
+
+Full account: [`simulation_frontier.md`](simulation_frontier.md). Artefacts:
+`results/frontier/` (7).
+
+The question: *"find the solution in simulation only, then transfer to the lab."* What must
+hold before a simulation result is worth a laboratory's time? **8 checks; 0 pass. Transfer
+authorised: NO.**
+
+### The model cannot rank the mechanisms it is asked to choose between
+
+| mechanism (halved) | terminal CRP (mg/L) |
+|---|---|
+| untreated | 88.6134 |
+| LDL lowering **or** NF-kB inhibition | 44.3508 |
+| NLRP3 | 44.3070 |
+| caspase-1 | 44.3067 |
+| IL-1b | 44.3067 |
+| IL-6 | 44.3067 |
+
+The four distinct anti-inflammatory targets differ by **0.000252 mg/L**, one part in five
+million. Separating them needs **66 billion patients per arm**. This is structural, not a
+resolution problem: each parameter is a multiplicative factor on a linear chain, so the
+chain product is invariant to which factor is adjusted. **More compute cannot fix it.**
+
+**And LDL lowering and NF-kB inhibition are the same perturbation** - max difference over
+all species and times is exactly **0.000e+00**, because `oxldl_factor` multiplies
+`k_nfkb_act` and nothing else. Comparing them is comparing a parameter with itself.
+
+### Why this blocks the plan specifically
+
+Choosing **which** experiment to run requires knowing which mechanism matters, which is what
+the experiment is for. That circularity is why a simulation cannot terminate in "the
+solution", however much compute it gets.
+
+### The gate
+
+| requirement | state |
+|---|---|
+| a pre-specified endpoint, effect size and population defining "the solution" | **FAIL** - never specified |
+| the model can rank the candidate mechanisms | **FAIL** - 0.000252 mg/L apart |
+| the model distinguishes the interventions it compares | **FAIL** - LDL = NF-kB |
+| parameters are determined by data rather than chosen | **FAIL** - 0 of 14 rates |
+| at least one external validation | **FAIL** - 0 of 7 targets present |
+| predictions are falsifiable | **FAIL** - no test asserts a contradictable quantity |
+| uncertainty is propagated to the hypothetical parameters | **FAIL** |
+| a stated comparator | **FAIL** - REVIVED OMT moves LVEF +3.4 pp unaided |
+
+### What it CAN hand over
+
+An **experiment specification**, not a cure: serial cytokine time courses (>=6 points),
+randomised dose-response to an NLRP3/IL-1b inhibitor, paired serial cap/LDL imaging, and a
+randomised cell-therapy arm (>=26 per arm for LVEF, an outcome endpoint for survival).
+Plus five things a laboratory cannot produce - MDE for any proposed trial, redundancy
+between shared pathways, and arithmetic limits on what a trial of a given size could show.
+
+**Simulation cannot find "the solution" - a model cannot choose the experiment that would
+tell you whether the model is right.** What it can do is rule things out, bound what a
+trial could show, and specify the measurement that would discriminate.
+
+---
+
 # PART G — THE HONESTY LEDGER
 
 Every retraction and correction made during this study, in order. This section
@@ -1545,6 +1607,9 @@ exists because a report that only shows final numbers hides how they were reache
 | 34 | "Do more computation and the efficacy question gets closer" | Simulating around a missing causal link does not supply it | **41% of outcome variance** outside the model; drop to 0.00% proof |
 | 35 | The patch trials showed a benefit | Both observed effects below their own minimum detectable difference | **n=8 cannot resolve 4.3 pp; n=20 cannot resolve 3.9 pp** |
 | 36 | Selecting responsive patients helps patients | Re-orders patients; moves none of them | **0% population gain**; single-arm readout inflated 7.6x |
+| 37 | More simulation gets closer to "the solution" | The model cannot rank the mechanisms it must choose between | **0.000252 mg/L apart; 66 billion per arm** |
+| 38 | The model compares LDL lowering with anti-inflammation | LDL lowering and NF-kB inhibition are algebraically identical here | **Difference exactly 0.0**; it is a parameter against itself |
+| 39 | "Simulation first, lab second" terminates in a cure | Choosing the experiment requires the experiment's result | **0 of 8 transfer checks pass** |
 
 **Implementation bugs found and fixed:** run-in pinned responders to the threshold
 instead of keeping their achieved value; gate threshold computed at 24 months but
@@ -1600,6 +1665,7 @@ python run_solutions.py recombine       # ATLAS-5 mechanism composition -> resul
 python run_solutions.py revival         # control-arm correction        -> results/revival/
 python run_solutions.py scientific-audit # provenance/identifiability    -> results/scientific_audit/
 python run_solutions.py unanswered       # what cannot be answered       -> results/unanswered/
+python run_solutions.py frontier         # can simulation pick a winner  -> results/frontier/
 python run_solutions.py validate        # registries only
 ```
 
@@ -1651,7 +1717,7 @@ the measured load-bearing parts of the first two, which is stronger and simpler 
 either and refuses 14.08 pp of double-counted benefit - then charged for the control
 arm it never had, and withdrawn when the charge was found to dissolve it; and a documented
 record of
-thirty-six claims that were tested and withdrawn. **The retractions are part of the
+thirty-nine claims that were tested and withdrawn. **The retractions are part of the
 result.**
 
 ---
