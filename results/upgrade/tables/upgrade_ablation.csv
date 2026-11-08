@@ -1,0 +1,5 @@
+removed_upgrade,active_in_construct,probability_of_target,probability_loss_pp,eligible_fraction,unconditional_probability,robust,load_bearing,status
+redundant_gate,True,0.6125,24.874999999999993,1.0,0.6125,False,True,atlas2_invented_architecture_unvalidated
+redundant_nodes,True,0.41625,44.49999999999999,1.0,0.41625,False,True,atlas2_invented_architecture_unvalidated
+titration,True,0.06125,80.0,1.0,0.06125,False,True,atlas2_invented_architecture_unvalidated
+verified_source,False,0.86125,0.0,1.0,0.86125,True,False,atlas2_invented_architecture_unvalidated

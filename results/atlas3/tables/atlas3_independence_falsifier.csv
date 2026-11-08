@@ -1,0 +1,6 @@
+failure_correlation,probability_of_target,first_attempt_probability,redundancy_gain_pp,robust,status
+0.0,0.88475,0.496,38.87500000000001,True,atlas3_invented_architecture_unvalidated
+0.25,0.893,0.5425,35.050000000000004,True,atlas3_invented_architecture_unvalidated
+0.5,0.81375,0.563,25.075000000000003,True,atlas3_invented_architecture_unvalidated
+0.75,0.6495,0.5385,11.099999999999998,False,atlas3_invented_architecture_unvalidated
+1.0,0.5095,0.5095,0.0,False,atlas3_invented_architecture_unvalidated

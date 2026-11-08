@@ -1,0 +1,68 @@
+IHD cure search: what the evidence can and cannot support
+====================================================================
+VERDICT: no catalogued intervention, and no combination of them, meets all five
+cure criteria. This is a quantitative statement about the encoded evidence,
+not a claim that a cure is impossible in principle.
+
+CRITERIA AND CEILINGS (best score any single therapy achieves)
+  durable_driver_control: ceiling 1.00 (threshold 0.80) - The causal driver stays suppressed without repeated dosing (one-time editing is the only modality that plausibly reaches this).
+  burden_reversal: ceiling 0.60 (threshold 0.80) - Existing atherosclerotic burden is removed, not merely stabilised. Imaging shows partial lipid-core regression with calcified volume rising, so this is capped.
+  myocardial_restoration: ceiling 0.50 (threshold 0.80) - Lost contractile myocardium is replaced. Engineered heart muscle shows a few percentage points of LVEF, not restored normal myocardium.
+  risk_normalisation: ceiling 0.10 (threshold 0.80) - Event risk returns to a low-risk reference. No single therapy does this; the best stacks remove roughly half of the excess risk.
+  randomised_proof: ceiling 1.00 (threshold 0.80) - Benefit proven on hard human endpoints. Biomarker, animal and pending results score low or zero.
+  best observed stack removes 74% of excess risk (risk-normalisation score 0.74, still below threshold)
+
+BINDING CONSTRAINTS
+  burden_reversal: no therapy reaches the threshold, so no stack can either
+  myocardial_restoration: no therapy reaches the threshold, so no stack can either
+  risk_normalisation: no therapy reaches the threshold, so no stack can either
+
+HIGHEST-SCORING INTERVENTIONS (readiness index, equal weights)
+  evolocumab: 0.36 [satisfied: randomised_proof]
+  ezetimibe: 0.34 [satisfied: randomised_proof]
+  statin_high_intensity: 0.34 [satisfied: randomised_proof]
+  ctx310_angptl3_editing: 0.26 [satisfied: durable_driver_control]
+  verve102_base_editing: 0.26 [satisfied: durable_driver_control]
+  alirocumab: 0.25 [satisfied: randomised_proof]
+  colchicine: 0.24 [satisfied: randomised_proof]
+  bempedoic_acid: 0.23 [satisfied: randomised_proof]
+  aspirin_secondary_prevention: 0.21 [satisfied: randomised_proof]
+  bp_intensification: 0.21 [satisfied: randomised_proof]
+
+THE STRONGEST CURE-ADJACENT SCENARIO: EARLY, DURABLE EXPOSURE REMOVAL
+Mendelian-randomisation scenario, not a treatment effect. Genetic carriers of
+lifelong low LDL-C have far lower risk than five-year trials predict, so the
+question is when a durable intervention starts, not only how much it lowers.
+  verve102_base_editing from age 30: lifetime risk 4.2% vs 20.0% (79% lower; 158 events avoided per 1000)
+  verve102_base_editing from age 40: lifetime risk 5.7% vs 20.0% (71% lower; 143 events avoided per 1000)
+  verve102_base_editing from age 50: lifetime risk 7.9% vs 20.0% (60% lower; 121 events avoided per 1000)
+  verve102_base_editing from age 60: lifetime risk 10.9% vs 20.0% (46% lower; 91 events avoided per 1000)
+  verve102_base_editing from age 70: lifetime risk 14.8% vs 20.0% (26% lower; 52 events avoided per 1000)
+  editing_plus_statin_stack from age 30: lifetime risk 2.5% vs 20.0% (87% lower; 175 events avoided per 1000)
+  editing_plus_statin_stack from age 40: lifetime risk 3.9% vs 20.0% (81% lower; 161 events avoided per 1000)
+  editing_plus_statin_stack from age 50: lifetime risk 5.9% vs 20.0% (71% lower; 141 events avoided per 1000)
+  editing_plus_statin_stack from age 60: lifetime risk 8.9% vs 20.0% (55% lower; 111 events avoided per 1000)
+  editing_plus_statin_stack from age 70: lifetime risk 13.5% vs 20.0% (33% lower; 65 events avoided per 1000)
+
+RESIDUAL RISK UNDER THE BEST EVIDENCE-BACKED STACKS
+  secondary_post_mi: 20.1% -> 8.2% vs reference 2.0%; 34% of excess risk remains
+  post_mi_pci: 22.1% -> 12.3% vs reference 2.0%; 51% of excess risk remains
+  stable_ccs: 13.9% -> 5.1% vs reference 2.0%; 26% of excess risk remains
+  ascvd_ckd_inflammation: 25.9% -> 17.1% vs reference 2.0%; 63% of excess risk remains
+  hefh_primary: 9.5% -> 4.5% vs reference 2.0%; 34% of excess risk remains
+  ischemic_cm_heart_failure: 33.0% -> 28.0% vs reference 2.0%; 84% of excess risk remains
+
+WHAT WOULD HAVE TO CHANGE
+- Burden reversal: trials showing removal of calcified/total burden, not just
+  the lipid-rich fraction. FLOWPROMOTE/GLAGOV show partial regression only.
+- Myocardial restoration: controlled trials showing durable, arrhythmia-free
+  remuscularisation with normalised function, not a few LVEF points.
+- Risk normalisation: evidence that treated risk equals a low-risk reference.
+- Randomised proof for one-time editing: outcomes trials, plus off-target
+  assays that DSB-based methods cannot provide.
+
+NON-CLAIMS
+- No cure is demonstrated, simulated or implied by this repository.
+- Animal and in-vitro results never produce human event credit.
+- Active-comparator and Mendelian-randomisation contrasts are never applied
+  as placebo-relative treatment effects.

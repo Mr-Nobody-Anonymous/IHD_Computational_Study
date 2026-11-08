@@ -1,0 +1,96 @@
+In-silico cure discovery: searching for a specification, not a cure
+====================================================================
+SIMULATION-ONLY DISCOVERY - outputs a candidate specification, never a cure. The randomised_proof criterion is excluded because no simulation can satisfy it. Nothing here is evidence, a therapy, or a recommendation.
+
+WHY THIS CANNOT RETURN A CURE
+The 'randomised_proof' criterion requires randomised human outcome evidence.
+No simulation can generate it. This programme therefore searches the four
+simulation-admissible criteria and returns a candidate specification. Calling
+that a cure would be a definitional trick, not a discovery.
+
+REQUIRED CAPABILITY VECTOR (back-calculated)
+  driver_durability      0.800
+  substrate_removal      0.800
+  lvef_gain_pp           20.000
+  hazard_ratio           0.298
+
+FEASIBILITY, TWO BOUND SETS
+  demonstrated   P(candidate)= 0.00%  best corner worst-score 0.156  blocking: burden_reversal;myocardial_restoration;risk_normalisation
+  conceivable    P(candidate)= 0.03%  best corner worst-score 0.835  blocking: none
+
+  Read this pair together: an empty feasible region under demonstrated
+  bounds and a non-empty one under conceivable bounds means the difference
+  between the boxes IS the missing discovery. A corner that passes while
+  P(candidate) is near zero means the feasible region is a vanishingly thin
+  corner: essentially every capability must be near its maximum at once.
+
+EXACT FEASIBLE VOLUME (analytic, no sampling noise)
+  demonstrated   feasible volume = 0.000e+00
+      driver_durability      passing window  20.00% of its range
+      substrate_removal      passing window   0.00% of its range
+      lvef_gain_pp           passing window   0.00% of its range
+      hazard_ratio           passing window   0.00% of its range
+  conceivable    feasible volume = 3.686e-04
+      driver_durability      passing window  20.00% of its range
+      substrate_removal      passing window   4.19% of its range
+      lvef_gain_pp           passing window  20.00% of its range
+      hazard_ratio           passing window  21.99% of its range
+
+WHAT IS MISSING, PER CAPABILITY
+  lvef_gain_pp           need  20.000  have   3.900  gap x 5.13  OUT OF REACH
+      basis: BioVAT-HF, n=20, +3.9 LVEF points
+  substrate_removal      need   0.800  have   0.431  gap x 1.86  OUT OF REACH
+      basis: best human noncalcified plaque reduction 43.1% (regression grid)
+  hazard_ratio           need   0.298  have   0.360  gap x 1.21  OUT OF REACH
+      basis: best strict stack, stable_ccs: 13.93% -> 5.09% five-year risk
+  driver_durability      need   0.800  have   1.000  gap x 0.80  reachable
+      basis: one-time hepatic editing modelled as permanent (score 1.0)
+
+WHICH MEASUREMENT WOULD MOST MOVE THE BINDING MARGIN
+(variance decomposition of the worst-criterion score)
+  substrate_removal      resolves  18.4% of decision variance
+  hazard_ratio           resolves  15.2% of decision variance
+  lvef_gain_pp           resolves  15.2% of decision variance
+  driver_durability      resolves  14.1% of decision variance
+
+INDISPENSABLE CAPABILITIES (revert-one ablation)
+  revert driver_durability      -> already solved
+  revert substrate_removal      -> INDISPENSABLE (blocks burden_reversal)
+  revert lvef_gain_pp           -> INDISPENSABLE (blocks myocardial_restoration)
+  revert hazard_ratio           -> INDISPENSABLE (blocks risk_normalisation)
+
+THE PROGRAMME
+  0. Formalise the target [executable now]
+     question: What exactly would count, and which criteria can a simulation address?
+     exit gate: A written target with four admissible criteria and one explicitly excluded
+  1. Feasibility frontier [executable now]
+     question: Does any capability vector satisfy the admissible criteria?
+     exit gate: Non-empty feasible region under conceivable bounds, empty under demonstrated
+  2. Gap quantification [executable now]
+     question: How far is each capability from the requirement?
+     exit gate: Every gap expressed as a factor with a cited provenance
+  3. Value of information [executable now]
+     question: Which unknown, if measured, would most change the answer?
+     exit gate: Capabilities ranked by decision variance resolved
+  4. Minimal capability set [executable now]
+     question: Which capabilities are indispensable versus already solved?
+     exit gate: An irreducible set of required discoveries
+  5. Adversarial falsification [requires new model structure]
+     question: Does the candidate survive hostile but plausible assumptions?
+     exit gate: Candidate retains a feasible region across structural perturbations
+  6. Identifiability audit [requires new model structure]
+     question: Are the governing parameters identifiable from obtainable data?
+     exit gate: Every decision-relevant parameter has an identifiable measurement route
+  7. Specification handoff [executable now]
+     question: What is the cheapest real-world sequence that could convert this to evidence?
+     exit gate: A specification a laboratory can act on, with the proof criterion still open
+
+THE HONEST BOTTOM LINE
+- Driver durability is already solved in principle by one-time editing.
+- Substrate clearance is short by roughly a factor of two, and the modelled
+  architecture's own ceiling only just clears the bar.
+- Myocardial restoration is the binding discovery: nothing demonstrated is
+  close, and no parameter tuning creates a capability that does not exist.
+- Randomised proof stays open no matter how good the simulation gets.
+- Therefore: a cure cannot be discovered in simulation. A specification can,
+  and this is it.

@@ -1,0 +1,739 @@
+population_id,mode,therapy_id,credited,anchor_id,hazard_ratio,reason,warnings,n_regimens_observed
+ascvd_ckd_inflammation,exploratory,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,transported_population,35
+ascvd_ckd_inflammation,strict,alirocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,surrogate,alirocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,exploratory,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,transported_population,35
+hefh_primary,strict,alirocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,surrogate,alirocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,exploratory,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,transported_population,35
+ischemic_cm_heart_failure,strict,alirocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,surrogate,alirocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,exploratory,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,transported_population,35
+post_mi_pci,strict,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,transported_population,35
+post_mi_pci,surrogate,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,transported_population,35
+secondary_post_mi,exploratory,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,,35
+secondary_post_mi,strict,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,,35
+secondary_post_mi,surrogate,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,,35
+stable_ccs,exploratory,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,transported_population,35
+stable_ccs,strict,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,transported_population,35
+stable_ccs,surrogate,alirocumab,True,ODYSSEY-OUTCOMES,0.85,ODYSSEY-OUTCOMES credited via fixed on MACE,transported_population,35
+ascvd_ckd_inflammation,exploratory,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+ascvd_ckd_inflammation,strict,aspirin_secondary_prevention,False,,,no trial anchor available for this therapy,no_anchor,753
+ascvd_ckd_inflammation,surrogate,aspirin_secondary_prevention,False,,,no trial anchor available for this therapy,no_anchor,753
+hefh_primary,exploratory,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+hefh_primary,strict,aspirin_secondary_prevention,False,,,no trial anchor available for this therapy,no_anchor,753
+hefh_primary,surrogate,aspirin_secondary_prevention,False,,,no trial anchor available for this therapy,no_anchor,753
+ischemic_cm_heart_failure,exploratory,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+ischemic_cm_heart_failure,strict,aspirin_secondary_prevention,False,,,no trial anchor available for this therapy,no_anchor,753
+ischemic_cm_heart_failure,surrogate,aspirin_secondary_prevention,False,,,no trial anchor available for this therapy,no_anchor,753
+post_mi_pci,exploratory,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+post_mi_pci,strict,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+post_mi_pci,surrogate,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+secondary_post_mi,exploratory,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+secondary_post_mi,strict,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+secondary_post_mi,surrogate,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+stable_ccs,exploratory,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+stable_ccs,strict,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+stable_ccs,surrogate,aspirin_secondary_prevention,True,ATT-ASPIRIN,0.81,ATT-ASPIRIN credited via fixed on MACE,transported_population,753
+ascvd_ckd_inflammation,exploratory,azd0780_oral,False,PURSUIT,,PURSUIT reports no effect estimate (SURROGATE),no_effect_estimate,35
+ascvd_ckd_inflammation,strict,azd0780_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,surrogate,azd0780_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,exploratory,azd0780_oral,False,PURSUIT,,PURSUIT reports no effect estimate (SURROGATE),no_effect_estimate,35
+hefh_primary,strict,azd0780_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,surrogate,azd0780_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,exploratory,azd0780_oral,False,PURSUIT,,PURSUIT reports no effect estimate (SURROGATE),no_effect_estimate,35
+ischemic_cm_heart_failure,strict,azd0780_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,surrogate,azd0780_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,exploratory,azd0780_oral,False,PURSUIT,,PURSUIT reports no effect estimate (SURROGATE),no_effect_estimate,35
+post_mi_pci,strict,azd0780_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,surrogate,azd0780_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,exploratory,azd0780_oral,False,PURSUIT,,PURSUIT reports no effect estimate (SURROGATE),no_effect_estimate,35
+secondary_post_mi,strict,azd0780_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,surrogate,azd0780_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,exploratory,azd0780_oral,False,PURSUIT,,PURSUIT reports no effect estimate (SURROGATE),no_effect_estimate,35
+stable_ccs,strict,azd0780_oral,False,PURSUIT,,PURSUIT reports no effect estimate (SURROGATE),no_effect_estimate,35
+stable_ccs,surrogate,azd0780_oral,False,PURSUIT,,PURSUIT reports no effect estimate (SURROGATE),no_effect_estimate,35
+ascvd_ckd_inflammation,exploratory,bempedoic_acid,True,CLEAR-OUTCOMES,0.87,CLEAR-OUTCOMES credited via fixed on MACE,transported_population,39
+ascvd_ckd_inflammation,strict,bempedoic_acid,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,bempedoic_acid,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,bempedoic_acid,True,CLEAR-OUTCOMES,0.87,CLEAR-OUTCOMES credited via fixed on MACE,transported_population,39
+hefh_primary,strict,bempedoic_acid,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,bempedoic_acid,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,bempedoic_acid,True,CLEAR-OUTCOMES,0.87,CLEAR-OUTCOMES credited via fixed on MACE,transported_population,39
+ischemic_cm_heart_failure,strict,bempedoic_acid,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,bempedoic_acid,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,bempedoic_acid,True,CLEAR-OUTCOMES,0.87,CLEAR-OUTCOMES credited via fixed on MACE,transported_population,39
+post_mi_pci,strict,bempedoic_acid,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,bempedoic_acid,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,bempedoic_acid,True,CLEAR-OUTCOMES,0.87,CLEAR-OUTCOMES credited via fixed on MACE,transported_population,39
+secondary_post_mi,strict,bempedoic_acid,True,CLEAR-OUTCOMES,0.87,CLEAR-OUTCOMES credited via fixed on MACE,transported_population,39
+secondary_post_mi,surrogate,bempedoic_acid,True,CLEAR-OUTCOMES,0.87,CLEAR-OUTCOMES credited via fixed on MACE,transported_population,39
+stable_ccs,exploratory,bempedoic_acid,True,CLEAR-OUTCOMES,0.87,CLEAR-OUTCOMES credited via fixed on MACE,transported_population,39
+stable_ccs,strict,bempedoic_acid,True,CLEAR-OUTCOMES,0.87,CLEAR-OUTCOMES credited via fixed on MACE,transported_population,39
+stable_ccs,surrogate,bempedoic_acid,True,CLEAR-OUTCOMES,0.87,CLEAR-OUTCOMES credited via fixed on MACE,transported_population,39
+ascvd_ckd_inflammation,exploratory,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+ascvd_ckd_inflammation,strict,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+ascvd_ckd_inflammation,surrogate,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+hefh_primary,exploratory,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+hefh_primary,strict,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+hefh_primary,surrogate,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+ischemic_cm_heart_failure,exploratory,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+ischemic_cm_heart_failure,strict,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+ischemic_cm_heart_failure,surrogate,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+post_mi_pci,exploratory,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+post_mi_pci,strict,bp_intensification,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,bp_intensification,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+secondary_post_mi,strict,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+secondary_post_mi,surrogate,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+stable_ccs,exploratory,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+stable_ccs,strict,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+stable_ccs,surrogate,bp_intensification,True,BPLTTC-SBP,0.9,BPLTTC-SBP credited via per_5_mmhg_sbp on MACE,transported_population,39
+ascvd_ckd_inflammation,exploratory,cabg_ischemic_cm,True,STICH-CABG,0.84,STICH-CABG credited via fixed on ALL_CAUSE_DEATH,transported_population,38
+ascvd_ckd_inflammation,strict,cabg_ischemic_cm,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,surrogate,cabg_ischemic_cm,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,exploratory,cabg_ischemic_cm,True,STICH-CABG,0.84,STICH-CABG credited via fixed on ALL_CAUSE_DEATH,transported_population,38
+hefh_primary,strict,cabg_ischemic_cm,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,surrogate,cabg_ischemic_cm,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,exploratory,cabg_ischemic_cm,True,STICH-CABG,0.84,STICH-CABG credited via fixed on ALL_CAUSE_DEATH,,38
+ischemic_cm_heart_failure,strict,cabg_ischemic_cm,False,STICH-CABG,,STICH-CABG endpoint ALL_CAUSE_DEATH is not a MACE composite; credit only in exploratory mode,non_mace_endpoint,38
+ischemic_cm_heart_failure,surrogate,cabg_ischemic_cm,False,STICH-CABG,,STICH-CABG endpoint ALL_CAUSE_DEATH is not a MACE composite; credit only in exploratory mode,non_mace_endpoint,38
+post_mi_pci,exploratory,cabg_ischemic_cm,True,STICH-CABG,0.84,STICH-CABG credited via fixed on ALL_CAUSE_DEATH,transported_population,38
+post_mi_pci,strict,cabg_ischemic_cm,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,surrogate,cabg_ischemic_cm,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,exploratory,cabg_ischemic_cm,True,STICH-CABG,0.84,STICH-CABG credited via fixed on ALL_CAUSE_DEATH,transported_population,38
+secondary_post_mi,strict,cabg_ischemic_cm,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,surrogate,cabg_ischemic_cm,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,exploratory,cabg_ischemic_cm,True,STICH-CABG,0.84,STICH-CABG credited via fixed on ALL_CAUSE_DEATH,transported_population,38
+stable_ccs,strict,cabg_ischemic_cm,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,surrogate,cabg_ischemic_cm,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,exploratory,canakinumab,True,CANTOS-150,0.85,CANTOS-150 credited via fixed on MACE,transported_population,38
+ascvd_ckd_inflammation,strict,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,surrogate,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,exploratory,canakinumab,True,CANTOS-150,0.85,CANTOS-150 credited via fixed on MACE,transported_population,38
+hefh_primary,strict,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,surrogate,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,exploratory,canakinumab,True,CANTOS-150,0.85,CANTOS-150 credited via fixed on MACE,transported_population,38
+ischemic_cm_heart_failure,strict,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,surrogate,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,exploratory,canakinumab,True,CANTOS-150,0.85,CANTOS-150 credited via fixed on MACE,transported_population,38
+post_mi_pci,strict,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,surrogate,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,exploratory,canakinumab,True,CANTOS-150,0.85,CANTOS-150 credited via fixed on MACE,transported_population,38
+secondary_post_mi,strict,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,surrogate,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,exploratory,canakinumab,True,CANTOS-150,0.85,CANTOS-150 credited via fixed on MACE,transported_population,38
+stable_ccs,strict,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,surrogate,canakinumab,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,exploratory,canakinumab_tet2_guided,True,CANTOS-TET2,0.38,CANTOS-TET2 credited via fixed on MACE,transported_population;observational_confounding,38
+ascvd_ckd_inflammation,strict,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,surrogate,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,exploratory,canakinumab_tet2_guided,True,CANTOS-TET2,0.38,CANTOS-TET2 credited via fixed on MACE,transported_population;observational_confounding,38
+hefh_primary,strict,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,surrogate,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,exploratory,canakinumab_tet2_guided,True,CANTOS-TET2,0.38,CANTOS-TET2 credited via fixed on MACE,transported_population;observational_confounding,38
+ischemic_cm_heart_failure,strict,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,surrogate,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,exploratory,canakinumab_tet2_guided,True,CANTOS-TET2,0.38,CANTOS-TET2 credited via fixed on MACE,transported_population;observational_confounding,38
+post_mi_pci,strict,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,surrogate,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,exploratory,canakinumab_tet2_guided,True,CANTOS-TET2,0.38,CANTOS-TET2 credited via fixed on MACE,transported_population;observational_confounding,38
+secondary_post_mi,strict,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,surrogate,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,exploratory,canakinumab_tet2_guided,True,CANTOS-TET2,0.38,CANTOS-TET2 credited via fixed on MACE,transported_population;observational_confounding,38
+stable_ccs,strict,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,surrogate,canakinumab_tet2_guided,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,exploratory,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,strict,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,strict,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,strict,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,strict,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,strict,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,surrogate,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,exploratory,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,strict,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,surrogate,car_treg_oxldl,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,exploratory,colchicine,True,CLEAR-SYNERGY,0.99,CLEAR-SYNERGY credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+ascvd_ckd_inflammation,strict,colchicine,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,colchicine,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,colchicine,True,CLEAR-SYNERGY,0.99,CLEAR-SYNERGY credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+hefh_primary,strict,colchicine,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,colchicine,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,colchicine,True,CLEAR-SYNERGY,0.99,CLEAR-SYNERGY credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+ischemic_cm_heart_failure,strict,colchicine,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,colchicine,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,colchicine,True,CLEAR-SYNERGY,0.99,CLEAR-SYNERGY credited via fixed on MACE,neutral_confidence_interval,39
+post_mi_pci,strict,colchicine,True,CLEAR-SYNERGY,0.99,CLEAR-SYNERGY credited via fixed on MACE,neutral_confidence_interval,39
+post_mi_pci,surrogate,colchicine,True,CLEAR-SYNERGY,0.99,CLEAR-SYNERGY credited via fixed on MACE,neutral_confidence_interval,39
+secondary_post_mi,exploratory,colchicine,True,COLCOT,0.77,COLCOT credited via fixed on MACE,,39
+secondary_post_mi,strict,colchicine,True,COLCOT,0.77,COLCOT credited via fixed on MACE,,39
+secondary_post_mi,surrogate,colchicine,True,COLCOT,0.77,COLCOT credited via fixed on MACE,,39
+stable_ccs,exploratory,colchicine,True,LODOCO2,0.69,LODOCO2 credited via fixed on MACE,,39
+stable_ccs,strict,colchicine,True,LODOCO2,0.69,LODOCO2 credited via fixed on MACE,,39
+stable_ccs,surrogate,colchicine,True,LODOCO2,0.69,LODOCO2 credited via fixed on MACE,,39
+ascvd_ckd_inflammation,exploratory,coronary_sinus_reducer,False,REMEDY-PILOT,,REMEDY-PILOT reports no effect estimate (FUNCTIONAL),no_effect_estimate,39
+ascvd_ckd_inflammation,strict,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,coronary_sinus_reducer,False,REMEDY-PILOT,,REMEDY-PILOT reports no effect estimate (FUNCTIONAL),no_effect_estimate,39
+hefh_primary,strict,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,coronary_sinus_reducer,False,REMEDY-PILOT,,REMEDY-PILOT reports no effect estimate (FUNCTIONAL),no_effect_estimate,39
+ischemic_cm_heart_failure,strict,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,coronary_sinus_reducer,False,REMEDY-PILOT,,REMEDY-PILOT reports no effect estimate (FUNCTIONAL),no_effect_estimate,39
+post_mi_pci,strict,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,coronary_sinus_reducer,False,REMEDY-PILOT,,REMEDY-PILOT reports no effect estimate (FUNCTIONAL),no_effect_estimate,39
+secondary_post_mi,strict,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,surrogate,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,exploratory,coronary_sinus_reducer,False,REMEDY-PILOT,,REMEDY-PILOT reports no effect estimate (FUNCTIONAL),no_effect_estimate,39
+stable_ccs,strict,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,surrogate,coronary_sinus_reducer,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,exploratory,ctx310_angptl3_editing,False,CTX310-P1A,,CTX310-P1A reports no effect estimate (SURROGATE),no_effect_estimate,39
+ascvd_ckd_inflammation,strict,ctx310_angptl3_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,ctx310_angptl3_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,ctx310_angptl3_editing,False,CTX310-P1A,,CTX310-P1A reports no effect estimate (SURROGATE),no_effect_estimate,39
+hefh_primary,strict,ctx310_angptl3_editing,False,CTX310-P1A,,CTX310-P1A reports no effect estimate (SURROGATE),no_effect_estimate,39
+hefh_primary,surrogate,ctx310_angptl3_editing,False,CTX310-P1A,,CTX310-P1A reports no effect estimate (SURROGATE),no_effect_estimate,39
+ischemic_cm_heart_failure,exploratory,ctx310_angptl3_editing,False,CTX310-P1A,,CTX310-P1A reports no effect estimate (SURROGATE),no_effect_estimate,39
+ischemic_cm_heart_failure,strict,ctx310_angptl3_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,ctx310_angptl3_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,ctx310_angptl3_editing,False,CTX310-P1A,,CTX310-P1A reports no effect estimate (SURROGATE),no_effect_estimate,39
+post_mi_pci,strict,ctx310_angptl3_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,ctx310_angptl3_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,ctx310_angptl3_editing,False,CTX310-P1A,,CTX310-P1A reports no effect estimate (SURROGATE),no_effect_estimate,39
+secondary_post_mi,strict,ctx310_angptl3_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,surrogate,ctx310_angptl3_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,exploratory,ctx310_angptl3_editing,False,CTX310-P1A,,CTX310-P1A reports no effect estimate (SURROGATE),no_effect_estimate,39
+stable_ccs,strict,ctx310_angptl3_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,surrogate,ctx310_angptl3_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,exploratory,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,strict,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,surrogate,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,exploratory,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,strict,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,surrogate,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,exploratory,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,strict,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,surrogate,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,exploratory,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,strict,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,surrogate,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,exploratory,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,strict,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,surrogate,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,exploratory,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,strict,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,surrogate,dfv890_nlrp3,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,exploratory,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,strict,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,strict,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,strict,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,strict,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,strict,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,surrogate,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,exploratory,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,strict,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,surrogate,diet_ldl_lowering,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,exploratory,empagliflozin,True,EMPA-REG,0.86,EMPA-REG credited via fixed on MACE,transported_population,38
+ascvd_ckd_inflammation,strict,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,surrogate,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,exploratory,empagliflozin,True,EMPA-REG,0.86,EMPA-REG credited via fixed on MACE,transported_population,38
+hefh_primary,strict,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,surrogate,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,exploratory,empagliflozin,True,EMPA-REG,0.86,EMPA-REG credited via fixed on MACE,transported_population,38
+ischemic_cm_heart_failure,strict,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,surrogate,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,exploratory,empagliflozin,True,EMPA-REG,0.86,EMPA-REG credited via fixed on MACE,transported_population,38
+post_mi_pci,strict,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,surrogate,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,exploratory,empagliflozin,True,EMPA-REG,0.86,EMPA-REG credited via fixed on MACE,transported_population,38
+secondary_post_mi,strict,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,surrogate,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,exploratory,empagliflozin,True,EMPA-REG,0.86,EMPA-REG credited via fixed on MACE,transported_population,38
+stable_ccs,strict,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,surrogate,empagliflozin,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,exploratory,enlicitide_oral,False,CORALREEF-LIPIDS,,CORALREEF-LIPIDS reports no effect estimate (SURROGATE),no_effect_estimate,35
+ascvd_ckd_inflammation,strict,enlicitide_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,surrogate,enlicitide_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,exploratory,enlicitide_oral,False,CORALREEF-LIPIDS,,CORALREEF-LIPIDS reports no effect estimate (SURROGATE),no_effect_estimate,35
+hefh_primary,strict,enlicitide_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,surrogate,enlicitide_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,exploratory,enlicitide_oral,False,CORALREEF-LIPIDS,,CORALREEF-LIPIDS reports no effect estimate (SURROGATE),no_effect_estimate,35
+ischemic_cm_heart_failure,strict,enlicitide_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,surrogate,enlicitide_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,exploratory,enlicitide_oral,False,CORALREEF-LIPIDS,,CORALREEF-LIPIDS reports no effect estimate (SURROGATE),no_effect_estimate,35
+post_mi_pci,strict,enlicitide_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,surrogate,enlicitide_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,exploratory,enlicitide_oral,False,CORALREEF-LIPIDS,,CORALREEF-LIPIDS reports no effect estimate (SURROGATE),no_effect_estimate,35
+secondary_post_mi,strict,enlicitide_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,surrogate,enlicitide_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,exploratory,enlicitide_oral,False,CORALREEF-LIPIDS,,CORALREEF-LIPIDS reports no effect estimate (SURROGATE),no_effect_estimate,35
+stable_ccs,strict,enlicitide_oral,False,CORALREEF-LIPIDS,,CORALREEF-LIPIDS reports no effect estimate (SURROGATE),no_effect_estimate,35
+stable_ccs,surrogate,enlicitide_oral,False,CORALREEF-LIPIDS,,CORALREEF-LIPIDS reports no effect estimate (SURROGATE),no_effect_estimate,35
+ascvd_ckd_inflammation,exploratory,evolocumab,True,FOURIER,0.85,FOURIER credited via fixed on MACE,transported_population,35
+ascvd_ckd_inflammation,strict,evolocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,surrogate,evolocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,exploratory,evolocumab,True,FOURIER,0.85,FOURIER credited via fixed on MACE,transported_population,35
+hefh_primary,strict,evolocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,surrogate,evolocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,exploratory,evolocumab,True,FOURIER,0.85,FOURIER credited via fixed on MACE,transported_population,35
+ischemic_cm_heart_failure,strict,evolocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,surrogate,evolocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,exploratory,evolocumab,True,FOURIER,0.85,FOURIER credited via fixed on MACE,transported_population,35
+post_mi_pci,strict,evolocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,surrogate,evolocumab,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,exploratory,evolocumab,True,FOURIER,0.85,FOURIER credited via fixed on MACE,transported_population,35
+secondary_post_mi,strict,evolocumab,True,FOURIER,0.85,FOURIER credited via fixed on MACE,transported_population,35
+secondary_post_mi,surrogate,evolocumab,True,FOURIER,0.85,FOURIER credited via fixed on MACE,transported_population,35
+stable_ccs,exploratory,evolocumab,True,FOURIER,0.85,FOURIER credited via fixed on MACE,,35
+stable_ccs,strict,evolocumab,True,FOURIER,0.85,FOURIER credited via fixed on MACE,,35
+stable_ccs,surrogate,evolocumab,True,FOURIER,0.85,FOURIER credited via fixed on MACE,,35
+ascvd_ckd_inflammation,exploratory,exercise_cardiac_rehab,True,EXERCISE-REHAB,0.74,EXERCISE-REHAB credited via fixed on CV_DEATH,transported_population,39
+ascvd_ckd_inflammation,strict,exercise_cardiac_rehab,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,exercise_cardiac_rehab,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,exercise_cardiac_rehab,True,EXERCISE-REHAB,0.74,EXERCISE-REHAB credited via fixed on CV_DEATH,transported_population,39
+hefh_primary,strict,exercise_cardiac_rehab,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,exercise_cardiac_rehab,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,exercise_cardiac_rehab,True,EXERCISE-REHAB,0.74,EXERCISE-REHAB credited via fixed on CV_DEATH,transported_population,39
+ischemic_cm_heart_failure,strict,exercise_cardiac_rehab,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,exercise_cardiac_rehab,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,exercise_cardiac_rehab,True,EXERCISE-REHAB,0.74,EXERCISE-REHAB credited via fixed on CV_DEATH,transported_population,39
+post_mi_pci,strict,exercise_cardiac_rehab,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,exercise_cardiac_rehab,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,exercise_cardiac_rehab,True,EXERCISE-REHAB,0.74,EXERCISE-REHAB credited via fixed on CV_DEATH,,39
+secondary_post_mi,strict,exercise_cardiac_rehab,False,EXERCISE-REHAB,,EXERCISE-REHAB endpoint CV_DEATH is not a MACE composite; credit only in exploratory mode,non_mace_endpoint,39
+secondary_post_mi,surrogate,exercise_cardiac_rehab,False,EXERCISE-REHAB,,EXERCISE-REHAB endpoint CV_DEATH is not a MACE composite; credit only in exploratory mode,non_mace_endpoint,39
+stable_ccs,exploratory,exercise_cardiac_rehab,True,EXERCISE-REHAB,0.74,EXERCISE-REHAB credited via fixed on CV_DEATH,transported_population,39
+stable_ccs,strict,exercise_cardiac_rehab,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,surrogate,exercise_cardiac_rehab,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,exploratory,ezetimibe,True,IMPROVE-IT,0.936,IMPROVE-IT credited via fixed on MACE,transported_population,39
+ascvd_ckd_inflammation,strict,ezetimibe,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,ezetimibe,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,ezetimibe,True,IMPROVE-IT,0.936,IMPROVE-IT credited via fixed on MACE,transported_population,39
+hefh_primary,strict,ezetimibe,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,ezetimibe,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,ezetimibe,True,IMPROVE-IT,0.936,IMPROVE-IT credited via fixed on MACE,transported_population,39
+ischemic_cm_heart_failure,strict,ezetimibe,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,ezetimibe,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,ezetimibe,True,IMPROVE-IT,0.936,IMPROVE-IT credited via fixed on MACE,transported_population,39
+post_mi_pci,strict,ezetimibe,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,ezetimibe,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,ezetimibe,True,IMPROVE-IT,0.936,IMPROVE-IT credited via fixed on MACE,,39
+secondary_post_mi,strict,ezetimibe,True,IMPROVE-IT,0.936,IMPROVE-IT credited via fixed on MACE,,39
+secondary_post_mi,surrogate,ezetimibe,True,IMPROVE-IT,0.936,IMPROVE-IT credited via fixed on MACE,,39
+stable_ccs,exploratory,ezetimibe,True,IMPROVE-IT,0.936,IMPROVE-IT credited via fixed on MACE,transported_population,39
+stable_ccs,strict,ezetimibe,True,IMPROVE-IT,0.936,IMPROVE-IT credited via fixed on MACE,transported_population,39
+stable_ccs,surrogate,ezetimibe,True,IMPROVE-IT,0.936,IMPROVE-IT credited via fixed on MACE,transported_population,39
+ascvd_ckd_inflammation,exploratory,icosapent_ethyl,True,REDUCE-IT,0.75,REDUCE-IT credited via fixed on MACE,transported_population,39
+ascvd_ckd_inflammation,strict,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,icosapent_ethyl,True,REDUCE-IT,0.75,REDUCE-IT credited via fixed on MACE,transported_population,39
+hefh_primary,strict,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,icosapent_ethyl,True,REDUCE-IT,0.75,REDUCE-IT credited via fixed on MACE,transported_population,39
+ischemic_cm_heart_failure,strict,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,icosapent_ethyl,True,REDUCE-IT,0.75,REDUCE-IT credited via fixed on MACE,transported_population,39
+post_mi_pci,strict,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,icosapent_ethyl,True,REDUCE-IT,0.75,REDUCE-IT credited via fixed on MACE,transported_population,39
+secondary_post_mi,strict,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,surrogate,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,exploratory,icosapent_ethyl,True,REDUCE-IT,0.75,REDUCE-IT credited via fixed on MACE,transported_population,39
+stable_ccs,strict,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,surrogate,icosapent_ethyl,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,exploratory,inclisiran,False,ORION-11,,ORION-11 reports no effect estimate (SURROGATE),no_effect_estimate,35
+ascvd_ckd_inflammation,strict,inclisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,surrogate,inclisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,exploratory,inclisiran,False,ORION-11,,ORION-11 reports no effect estimate (SURROGATE),no_effect_estimate,35
+hefh_primary,strict,inclisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,surrogate,inclisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,exploratory,inclisiran,False,ORION-11,,ORION-11 reports no effect estimate (SURROGATE),no_effect_estimate,35
+ischemic_cm_heart_failure,strict,inclisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,surrogate,inclisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,exploratory,inclisiran,False,ORION-11,,ORION-11 reports no effect estimate (SURROGATE),no_effect_estimate,35
+post_mi_pci,strict,inclisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,surrogate,inclisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,exploratory,inclisiran,False,ORION-11,,ORION-11 reports no effect estimate (SURROGATE),no_effect_estimate,35
+secondary_post_mi,strict,inclisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,surrogate,inclisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,exploratory,inclisiran,False,ORION-11,,ORION-11 reports no effect estimate (SURROGATE),no_effect_estimate,35
+stable_ccs,strict,inclisiran,False,ORION-11,,ORION-11 reports no effect estimate (SURROGATE),no_effect_estimate,35
+stable_ccs,surrogate,inclisiran,False,ORION-11,,ORION-11 reports no effect estimate (SURROGATE),no_effect_estimate,35
+ascvd_ckd_inflammation,exploratory,lepodisiran,False,ACCLAIM-LPA,,ACCLAIM-LPA reports no effect estimate (PENDING),no_effect_estimate,35
+ascvd_ckd_inflammation,strict,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,surrogate,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,exploratory,lepodisiran,False,ACCLAIM-LPA,,ACCLAIM-LPA reports no effect estimate (PENDING),no_effect_estimate,35
+hefh_primary,strict,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,surrogate,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,exploratory,lepodisiran,False,ACCLAIM-LPA,,ACCLAIM-LPA reports no effect estimate (PENDING),no_effect_estimate,35
+ischemic_cm_heart_failure,strict,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,surrogate,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,exploratory,lepodisiran,False,ACCLAIM-LPA,,ACCLAIM-LPA reports no effect estimate (PENDING),no_effect_estimate,35
+post_mi_pci,strict,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,surrogate,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,exploratory,lepodisiran,False,ACCLAIM-LPA,,ACCLAIM-LPA reports no effect estimate (PENDING),no_effect_estimate,35
+secondary_post_mi,strict,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,surrogate,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,exploratory,lepodisiran,False,ACCLAIM-LPA,,ACCLAIM-LPA reports no effect estimate (PENDING),no_effect_estimate,35
+stable_ccs,strict,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,surrogate,lepodisiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,exploratory,methotrexate_low_dose,True,CIRT,1.01,CIRT credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+ascvd_ckd_inflammation,strict,methotrexate_low_dose,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,methotrexate_low_dose,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,methotrexate_low_dose,True,CIRT,1.01,CIRT credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+hefh_primary,strict,methotrexate_low_dose,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,methotrexate_low_dose,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,methotrexate_low_dose,True,CIRT,1.01,CIRT credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+ischemic_cm_heart_failure,strict,methotrexate_low_dose,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,methotrexate_low_dose,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,methotrexate_low_dose,True,CIRT,1.01,CIRT credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+post_mi_pci,strict,methotrexate_low_dose,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,methotrexate_low_dose,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,methotrexate_low_dose,True,CIRT,1.01,CIRT credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+secondary_post_mi,strict,methotrexate_low_dose,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,surrogate,methotrexate_low_dose,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,exploratory,methotrexate_low_dose,True,CIRT,1.01,CIRT credited via fixed on MACE,neutral_confidence_interval,39
+stable_ccs,strict,methotrexate_low_dose,True,CIRT,1.01,CIRT credited via fixed on MACE,neutral_confidence_interval,39
+stable_ccs,surrogate,methotrexate_low_dose,True,CIRT,1.01,CIRT credited via fixed on MACE,neutral_confidence_interval,39
+ascvd_ckd_inflammation,exploratory,muvalaplin_oral,False,MUV-Phase2,,MUV-Phase2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+ascvd_ckd_inflammation,strict,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,surrogate,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,exploratory,muvalaplin_oral,False,MUV-Phase2,,MUV-Phase2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+hefh_primary,strict,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,surrogate,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,exploratory,muvalaplin_oral,False,MUV-Phase2,,MUV-Phase2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+ischemic_cm_heart_failure,strict,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,surrogate,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,exploratory,muvalaplin_oral,False,MUV-Phase2,,MUV-Phase2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+post_mi_pci,strict,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,surrogate,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,exploratory,muvalaplin_oral,False,MUV-Phase2,,MUV-Phase2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+secondary_post_mi,strict,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,surrogate,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,exploratory,muvalaplin_oral,False,MUV-Phase2,,MUV-Phase2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+stable_ccs,strict,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,surrogate,muvalaplin_oral,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,exploratory,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,strict,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,surrogate,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,exploratory,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,strict,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,surrogate,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,exploratory,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,strict,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,surrogate,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,exploratory,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,strict,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,surrogate,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,exploratory,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,strict,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,surrogate,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,exploratory,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,strict,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,surrogate,nlrp3_inhibitor,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,exploratory,obicetrapib,True,BROADWAY-EVENTS,0.79,BROADWAY-EVENTS credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+ascvd_ckd_inflammation,strict,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,obicetrapib,True,BROADWAY-EVENTS,0.79,BROADWAY-EVENTS credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+hefh_primary,strict,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,obicetrapib,True,BROADWAY-EVENTS,0.79,BROADWAY-EVENTS credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+ischemic_cm_heart_failure,strict,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,obicetrapib,True,BROADWAY-EVENTS,0.79,BROADWAY-EVENTS credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+post_mi_pci,strict,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,obicetrapib,True,BROADWAY-EVENTS,0.79,BROADWAY-EVENTS credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+secondary_post_mi,strict,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,surrogate,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,exploratory,obicetrapib,True,BROADWAY-EVENTS,0.79,BROADWAY-EVENTS credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+stable_ccs,strict,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,surrogate,obicetrapib,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,exploratory,olezarsen,False,CORE-TIMI-72,,CORE-TIMI-72 reports no effect estimate (SURROGATE),no_effect_estimate,38
+ascvd_ckd_inflammation,strict,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,surrogate,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,exploratory,olezarsen,False,CORE-TIMI-72,,CORE-TIMI-72 reports no effect estimate (SURROGATE),no_effect_estimate,38
+hefh_primary,strict,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,surrogate,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,exploratory,olezarsen,False,CORE-TIMI-72,,CORE-TIMI-72 reports no effect estimate (SURROGATE),no_effect_estimate,38
+ischemic_cm_heart_failure,strict,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,surrogate,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,exploratory,olezarsen,False,CORE-TIMI-72,,CORE-TIMI-72 reports no effect estimate (SURROGATE),no_effect_estimate,38
+post_mi_pci,strict,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,surrogate,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,exploratory,olezarsen,False,CORE-TIMI-72,,CORE-TIMI-72 reports no effect estimate (SURROGATE),no_effect_estimate,38
+secondary_post_mi,strict,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,surrogate,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,exploratory,olezarsen,False,CORE-TIMI-72,,CORE-TIMI-72 reports no effect estimate (SURROGATE),no_effect_estimate,38
+stable_ccs,strict,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,surrogate,olezarsen,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,exploratory,olpasiran,False,OCEAN-A,,OCEAN-A reports no effect estimate (PENDING),no_effect_estimate,35
+ascvd_ckd_inflammation,strict,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,surrogate,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,exploratory,olpasiran,False,OCEAN-A,,OCEAN-A reports no effect estimate (PENDING),no_effect_estimate,35
+hefh_primary,strict,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,surrogate,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,exploratory,olpasiran,False,OCEAN-A,,OCEAN-A reports no effect estimate (PENDING),no_effect_estimate,35
+ischemic_cm_heart_failure,strict,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,surrogate,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,exploratory,olpasiran,False,OCEAN-A,,OCEAN-A reports no effect estimate (PENDING),no_effect_estimate,35
+post_mi_pci,strict,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,surrogate,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,exploratory,olpasiran,False,OCEAN-A,,OCEAN-A reports no effect estimate (PENDING),no_effect_estimate,35
+secondary_post_mi,strict,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,surrogate,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,exploratory,olpasiran,False,OCEAN-A,,OCEAN-A reports no effect estimate (PENDING),no_effect_estimate,35
+stable_ccs,strict,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,surrogate,olpasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,exploratory,pci_stable_cad,True,ISCHEMIA,0.93,ISCHEMIA credited via fixed on MACE,neutral_confidence_interval;transported_population,38
+ascvd_ckd_inflammation,strict,pci_stable_cad,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,surrogate,pci_stable_cad,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,exploratory,pci_stable_cad,True,ISCHEMIA,0.93,ISCHEMIA credited via fixed on MACE,neutral_confidence_interval;transported_population,38
+hefh_primary,strict,pci_stable_cad,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,surrogate,pci_stable_cad,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,exploratory,pci_stable_cad,True,ISCHEMIA,0.93,ISCHEMIA credited via fixed on MACE,neutral_confidence_interval;transported_population,38
+ischemic_cm_heart_failure,strict,pci_stable_cad,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,surrogate,pci_stable_cad,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,exploratory,pci_stable_cad,True,ISCHEMIA,0.93,ISCHEMIA credited via fixed on MACE,neutral_confidence_interval;transported_population,38
+post_mi_pci,strict,pci_stable_cad,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,surrogate,pci_stable_cad,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,exploratory,pci_stable_cad,True,ISCHEMIA,0.93,ISCHEMIA credited via fixed on MACE,neutral_confidence_interval;transported_population,38
+secondary_post_mi,strict,pci_stable_cad,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,surrogate,pci_stable_cad,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,exploratory,pci_stable_cad,True,ISCHEMIA,0.93,ISCHEMIA credited via fixed on MACE,neutral_confidence_interval,38
+stable_ccs,strict,pci_stable_cad,True,ISCHEMIA,0.93,ISCHEMIA credited via fixed on MACE,neutral_confidence_interval,38
+stable_ccs,surrogate,pci_stable_cad,True,ISCHEMIA,0.93,ISCHEMIA credited via fixed on MACE,neutral_confidence_interval,38
+ascvd_ckd_inflammation,exploratory,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,strict,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,strict,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,strict,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,strict,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,strict,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,surrogate,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,exploratory,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,strict,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,surrogate,pcsk9_vaccine,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,exploratory,pelacarsen,True,LPA-HORIZON,1.0,LPA-HORIZON credited via fixed on MACE,neutral_confidence_interval;topline_only_no_published_interval;transported_population,35
+ascvd_ckd_inflammation,strict,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,surrogate,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,exploratory,pelacarsen,True,LPA-HORIZON,1.0,LPA-HORIZON credited via fixed on MACE,neutral_confidence_interval;topline_only_no_published_interval;transported_population,35
+hefh_primary,strict,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,surrogate,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,exploratory,pelacarsen,True,LPA-HORIZON,1.0,LPA-HORIZON credited via fixed on MACE,neutral_confidence_interval;topline_only_no_published_interval;transported_population,35
+ischemic_cm_heart_failure,strict,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,surrogate,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,exploratory,pelacarsen,True,LPA-HORIZON,1.0,LPA-HORIZON credited via fixed on MACE,neutral_confidence_interval;topline_only_no_published_interval;transported_population,35
+post_mi_pci,strict,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,surrogate,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,exploratory,pelacarsen,True,LPA-HORIZON,1.0,LPA-HORIZON credited via fixed on MACE,neutral_confidence_interval;topline_only_no_published_interval;transported_population,35
+secondary_post_mi,strict,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,surrogate,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,exploratory,pelacarsen,True,LPA-HORIZON,1.0,LPA-HORIZON credited via fixed on MACE,neutral_confidence_interval;topline_only_no_published_interval;transported_population,35
+stable_ccs,strict,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,surrogate,pelacarsen,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,exploratory,plozasiran,False,SHASTA-3-4,,SHASTA-3-4 reports no effect estimate (SURROGATE),no_effect_estimate,38
+ascvd_ckd_inflammation,strict,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,surrogate,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,exploratory,plozasiran,False,SHASTA-3-4,,SHASTA-3-4 reports no effect estimate (SURROGATE),no_effect_estimate,38
+hefh_primary,strict,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,surrogate,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,exploratory,plozasiran,False,SHASTA-3-4,,SHASTA-3-4 reports no effect estimate (SURROGATE),no_effect_estimate,38
+ischemic_cm_heart_failure,strict,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,surrogate,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,exploratory,plozasiran,False,SHASTA-3-4,,SHASTA-3-4 reports no effect estimate (SURROGATE),no_effect_estimate,38
+post_mi_pci,strict,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,surrogate,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,exploratory,plozasiran,False,SHASTA-3-4,,SHASTA-3-4 reports no effect estimate (SURROGATE),no_effect_estimate,38
+secondary_post_mi,strict,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,surrogate,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,exploratory,plozasiran,False,SHASTA-3-4,,SHASTA-3-4 reports no effect estimate (SURROGATE),no_effect_estimate,38
+stable_ccs,strict,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,surrogate,plozasiran,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,exploratory,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+ascvd_ckd_inflammation,strict,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+ascvd_ckd_inflammation,surrogate,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+hefh_primary,exploratory,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+hefh_primary,strict,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+hefh_primary,surrogate,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+ischemic_cm_heart_failure,exploratory,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+ischemic_cm_heart_failure,strict,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+ischemic_cm_heart_failure,surrogate,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+post_mi_pci,exploratory,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+post_mi_pci,strict,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+post_mi_pci,surrogate,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+secondary_post_mi,exploratory,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+secondary_post_mi,strict,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+secondary_post_mi,surrogate,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+stable_ccs,exploratory,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+stable_ccs,strict,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+stable_ccs,surrogate,retatrutide,False,,,no trial anchor available for this therapy,no_anchor,37
+ascvd_ckd_inflammation,exploratory,semaglutide_2_4mg,True,SELECT,0.8,SELECT credited via fixed on MACE,transported_population,37
+ascvd_ckd_inflammation,strict,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+ascvd_ckd_inflammation,surrogate,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+hefh_primary,exploratory,semaglutide_2_4mg,True,SELECT,0.8,SELECT credited via fixed on MACE,transported_population,37
+hefh_primary,strict,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+hefh_primary,surrogate,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+ischemic_cm_heart_failure,exploratory,semaglutide_2_4mg,True,SELECT,0.8,SELECT credited via fixed on MACE,transported_population,37
+ischemic_cm_heart_failure,strict,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+ischemic_cm_heart_failure,surrogate,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+post_mi_pci,exploratory,semaglutide_2_4mg,True,SELECT,0.8,SELECT credited via fixed on MACE,transported_population,37
+post_mi_pci,strict,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+post_mi_pci,surrogate,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+secondary_post_mi,exploratory,semaglutide_2_4mg,True,SELECT,0.8,SELECT credited via fixed on MACE,transported_population,37
+secondary_post_mi,strict,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+secondary_post_mi,surrogate,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+stable_ccs,exploratory,semaglutide_2_4mg,True,SELECT,0.8,SELECT credited via fixed on MACE,transported_population,37
+stable_ccs,strict,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+stable_ccs,surrogate,semaglutide_2_4mg,False,,,no trial anchor available for this therapy,no_anchor,37
+ascvd_ckd_inflammation,exploratory,sglt2_inhibitor_hf,False,DAPA-HF,,DAPA-HF endpoint class HF_COMPOSITE cannot be credited as MACE,endpoint_class_not_mace,38
+ascvd_ckd_inflammation,strict,sglt2_inhibitor_hf,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,surrogate,sglt2_inhibitor_hf,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,exploratory,sglt2_inhibitor_hf,False,DAPA-HF,,DAPA-HF endpoint class HF_COMPOSITE cannot be credited as MACE,endpoint_class_not_mace,38
+hefh_primary,strict,sglt2_inhibitor_hf,False,,,no trial anchor available for this therapy,no_anchor,38
+hefh_primary,surrogate,sglt2_inhibitor_hf,False,,,no trial anchor available for this therapy,no_anchor,38
+ischemic_cm_heart_failure,exploratory,sglt2_inhibitor_hf,False,DAPA-HF,,DAPA-HF endpoint class HF_COMPOSITE cannot be credited as MACE,endpoint_class_not_mace,38
+ischemic_cm_heart_failure,strict,sglt2_inhibitor_hf,False,DAPA-HF,,DAPA-HF endpoint class HF_COMPOSITE cannot be credited as MACE,endpoint_class_not_mace,38
+ischemic_cm_heart_failure,surrogate,sglt2_inhibitor_hf,False,DAPA-HF,,DAPA-HF endpoint class HF_COMPOSITE cannot be credited as MACE,endpoint_class_not_mace,38
+post_mi_pci,exploratory,sglt2_inhibitor_hf,False,DAPA-HF,,DAPA-HF endpoint class HF_COMPOSITE cannot be credited as MACE,endpoint_class_not_mace,38
+post_mi_pci,strict,sglt2_inhibitor_hf,False,,,no trial anchor available for this therapy,no_anchor,38
+post_mi_pci,surrogate,sglt2_inhibitor_hf,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,exploratory,sglt2_inhibitor_hf,False,DAPA-HF,,DAPA-HF endpoint class HF_COMPOSITE cannot be credited as MACE,endpoint_class_not_mace,38
+secondary_post_mi,strict,sglt2_inhibitor_hf,False,,,no trial anchor available for this therapy,no_anchor,38
+secondary_post_mi,surrogate,sglt2_inhibitor_hf,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,exploratory,sglt2_inhibitor_hf,False,DAPA-HF,,DAPA-HF endpoint class HF_COMPOSITE cannot be credited as MACE,endpoint_class_not_mace,38
+stable_ccs,strict,sglt2_inhibitor_hf,False,,,no trial anchor available for this therapy,no_anchor,38
+stable_ccs,surrogate,sglt2_inhibitor_hf,False,,,no trial anchor available for this therapy,no_anchor,38
+ascvd_ckd_inflammation,exploratory,smoking_cessation,True,QUIT-POSTMI,0.64,QUIT-POSTMI credited via fixed on ALL_CAUSE_DEATH,transported_population;observational_confounding,39
+ascvd_ckd_inflammation,strict,smoking_cessation,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,smoking_cessation,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,smoking_cessation,True,QUIT-POSTMI,0.64,QUIT-POSTMI credited via fixed on ALL_CAUSE_DEATH,transported_population;observational_confounding,39
+hefh_primary,strict,smoking_cessation,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,smoking_cessation,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,smoking_cessation,True,QUIT-POSTMI,0.64,QUIT-POSTMI credited via fixed on ALL_CAUSE_DEATH,transported_population;observational_confounding,39
+ischemic_cm_heart_failure,strict,smoking_cessation,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,smoking_cessation,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,smoking_cessation,True,QUIT-POSTMI,0.64,QUIT-POSTMI credited via fixed on ALL_CAUSE_DEATH,transported_population;observational_confounding,39
+post_mi_pci,strict,smoking_cessation,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,smoking_cessation,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,smoking_cessation,True,QUIT-POSTMI,0.64,QUIT-POSTMI credited via fixed on ALL_CAUSE_DEATH,observational_confounding,39
+secondary_post_mi,strict,smoking_cessation,False,QUIT-POSTMI,,QUIT-POSTMI endpoint ALL_CAUSE_DEATH is not a MACE composite; credit only in exploratory mode,non_mace_endpoint,39
+secondary_post_mi,surrogate,smoking_cessation,False,QUIT-POSTMI,,QUIT-POSTMI endpoint ALL_CAUSE_DEATH is not a MACE composite; credit only in exploratory mode,non_mace_endpoint,39
+stable_ccs,exploratory,smoking_cessation,True,QUIT-POSTMI,0.64,QUIT-POSTMI credited via fixed on ALL_CAUSE_DEATH,transported_population;observational_confounding,39
+stable_ccs,strict,smoking_cessation,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,surrogate,smoking_cessation,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,exploratory,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+ascvd_ckd_inflammation,strict,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+ascvd_ckd_inflammation,surrogate,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+hefh_primary,exploratory,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+hefh_primary,strict,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+hefh_primary,surrogate,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+ischemic_cm_heart_failure,exploratory,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+ischemic_cm_heart_failure,strict,statin_high_intensity,False,,,no trial anchor available for this therapy,no_anchor,753
+ischemic_cm_heart_failure,surrogate,statin_high_intensity,False,,,no trial anchor available for this therapy,no_anchor,753
+post_mi_pci,exploratory,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+post_mi_pci,strict,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+post_mi_pci,surrogate,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+secondary_post_mi,exploratory,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+secondary_post_mi,strict,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+secondary_post_mi,surrogate,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+stable_ccs,exploratory,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+stable_ccs,strict,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+stable_ccs,surrogate,statin_high_intensity,True,CTT-STATIN,0.78,CTT-STATIN credited via per_mmol_l_ldl on MACE,transported_population,753
+ascvd_ckd_inflammation,exploratory,tirzepatide,False,SURPASS-CVOT,0.92,SURPASS-CVOT uses an active comparator; its HR is not placebo-relative,active_comparator_not_placebo_relative,37
+ascvd_ckd_inflammation,strict,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+ascvd_ckd_inflammation,surrogate,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+hefh_primary,exploratory,tirzepatide,False,SURPASS-CVOT,0.92,SURPASS-CVOT uses an active comparator; its HR is not placebo-relative,active_comparator_not_placebo_relative,37
+hefh_primary,strict,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+hefh_primary,surrogate,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+ischemic_cm_heart_failure,exploratory,tirzepatide,False,SURPASS-CVOT,0.92,SURPASS-CVOT uses an active comparator; its HR is not placebo-relative,active_comparator_not_placebo_relative,37
+ischemic_cm_heart_failure,strict,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+ischemic_cm_heart_failure,surrogate,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+post_mi_pci,exploratory,tirzepatide,False,SURPASS-CVOT,0.92,SURPASS-CVOT uses an active comparator; its HR is not placebo-relative,active_comparator_not_placebo_relative,37
+post_mi_pci,strict,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+post_mi_pci,surrogate,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+secondary_post_mi,exploratory,tirzepatide,False,SURPASS-CVOT,0.92,SURPASS-CVOT uses an active comparator; its HR is not placebo-relative,active_comparator_not_placebo_relative,37
+secondary_post_mi,strict,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+secondary_post_mi,surrogate,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+stable_ccs,exploratory,tirzepatide,False,SURPASS-CVOT,0.92,SURPASS-CVOT uses an active comparator; its HR is not placebo-relative,active_comparator_not_placebo_relative,37
+stable_ccs,strict,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+stable_ccs,surrogate,tirzepatide,False,,,no trial anchor available for this therapy,no_anchor,37
+ascvd_ckd_inflammation,exploratory,verve102_base_editing,False,HEART-2,,HEART-2 reports no effect estimate (SURROGATE),no_effect_estimate,39
+ascvd_ckd_inflammation,strict,verve102_base_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,surrogate,verve102_base_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,exploratory,verve102_base_editing,False,HEART-2,,HEART-2 reports no effect estimate (SURROGATE),no_effect_estimate,39
+hefh_primary,strict,verve102_base_editing,False,HEART-2,,HEART-2 reports no effect estimate (SURROGATE),no_effect_estimate,39
+hefh_primary,surrogate,verve102_base_editing,False,HEART-2,,HEART-2 reports no effect estimate (SURROGATE),no_effect_estimate,39
+ischemic_cm_heart_failure,exploratory,verve102_base_editing,False,HEART-2,,HEART-2 reports no effect estimate (SURROGATE),no_effect_estimate,39
+ischemic_cm_heart_failure,strict,verve102_base_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,verve102_base_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,verve102_base_editing,False,HEART-2,,HEART-2 reports no effect estimate (SURROGATE),no_effect_estimate,39
+post_mi_pci,strict,verve102_base_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,verve102_base_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,verve102_base_editing,False,HEART-2,,HEART-2 reports no effect estimate (SURROGATE),no_effect_estimate,39
+secondary_post_mi,strict,verve102_base_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,surrogate,verve102_base_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,exploratory,verve102_base_editing,False,HEART-2,,HEART-2 reports no effect estimate (SURROGATE),no_effect_estimate,39
+stable_ccs,strict,verve102_base_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,surrogate,verve102_base_editing,False,,,no trial anchor available for this therapy,no_anchor,39
+ascvd_ckd_inflammation,exploratory,zerlasiran,False,ZERLASIRAN-P2,,ZERLASIRAN-P2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+ascvd_ckd_inflammation,strict,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,surrogate,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,exploratory,zerlasiran,False,ZERLASIRAN-P2,,ZERLASIRAN-P2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+hefh_primary,strict,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+hefh_primary,surrogate,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,exploratory,zerlasiran,False,ZERLASIRAN-P2,,ZERLASIRAN-P2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+ischemic_cm_heart_failure,strict,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ischemic_cm_heart_failure,surrogate,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,exploratory,zerlasiran,False,ZERLASIRAN-P2,,ZERLASIRAN-P2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+post_mi_pci,strict,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+post_mi_pci,surrogate,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,exploratory,zerlasiran,False,ZERLASIRAN-P2,,ZERLASIRAN-P2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+secondary_post_mi,strict,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+secondary_post_mi,surrogate,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,exploratory,zerlasiran,False,ZERLASIRAN-P2,,ZERLASIRAN-P2 reports no effect estimate (SURROGATE),no_effect_estimate,35
+stable_ccs,strict,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+stable_ccs,surrogate,zerlasiran,False,,,no trial anchor available for this therapy,no_anchor,35
+ascvd_ckd_inflammation,exploratory,ziltivekimab,True,ZEUS,0.99,ZEUS credited via fixed on MACE,neutral_confidence_interval,39
+ascvd_ckd_inflammation,strict,ziltivekimab,True,ZEUS,0.99,ZEUS credited via fixed on MACE,neutral_confidence_interval,39
+ascvd_ckd_inflammation,surrogate,ziltivekimab,True,ZEUS,0.99,ZEUS credited via fixed on MACE,neutral_confidence_interval,39
+hefh_primary,exploratory,ziltivekimab,True,ZEUS,0.99,ZEUS credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+hefh_primary,strict,ziltivekimab,False,,,no trial anchor available for this therapy,no_anchor,39
+hefh_primary,surrogate,ziltivekimab,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,exploratory,ziltivekimab,True,ZEUS,0.99,ZEUS credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+ischemic_cm_heart_failure,strict,ziltivekimab,False,,,no trial anchor available for this therapy,no_anchor,39
+ischemic_cm_heart_failure,surrogate,ziltivekimab,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,exploratory,ziltivekimab,True,ZEUS,0.99,ZEUS credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+post_mi_pci,strict,ziltivekimab,False,,,no trial anchor available for this therapy,no_anchor,39
+post_mi_pci,surrogate,ziltivekimab,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,exploratory,ziltivekimab,True,ZEUS,0.99,ZEUS credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+secondary_post_mi,strict,ziltivekimab,False,,,no trial anchor available for this therapy,no_anchor,39
+secondary_post_mi,surrogate,ziltivekimab,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,exploratory,ziltivekimab,True,ZEUS,0.99,ZEUS credited via fixed on MACE,neutral_confidence_interval;transported_population,39
+stable_ccs,strict,ziltivekimab,False,,,no trial anchor available for this therapy,no_anchor,39
+stable_ccs,surrogate,ziltivekimab,False,,,no trial anchor available for this therapy,no_anchor,39

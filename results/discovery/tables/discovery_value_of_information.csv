@@ -1,0 +1,5 @@
+capability,variance_share,outcome,status
+substrate_removal,0.18386524982854352,worst_score,in_silico_specification_not_evidence
+hazard_ratio,0.15240106293387956,worst_score,in_silico_specification_not_evidence
+lvef_gain_pp,0.15230176747307483,worst_score,in_silico_specification_not_evidence
+driver_durability,0.14094933652381564,worst_score,in_silico_specification_not_evidence

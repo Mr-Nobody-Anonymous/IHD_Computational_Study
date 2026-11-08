@@ -1,0 +1,7 @@
+removed_arm,durable_driver_control_lost,clearance_pct,clearance_loss_pp,graft_probability,graft_probability_loss_pp,load_bearing,status
+gated_clearance,False,0.0,80.01119533331375,0.26033333333333336,12.599999999999994,True,atlas_invented_hypothesis_unvalidated
+source_reduction,False,65.96787343962475,14.04332189368901,0.3596666666666667,2.6666666666666616,True,atlas_invented_hypothesis_unvalidated
+durable_editing,True,80.01119533331375,0.0,0.3863333333333333,0.0,True,atlas_invented_hypothesis_unvalidated
+proven_backbone,False,80.01119533331375,0.0,0.133,25.33333333333333,True,atlas_invented_hypothesis_unvalidated
+remuscularisation,False,80.01119533331375,0.0,0.0,38.63333333333333,True,atlas_invented_hypothesis_unvalidated
+bed_sequencing,False,80.01119533331375,0.0,0.26033333333333336,12.599999999999994,True,atlas_invented_hypothesis_unvalidated

@@ -1,0 +1,2 @@
+nominal_clearance_pct,median_clearance_pct,p05_clearance_pct,p95_clearance_pct,probability_of_target,robust,nominal_is_misleading,status
+80.01119533331375,1.82911552559053,-38.28988024690476,41.68954764973855,0.0,False,True,atlas_invented_hypothesis_unvalidated

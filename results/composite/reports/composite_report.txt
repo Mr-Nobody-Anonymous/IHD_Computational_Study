@@ -1,0 +1,101 @@
+Best-of-breed composite: strongest part per disease node, tested everywhere
+==========================================================================
+COMPOSITE SCENARIO - a best-per-node assembly, not a tested regimen. Every combination here is untrialled, so randomised proof is zero by construction. Invented components are tagged separately and never earn evidence credit.
+
+HOW IT WAS BUILT
+Greedy selection by marginal event benefit, one component per disease node, with
+an explicit same-target rule so PCSK9 editing and a PCSK9 antibody can never be
+stacked. Components that add nothing are refused automatically. Then a coverage
+pass attaches the best part for cure-relevant nodes that are event-neutral
+(the myocardium), at zero event credit, so optimising events cannot silently
+drop the heart.
+
+THE RECURRING CORE (across populations and modes)
+  canakinumab_tet2_guided          inflammation         19 populations  mean marginal  99.95/1000
+  verve102_base_editing            durable_driver       19 populations  mean marginal  32.18/1000
+  smoking_cessation                lifestyle            18 populations  mean marginal  19.42/1000
+  aspirin_secondary_prevention     thrombosis           18 populations  mean marginal  10.98/1000
+  icosapent_ethyl                  triglyceride         18 populations  mean marginal  10.48/1000
+  statin_high_intensity            ldl_synthesis        12 populations  mean marginal  27.43/1000
+  bempedoic_acid                   ldl_synthesis        12 populations  mean marginal   1.57/1000
+  retatrutide                      metabolic            11 populations  mean marginal  27.05/1000
+  bp_intensification               hemodynamic          11 populations  mean marginal  17.37/1000
+  ezetimibe                        ldl_absorption        9 populations  mean marginal   2.51/1000
+  obicetrapib                      ldl_ceil              9 populations  mean marginal   2.13/1000
+  alirocumab                       residual_pcsk9        5 populations  mean marginal  12.70/1000
+
+MODE: STRICT
+--------------------------------------------------------------------------
+  secondary_post_mi            20.15% ->  6.71%  avoided 134.34/1000  excess left 26.1%
+  post_mi_hscrp_high           22.12% ->  8.80%  avoided 133.21/1000  excess left 33.9%
+  t2d_ascvd                    18.13% ->  6.77%  avoided 113.57/1000  excess left 29.7%
+  statin_intolerant_ascvd      18.13% ->  7.66%  avoided 104.71/1000  excess left 35.2%
+  ascvd_high_triglycerides     18.13% ->  7.98%  avoided 101.50/1000  excess left 37.1%
+  post_mi_pci                  22.12% -> 12.30%  avoided  98.18/1000  excess left 51.2%
+  populations with an empty composite: 0 of 19 (no agent earns credit there)
+  max criteria met: 1 of 5
+  best score per criterion across populations:
+    durable_driver_control   0.000  blocking
+    burden_reversal          0.600  blocking
+    myocardial_restoration   0.500  blocking
+    risk_normalisation       0.819  MET
+    randomised_proof         0.000  blocking
+
+MODE: SURROGATE
+--------------------------------------------------------------------------
+  post_mi_hscrp_high           22.12% ->  5.93%  avoided 161.93/1000  excess left 19.6%
+  ascvd_ckd_inflammation       25.92% -> 10.37%  avoided 155.53/1000  excess left 35.0%
+  secondary_post_mi            20.15% ->  4.60%  avoided 155.50/1000  excess left 14.4%
+  statin_intolerant_ascvd      18.13% ->  4.09%  avoided 140.35/1000  excess left 13.1%
+  t2d_ascvd                    18.13% ->  5.35%  avoided 127.80/1000  excess left 20.9%
+  ascvd_high_triglycerides     18.13% ->  5.58%  avoided 125.50/1000  excess left 22.3%
+  populations with an empty composite: 0 of 19 (no agent earns credit there)
+  max criteria met: 2 of 5
+  best score per criterion across populations:
+    durable_driver_control   1.000  MET
+    burden_reversal          0.600  blocking
+    myocardial_restoration   0.500  blocking
+    risk_normalisation       0.974  MET
+    randomised_proof         0.000  blocking
+
+MODE: EXPLORATORY
+--------------------------------------------------------------------------
+  ischemic_cm_heart_failure    32.97% ->  6.28%  avoided 266.87/1000  excess left 13.9%
+  advanced_ischemic_hf         29.53% ->  5.56%  avoided 239.70/1000  excess left 13.0%
+  ascvd_ckd_inflammation       25.92% ->  4.78%  avoided 211.36/1000  excess left 11.7%
+  ascvd_tet2_chip              24.04% ->  4.39%  avoided 196.55/1000  excess left 10.9%
+  post_mi_hscrp_high           22.12% ->  3.99%  avoided 181.26/1000  excess left 10.0%
+  post_mi_pci                  22.12% ->  4.00%  avoided 181.23/1000  excess left 10.0%
+  populations with an empty composite: 0 of 19 (no agent earns credit there)
+  max criteria met: 2 of 5
+  best score per criterion across populations:
+    durable_driver_control   1.000  MET
+    burden_reversal          0.600  blocking
+    myocardial_restoration   0.500  blocking
+    risk_normalisation       1.000  MET
+    randomised_proof         0.000  blocking
+
+WHAT CHANGES WITH THE CREDIT MODE
+Strict mode cannot include gene editing, because editing has no outcomes
+evidence - so durable driver control scores 0. Surrogate and exploratory modes
+admit it and driver control reaches 1.0. That difference is the honest measure
+of how much of the composite depends on evidence we do not yet have.
+
+WHAT THE INVENTED NODES ADD
+Nothing to any score. The REVERT-1 clearance loop and the CAR-Treg lock are
+listed as the nodes the catalogue cannot serve, and carry no evidence credit.
+Their hypothetical effect lives in results/hypotheses and results/discovery,
+never here.
+
+THE THREE RULES THAT KEEP THIS HONEST
+1. Coverage combines by maximum. Two half-restorations are not one heart.
+2. The same molecular target is never stacked, even across exclusive groups.
+3. An untrialled combination scores zero on randomised proof. Every component
+   can have phase-3 evidence and the combination still has none.
+
+BOTTOM LINE
+Composites declared a cure: 0.
+Risk normalisation is the one criterion the composite can clear, and it does -
+but burden reversal (0.60), myocardial restoration (0.50) and randomised proof
+(0.00) stay below threshold in every population and every mode. Assembling the
+best proven parts produces the strongest supportable regimen, not a cure.

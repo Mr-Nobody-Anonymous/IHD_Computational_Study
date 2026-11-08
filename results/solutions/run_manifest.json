@@ -1,0 +1,203 @@
+{
+  "config": {
+    "horizon_years": 5.0,
+    "max_optional": 2,
+    "modes": [
+      "strict",
+      "surrogate",
+      "exploratory"
+    ],
+    "monte_carlo_draws": 120,
+    "populations": [
+      "secondary_post_mi",
+      "post_mi_pci",
+      "stable_ccs",
+      "ascvd_ckd_inflammation",
+      "hefh_primary",
+      "ischemic_cm_heart_failure"
+    ],
+    "seed": 20261106,
+    "step_days": 30.0
+  },
+  "counts": {
+    "outputs": 33,
+    "ranking_rows": 4518,
+    "regimens_per_population": 753
+  },
+  "environment": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.4.6",
+    "pandas": "3.1.1",
+    "python": "3.11.2",
+    "scipy": "1.17.1"
+  },
+  "outputs": [
+    {
+      "bytes": 10159,
+      "path": "tables/therapy_catalog_resolved.csv",
+      "sha256": "043dda222872cf6047171d4db3abf6b9db567c8e0d1c9dc06294f69029500a1e"
+    },
+    {
+      "bytes": 246,
+      "path": "tables/evidence_tier_summary.csv",
+      "sha256": "43799ffa930bce3c48b638cd0a8731c53473089101933cb200fc0605f00b8827"
+    },
+    {
+      "bytes": 7582,
+      "path": "tables/endpoint_specific_effects.csv",
+      "sha256": "a7b8852632afda6d4aed6eb285b44c63196341980cb0a2f13906b6adc979ef00"
+    },
+    {
+      "bytes": 2259963,
+      "path": "tables/regimen_ranking.csv",
+      "sha256": "83081ab662df05a088d3226774fdb8a29747a7d2cd86fb536ba608d1c5e10c59"
+    },
+    {
+      "bytes": 87302,
+      "path": "tables/credit_decisions.csv",
+      "sha256": "1a6eb1832c2238d7556455e4635ad8bdb9f4685922872a045ecd0867715eccd9"
+    },
+    {
+      "bytes": 1720,
+      "path": "tables/pareto_front.csv",
+      "sha256": "c0c6060fcdb4e26bab18ecbfa8f5dcf69312d8a4720512ec566d633cb62c693a"
+    },
+    {
+      "bytes": 75209,
+      "path": "tables/lipid_trajectories.csv",
+      "sha256": "6d0ced063a52d253ce742cced013c6c319b517bd4216bbd724c737664826f62d"
+    },
+    {
+      "bytes": 56407,
+      "path": "tables/risk_curves.csv",
+      "sha256": "7f8ba2f3f7ce16e8d7983d764d305a6ac37d3b69616b4467826458e545d8caa9"
+    },
+    {
+      "bytes": 1121,
+      "path": "tables/monte_carlo_summary.csv",
+      "sha256": "51dcfa059d32e3c5ce0a32a106cc474b7595c040038b72d1e332efe99736f0aa"
+    },
+    {
+      "bytes": 655,
+      "path": "tables/rank_stability.csv",
+      "sha256": "74c58b06fb8b13cfbae980f9826ccc9434d7398b042fb9725ab9207af0409660"
+    },
+    {
+      "bytes": 437,
+      "path": "tables/sensitivity_tornado.csv",
+      "sha256": "8774327343e54d6a3e59de3910c9026a99caf73b54b78864784e9c21b4ae7045"
+    },
+    {
+      "bytes": 5960,
+      "path": "tables/plaque_solution_grid.csv",
+      "sha256": "0c75f667ed91b7af599dafc934b5a32b6afeb9c11310ac1fa332412b0afc1ddf"
+    },
+    {
+      "bytes": 4612,
+      "path": "tables/inflammation_solution_grid.csv",
+      "sha256": "d092b768d7a2fc91077ed39932b520dbe749def79258ed066512a32a1f17a53f"
+    },
+    {
+      "bytes": 684,
+      "path": "tables/editing_scenarios.csv",
+      "sha256": "6aa21afa2e46e5a6e9a143d556d6fc4e324740397b570115b51a591c1fc54a1d"
+    },
+    {
+      "bytes": 632,
+      "path": "tables/bystander_report.json",
+      "sha256": "ed995b4298e0c25d700d9e1ea4556c24ca338c330a2fdeb1bdc1184a23ad0cb5"
+    },
+    {
+      "bytes": 653,
+      "path": "tables/off_target_status.json",
+      "sha256": "8b789e4fa5c9bc536720defbe7cc0620172a79a5ad9f6dc2a634929d0db22cae"
+    },
+    {
+      "bytes": 1035,
+      "path": "tables/regeneration_scenarios.csv",
+      "sha256": "b03458bc9ab75f486f96f2d46d290fd0c60b780628467e3d09c069d44b2d2c48"
+    },
+    {
+      "bytes": 424,
+      "path": "tables/regeneration_surveillance.json",
+      "sha256": "002258389eac5081d1bd461218abe998d379e2a5b75e0454cd38dcd075995693"
+    },
+    {
+      "bytes": 30321,
+      "path": "tables/cure_criteria_scores.csv",
+      "sha256": "ba022c02dced0e037570e626bb4a94dfd225015563472533c0c70c173aeb81fb"
+    },
+    {
+      "bytes": 1059,
+      "path": "tables/cure_combination_search.json",
+      "sha256": "f7733b710e2b47c3301a335d0d2e03a74727485c52028021c339d652a93ceff1"
+    },
+    {
+      "bytes": 912,
+      "path": "tables/cure_combination_search_relaxed.json",
+      "sha256": "456ce5e753859851c8a0cd2799db9454a2711186ae890f46ffe2a99fe789c669"
+    },
+    {
+      "bytes": 3753,
+      "path": "tables/lifetime_exposure_scenarios.csv",
+      "sha256": "fc3808ccadb9ffda4100e45cab6da177e17746efdad56e697932ea652a678db4"
+    },
+    {
+      "bytes": 434,
+      "path": "tables/regression_calibration.csv",
+      "sha256": "2276e21894e8504771b54cd984a88045a80ac0900eda853e0e3aff9466e59195"
+    },
+    {
+      "bytes": 706,
+      "path": "tables/regression_calibration_fit.json",
+      "sha256": "ddbe485746099b4c6e121cde25d25a8d907b234377d14e106dbdf3b49f557b47"
+    },
+    {
+      "bytes": 870,
+      "path": "tables/plaque_imaging_evidence.csv",
+      "sha256": "a636df91392db3f6f38ff728ba0ed09beba7b78111975a3832ad9153a5caab02"
+    },
+    {
+      "bytes": 3355,
+      "path": "tables/plaque_regression_grid.csv",
+      "sha256": "be43e89e0da65339e3fcc70be269c738d5b9795a5827302ea68ca41ea9747e3d"
+    },
+    {
+      "bytes": 1125,
+      "path": "tables/residual_risk.csv",
+      "sha256": "81a257f3d794449cdd70bdcef4ed505556f7c88d046bb858813b4cb287f4ee3e"
+    },
+    {
+      "bytes": 5021,
+      "path": "reports/cure_search_report.txt",
+      "sha256": "ebff02044834d0682327d78cb9ac92cca6af270d82a8d66e9297e4221a7e343c"
+    },
+    {
+      "bytes": 159081,
+      "path": "figures/regimen_ranking.png",
+      "sha256": "af20bbdffabf24b72b0812ee489933732ed1ed5934a369ce6c68c8702269900c"
+    },
+    {
+      "bytes": 173620,
+      "path": "figures/lipid_trajectories.png",
+      "sha256": "3aac7ac22c7d48eac39025f23bea7b9deb7825e05a3544dc2e733c64f4059714"
+    },
+    {
+      "bytes": 80915,
+      "path": "figures/uncertainty_intervals.png",
+      "sha256": "6b5f5866e1b319cf14fbf41c3ca6707bf8c3eae03a7d14c7764db0b156436374"
+    },
+    {
+      "bytes": 39576,
+      "path": "figures/sensitivity_tornado.png",
+      "sha256": "a3ea25ba4c873d8d8d7f858b0859dbf8c95f1cf8f7e9ab3323dac2378b7f57b5"
+    },
+    {
+      "bytes": 4368,
+      "path": "reports/solutions_simulation_report.txt",
+      "sha256": "6d2d99480a1c900c11f340456ebde97816c223f2e5e50273b3f93bb23ff1f39b"
+    }
+  ],
+  "scope": "scenario simulation; not clinical prediction",
+  "status": "passed"
+}

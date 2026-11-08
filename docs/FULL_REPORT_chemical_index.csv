@@ -1,0 +1,96 @@
+entity,id,source,modality,mechanism,mw_da,evidence_tier,regulatory_status,qa_flag
+High-intensity statin,statin_high_intensity,therapy_catalog,LIPID_LOWERING,HMG-CoA reductase inhibition,,META_ANALYSIS,approved,
+Moderate-intensity statin,statin_moderate_intensity,therapy_catalog,LIPID_LOWERING,HMG-CoA reductase inhibition,,META_ANALYSIS,approved,
+Ezetimibe,ezetimibe,therapy_catalog,LIPID_LOWERING,NPC1L1 cholesterol-absorption inhibition,,RANDOMIZED_OUTCOMES,approved,
+Bempedoic acid,bempedoic_acid,therapy_catalog,LIPID_LOWERING,ATP-citrate lyase inhibition,,RANDOMIZED_OUTCOMES,approved,
+Evolocumab,evolocumab,therapy_catalog,LIPID_LOWERING,Anti-PCSK9 monoclonal antibody,,RANDOMIZED_OUTCOMES,approved,
+Alirocumab,alirocumab,therapy_catalog,LIPID_LOWERING,Anti-PCSK9 monoclonal antibody,,RANDOMIZED_OUTCOMES,approved,
+Inclisiran,inclisiran,therapy_catalog,LIPID_LOWERING,siRNA silencing of hepatic PCSK9,,RANDOMIZED_SURROGATE,approved,
+Enlicitide oral macrocyclic peptide,enlicitide_oral,therapy_catalog,LIPID_LOWERING,Oral macrocyclic peptide blocking PCSK9-LDLR binding,,RANDOMIZED_SURROGATE,approved,
+AZD0780 oral small molecule,azd0780_oral,therapy_catalog,LIPID_LOWERING,Small-molecule PCSK9 inhibition,,RANDOMIZED_SURROGATE,phase_3,
+VERVE-102 PCSK9 base editing,verve102_base_editing,therapy_catalog,GENE_EDITING,Single-infusion adenine base editing of PCSK9 splice site,,RANDOMIZED_SURROGATE,phase_1,
+Pelacarsen,pelacarsen,therapy_catalog,LPA_LOWERING,Antisense oligonucleotide against apolipoprotein(a),,RANDOMIZED_TOPLINE,phase_3,
+Olpasiran,olpasiran,therapy_catalog,LPA_LOWERING,siRNA against apolipoprotein(a),,RANDOMIZED_SURROGATE,phase_3,
+Muvalaplin,muvalaplin_oral,therapy_catalog,LPA_LOWERING,Oral small-molecule disruptor of apo(a)-apoB assembly,,RANDOMIZED_SURROGATE,phase_2,
+Low-dose colchicine,colchicine,therapy_catalog,ANTI_INFLAMMATORY,Tubulin and NLRP3-mediated inflammatory dampening,,RANDOMIZED_OUTCOMES,approved,
+Canakinumab,canakinumab,therapy_catalog,ANTI_INFLAMMATORY,IL-1beta monoclonal antibody,,RANDOMIZED_OUTCOMES,not_approved_for_ascvd,
+Ziltivekimab,ziltivekimab,therapy_catalog,ANTI_INFLAMMATORY,IL-6 ligand monoclonal antibody,,RANDOMIZED_OUTCOMES,investigational,
+Low-dose methotrexate,methotrexate_low_dose,therapy_catalog,ANTI_INFLAMMATORY,Broad anti-inflammatory without IL-6 pathway engagement,,RANDOMIZED_OUTCOMES,not_indicated,
+Selective NLRP3 inhibitor,nlrp3_inhibitor,therapy_catalog,ANTI_INFLAMMATORY,Direct NLRP3 inflammasome inhibition,,MECHANISTIC,investigational,
+Semaglutide 2.4 mg weekly,semaglutide_2_4mg,therapy_catalog,METABOLIC,GLP-1 receptor agonism with weight and metabolic effects,,RANDOMIZED_OUTCOMES,approved,
+Empagliflozin,empagliflozin,therapy_catalog,METABOLIC,SGLT2 inhibition,,RANDOMIZED_OUTCOMES,approved,
+SGLT2 inhibitor for heart failure,sglt2_inhibitor_hf,therapy_catalog,METABOLIC,SGLT2 inhibition in heart failure,,RANDOMIZED_OUTCOMES,approved,
+Blood-pressure intensification,bp_intensification,therapy_catalog,BLOOD_PRESSURE,Additional antihypertensive therapy to lower systolic pressure,,META_ANALYSIS,approved,
+Aspirin secondary prevention,aspirin_secondary_prevention,therapy_catalog,ANTITHROMBOTIC,Platelet cyclo-oxygenase inhibition,,META_ANALYSIS,approved,
+Icosapent ethyl,icosapent_ethyl,therapy_catalog,ANTITHROMBOTIC,High-dose EPA formulation,,RANDOMIZED_OUTCOMES,approved,
+Smoking cessation,smoking_cessation,therapy_catalog,LIFESTYLE,Removal of tobacco exposure,,OBSERVATIONAL,recommended,
+Exercise-based cardiac rehabilitation,exercise_cardiac_rehab,therapy_catalog,LIFESTYLE,Structured exercise and risk-factor programme,,META_ANALYSIS,recommended,
+LDL-lowering dietary pattern,diet_ldl_lowering,therapy_catalog,LIFESTYLE,Saturated-fat replacement and plant-sterol intake,,RANDOMIZED_SURROGATE,recommended,
+PCI for stable coronary disease,pci_stable_cad,therapy_catalog,REVASCULARIZATION,Percutaneous revascularisation,,RANDOMIZED_OUTCOMES,approved,
+CABG for ischaemic cardiomyopathy,cabg_ischemic_cm,therapy_catalog,REVASCULARIZATION,Surgical revascularisation,,RANDOMIZED_OUTCOMES,approved,
+iPSC-derived cardiomyocyte sheet,ipsc_cm_sheet,therapy_catalog,REGENERATIVE,Paracrine epicardial cell-sheet therapy,,CONDITIONAL_APPROVAL,conditional_japan,
+Obicetrapib 10 mg,obicetrapib,therapy_catalog,LIPID_LOWERING,Selective CETP inhibition,,RANDOMIZED_SURROGATE,phase_3_outcomes_pending,
+CTX310 ANGPTL3 CRISPR editing,ctx310_angptl3_editing,therapy_catalog,GENE_EDITING,One-time in vivo Cas9 loss-of-function editing of hepatic ANGPTL3,,RANDOMIZED_SURROGATE,phase_1b,
+Lepodisiran,lepodisiran,therapy_catalog,LPA_LOWERING,Ultra-long-acting GalNAc-siRNA against LPA,,RANDOMIZED_SURROGATE,phase_3,
+Zerlasiran,zerlasiran,therapy_catalog,LPA_LOWERING,GalNAc-siRNA against LPA,,RANDOMIZED_SURROGATE,phase_2,
+Plozasiran (APOC3 siRNA),plozasiran,therapy_catalog,LIPID_LOWERING,RNAi suppression of apolipoprotein C-III,,RANDOMIZED_SURROGATE,approved_sHTG,
+Olezarsen (APOC3 ASO),olezarsen,therapy_catalog,LIPID_LOWERING,Antisense suppression of apolipoprotein C-III,,RANDOMIZED_SURROGATE,filed_sHTG,
+Tirzepatide,tirzepatide,therapy_catalog,METABOLIC,Dual GIP/GLP-1 receptor agonism,,RANDOMIZED_OUTCOMES,approved,
+Retatrutide,retatrutide,therapy_catalog,METABOLIC,Triple GIP/GLP-1/glucagon receptor agonism,,RANDOMIZED_SURROGATE,phase_3,
+DFV890 (selective NLRP3 inhibitor),dfv890_nlrp3,therapy_catalog,ANTI_INFLAMMATORY,Direct selective NLRP3 inflammasome inhibition,,RANDOMIZED_SURROGATE,phase_2a,
+Genotype-guided canakinumab (TET2-CHIP),canakinumab_tet2_guided,therapy_catalog,ANTI_INFLAMMATORY,IL-1beta blockade restricted to TET2 clonal-haematopoiesis carriers,,OBSERVATIONAL,post_hoc_hypothesis,
+YAP101 (AAV9-SAV1-shRNA),yap101_sav1_gene_therapy,therapy_catalog,REGENERATIVE,Cardiomyocyte-restricted Hippo pathway release to trigger proliferation,,MECHANISTIC,phase_1,
+BioVAT engineered heart muscle patch,biovat_hf_patch,therapy_catalog,REGENERATIVE,Epicardial iPSC-derived cardiomyocyte/stromal tissue for remuscularisation,,RANDOMIZED_SURROGATE,phase_2,
+Autologous CD34+ cell therapy,cd34_cell_therapy,therapy_catalog,REGENERATIVE,Pro-angiogenic cell delivery to ischaemic myocardium/microvasculature,,RANDOMIZED_SURROGATE,phase_3,
+Coronary sinus reducer,coronary_sinus_reducer,therapy_catalog,REVASCULARIZATION,Controlled coronary sinus narrowing to redistribute perfusion,,RANDOMIZED_SURROGATE,approved_limited,
+PCSK9 peptide vaccine (AT04A-class),pcsk9_vaccine,therapy_catalog,LIPID_LOWERING,Active immunisation raising anti-PCSK9 antibodies,,MECHANISTIC,preclinical,
+CAR-Treg against oxidised LDL,car_treg_oxldl,therapy_catalog,ANTI_INFLAMMATORY,Antigen-specific regulatory T cells restoring tolerance to oxLDL,,MECHANISTIC,preclinical,
+AB-1002 / umiposgene parvec,ab1002_gene_therapy,therapy_catalog,REGENERATIVE,Intracoronary AAV delivery of constitutively active inhibitor-1 (I-1c),,RANDOMIZED_SURROGATE,phase_2,
+Anakinra_mimic,screen_rank_1,virtual_screening,screening compound,,428.5,NONE,,heuristic score saturated
+Empagliflozin,screen_rank_2,virtual_screening,screening compound,,450.9,NONE,,heuristic score saturated
+Ezetimibe,screen_rank_3,virtual_screening,screening compound,,409.4,NONE,,heuristic score saturated
+Alirocumab_frag,screen_rank_4,virtual_screening,screening compound,,402.8,NONE,,heuristic score saturated
+Inclisiran,screen_rank_5,virtual_screening,screening compound,,337.3,NONE,,INVALID: biologic given small-molecule MW
+Valsartan,screen_rank_6,virtual_screening,screening compound,,435.5,NONE,,heuristic score saturated
+Rosuvastatin,screen_rank_7,virtual_screening,screening compound,,481.5,NONE,,heuristic score saturated
+Ramipril,screen_rank_8,virtual_screening,screening compound,,416.5,NONE,,heuristic score saturated
+PF-06446846,screen_rank_9,virtual_screening,screening compound,,357.8,NONE,,heuristic score saturated
+Berberine,screen_rank_10,virtual_screening,screening compound,,336.4,NONE,,heuristic score saturated
+Quercetin,screen_rank_11,virtual_screening,screening compound,,302.2,NONE,,heuristic score saturated
+Clopidogrel,screen_rank_12,virtual_screening,screening compound,,321.8,NONE,,heuristic score saturated
+Ziltivekimab,screen_rank_13,virtual_screening,screening compound,,434.5,NONE,,INVALID: biologic given small-molecule MW
+Atorvastatin,screen_rank_14,virtual_screening,screening compound,,558.6,NONE,,heuristic score saturated
+Ticagrelor,screen_rank_15,virtual_screening,screening compound,,522.6,NONE,,heuristic score saturated
+SBC-115076,screen_rank_16,virtual_screening,screening compound,,261.7,NONE,,heuristic score saturated
+Colchicine,screen_rank_17,virtual_screening,screening compound,,399.4,NONE,,heuristic score saturated
+Resveratrol,screen_rank_18,virtual_screening,screening compound,,228.2,NONE,,heuristic score saturated
+Simvastatin,screen_rank_19,virtual_screening,screening compound,,418.6,NONE,,heuristic score only
+Lomitapide,screen_rank_20,virtual_screening,screening compound,,363.3,NONE,,heuristic score only
+Evolocumab_frag,screen_rank_21,virtual_screening,screening compound,,296.4,NONE,,heuristic score only
+Aspirin,screen_rank_22,virtual_screening,screening compound,,180.2,NONE,,heuristic score only
+Nicotinamide,screen_rank_23,virtual_screening,screening compound,,122.1,NONE,,heuristic score only
+Canakinumab,screen_rank_24,virtual_screening,screening compound,,518.6,NONE,,INVALID: biologic given small-molecule MW
+Doxycycline,screen_rank_25,virtual_screening,screening compound,,444.4,NONE,,heuristic score only
+Metformin,screen_rank_26,virtual_screening,screening compound,,129.2,NONE,,heuristic score only
+Semaglutide,screen_rank_27,virtual_screening,screening compound,,283.5,NONE,,INVALID: biologic given small-molecule MW
+Inclisiran_analog,screen_rank_28,virtual_screening,screening compound,,591.7,NONE,,heuristic score only
+PCSK9-Inh-D3,dock_rank_1,docking_de_novo,De Novo Macrocyclic Inhibitor,Cyclic peptide mimetic: Emulates the Leu298-Asn309 beta-turn of LDLR EGF-A with constrained conformation to minimize entropic penalty,524.6,NONE,,"NON-USABLE: positive dG, Kd clamped at 1 M"
+PCSK9-Inh-D1,dock_rank_2,docking_de_novo,De Novo Designed Small Molecule,Designed Biphenyl-Carboxylate: Terminal -COOH binds Arg194 guanidinium; bis-trifluoromethyl/fluoro head stacks into Phe379 pocket,403.3,NONE,,"NON-USABLE: positive dG, Kd clamped at 1 M"
+Valsartan,dock_rank_3,docking_de_novo,Approved Drug (ARB),Biphenyl-carboxylate scaffold capable of salt-bridging Arg194,370.5,NONE,,"NON-USABLE: positive dG, Kd clamped at 1 M"
+PF-06446846,dock_rank_4,docking_de_novo,Preclinical Lead,Pfizer PCSK9 oral translation inhibitor pharmacophore,315.8,NONE,,"NON-USABLE: positive dG, Kd clamped at 1 M"
+Rosuvastatin,dock_rank_5,docking_de_novo,Approved Drug (Statin),Potent polar head + fluorophenyl core with high H-bonding capacity,481.5,NONE,,"NON-USABLE: positive dG, Kd clamped at 1 M"
+Ezetimibe,dock_rank_6,docking_de_novo,Approved Drug (Cholesterol Absorption),Fluorinated diphenylazetidinone with hydrophobic match for Phe379 sub-pocket,365.4,NONE,,"NON-USABLE: positive dG, Kd clamped at 1 M"
+SBC-115076,dock_rank_7,docking_de_novo,Preclinical Lead,Published small molecule known to disrupt PCSK9/LDLR EGF-A interaction,246.7,NONE,,"NON-USABLE: positive dG, Kd clamped at 1 M"
+PCSK9-Inh-D2,dock_rank_8,docking_de_novo,De Novo Designed Small Molecule,Quinazolinone Sulfonamide: Designed to bridge Asp238 and Arg194 simultaneously while inserting fluorobenzyl group into hydrophobic groove,453.5,NONE,,"NON-USABLE: positive dG, Kd clamped at 1 M"
+gate_specificity,gate_specificity,revert1_module,invented module,lesion-targeted delivery gate; multiplies 6 of 8 modules,,INVENTED,does not exist,invented; assumed strength 0.9
+crystal_solubilisation,crystal_solubilisation,revert1_module,invented module,dissolve cholesterol crystals in situ,,INVENTED,does not exist,invented; assumed strength 0.6
+efflux_gain,efflux_gain,revert1_module,invented module,cholesterol export capacity (ABCA1/ABCG1/ApoA-I),,INVENTED,does not exist,invented; assumed strength 0.8
+efferocytosis_gain,efferocytosis_gain,revert1_module,invented module,corpse clearance by phagocytes,,INVENTED,does not exist,invented; assumed strength 0.7
+influx_block,influx_block,revert1_module,invented module,block further lipid entry,,INVENTED,does not exist,invented; assumed strength 0.5
+resolution,resolution,revert1_module,invented module,pro-resolving inflammation programme,,INVENTED,does not exist,invented; assumed strength 0.6
+nucleation_block,nucleation_block,revert1_module,invented module,prevent new crystal nucleation,,INVENTED,does not exist,invented; assumed strength 0.6
+plasma_driver_reduction,plasma_driver_reduction,revert1_module,invented module,lower the circulating lipid driver,,INVENTED,does not exist,invented; assumed strength 0.7
+dose_escalation,dose_escalation,remuscularisation_factor,graft enhancement,BioVAT max 800M cells; human-scale EHT patch 450M cells; ~1400M input estimated for a 300 g heart,,human construct / clinical,,multiplier 1.75; not human-chronic-injury validated
+endothelial_co_delivery,endothelial_co_delivery,remuscularisation_factor,graft enhancement,EC+CM co-transplant raised primate EF 8.9 pp vs 1.9 pp CM alone; 10-fold larger grafts in rodents,,primate + rodent,,multiplier 2.0; not human-chronic-injury validated
+epicardial_stromal_co_delivery,epicardial_stromal_co_delivery,remuscularisation_factor,graft enhancement,"epicardial co-delivery doubled CM proliferation, 2.6-fold graft size",,rodent / construct,,multiplier 2.6; not human-chronic-injury validated
+proliferation_induction,proliferation_induction,remuscularisation_factor,graft enhancement,CCND2-overexpressing hiPSC-CMs replaced >50% of scar at 6 months; CHIR/FGF1 patches 4-fold engraftment,,rodent / construct,,multiplier 2.0; not human-chronic-injury validated

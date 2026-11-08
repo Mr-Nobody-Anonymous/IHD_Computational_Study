@@ -1,0 +1,11 @@
+doses,mode,probability_of_target,median_gain_pp,mean_doses_used,cumulative_adverse_risk,risk_adjusted_probability,saturated_fraction,robust,beyond_precedent,status
+1,best_of,0.496,19.923711487385575,1.0,0.050000000000000044,0.47119999999999995,0.29875,False,False,atlas4_precedent_corrected_unvalidated
+1,cumulative,0.496,19.923711487385575,1.0,0.050000000000000044,0.47119999999999995,0.29875,False,False,atlas4_precedent_corrected_unvalidated
+2,best_of,0.60525,22.11622266139311,1.16025,0.057776757615085717,0.5702806174534694,0.37775,False,False,atlas4_precedent_corrected_unvalidated
+2,cumulative,0.644,22.75393680710228,1.16025,0.057776757615085717,0.6067917680958849,0.3895,False,False,atlas4_precedent_corrected_unvalidated
+3,best_of,0.6785,23.290679715926885,1.39525,0.06906606820183958,0.6316386727250518,0.42225,False,False,atlas4_precedent_corrected_unvalidated
+3,cumulative,0.75125,24.44289679607278,1.38175,0.06842121093788844,0.6998485652829113,0.46725,False,False,atlas4_precedent_corrected_unvalidated
+4,best_of,0.74125,24.26778700360291,1.677,0.08242306956961698,0.6801538996815214,0.467,False,False,atlas4_precedent_corrected_unvalidated
+4,cumulative,0.82975,25.0,1.62225,0.0798426093892588,0.7635005948592625,0.52175,True,False,atlas4_precedent_corrected_unvalidated
+6,best_of,0.837,25.0,2.2525,0.10911341182161649,0.745672074305307,0.52825,True,True,atlas4_precedent_corrected_unvalidated
+6,cumulative,0.93025,25.0,2.0635,0.10043477253087774,0.836820552853151,0.58925,True,True,atlas4_precedent_corrected_unvalidated

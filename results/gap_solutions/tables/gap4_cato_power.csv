@@ -1,0 +1,5 @@
+n_per_arm,assumed_sd_pp,comparisons,minimum_detectable_difference_pp,power_for_3pp,power_for_5pp,n_per_arm_needed_for_3pp,status
+20,5.0,2,4.874688899098288,0.365409556875087,0.8214421362669174,53,gap_solutions_design_arithmetic_not_evidence
+20,6.0,2,5.849626678917945,0.25454224688361143,0.6531462268349089,77,gap_solutions_design_arithmetic_not_evidence
+20,7.0,2,6.824564458737602,0.18777081010776153,0.5069280941458433,104,gap_solutions_design_arithmetic_not_evidence
+20,8.0,2,7.7995022385572605,0.14558724610958523,0.3955127464732635,136,gap_solutions_design_arithmetic_not_evidence

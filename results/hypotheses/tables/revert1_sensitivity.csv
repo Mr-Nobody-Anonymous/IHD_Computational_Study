@@ -1,0 +1,9 @@
+module,spearman_rho,p_value,status
+gate_specificity,0.5545189657435359,1.2589863572212916e-33,invented_hypothesis_unvalidated
+crystal_solubilisation,0.4301350008437552,1.9147740081662167e-19,invented_hypothesis_unvalidated
+plasma_driver_reduction,0.38495809348808424,1.40671747748214e-15,invented_hypothesis_unvalidated
+efflux_gain,0.30959218495115587,2.4737015981088633e-10,invented_hypothesis_unvalidated
+influx_block,0.21166257289108056,1.9682565133690464e-05,invented_hypothesis_unvalidated
+resolution,-0.11260382877392981,0.024309887000374966,invented_hypothesis_unvalidated
+nucleation_block,0.09821423883899275,0.049659487222237196,invented_hypothesis_unvalidated
+efferocytosis_gain,-0.03463127894549341,0.4897759612757147,invented_hypothesis_unvalidated

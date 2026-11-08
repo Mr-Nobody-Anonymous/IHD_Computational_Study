@@ -1,0 +1,9 @@
+arm,modules,substrate_removal_pct,necrotic_core_change_pct,necrotic_core_change_12m_pct,microcalcification_removal_pct,final_macrophage_viability,phagocyte_depletion,status
+revert1_full,plasma_driver_reduction;crystal_solubilisation;efflux_gain;efferocytosis_gain;influx_block;resolution;nucleation_block,43.69449777585923,-46.4963131978161,-26.89468242493447,-5.193886937039172,1.0,False,invented_hypothesis_unvalidated
+efflux_plus_efferocytosis,crystal_solubilisation;efflux_gain;efferocytosis_gain,18.278310416187804,-23.746831490591635,-13.037002520508413,-96.15799665999441,1.0,False,invented_hypothesis_unvalidated
+two_pronged_published,crystal_solubilisation;efflux_gain;influx_block,12.690100948663375,35.45338515709658,18.225755954126655,-154.34979252691,1.0,False,invented_hypothesis_unvalidated
+efflux_only,crystal_solubilisation;efflux_gain,5.344172693359239,35.45338515709658,18.225755954126655,-154.34979252691,1.0,False,invented_hypothesis_unvalidated
+revert1_ungated,plasma_driver_reduction;crystal_solubilisation;efflux_gain;efferocytosis_gain;influx_block;resolution;nucleation_block,-4.7179064845044305,12.738041852901594,6.670253527713466,-104.92521933450524,1.0,False,invented_hypothesis_unvalidated
+driver_only,plasma_driver_reduction,-14.168981156625481,35.45338515709658,18.225755954126655,-154.34979252691,1.0,False,invented_hypothesis_unvalidated
+untreated,none,-60.89301282534281,42.68289977461499,18.723202698914164,-157.73654133409906,0.9000375205496447,False,invented_hypothesis_unvalidated
+efferocytosis_only,efferocytosis_gain,-102.28741552061442,9.814580214493752,-6.31699925013367,-116.94739197872349,0.689178095510334,True,invented_hypothesis_unvalidated

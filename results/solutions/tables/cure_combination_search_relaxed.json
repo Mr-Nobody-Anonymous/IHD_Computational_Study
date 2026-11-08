@@ -1,0 +1,31 @@
+{
+  "binding_constraints": [
+    "risk_normalisation"
+  ],
+  "ceiling": {
+    "burden_reversal": 0.6,
+    "durable_driver_control": 1.0,
+    "myocardial_restoration": 0.5,
+    "randomised_proof": 1.0,
+    "risk_normalisation": 0.09597144215671254
+  },
+  "coverage": {
+    "burden_reversal": 0.6,
+    "durable_driver_control": 1.0,
+    "myocardial_restoration": 0.5,
+    "randomised_proof": 1.0,
+    "risk_normalisation": 0.09597144215671254
+  },
+  "interpretation": "Criteria combine by maximum, never by summation. A binding ceiling means no combination of catalogued interventions can satisfy that criterion.",
+  "missing": [
+    "risk_normalisation"
+  ],
+  "notes": [
+    "no combination of catalogued interventions satisfies every criterion",
+    "criteria combined by maximum, never by summation",
+    "binding ceilings: risk_normalisation"
+  ],
+  "satisfied": false,
+  "selected": [],
+  "threshold": 0.5
+}

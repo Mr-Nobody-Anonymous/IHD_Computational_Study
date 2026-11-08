@@ -1,0 +1,6 @@
+criterion,catalogue_ceiling,meets_threshold,already_at_100pct,blocker,status
+durable_driver_control,1.0,True,True,Reachable. One-time editing already scores 1.0 for a catalogued agent; the open item is a verified guide sequence and human durability follow-up.,atlas4_precedent_corrected_unvalidated
+burden_reversal,0.6,False,False,Capped by regression biology: partial plaque regression is limited to 0.6 for any single agent. ATLAS-2 reaches the burden target in simulation only by an invented 2.80x potency cap at 60 months.,atlas4_precedent_corrected_unvalidated
+myocardial_restoration,0.5,False,False,"Capped at 0.5 for any myocardial claim without human remuscularisation evidence. ATLAS-4 raises the simulated probability but cannot raise the score, because the score is an evidence cap, not a probability.",atlas4_precedent_corrected_unvalidated
+risk_normalisation,0.06134704813783688,False,False,"Capped at 0.4 per single agent: no single therapy returns event risk to a low-risk reference. This is a property of the effect sizes, not a search failure.",atlas4_precedent_corrected_unvalidated
+randomised_proof,1.0,True,True,"Reachable only for the exact regimen randomised. Proof reaches 1.0 for outcomes-tier catalogued agents, but does not transfer to an untested combination, so every invented architecture here scores 0.",atlas4_precedent_corrected_unvalidated

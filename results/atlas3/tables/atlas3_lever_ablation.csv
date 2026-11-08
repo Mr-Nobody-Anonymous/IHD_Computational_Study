@@ -1,0 +1,5 @@
+removed_lever,probability_of_target,probability_loss_pp,cumulative_adverse_risk,robust,load_bearing,status
+retry_redundancy,0.496,43.50000000000001,0.050000000000000044,False,True,atlas3_invented_architecture_unvalidated
+independence,0.665,26.6,0.09314965495036831,False,True,atlas3_invented_architecture_unvalidated
+feedback,0.88475,4.625000000000002,0.0855710486413126,True,True,atlas3_invented_architecture_unvalidated
+measurement,0.88475,4.625000000000002,0.0855710486413126,True,True,atlas3_invented_architecture_unvalidated

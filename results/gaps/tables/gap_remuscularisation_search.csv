@@ -1,0 +1,17 @@
+n_factors,factors,raw_multiplier,scar_fraction,lvef_gain_pp,saturated,meets_target,status
+2,endothelial_co_delivery;epicardial_stromal_co_delivery,5.2,0.8112,20.28,False,True,gap_closure_scenario_not_evidence
+2,epicardial_stromal_co_delivery;proliferation_induction,5.2,0.8112,20.28,False,True,gap_closure_scenario_not_evidence
+3,dose_escalation;endothelial_co_delivery;epicardial_stromal_co_delivery,9.1,1.0,25.0,True,True,gap_closure_scenario_not_evidence
+3,dose_escalation;endothelial_co_delivery;proliferation_induction,7.0,1.0,25.0,True,True,gap_closure_scenario_not_evidence
+3,dose_escalation;epicardial_stromal_co_delivery;proliferation_induction,9.1,1.0,25.0,True,True,gap_closure_scenario_not_evidence
+3,endothelial_co_delivery;epicardial_stromal_co_delivery;proliferation_induction,10.4,1.0,25.0,True,True,gap_closure_scenario_not_evidence
+4,dose_escalation;endothelial_co_delivery;epicardial_stromal_co_delivery;proliferation_induction,18.2,1.0,25.0,True,True,gap_closure_scenario_not_evidence
+0,none,1.0,0.156,3.9,False,False,gap_closure_scenario_not_evidence
+1,dose_escalation,1.75,0.273,6.825,False,False,gap_closure_scenario_not_evidence
+1,endothelial_co_delivery,2.0,0.312,7.8,False,False,gap_closure_scenario_not_evidence
+1,epicardial_stromal_co_delivery,2.6,0.4056,10.14,False,False,gap_closure_scenario_not_evidence
+1,proliferation_induction,2.0,0.312,7.8,False,False,gap_closure_scenario_not_evidence
+2,dose_escalation;endothelial_co_delivery,3.5,0.546,13.65,False,False,gap_closure_scenario_not_evidence
+2,dose_escalation;epicardial_stromal_co_delivery,4.55,0.7098,17.745,False,False,gap_closure_scenario_not_evidence
+2,dose_escalation;proliferation_induction,3.5,0.546,13.65,False,False,gap_closure_scenario_not_evidence
+2,endothelial_co_delivery;proliferation_induction,4.0,0.624,15.6,False,False,gap_closure_scenario_not_evidence

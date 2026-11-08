@@ -1,0 +1,17 @@
+source_reduction,horizon_months,minimum_potency_multiplier,feasible,source_within_precedent,removal_at_potency_pct,status,admissible
+0.0,24.0,,False,True,,residual_resolution_scenario_not_evidence,False
+0.0,36.0,1.627044677734375,True,True,80.00040532069957,residual_resolution_scenario_not_evidence,True
+0.0,60.0,1.403289794921875,True,True,80.00116469860609,residual_resolution_scenario_not_evidence,True
+0.0,120.0,1.33160400390625,True,True,80.00152480116465,residual_resolution_scenario_not_evidence,True
+0.2,24.0,,False,True,,residual_resolution_scenario_not_evidence,False
+0.2,36.0,1.302398681640625,True,True,80.00089379338358,residual_resolution_scenario_not_evidence,True
+0.2,60.0,1.1556396484375,True,True,80.00066846181055,residual_resolution_scenario_not_evidence,True
+0.2,120.0,1.101348876953125,True,True,80.00354024615955,residual_resolution_scenario_not_evidence,True
+0.35,24.0,1.42572021484375,True,True,80.00039546750418,residual_resolution_scenario_not_evidence,True
+0.35,36.0,1.152252197265625,True,True,80.00259975601848,residual_resolution_scenario_not_evidence,True
+0.35,60.0,1.0413818359375,True,True,80.00122544552832,residual_resolution_scenario_not_evidence,True
+0.35,120.0,1.0,True,True,80.07870851173118,residual_resolution_scenario_not_evidence,True
+0.5,24.0,1.28363037109375,True,True,80.00061775596629,residual_resolution_scenario_not_evidence,True
+0.5,36.0,1.057952880859375,True,True,80.00390978159388,residual_resolution_scenario_not_evidence,True
+0.5,60.0,1.0,True,True,82.96658401427435,residual_resolution_scenario_not_evidence,True
+0.5,120.0,1.0,True,True,84.91037356128595,residual_resolution_scenario_not_evidence,True

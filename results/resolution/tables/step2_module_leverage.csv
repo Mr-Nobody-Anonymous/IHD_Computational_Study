@@ -1,0 +1,9 @@
+module,central_value,removal_alone_pct,gain_over_central_pp,reaches_target_alone,status
+crystal_solubilisation,0.6,63.34812646592045,6.831188236935304,False,residual_resolution_scenario_not_evidence
+efferocytosis_gain,0.7,62.33956533625257,5.822627107267422,False,residual_resolution_scenario_not_evidence
+gate_specificity,0.9,62.33362165988886,5.816683430903716,False,residual_resolution_scenario_not_evidence
+resolution,0.6,60.02031061192024,3.5033723829350905,False,residual_resolution_scenario_not_evidence
+plasma_driver_reduction,0.7,59.274112401166626,2.757174172181479,False,residual_resolution_scenario_not_evidence
+efflux_gain,0.8,59.24760593576761,2.7306677067824623,False,residual_resolution_scenario_not_evidence
+nucleation_block,0.6,59.191699019208,2.674760790222855,False,residual_resolution_scenario_not_evidence
+influx_block,0.5,58.77594876854834,2.2590105395631923,False,residual_resolution_scenario_not_evidence

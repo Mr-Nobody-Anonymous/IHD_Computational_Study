@@ -1,0 +1,83 @@
+REVERT-1: an invented architecture for clearing the rupture-prone substrate
+==========================================================================
+INVENTED HYPOTHESIS - not a therapy, not a trial result, not efficacy evidence. All parameters are assumptions with stated ranges. Excluded from all evidence-graded outputs.
+
+THE IDEA
+Do not add another lipid-lowering drug. Close a loop inside the lesion: dissolve
+the plaque's own cholesterol crystals, let the resulting oxysterols drive both
+cholesterol export and corpse clearance, keep the phagocyte alive while it eats,
+and gate the whole payload to the lesion so the dose is reachable.
+
+WHY COUPLING IS THE CLAIM
+Engulfing a dead cell loads the macrophage with cholesterol. Without export
+capacity the efferocyte dies and becomes necrotic core itself. So efferocytosis
+alone can enlarge the lesion, and export alone cannot clear existing debris.
+
+SIMULATED ABLATION (24 months, assumed parameters)
+  revert1_full                 substrate removed   43.7%  necrotic core   -46.5%
+  efflux_plus_efferocytosis    substrate removed   18.3%  necrotic core   -23.7%
+  two_pronged_published        substrate removed   12.7%  necrotic core   +35.5%
+  efflux_only                  substrate removed    5.3%  necrotic core   +35.5%
+  revert1_ungated              substrate removed   -4.7%  necrotic core   +12.7%
+  driver_only                  substrate removed  -14.2%  necrotic core   +35.5%
+  untreated                    substrate removed  -60.9%  necrotic core   +42.7%
+  efferocytosis_only           substrate removed -102.3%  necrotic core    +9.8% [PHAGOCYTE DEPLETION]
+
+  full architecture vs best published-style two-pronged arm: 43.7% vs 12.7%
+  efferocytosis alone: necrotic core +9.8% (export alone +35.5%)
+
+WHAT A CURE WOULD REQUIRE (back-calculated, not hoped for)
+  rupture-substrate removal: 80% (best current 43.1%; gap x1.9)
+  hazard ratio needed to normalise risk: 0.298
+  LVEF gain for the scar arm: +25 points (best current +3.9; gap x6.4)
+
+MONTE CARLO OVER THE FULL ASSUMED RANGE
+  draws: 400; P(substrate removal >= 80%) = 0.0%
+  median substrate removal: -4.9%
+  draws with phagocyte depletion: 0.0%
+  modules most associated with clearance:
+    gate_specificity: rho +0.55
+    crystal_solubilisation: rho +0.43
+    plasma_driver_reduction: rho +0.38
+    efflux_gain: rho +0.31
+
+THE CEILING, WITH EVERY MODULE SET TO PERFECT
+  asymptotic substrate removal: 83.5%
+  earliest time the 80% target is met: 34 months
+  full eradication: False
+  Perfect modules are not achievable. This is an upper bound on the
+  architecture, so the honest reading is that REVERT-1 could approach
+  the burden-reversal bar only with near-perfect delivery over years,
+  and it would still leave residual substrate behind.
+
+A NOTE ON CALCIUM
+This design deliberately does NOT try to decalcify the artery. Dense
+macrocalcification is stabilising; microcalcification in the cap is what
+raises local stress. Module M6 suppresses new nucleation and lets existing
+deposits mature. Total-calcium removal would be a design error.
+
+KILL CRITERIA, CHEAPEST FIRST
+  1. Coupling: uptake without export is counterproductive
+     falsified if: Boosting efferocytosis alone shrinks the necrotic core as well as co-delivery does
+     cheapest test: Apoe-null or Ldlr-null mice, four arms: anti-CD47 alone, macrophage-targeted LXR agonist alone, both, control; 12 weeks on Western diet
+  2. Fuel: dissolved crystal cholesterol really does drive the loop
+     falsified if: Crystal solubilisation adds no oxysterol signal or no ABCA1/MerTK induction in human plaque macrophages
+     cheapest test: Ex vivo human carotid endarterectomy explants, cyclodextrin versus vehicle, 48 hours
+  3. Gate: lesion-restricted release is achievable at a useful dose
+     falsified if: Dual-recognition particles cannot exceed ~25% lesional delivery, or systemic exposure still causes anaemia or hepatic steatosis
+     cheapest test: Biodistribution and toxicology in a large animal with labelled particles; haemoglobin, reticulocytes, liver triglyceride
+  4. Mineral: suppressing nucleation does not destabilise the cap
+     falsified if: Blocking microcalcification nucleation thins the cap or raises rupture features instead of shifting mineral to stable macro
+     cheapest test: Same animals, OCT/NaF-PET plus histology for cap thickness and micro-deposit size distribution
+  5. Durability: tolerance prevents recurrence after withdrawal
+     falsified if: Lesions regrow at control rates once the chassis is withdrawn despite CAR-Treg transfer
+     cheapest test: Withdrawal-and-rechallenge design in the mouse regression model
+
+HONEST STATUS
+- Every module has a published precedent; all precedents are preclinical or
+  mechanistic. The combination, the gate and the coupling claim are invented.
+- The simulation is a toy model with assumed rate constants. It cannot
+  establish efficacy, and it is excluded from all evidence-graded outputs.
+- Even if every module worked, the scar arm is a separate problem: this
+  architecture does not regenerate myocardium.
+- Nothing here is a treatment recommendation or a patient-level prediction.

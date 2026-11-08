@@ -1,0 +1,13 @@
+horizon_months,scenario,substrate_removal_pct,necrotic_core_change_pct,meets_substrate_target,status
+12.0,central_assumptions,30.100802490627686,-26.95752562723992,False,invented_hypothesis_unvalidated
+12.0,perfect_modules,55.264507523214945,-58.569836797028486,False,invented_hypothesis_unvalidated
+24.0,central_assumptions,43.77306378132012,-46.60363787762891,False,invented_hypothesis_unvalidated
+24.0,perfect_modules,74.93528176844681,-81.47661842274012,False,invented_hypothesis_unvalidated
+36.0,central_assumptions,52.877363113413075,-58.948362362944614,False,invented_hypothesis_unvalidated
+36.0,perfect_modules,80.3695053780939,-85.16091231907598,True,invented_hypothesis_unvalidated
+60.0,central_assumptions,62.35164155349862,-68.70957612470568,False,invented_hypothesis_unvalidated
+60.0,perfect_modules,82.27982876134188,-85.57322803264974,True,invented_hypothesis_unvalidated
+120.0,central_assumptions,66.40431656038812,-71.04044865984132,False,invented_hypothesis_unvalidated
+120.0,perfect_modules,83.29674049111627,-85.57692305004312,True,invented_hypothesis_unvalidated
+240.0,central_assumptions,66.80204209512938,-71.06838297337012,False,invented_hypothesis_unvalidated
+240.0,perfect_modules,83.48845636897217,-85.57692307692307,True,invented_hypothesis_unvalidated

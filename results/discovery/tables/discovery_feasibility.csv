@@ -1,0 +1,3 @@
+bound_set,draws,p_candidate,any_candidate,corner_is_candidate,corner_worst_score,corner_blocking,median_criteria_met,status
+demonstrated,4000,0.0,False,False,0.156,burden_reversal;myocardial_restoration;risk_normalisation,0.0,in_silico_specification_not_evidence
+conceivable,4000,0.00025,True,True,0.835,none,1.0,in_silico_specification_not_evidence

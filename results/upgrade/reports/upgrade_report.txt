@@ -1,0 +1,105 @@
+ATLAS-2: upgrading the parts the audits broke
+===========================================
+ATLAS-2 IS AN INVENTED, UNTRIALLED CONSTRUCT. Its upgrades are architectural hypotheses with clinical analogues, not demonstrated effects. Every upgrade is ablated and charged for; the population excluded by verified source control is reported. Nothing here is a therapy, a result, or a recommendation.
+
+THE DIAGNOSIS BEING FIXED
+delivered() multiplies six of eight module strengths by one gate_specificity
+draw, so a single uncertain parameter throttles almost the whole system in
+series. Delivery was open loop: pick a potency and hope. Both are architectural
+defects, not potency shortages, so ATLAS-2 changes the architecture.
+
+  U1 redundant gate + nodes  -> removes the series bottleneck
+  U2 closed-loop titration   -> treat to a measured target, as lipidology does
+  U3 verified source control -> available, but NOT needed at the solved horizon
+
+RESULT (60-month horizon, whole population, no run-in exclusion)
+  ATLAS-1 baseline (upgrades off, 24mo)  P(target)   0.00%   median   1.58%
+  ATLAS-2 (upgrades on, 60mo)            P(target)  86.12%   median  81.16%
+  robust at 80%                          YES
+  robust with 2-SE margin                YES  (lower bound 83.68%)
+  eligible fraction                      100.00%
+  UNCONDITIONAL success                   86.12%
+
+WHAT IT COST
+  potency cap required                   2.800x
+  precedented operating point            1.284x
+  precedent gap                          2.18x
+  distinct targeting routes              3 (cap 3 is precedented)
+  horizon                                60 months instead of 24
+
+  The remaining gap is potency and time, not architecture. Nothing here is
+  free: 2x the precedented potency across every module simultaneously is a
+  strong assumption, and it is the thing that would have to be demonstrated.
+
+A CORRECTION TO THE EARLIER AUDIT
+The ATLAS-1 audit reported a 55.4% probability ceiling at any potency while the
+source term is uncertain. That was horizon-specific. At 24 months perfect
+modules need source reduction >= 0.2230; at 36 months and beyond they need
+none, because the structural ceiling itself rises above the target. So the
+source lever stops binding once the horizon is long enough, and a run-in would
+only exclude patients who would have succeeded. U3 is therefore off.
+
+UPGRADE ABLATION (at the solved point)
+  drop redundant_gate     P  61.25% (+24.87 pp)  LOAD-BEARING
+  drop redundant_nodes    P  41.62% (+44.50 pp)  LOAD-BEARING
+  drop titration          P   6.12% (+80.00 pp)  LOAD-BEARING
+  drop verified_source    P  86.12% ( +0.00 pp)  not used at this horizon
+
+  Titration is the single largest contributor. Treating to a measured target
+  beats adding potency, which is the same lesson as the gate in REVERT-1:
+  control structure beats raw strength.
+
+TIME AGAINST POTENCY
+     24mo  cap 1.284x  P   0.00%          precedented
+     24mo  cap 1.500x  P   0.45%          beyond precedent
+     24mo  cap 2.000x  P  11.71%          beyond precedent
+     24mo  cap 2.500x  P  28.38%          beyond precedent
+     24mo  cap 3.000x  P  47.30%          beyond precedent
+     60mo  cap 1.284x  P   8.56%          precedented
+     60mo  cap 1.500x  P  31.53%          beyond precedent
+     60mo  cap 2.000x  P  76.58%          beyond precedent
+     60mo  cap 2.500x  P  92.34%  robust  beyond precedent
+     60mo  cap 3.000x  P  98.20%  robust  beyond precedent
+    120mo  cap 1.284x  P  18.47%          precedented
+    120mo  cap 1.500x  P  47.75%          beyond precedent
+    120mo  cap 2.000x  P  86.04%  robust  beyond precedent
+    120mo  cap 2.500x  P  98.20%  robust  beyond precedent
+    120mo  cap 3.000x  P  98.20%  robust  beyond precedent
+
+REDUNDANCY: where precedent runs out
+  1 routes  P  32.75%  precedented
+  2 routes  P  80.75%  precedented
+  3 routes  P  84.75%  precedented
+  4 routes  P  85.25%  BEYOND PRECEDENT
+  6 routes  P  86.50%  BEYOND PRECEDENT
+
+POTENCY CEILING at 60 months
+  cap 1.284x  P   4.75%  not robust
+  cap 1.500x  P  18.50%  not robust
+  cap 2.000x  P  57.75%  not robust
+  cap 2.590x  P  80.00%  robust
+  cap 3.000x  P  88.00%  robust
+
+DOES THE SEQUENCING IDEA FINALLY PAY OFF?
+ATLAS-1's sequencing gain collapsed because phase 1 usually failed, leaving
+median bed quality at 0.023. Scored against the bed the upgraded phase 1
+actually produces:
+
+  coupling 0.00  bed quality 1.000  graft P  27.9%  sequencing gain  +0.0 pp
+  coupling 0.50  bed quality 1.000  graft P  39.1%  sequencing gain +11.2 pp
+  coupling 1.00  bed quality 1.000  graft P  52.1%  sequencing gain +24.2 pp
+
+  The idea was never structurally wrong; it was starved by a failing phase 1.
+  With the bed genuinely prepared it delivers its full gain again. The graft
+  still is not robust, so remuscularisation is now the sole binding biology
+  problem rather than one of two.
+
+VERDICT
+The clearance arm is FIXED as a specification: robust across the whole
+population with margin at the stated sample size,no eligibility exclusion, every active upgrade load-bearing. The
+price is a 2.18x potency gap beyond precedent and a 60-month horizon instead of 24.
+
+Not fixed: myocardial restoration is still not robust, and randomised proof is
+still zero because none of this has been trialled. ATLAS-2 is a materially
+better candidate and a sharper specification of what must be demonstrated. It
+is not a cure.

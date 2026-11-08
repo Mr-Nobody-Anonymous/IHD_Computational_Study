@@ -1,0 +1,4 @@
+modality,measurement_quality,viability_specific,probability_of_target,gain_vs_no_feedback_pp,status
+reporter_gene_pet,0.78,True,0.82975,0.40000000000000036,atlas4_precedent_corrected_unvalidated
+iron_oxide_mri,0.0,False,0.82575,0.0,atlas4_precedent_corrected_unvalidated
+acute_retention_only,0.0,False,0.82575,0.0,atlas4_precedent_corrected_unvalidated

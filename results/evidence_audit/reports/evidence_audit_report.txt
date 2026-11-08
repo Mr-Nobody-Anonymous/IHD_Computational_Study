@@ -1,0 +1,59 @@
+EVIDENCE-LAYER AUDIT: are the inherited criterion scores probabilities?
+=======================================================================
+SCENARIO SIMULATION, NOT CLINICAL PREDICTION. This audit propagates the confidence intervals reported by the source trials, plus adherence and baseline-rate uncertainty. It does not establish that any mechanism transports to a new population, and it declares no cures.
+
+WHY THIS AUDIT
+The ATLAS-1 self-audit caught a nominal pass in an invented construct. The
+same question applies to the layer every construct inherits. It turns out
+composite.score_criteria computes risk_normalisation from one point-estimate
+simulation, while uncertainty.monte_carlo_regimen already propagates LDL,
+hazard-ratio, baseline-rate and adherence uncertainty. The criterion was
+nominal even though the machinery to make it distributional already existed.
+
+Only risk_normalisation is an effect estimate. Driver control is a mechanism
+flag; burden and myocardial credit are capped below the threshold; proof is
+zero by construction. Those four are unchanged, for the reasons in
+tables/evidence_criterion_ledger.csv.
+
+RESULT BY CREDIT MODE
+  mode          nominal passes   robust passes   retracted   best criteria
+  exploratory               19              18           1   2 -> 2
+  strict                     1               0           1   1 -> 0
+  surrogate                  7               2           4   2 -> 2
+
+NOMINAL PASSES THAT DO NOT SURVIVE
+  any_ascvd                  surrogate    nominal 0.806  median 0.752  P(>=0.8)   5.0%
+  ascvd_obesity_no_diabetes  surrogate    nominal 0.819  median 0.764  P(>=0.8)  13.0%
+  lifetime_exposure          exploratory  nominal 1.000  median 0.500  P(>=0.8)  50.0%
+  post_mi_hscrp_high         surrogate    nominal 0.804  median 0.754  P(>=0.8)   5.3%
+  secondary_post_mi          surrogate    nominal 0.856  median 0.792  P(>=0.8)  43.7%
+  stable_ccs                 strict       nominal 0.819  median 0.749  P(>=0.8)  11.7%
+
+TOO CLOSE TO CALL (within two Monte Carlo standard errors of 80%)
+  statin_intolerant_ascvd    surrogate    P  78.3% +/-  4.8 pp (2 SE)
+  These are not counted as retractions; more draws would settle them.
+
+WHAT THIS CHANGES
+Strict credit is the worst affected. Its single risk-normalisation pass was
+the only criterion any population met under strict rules, and it does not
+survive: the best strict result falls to zero of five. Exploratory credit is
+largely unaffected, because its effects are large relative to their intervals.
+
+A MEDIAN IS NOT A PROBABILITY EITHER
+  lifetime_exposure          exploratory  50.0% of draws at 0, 50.0% at 1, P(>=0.8)  50.0%
+  The score is clipped to [0, 1], so these distributions pile up at both
+  poles with little mass between. The median then sits at whichever pole
+  holds slightly more than half the draws, and flips with the sample size.
+  It is not a summary of such a distribution. The probability is, which is
+  why every criterion here is reported as one.
+
+VERDICT
+The evidence layer was partly nominal too, and is now corrected. This does
+not rescue any construct: it lowers the ceiling they all inherit. Combined
+with the ATLAS-1 self-audit, no construct in this study meets more than two
+of five criteria robustly, and under strict credit none meets any.
+
+The recommendation is unchanged and is the one item that does not depend on
+any of these scores: a PCSK9-editing outcomes trial would replace assumed
+durability and surrogate credit with a randomised effect estimate, which is
+precisely the deficiency this audit exposes.

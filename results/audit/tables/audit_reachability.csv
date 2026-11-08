@@ -1,0 +1,3 @@
+source_uncertain,perfect_module_source_threshold,asymptotic_probability_ceiling,minimum_robust_potency,robust_potency_exists,status
+True,0.22302018300979398,0.553959633980412,,False,atlas_invented_hypothesis_unvalidated
+False,0.22302018300979398,1.0,17.71016573905945,True,atlas_invented_hypothesis_unvalidated

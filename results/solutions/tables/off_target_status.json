@@ -1,0 +1,13 @@
+{
+  "numeric_off_target_score": null,
+  "reason": "SpCas9 cleavage-based proxies and double-strand-break assays do not measure adenine-base-editor off-target editing; no numeric safety score is produced",
+  "required_assays": [
+    "base-editor-specific genome-wide DNA off-target assay",
+    "RNA off-target transcriptome-wide assay",
+    "bystander editing amplicon sequencing at the target locus",
+    "indel and structural-variant spectrum at the target locus",
+    "germline transmission assessment in an appropriate model",
+    "long-term clinical follow-up with malignancy and hepatic monitoring"
+  ],
+  "status": "requires_experimental_assay"
+}

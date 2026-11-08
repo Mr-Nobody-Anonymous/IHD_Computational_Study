@@ -1,0 +1,54 @@
+Ischaemic heart disease: solution simulation report
+====================================================================
+SCOPE: scenario modelling of candidate interventions. Not a clinical trial,
+not a patient-level prediction, not a treatment recommendation, not a cure.
+
+Therapies in catalogue: 47
+Trial anchors: 48
+Admissible regimens per population: 753
+Populations: secondary_post_mi, post_mi_pci, stable_ccs, ascvd_ckd_inflammation, hefh_primary, ischemic_cm_heart_failure
+Evidence modes: strict, surrogate, exploratory
+Horizon: 5.0 years; grid step 30.0 days
+Monte Carlo draws per regimen: 120; seed 20261106
+
+CREDITING RULES
+- strict: only randomised hard-endpoint anchors matched or declared transportable
+- surrogate: additionally transports the LDL/pressure relationships to unproven agents
+- exploratory: additionally admits observational and non-MACE endpoint evidence
+- hsCRP and Lp(a) changes never create event credit in any mode
+- heart-failure, functional and mortality endpoints are never relabelled as MACE
+- neutral published intervals are held at HR = 1.0 (RiskParameters.neutral_ci_policy)
+
+BEST REGIMEN PER POPULATION (headline mode)
+  secondary_post_mi: background 75.2 -> 119.2 events avoided/1000 with aspirin_secondary_prevention + bp_intensification + colchicine + statin_high_intensity
+  post_mi_pci: background 80.0 -> 98.2 events avoided/1000 with alirocumab + aspirin_secondary_prevention + statin_high_intensity
+  stable_ccs: background 52.0 -> 88.4 events avoided/1000 with aspirin_secondary_prevention + bp_intensification + colchicine + statin_high_intensity
+  ascvd_ckd_inflammation: background 55.0 -> 88.1 events avoided/1000 with aspirin_secondary_prevention + bp_intensification + statin_high_intensity
+  hefh_primary: background 40.4 -> 49.8 events avoided/1000 with aspirin_secondary_prevention + bp_intensification + statin_high_intensity
+  ischemic_cm_heart_failure: background 0.0 -> 50.0 events avoided/1000 with aspirin_secondary_prevention + bp_intensification + statin_high_intensity
+
+TOP REGIMENS (secondary_post_mi, strict mode)
+  aspirin_secondary_prevention + bp_intensification + colchicine + statin_high_intensity: 119.2 events avoided/1000; burden 4
+  alirocumab + aspirin_secondary_prevention + colchicine + statin_high_intensity: 115.4 events avoided/1000; burden 6
+  aspirin_secondary_prevention + colchicine + evolocumab + statin_high_intensity: 115.4 events avoided/1000; burden 6
+  aspirin_secondary_prevention + bempedoic_acid + colchicine + statin_high_intensity: 114.5 events avoided/1000; burden 4
+  alirocumab + aspirin_secondary_prevention + bp_intensification + statin_high_intensity: 110.2 events avoided/1000; burden 6
+  aspirin_secondary_prevention + bp_intensification + evolocumab + statin_high_intensity: 110.2 events avoided/1000; burden 6
+  aspirin_secondary_prevention + bempedoic_acid + bp_intensification + statin_high_intensity: 109.2 events avoided/1000; burden 4
+  aspirin_secondary_prevention + colchicine + ezetimibe + statin_high_intensity: 108.3 events avoided/1000; burden 4
+  aspirin_secondary_prevention + bempedoic_acid + evolocumab + statin_high_intensity: 105.0 events avoided/1000; burden 6
+  alirocumab + aspirin_secondary_prevention + bempedoic_acid + statin_high_intensity: 105.0 events avoided/1000; burden 6
+
+UNCERTAINTY (median and 90% interval, events avoided per 1000)
+  aspirin_secondary_prevention + bp_intensification + colchicine + statin_high_intensity: 105.4 [91.9, 129.0]; P(benefit)=1.00
+  alirocumab + aspirin_secondary_prevention + colchicine + statin_high_intensity: 102.7 [84.6, 125.2]; P(benefit)=1.00
+  aspirin_secondary_prevention + colchicine + evolocumab + statin_high_intensity: 102.0 [75.8, 119.0]; P(benefit)=1.00
+  alirocumab + aspirin_secondary_prevention + bp_intensification + statin_high_intensity: 97.1 [84.1, 113.1]; P(benefit)=1.00
+  aspirin_secondary_prevention + bempedoic_acid + colchicine + statin_high_intensity: 96.7 [78.6, 123.3]; P(benefit)=1.00
+
+WHAT THIS SUITE DOES NOT ESTABLISH
+- No plaque-rupture prediction for an individual artery
+- No base-editor safety conclusion; dedicated off-target assays are required
+- No remuscularisation or mortality claim for regenerative cell sheets
+- No claim that biomarker improvement implies fewer clinical events
+- Total simulated years per curve: 5.0; days per year convention: 365.25

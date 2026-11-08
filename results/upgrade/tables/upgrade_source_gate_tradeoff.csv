@@ -1,0 +1,6 @@
+source_required,eligible_fraction,excluded_fraction,conditional_probability,unconditional_probability,robust_conditional,status
+0.0,1.0,0.0,0.065,0.065,False,atlas2_invented_architecture_unvalidated
+0.1,0.7775,0.22250000000000003,0.08360128617363344,0.065,False,atlas2_invented_architecture_unvalidated
+0.223,0.555,0.44499999999999995,0.11711711711711711,0.065,False,atlas2_invented_architecture_unvalidated
+0.35,0.2825,0.7175,0.18584070796460178,0.0525,False,atlas2_invented_architecture_unvalidated
+0.5,0.0,1.0,0.0,0.0,False,atlas2_invented_architecture_unvalidated

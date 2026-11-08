@@ -1,0 +1,67 @@
+ATLAS-1: best working part of every construct, sequenced rather than stacked
+============================================================================
+ATLAS-1 IS AN INVENTED, UNTRIALLED CONSTRUCT. Invented arms carry zero evidence credit. The bed-preparation coupling is an assumption swept to zero, not a measured effect. Nothing here is a therapy, a result, or a recommendation.
+
+WHAT WAS KEPT FROM WHERE
+  catalogue      -> node-disjoint proven backbone (real event benefit)
+  composite      -> target-overlap dedup; zero proof for an untested combination
+  REVERT-1       -> the AND gate and the efflux/efferocytosis coupling
+  gap solver M7  -> source reduction, which broke the structural plateau
+  resolution     -> the 1.28x potency operating point (NOMINAL PASS RETRACTED
+                    by the self-audit; see ihd_solutions.audit)
+  discovery      -> the back-calculated capability target
+
+THE NEW IDEA
+Every earlier construct delivered everything at once. ATLAS-1 clears and quietens
+the lesion first, then grafts muscle into the prepared bed. The claim is that
+phase 1 lifts phase 2's chronic-injury translation floor. That link is an
+assumption, so it is swept to zero where the idea contributes nothing:
+
+  bed coupling   floor   P(+20)   vs unsequenced   robust
+     0.00       0.50    26.8%     +0.0 pp        no
+     0.25       0.62    32.4%     +5.5 pp        no
+     0.50       0.75    38.7%    +11.9 pp        no
+     0.75       0.88    45.2%    +18.4 pp        no
+     1.00       1.00    50.9%    +24.1 pp        no
+
+  At zero coupling sequencing adds +0.0 pp. At full coupling it adds +24.1 pp.
+  THESE NUMBERS ASSUME PHASE 1 SUCCEEDED. They score the graft against a
+  nominally cleared bed. The self-audit (results/audit/) shows phase 1 reaches
+  its target with probability ~0, so the bed is usually not prepared and this
+  table overstates the graft by about 20 pp at full coupling. Scored jointly,
+  sequencing adds only a few points. The structure of the idea survives; its
+  practical value does not, until clearance itself is robust.
+
+ARM ABLATION (what is actually load-bearing)
+  drop gated_clearance      clearance   0.0% (+80.0 pp)  graft P 26.0% (+12.6 pp)  LOAD-BEARING
+  drop source_reduction     clearance  66.0% (+14.0 pp)  graft P 36.0% ( +2.7 pp)  LOAD-BEARING
+  drop durable_editing      clearance  80.0% ( +0.0 pp)  graft P 38.6% ( +0.0 pp)  LOAD-BEARING  [durability criterion]
+  drop proven_backbone      clearance  80.0% ( +0.0 pp)  graft P 13.3% (+25.3 pp)  LOAD-BEARING
+  drop remuscularisation    clearance  80.0% ( +0.0 pp)  graft P  0.0% (+38.6 pp)  LOAD-BEARING
+  drop bed_sequencing       clearance  80.0% ( +0.0 pp)  graft P 26.0% (+12.6 pp)  LOAD-BEARING
+
+TESTED ACROSS EVERY POPULATION AND CREDIT MODE
+  rows: 57  (19 populations x 3 modes)
+  best criteria met on EVIDENCE alone:      2 of 5
+  best criteria met IF the hypothesis held: 2 of 5
+  ATLAS-1 configurations declared a cure:   0
+
+  Both counts score the invented arms as probabilities of hitting their
+  targets under delivery uncertainty, not as nominal point estimates. They
+  come out equal: the invented arms add no criterion that survives that test.
+  Proof stays at zero in both, because no combination here has been trialled.
+
+VERDICT (corrected by the self-audit)
+ATLAS-1 remains the best candidate on construction quality: every arm is
+load-bearing, every inherited part survived its own ablation, and its one new
+idea carries an explicit falsifier. But the earlier claim that it reaches 3 of
+5 criteria is WITHDRAWN. That claim rested on a nominal clearance pass at
+1.284x potency; under delivery uncertainty the probability of reaching the
+clearance target is ~0, and no potency makes it robust while the source term
+is uncertain. Jointly scored, ATLAS-1 reaches 2 of 5 -- the same as every
+predecessor. It is not a cure.
+
+Corrected ranking of open problems: clearance under delivery uncertainty
+first, remuscularisation second, randomised proof third. The highest-leverage
+real-world action is unchanged and needs no new biology: the PCSK9-editing
+outcomes trial.

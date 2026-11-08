@@ -1,0 +1,11 @@
+mode,failure_correlation,probability_of_target,single_dose_probability,gain_vs_single_pp,robust,status
+best_of,0.0,0.74125,0.496,24.525,False,atlas4_precedent_corrected_unvalidated
+best_of,0.25,0.7755,0.5425,23.299999999999997,False,atlas4_precedent_corrected_unvalidated
+best_of,0.5,0.7585,0.563,19.55,False,atlas4_precedent_corrected_unvalidated
+best_of,0.75,0.677,0.5385,13.850000000000007,False,atlas4_precedent_corrected_unvalidated
+best_of,1.0,0.59725,0.5095,8.774999999999999,False,atlas4_precedent_corrected_unvalidated
+cumulative,0.0,0.82975,0.496,33.375,True,atlas4_precedent_corrected_unvalidated
+cumulative,0.25,0.8535,0.5425,31.100000000000005,True,atlas4_precedent_corrected_unvalidated
+cumulative,0.5,0.8615,0.563,29.85000000000001,True,atlas4_precedent_corrected_unvalidated
+cumulative,0.75,0.8505,0.5385,31.200000000000006,True,atlas4_precedent_corrected_unvalidated
+cumulative,1.0,0.812,0.5095,30.25000000000001,True,atlas4_precedent_corrected_unvalidated

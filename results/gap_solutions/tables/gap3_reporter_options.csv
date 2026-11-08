@@ -1,0 +1,4 @@
+reporter,tracers,viability_specific,human_imaging_precedent,immunogenicity,cardiac_graft_precedent,status
+human_NIS,123I | 124I | 99mTc-pertechnetate | 18F-tetrafluoroborate,True,MV-NIS: 123I SPECT/CT positive in 8 of 32 myeloma patients; NIS expression confirmed in 3 ovarian-cancer patients across repeat cycles,"human-derived, expected non-immunogenic",none - this is the gap,gap_solutions_design_arithmetic_not_evidence
+HSV1-tk,18F-FHBG,True,used in human gene-transfer studies,"viral protein, immunogenic",rodent only; gave LOWER cardiac signal and contrast than hNIS in a direct comparison (n=34 animals),gap_solutions_design_arithmetic_not_evidence
+iron_oxide_MRI,none (contrast agent),False,yes,not applicable,signal persists in macrophages after cell death - blind to viability,gap_solutions_design_arithmetic_not_evidence

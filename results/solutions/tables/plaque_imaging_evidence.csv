@@ -1,0 +1,4 @@
+anchor_id,therapy_id,population_id,endpoint,followup_years,n_participants,mace_credit,notes,source_url
+ASTEROID,statin_high_intensity,stable_ccs,Percent atheroma volume by IVUS,2.0,507,0,LDL-C 60.8 mg/dL: PAV -0.98 pp over 24 months; 63.6% of patients regressed.,https://deo-medical.com/blog/plaque-regression/
+GLAGOV,evolocumab,stable_ccs,Percent atheroma volume by IVUS,1.5,968,0,Achieved LDL-C 36.5 mg/dL: PAV -0.95 pp; 64.3% regressed; 81.2% regressed among those already below 70 mg/dL.,https://deo-medical.com/blog/plaque-regression/
+FLOWPROMOTE,ezetimibe,stable_ccs,Total and noncalcified plaque volume by CT,1.5,104,0,"JAMA Cardiol 2026-10-30, statin-naive: rosuvastatin+ezetimibe vs atorvastatin, total plaque -21.1% vs -13.6%, noncalcified -28.2% vs -20.0%; LDL-C 42.5 vs 69.5 mg/dL. Calcified volume unchanged.",https://www.dralo.net/blog/reverse-soft-plaque

@@ -1,0 +1,4 @@
+mode,populations,nominal_risk_passes,robust_risk_passes,retracted_passes,borderline_cases,median_probability,best_nominal_criteria,best_robust_criteria,status
+exploratory,19,19,18,1,0,0.99,2,2,evidence_layer_uncertainty_audit
+strict,19,1,0,1,0,0.0,1,0,evidence_layer_uncertainty_audit
+surrogate,19,7,2,4,1,0.0,2,2,evidence_layer_uncertainty_audit

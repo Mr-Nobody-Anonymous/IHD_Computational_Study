@@ -1,0 +1,6 @@
+bed_coupling,median_bed_quality,median_translation_floor,coupled_probability,decoupled_probability,overstatement_pp,median_gain_pp,robust_at_80pct,status
+0.0,0.022863944069881625,0.5,0.2732,0.2732,0.0,14.897694287781555,False,atlas_invented_hypothesis_unvalidated
+0.25,0.022863944069881625,0.5028579930087351,0.2808,0.3368,5.6,15.0599282995808,False,atlas_invented_hypothesis_unvalidated
+0.5,0.022863944069881625,0.5057159860174705,0.2876,0.3916,10.399999999999999,15.231871789135027,False,atlas_invented_hypothesis_unvalidated
+0.75,0.022863944069881625,0.5085739790262056,0.2932,0.4512,15.799999999999997,15.39624649272012,False,atlas_invented_hypothesis_unvalidated
+1.0,0.022863944069881625,0.5114319720349407,0.3032,0.506,20.279999999999998,15.59627646545924,False,atlas_invented_hypothesis_unvalidated

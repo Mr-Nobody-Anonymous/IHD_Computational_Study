@@ -1,0 +1,10 @@
+repeat_responder_probability,translation_floor,probability_of_target,median_gain_pp,risk_adjusted_probability,robust,status
+0.3333333333333333,1.0,0.82975,25.0,0.7635005948592625,True,atlas4_precedent_corrected_unvalidated
+0.3333333333333333,0.7,0.764,23.763286609590395,0.6955219636129405,False,atlas4_precedent_corrected_unvalidated
+0.3333333333333333,0.4,0.6635,22.19572207718288,0.5971371269812538,False,atlas4_precedent_corrected_unvalidated
+0.5,1.0,0.92525,25.0,0.8470198203327989,True,atlas4_precedent_corrected_unvalidated
+0.5,0.7,0.89125,24.565069928168104,0.8052096826255055,True,atlas4_precedent_corrected_unvalidated
+0.5,0.4,0.81725,23.348148593877035,0.7271067291135284,True,atlas4_precedent_corrected_unvalidated
+1.0,1.0,1.0,25.0,0.9234553404408793,True,atlas4_precedent_corrected_unvalidated
+1.0,0.7,1.0,24.572479065254896,0.9124025986810838,True,atlas4_precedent_corrected_unvalidated
+1.0,0.4,0.99975,23.90450024252283,0.8962779085549917,True,atlas4_precedent_corrected_unvalidated

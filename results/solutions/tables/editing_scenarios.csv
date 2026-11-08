@@ -1,0 +1,5 @@
+scenario_id,editor_version,durability_assumption,plateau_pcsk9_knockdown_pct,plateau_ldl_reduction_pct,ten_year_mean_ldl_reduction_pct,final_ldl_c_mg_dl,clinical_safety_assessed,mace_credit
+narrow_window_editor,ABE9,permanent_scenario,80.75,59.98072084701924,59.48907559417482,52.025062898874985,False,0.0
+permanent_high_efficiency,ABE8e,permanent_scenario,90.25,62.56966162120856,62.05679554234622,48.65943989242887,False,0.0
+permanent_moderate_efficiency,ABE8e,permanent_scenario,66.49999999999999,55.05204882810113,54.60080252623144,58.43233652346853,False,0.0
+waning_5_year_half_life,ABE8e,waning,89.16465958141112,62.29805776494898,44.389081411481314,94.41204042254031,False,0.0

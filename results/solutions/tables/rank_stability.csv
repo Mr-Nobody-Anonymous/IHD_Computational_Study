@@ -1,0 +1,6 @@
+regimen,probability_top_rank,median_events_avoided
+aspirin_secondary_prevention + bp_intensification + colchicine + statin_high_intensity,0.7583333333333333,105.44772384444641
+alirocumab + aspirin_secondary_prevention + colchicine + statin_high_intensity,0.6833333333333333,102.68704462071716
+aspirin_secondary_prevention + colchicine + evolocumab + statin_high_intensity,0.6166666666666667,101.98536297660755
+aspirin_secondary_prevention + bempedoic_acid + colchicine + statin_high_intensity,0.48333333333333334,96.70808883613076
+alirocumab + aspirin_secondary_prevention + bp_intensification + statin_high_intensity,0.4583333333333333,97.13539032897877
