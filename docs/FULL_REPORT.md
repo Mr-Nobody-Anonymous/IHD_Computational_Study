@@ -54,9 +54,9 @@ this study, because no combination has been trialled.
 | `results/upgrade/` | 10 |
 
 **Input registries:** 47 therapies · 48 trial anchors · 19 populations
-**Documentation:** 23 documents (plus this report)
-**Code:** 41 modules in `src/ihd_solutions/`
-**Tests:** 36 test files
+**Documentation:** 24 documents (plus this report)
+**Code:** 42 modules in `src/ihd_solutions/`
+**Tests:** 37 test files
 
 ---
 
@@ -1564,6 +1564,60 @@ trial could show, and specify the measurement that would discriminate.
 
 ---
 
+## F.17 The literature behind each gate item, and a correction to F.16 (`interventions`)
+
+Full account: [`literature_register.md`](literature_register.md). Artefacts:
+`results/interventions/` (6).
+
+Every one of the eight transfer-gate items maps to an established method. The search found
+that **all eight were "solved" methodologically, and none is closed by having the method
+available**. Outcome here: **8 applied, 0 resolved, 8 still failed.**
+
+### A CORRECTION TO F.16
+
+F.16 reported that the inflammatory model **cannot rank** the four mechanisms, because they
+differ by 0.000252 mg/L in terminal CRP. That number is right; **the conclusion was too
+strong.** The reading used the day-180 terminal value of an **unobserved** species at a
+**design-chosen** horizon. Applying T-optimal design (Atkinson & Fedorov 1975; Box & Hill
+1967) to the same model over time:
+
+| reading | separation | patients per arm |
+|---|---|---|
+| terminal CRP, day 180 | 0.000252 mg/L | 66,000,000,000 |
+| **CRP time course, day 22** | **9.954 mg/L** | **6.9** |
+
+**39,507x from a better design, not from more compute.** The correct statement is that the
+model ranks the mechanisms *through a time course of CRP or IL-6*, and only through that.
+What the repository lacks is a time course, not a capability. (The mechanism *nodes*
+separate by more absolutely, but only because they are the perturbed quantity - that is
+circular and the table flags it.)
+
+### The eight instruments
+
+| gate item | instrument | source | here |
+|---|---|---|---|
+| pre-specified endpoint/population | estimand framework | ICH E9(R1) 2019 | still fails - 2 of 5 attributes stated |
+| rank the mechanisms | T-optimality | Atkinson & Fedorov 1975 | corrected; still fails on data held |
+| distinguish interventions | structural identifiability | DAISY, SIAN, STRIKE-GOLDD | still fails - identical parameters |
+| parameters from data | profile likelihood | Raue et al. 2009 | still fails - infinite CI is correct |
+| external validation | TRIPOD+AI / REMARK | Collins 2024; McShane 2005 | still fails - a split is not validation |
+| falsifiable predictions | surrogate validation | Prentice 1989; R2 0.59, STE +6 pp | still fails - effect below the threshold |
+| uncertainty propagated | sloppy models | Gutenkunst et al. 2007 | still fails - defence requires item 5 |
+| stated comparator | reproducibility | Tiwari et al. 2021 | still fails - comparator named, never subtracted |
+
+### The one honest defence the literature offers, and why it is incomplete
+
+Gutenkunst et al. show sensitivity spectra are sloppy in **every** systems-biology model
+examined, and conclude that the response is to **validate predictions rather than pin
+parameters**. That is a real defence of this repository's position - and it requires the
+second half, prediction validation, which has not been done. Doing the first half without
+the second is the worst of both: unidentifiable parameters *and* unvalidated predictions.
+
+**The literature settles the methods. It does not settle this study's data, population,
+endpoint choice, or intercurrent-event policy.**
+
+---
+
 # PART G — THE HONESTY LEDGER
 
 Every retraction and correction made during this study, in order. This section
@@ -1610,6 +1664,8 @@ exists because a report that only shows final numbers hides how they were reache
 | 37 | More simulation gets closer to "the solution" | The model cannot rank the mechanisms it must choose between | **0.000252 mg/L apart; 66 billion per arm** |
 | 38 | The model compares LDL lowering with anti-inflammation | LDL lowering and NF-kB inhibition are algebraically identical here | **Difference exactly 0.0**; it is a parameter against itself |
 | 39 | "Simulation first, lab second" terminates in a cure | Choosing the experiment requires the experiment's result | **0 of 8 transfer checks pass** |
+| 40 | The inflammatory model cannot rank its mechanisms | True only of the terminal value at a design-chosen horizon of an unobserved species | **9.954 mg/L over time vs 0.000252 terminal; 39,507x** |
+| 41 | Sloppy parameters are an acceptable excuse | The literature's defence requires validating predictions, not just reporting sloppiness | **Defence accepted, second half not done** |
 
 **Implementation bugs found and fixed:** run-in pinned responders to the threshold
 instead of keeping their achieved value; gate threshold computed at 24 months but
@@ -1666,6 +1722,7 @@ python run_solutions.py revival         # control-arm correction        -> resul
 python run_solutions.py scientific-audit # provenance/identifiability    -> results/scientific_audit/
 python run_solutions.py unanswered       # what cannot be answered       -> results/unanswered/
 python run_solutions.py frontier         # can simulation pick a winner  -> results/frontier/
+python run_solutions.py interventions    # literature per gate item      -> results/interventions/
 python run_solutions.py validate        # registries only
 ```
 
@@ -1717,7 +1774,7 @@ the measured load-bearing parts of the first two, which is stronger and simpler 
 either and refuses 14.08 pp of double-counted benefit - then charged for the control
 arm it never had, and withdrawn when the charge was found to dissolve it; and a documented
 record of
-thirty-nine claims that were tested and withdrawn. **The retractions are part of the
+forty-one claims that were tested and withdrawn. **The retractions are part of the
 result.**
 
 ---

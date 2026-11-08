@@ -177,6 +177,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     frontier.add_argument("--output-dir", type=Path, default=Path("results/frontier"))
 
+    interventions = subparsers.add_parser(
+        "interventions",
+        help="what the literature says about each transfer-gate item, and what happened here",
+    )
+    interventions.add_argument("--output-dir", type=Path, default=Path("results/interventions"))
+
     subparsers.add_parser("validate", help="validate all input registries and exit")
     return parser
 
@@ -192,6 +198,15 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _dispatch(args: argparse.Namespace) -> int:
+    if args.command == "interventions":
+        from ihd_solutions.interventions import write_intervention_report
+
+        summary = write_intervention_report(str(args.output_dir))
+        for key, value in summary.items():
+            print(f"{key}: {value}")
+        print((args.output_dir / "intervention_report.txt").read_text())
+        return 0
+
     if args.command == "frontier":
         from ihd_solutions.simulation_frontier import write_frontier_report
 

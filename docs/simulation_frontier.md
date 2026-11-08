@@ -108,6 +108,14 @@ size could show; and an ordered list of experiments by information per cost.
 
 ## The honest bottom line
 
+> **CORRECTED — see [`literature_register.md`](literature_register.md).** The 0.000252 mg/L
+> reading above uses the day-180 terminal value of an *unobserved* species at a
+> *design-chosen* horizon. Over a CRP time course the same four mechanisms separate by
+> **9.954 mg/L around day 22** — **39,507×** more, resolvable with **7 patients per arm**.
+> The model **can** rank them through a time course; what the repository lacks is the time
+> course, not the capability. The claim below is therefore narrowed: a model cannot choose
+> an experiment it has no data for.
+
 **Simulation cannot find "the solution" — not because there is not enough compute, but
 because a model cannot choose the experiment that would tell you whether the model is right.**
 
@@ -117,5 +125,5 @@ time. "The solution" is not a thing this or any simulation can hand over, and a 
 that promises it will end by narrating whatever the first experiment returns as success —
 which is precisely why gate item 1 comes first.
 
-Tests: `tests/test_simulation_frontier.py` — **30 tests**, `simulation_frontier.py` at
+Tests: `tests/test_simulation_frontier.py` — **32 tests**, `simulation_frontier.py` at
 **100%** line coverage.

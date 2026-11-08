@@ -1,0 +1,16 @@
+WHAT THIS MODULE IS
+  A register: each of the eight transfer-gate items mapped to the established method that
+  addresses it, with the primary citation, and the outcome of actually applying it here.
+
+WHAT IT IS NOT
+  A claim that the gate now passes. Seven items remain failed. One conclusion of this
+  repository was wrong and is corrected: the inflammatory model CAN rank its mechanisms,
+  through a time course, and the earlier "0.000252 mg/L" reading used the wrong coordinate.
+
+WHAT THE LITERATURE SETTLES
+  The methods. Prespecification, T-optimal design, structural and practical identifiability,
+  sloppy-model analysis, external validation and surrogate validation are all mature, with
+  named tools and published guidance.
+
+WHAT IT DOES NOT SETTLE
+  This study's data, its population, its endpoint choice, or its intercurrent-event policy.

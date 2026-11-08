@@ -1,0 +1,6 @@
+attribute,state
+population,"NOT SPECIFIED. Candidate populations exist in data/solutions (19 registered), but no single one is declared the target. This is a choice the repository must make and has not."
+treatment,"STATED. The architecture is a cell patch plus PCSK9 base editing plus background guideline therapy; the comparator must be guideline therapy alone, because REVIVED's medical-therapy arm moves LVEF +3.4 pp unaided."
+variable,PARTIALLY STATED. Two candidate endpoints are in use: LVEF change (surrogate) and a composite cardiovascular outcome (not modelled). Prentice validation says these are not interchangeable.
+intercurrent_events,"NOT SPECIFIED. Death, transplant, immunosuppression withdrawal and repeat dosing are all recorded in the source trials and none has a declared strategy. Under ICH E9(R1) this alone leaves the treatment effect undefined."
+summary,"NOT SPECIFIED. Mean difference, risk difference and hazard ratio are all used in the repository at different points."

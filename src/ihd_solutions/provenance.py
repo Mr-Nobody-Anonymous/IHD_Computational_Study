@@ -626,6 +626,46 @@ REGISTRY: dict[str, Provenance] = {
         "ATLAS-4's best admissible point, read from results/atlas4, pinned by test",
         "a MODEL OUTPUT, not an external measurement; it is a reference point only",
     ),
+    # ------------------------------------------------------- literature register
+    "INTERVENTION_PATIENT_CV": Provenance(
+        0.30,
+        "coefficient of variation",
+        "estimated",
+        "arithmetic",
+        "human",
+        "between-patient CV of a peak or nadir inflammatory marker value; deliberately "
+        "generous so the trial-size requirement is not flattered",
+        "ESTIMATED and conservative",
+    ),
+    "INTERVENTION_ASSAY_CV": Provenance(
+        0.10,
+        "coefficient of variation",
+        "estimated",
+        "arithmetic",
+        "human",
+        "within-assay CV for CRP and IL-6 at the upper end of the quoted 5-10% range",
+        "ESTIMATED from the quoted assay range",
+    ),
+    "RESOLVABLE_TRIAL_SIZE": Provenance(
+        200.0,
+        "patients per arm",
+        "estimated",
+        "design",
+        "none",
+        "a discrimination needing at most this many per arm is called resolvable, i.e. "
+        "within the size of a conventional single-centre study",
+        "a design threshold, not a measurement",
+    ),
+    "INTERVENTION_STEP": Provenance(
+        0.50,
+        "fraction",
+        "estimated",
+        "design",
+        "none",
+        "relative perturbation applied to each mechanism when building the discrimination "
+        "table; identical for every mechanism so the comparison is like-for-like",
+        "a design choice",
+    ),
     # ------------------------------------------------------- simulation frontier
     "CRP_ASSAY_CV": Provenance(
         0.10,

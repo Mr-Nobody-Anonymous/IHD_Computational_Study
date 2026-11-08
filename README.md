@@ -334,6 +334,21 @@ time, and is not the same thing as a cure.
 python run_solutions.py frontier         # -> results/frontier/ (7 artefacts)
 ```
 
+[`docs/literature_register.md`](docs/literature_register.md) maps each of those eight gate
+items to the established method that addresses it - the ICH E9(R1) estimand framework,
+T-optimal design, structural and practical identifiability (DAISY/SIAN/STRIKE-GOLDD), TRIPOD+AI
+external validation, Prentice surrogate validation, and sloppy-model analysis - and records
+what happened when each was applied. **All eight were solved methodologically; none is closed
+by having the method available; 8 still fail.** The search also corrected one of my own
+conclusions: the inflammatory model **can** rank its mechanisms, at **9.954 mg/L** on a CRP
+time course around day 22 versus **0.000252 mg/L** at the terminal point I had read - a
+**39,507x** difference produced by a better design rather than by more compute. What the
+repository lacks is a time course, not a ranking capability.
+
+```bash
+python run_solutions.py interventions    # -> results/interventions/ (6 artefacts)
+```
+
 - **Hazard ratio — solved as procurement.** All 19 populations close by exploratory credit.
   One PCSK9-editing outcomes trial unlocks **17 of 19**. No new biology needed.
 - **Clearance — solved as an engineering spec.** Correction: no *single* module suffices
@@ -426,6 +441,7 @@ IHD_Computational_Study/
 │   ├── scientific_audit.md                       # provenance, identifiability, verification vs validation
 │   ├── unanswered_questions.md                   # what cannot be answered, and what each gap costs
 │   ├── simulation_frontier.md                    # can simulation pick a winner? no - and why
+│   ├── literature_register.md                    # what the literature solves per gate item
 │   ├── FULL_REPORT.md                            # consolidated report: all agents, compounds, experiments, results
 │   ├── FULL_REPORT_chemical_index.csv            # 95 entities, source-tagged, QA-flagged
 │   ├── scientific_methodology_and_limitations.md # Critical reality check & assumptions

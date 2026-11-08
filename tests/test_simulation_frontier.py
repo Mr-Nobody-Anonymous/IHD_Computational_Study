@@ -67,10 +67,24 @@ def test_the_ranking_result_does_not_claim_nothing_is_visible():
     assert result["upstream_vs_downstream_is_visible"] is True
 
 
-def test_the_ranking_result_explains_why_compute_cannot_fix_it():
-    text = F.ranking_is_unidentifiable()["why_more_compute_does_not_help"]
+def test_the_ranking_result_explains_why_compute_cannot_fix_this_coordinate():
+    text = F.ranking_is_unidentifiable()["why_more_compute_does_not_help_on_this_coordinate"]
     assert "not a numerical artefact" in text
     assert "multiplicative" in text
+
+
+def test_the_ranking_result_is_labelled_as_coordinate_specific():
+    """It is a statement about the day-180 terminal value, not about the model."""
+    result = F.ranking_is_unidentifiable()
+    assert result["status"] == "ranking_unidentifiable_on_terminal_value_only"
+    assert "coordinate" in result["why_more_compute_does_not_help_on_this_coordinate"]
+
+
+def test_the_report_carries_the_correction_so_both_claims_cannot_coexist():
+    text = F.frontier_report()
+    assert "CORRECTION TO THE PREVIOUS SECTION" in text
+    assert "39,507x" in text
+    assert "CAN rank the mechanisms through a time course" in text
 
 
 def test_the_ranking_result_names_the_circularity():

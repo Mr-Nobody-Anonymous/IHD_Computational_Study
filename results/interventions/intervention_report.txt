@@ -1,0 +1,118 @@
+==============================================================================
+WHAT THE LITERATURE SAYS ABOUT EACH GATE ITEM
+==============================================================================
+
+WHAT THIS MODULE IS
+  A register: each of the eight transfer-gate items mapped to the established method that
+  addresses it, with the primary citation, and the outcome of actually applying it here.
+
+WHAT IT IS NOT
+  A claim that the gate now passes. Seven items remain failed. One conclusion of this
+  repository was wrong and is corrected: the inflammatory model CAN rank its mechanisms,
+  through a time course, and the earlier "0.000252 mg/L" reading used the wrong coordinate.
+
+WHAT THE LITERATURE SETTLES
+  The methods. Prespecification, T-optimal design, structural and practical identifiability,
+  sloppy-model analysis, external validation and surrogate validation are all mature, with
+  named tools and published guidance.
+
+WHAT IT DOES NOT SETTLE
+  This study's data, its population, its endpoint choice, or its intercurrent-event policy.
+
+  gate items                    8
+  instruments applied here      8
+  RESOLVED                      0
+  APPLICABLE, not yet done      0
+  STILL FAILED                  8
+  verdicts match the live gate  True
+
+------------------------------------------------------------------------------
+THE CORRECTION
+------------------------------------------------------------------------------
+  superseded : the model cannot rank the four downstream mechanisms
+  corrected  : the model ranks them through a time course of CRP or IL-6, and only through that; the terminal value at day 180 carries almost none of the information
+
+  terminal-value separation     0.000252 mg/L
+  best time-course separation   9.954 mg/L
+  fold improvement              39,507x
+  patients per arm required     6.9
+
+  what was wrong with the original reading:
+    - it read the model at a terminal timepoint the model has not converged to
+    - the terminal timepoint was a design choice, not a measurement
+    - it read an unobserved species instead of the reachable ones
+
+  still true: the repository holds no time course, so the ranking is computed on nobody's data; and the mechanisms remain unrankable on terminal CRP alone
+
+------------------------------------------------------------------------------
+THE T-OPTIMAL DESIGN
+------------------------------------------------------------------------------
+  best observable               crp
+  best day                      22.5
+  separation                    9.954 mg/L
+  between-patient sd            6.59 mg/L
+  resolvable at <= 200 per arm   True
+
+------------------------------------------------------------------------------
+ITEM BY ITEM
+------------------------------------------------------------------------------
+  [STILL_FAILED] solution_is_defined
+      instrument : estimand
+      source     : ICH E9(R1) Addendum on Estimands and Sensitivity Analysis (2019)
+      literature : Prespecification is a solved problem at the level of a guideline. The repository has never applied it: it reports LVEF gains, CRP values and hazard ratios without stating which of them, at what threshold, in whom, is 'the solution'.
+      here       : the five-attribute template is now filled in as far as it can honestly be: treatment stated, variable partial, population/intercurrent events/summary not
+      remains    : declare the population, choose surrogate or outcome as the primary variable, and state the intercurrent-event strategy. All three are decisions, not data.
+
+  [STILL_FAILED] model_identifies_a_winner
+      instrument : t_optimal
+      source     : Atkinson & Fedorov (1975) Biometrika 62:289-303
+      literature : A mature field with tooling (e.g. GPdoemd). The criterion is computable for this model and is applied here.
+      here       : T-optimal design applied: the four mechanisms separate by 9.95 mg/L around day 22 on CRP, needing about 7 patients per arm - four orders of magnitude better than the terminal-value reading that produced the earlier conclusion
+      remains    : no such time course exists in data/, so the ranking has no empirical anchor; collect or obtain serial CRP/IL-6 under a defined stimulus
+
+  [STILL_FAILED] mechanisms_are_distinguishable
+      instrument : structural_identifiability
+      source     : Bellu et al. (2007) DAISY, Comput Methods Programs Biomed
+      literature : A mature field. The relevant finding is structural: in a single chain with one observable, the rates are not separately recoverable, and no tool can make them so.
+      here       : the axis collapse is structural, not numerical: LDL lowering scales the k_nfkb_act term and appears nowhere else, so the two are identical to machine precision. No identifiability tool can separate parameters that are the same parameter.
+      remains    : add a mechanism that is genuinely separate - a parameter entering a different ODE term - and verify with DAISY, SIAN or StructuralIdentifiability.jl rather than by inspection
+
+  [STILL_FAILED] parameters_are_identified
+      instrument : practical_identifiability
+      source     : Raue et al. (2009) Bioinformatics 25:1923-1929
+      literature : Solves the practical case and provides the interval. It does not solve the structural case: an infinite confidence interval is the correct answer for a structurally unidentifiable parameter, not a failure of the method.
+      here       : profile identifiability is implemented for the univariate case; 0 of 14 rates are jointly identifiable and the profile returns 'unidentified'
+      remains    : a full multi-dimensional profile likelihood over the identified combinations, and the additional independent observables the rank analysis says are needed
+
+  [STILL_FAILED] at_least_one_external_validation
+      instrument : external_validation
+      source     : Collins et al. (2024) BMJ 385:e078378
+      literature : The standard exists and is unambiguous. The repository has no held-out dataset, and the guideline explicitly rejects reusing development data as validation.
+      here       : the repository reproduces its own legacy script to three decimals, which TRIPOD+AI explicitly does not count as external validation; 0 of 7 named validation targets exist in data/
+      remains    : obtain one published dataset not used to fit any registered constant; TRIPOD+AI says a random split is not sufficient
+
+  [STILL_FAILED] predictions_are_falsifiable
+      instrument : surrogate_validation
+      source     : Prentice (1989) Stat Med 8:431
+      literature : The framework is settled and its verdict for this repository is negative: LVEF cannot stand in for mortality, and the effect size sought here is BELOW the surrogate threshold.
+      here       : the repository now states the surrogate threshold: a treatment effect on LVEF of about +6 pp is needed to imply a mortality benefit, and the repository's own corrected estimate is below it
+      remains    : restate every prediction against an outcome, not a surrogate, or declare it a surrogate prediction and accept that it cannot license an efficacy claim
+
+  [STILL_FAILED] uncertainty_is_propagated
+      instrument : sloppiness
+      source     : Gutenkunst et al. (2007) PLoS Comput Biol 3:e189
+      literature : This is the strongest defence of the repository's position. The literature says parameter non-identifiability is normal and that the response is to validate predictions. The repository has done the first half and none of the second.
+      here       : the repository reports seed and scenario intervals but cannot propagate uncertainty in the 32 hypothetical parameters, because they have no distribution. Sloppiness says this is normal and that predictions should be validated instead of parameters pinned - the repository has done the first half of that and none of the second.
+      remains    : either measure the 32 hypothetical parameters, or assign them ranges, propagate those ranges, and report predictions as intervals with the range stated as a prior assumption
+
+  [STILL_FAILED] the_comparator_is_defined
+      instrument : reproducibility
+      source     : Tiwari et al. (2021) EMBO Reports, reproducibility in systems biology modelling
+      literature : The measured baseline is that roughly half of published models do not reproduce. This repository reproduces its own legacy script to three decimals and types every constant - so it is ahead of the baseline, but it has never reproduced an independently published result.
+      here       : the comparator is now named - guideline medical therapy, whose unaided effect on LVEF is +3.4 pp in REVIVED - but it has never been subtracted in this repository, so every reported gain is a difference from baseline rather than from the comparator
+      remains    : subtract the comparator's measured unaided effect from every reported gain, and state the residual as the intervention's own effect
+
+==============================================================================
+CONCLUSION
+==============================================================================
+  every one of the eight items maps to an established method, and none of the eight is closed by having that method available. The literature solves the method; it does not supply this study's data or decisions.

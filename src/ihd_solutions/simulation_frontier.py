@@ -15,14 +15,20 @@ THE CENTRAL RESULT
 ------------------
 `ranking_is_unidentifiable()`. The legacy inflammatory model contains six mechanisms that
 a laboratory could target. The model can order them into coarse classes, but **it cannot
-rank the four downstream mechanisms at all** - they differ by 0.000252 mg/L in terminal
-CRP. Separating them would need 47.9 billion patients per arm.
+rank the four downstream mechanisms at all** - on terminal CRP they differ by 0.000252
+mg/L, and separating them there would need billions of patients per arm.
 
-This is not a resolution problem that more compute solves. It is structural: ranking
-requires knowing the rate constants, and the rate constants are exactly what the ranking
-experiment is supposed to determine. **A model cannot be used to choose which experiment to
-run when choosing requires the experiment's result.** That circularity is the reason
-"simulation first, lab second" cannot terminate in "the solution".
+This is not a resolution problem that more compute solves: each of these parameters is a
+multiplicative factor on its own ODE term, so the terminal value is set by the product of
+the chain and is invariant to which factor is adjusted.
+
+**SUPERSEDED IN PART** by `interventions.terminal_value_was_the_wrong_coordinate()`. The
+terminal reading is the DAY-180 value of an UNOBSERVED species at a DESIGN-CHOSEN horizon.
+Over the trajectory of a reachable observable the same four mechanisms separate by 9.95
+mg/L around day 22 - about 39,500 times more, resolvable with roughly 7 patients per arm.
+The model CAN rank them through a time course; it cannot rank them on the terminal reading,
+and the repository holds no time course. The arithmetic below is retained unchanged so the
+correction is visible rather than silently edited away.
 
 WHAT THAT DOES NOT MEAN
 -----------------------
@@ -191,19 +197,22 @@ def ranking_is_unidentifiable(step: float = FRONTIER_STEP) -> dict[str, object]:
         "patients_per_arm_to_separate": per_arm,
         "upstream_vs_downstream_is_visible": True,
         "within_class_ranking_is_not": True,
-        "why_more_compute_does_not_help": (
-            "the separation is not a numerical artefact that finer integration would "
-            "resolve; it is a property of a model in which each mechanism enters as a "
-            "multiplicative factor on a linear chain, so the chain product is invariant "
-            "to which factor is adjusted"
+        "why_more_compute_does_not_help_on_this_coordinate": (
+            "on this coordinate the separation is not a numerical artefact that finer "
+            "integration would resolve; it is a property of a model in which each "
+            "mechanism enters as a multiplicative factor on a linear chain, so the chain "
+            "product is invariant to which factor is adjusted. It IS an artefact of the "
+            "coordinate: read over time, the same model separates them by four orders of "
+            "magnitude more (interventions.t_optimal_design)"
         ),
         "why_this_blocks_the_plan": (
-            "choosing WHICH experiment to run requires knowing which mechanism matters, "
-            "which is what the experiment is for. Selecting the target by fitting the "
-            "unfitted is circular, and it is the reason 'simulation first, lab second' "
-            "cannot terminate in 'the solution'"
+            "on this coordinate, choosing WHICH mechanism matters requires the very "
+            "experiment the choice is meant to design. That circularity applies to the "
+            "terminal reading only, and it is BROKEN by the T-optimal design in "
+            "interventions, which names the measurement that would separate them and the "
+            "resolution it needs - a better design, not more compute"
         ),
-        "status": "ranking_unidentifiable_no_model_change",
+        "status": "ranking_unidentifiable_on_terminal_value_only",
     }
 
 
@@ -619,11 +628,13 @@ WHAT THIS MODULE IS
 WHAT IT IS NOT
   A model change, a tuning exercise, or a claim. No result here is improved.
 
-THE CENTRAL RESULT
-  The inflammatory model cannot rank the four downstream mechanisms it is asked to choose
-  between - they differ by 0.000252 mg/L. Choosing which experiment to run requires
-  knowing which mechanism matters, which is what the experiment is for. That circularity
-  is why a simulation cannot terminate in "the solution", however much compute it gets.
+THE CENTRAL RESULT, AND ITS CORRECTION
+  On terminal CRP at day 180 the inflammatory model cannot rank the four downstream
+  mechanisms - they differ by 0.000252 mg/L. That measurement stands, but it used the
+  wrong coordinate: interventions.terminal_value_was_the_wrong_coordinate() shows the same
+  mechanisms separate by 9.95 mg/L around day 22 on a CRP time course. What blocks the
+  solution is not that the model cannot rank them, but that the repository holds no time
+  course on which to rank them against anyone's data.
 
 WHAT IT CAN DO INSTEAD
   State precisely which measurement would discriminate, at what resolution, in what
@@ -664,6 +675,18 @@ def frontier_report() -> str:
         "  LDL lowering and NF-kB inhibition are the same perturbation:",
         "    max difference over all species and times =",
         f"    {ldl_and_nfkb_are_the_same_perturbation()['max_absolute_difference_over_all_species']:.3e}",
+        "",
+        "-" * 78,
+        "1b. CORRECTION TO THE PREVIOUS SECTION",
+        "-" * 78,
+        "  The reading above uses the day-180 terminal value of an UNOBSERVED species at a",
+        "  DESIGN-CHOSEN horizon. That is the wrong coordinate.",
+        "  See interventions.terminal_value_was_the_wrong_coordinate():",
+        "    terminal-value separation     0.000252 mg/L",
+        "    best time-course separation   9.954 mg/L   (39,507x, day 22, CRP)",
+        "    patients per arm required     6.9",
+        "  The model CAN rank the mechanisms through a time course. It cannot rank them on",
+        "  the terminal reading, and the repository holds no time course.",
         "",
         "-" * 78,
         "2. WHAT DATA WOULD MAKE EACH MODEL FALSIFIABLE",
