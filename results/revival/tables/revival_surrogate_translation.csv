@@ -1,3 +1,3 @@
 endpoint,surrogate_threshold_pp,surrogate_r2,raw_mean_gain_pp,corrected_mean_gain_pp,corrected_median_gain_pp,corrected_saturated_fraction,model_exceeds_observed_range,comparison_usable,raw_clears_ste,corrected_clears_ste,link_established_in_this_population,note,status
-all cause mortality,8.0,0.59,24.39758321172145,20.67958117216616,20.63147566319833,0.1976,True,False,True,True,False,STICH: no association between LVEF change and death in this population,recombination_natural_history_corrected_unvalidated
-HF hospitalisation,2.0,0.59,24.39758321172145,20.67958117216616,20.63147566319833,0.1976,True,False,True,True,True,trial-level surrogate accepted in HFrEF only,recombination_natural_history_corrected_unvalidated
+all cause mortality,8.0,0.59,24.40946060595622,20.95172876045849,21.06453578180081,0.21825,True,False,True,True,False,STICH: no association between LVEF change and death in this population,recombination_natural_history_corrected_unvalidated
+HF hospitalisation,2.0,0.59,24.40946060595622,20.95172876045849,21.06453578180081,0.21825,True,False,True,True,True,trial-level surrogate accepted in HFrEF only,recombination_natural_history_corrected_unvalidated

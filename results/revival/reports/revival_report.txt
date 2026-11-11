@@ -33,34 +33,70 @@ WHAT THE SEARCH FOUND (each item is a documented deficiency, not a knob)
 THE LADDER: WHAT SURVIVES THE CORRECTION
 ------------------------------------------------------------------------------
   rung  step                                    P(target)  of original
-     0  as published (no control group)            97.92%       100.0%
-     1  minus unaided gain, upper range (+3.4 pp)     57.56%        58.8%
-     2  minus unaided gain, lower range (+1.1 pp)     73.32%        74.9%
+     0  as published (no control group)            97.08%       100.0%
+     1  minus unaided gain, upper range (+3.4 pp)     57.70%        59.4%
+     2  minus unaided gain, lower range (+1.1 pp)     73.81%        76.0%
      3  second uncontrolled patch trial               n/a          n/a
 
-  ATTRIBUTION LOSS: 40.36 pp of the reported
+  ATTRIBUTION LOSS: 39.37 pp of the reported
   probability was what the guideline therapy arm achieved unaided.
 
   *** ATLAS-5 IS NO LONGER ROBUST ONCE THE CONTROL ARM IS SUBTRACTED. ***
-  It does not clear the 80% bar. The reported 97.92% was carried by an
+  It does not clear the 80% bar. The 97.08% no-control estimate was carried by an
   uncontrolled baseline, not by the mechanisms.
 
 IS THE COMPOSITION STILL THE RIGHT ONE?
 ------------------------------------------------------------------------------
-  NO. Re-searching under the corrected accounting selects a DIFFERENT set:
-    retry_redundancy|maturation
-  ATLAS-5 was an artefact of the missing control arm.
-  NO composition is robust after the correction. The correct report is the
-  best available design with robust_set_exists = False.
-  Still beats ATLAS-4's 89.60% best admissible: no.
+  Search: 256 composition-dose pairs across
+  4 precedented dose counts, with 20,000 draws per pair.
+  Prioritises the 80% threshold, then corrected risk-adjusted probability and parsimony:
+    ATLAS-5F (simulation-only frugal variant): retry_redundancy|maturation at 4 doses
+    P(target) 57.81%; risk-adjusted 54.62%.
+  Versus ATLAS-5, selected design's risk-adjusted advantage is only 0.087 pp.
+  NO composition is robust after the correction. The point-estimate winner
+  does not clear the 80% threshold; this is not a successful treatment result.
+  ATLAS-4's 89.60% figure is uncorrected; comparing it directly with this
+  corrected search is not an apples-to-apples performance comparison.
+
+COUNTERFACTUAL: WHAT UNVALIDATED EXTRA LVEF GAIN WOULD CROSS 80%?
+------------------------------------------------------------------------------
+  This is a uniform mathematical uplift, not a molecule or evidence-backed effect.
+  scenario                                           extra pp  P(target)  risk-adjusted
+  current corrected model                                0.00     57.81%         54.62%
+  uniform uplift to 80% target probability               3.37     80.00%         75.57%
+  uniform uplift to 80% risk-adjusted probability        4.34     84.69%         80.00%
+  No known added molecule in this model supplies this extra LVEF effect.
+  Adding the number as an assumption would make the simulation cross the bar,
+  but would not improve the scientific evidence.
+
+EVIDENCE GATE: WHAT CAN BE CREDITED TODAY?
+------------------------------------------------------------------------------
+  A positive uplift is credited only from a randomized concurrent control,
+  the same population and candidate intervention, a prespecified LVEF endpoint,
+  a positive lower 95% confidence bound, plus an independently validated patient-level
+  response model whose effect draws align with this simulated cohort.
+  Current status: no qualifying evidence; incremental-effect credit is zero; mean effect credit 0.00 pp.
+  Evidence gate result: P(target) 57.81%; risk-adjusted 54.62%.
+  Missing: randomized, concurrent controlled comparison; direct evidence in the modeled ischemic-cardiomyopathy population; candidate-specific intervention, not a class analogy; LVEF measured at a prespecified time point; independently validated patient-level response model; traceable publication DOI or trial-registry identifier; positive lower 95% confidence bound for the between-arm LVEF effect; finite patient-level incremental LVEF-effect draws aligned to this simulation.
+  This gate identifies evidence needed; software cannot supply that evidence.
+
+BEST DESIGN AT EACH DOCUMENTED COMPARATOR (256 pairs re-searched each time)
+------------------------------------------------------------------------------
+   unaided LVEF pp   best P(target)   risk-adjusted     80%?
+              1.10           73.91%          69.82%       no
+              2.25           66.09%          62.43%       no
+              3.40           57.81%          54.62%       no
+  These are conditional sensitivities; only comparator-specific evidence can
+  choose among them. A pass at a lower comparator is not robustness across
+  the documented range.
 
 SENSITIVITY: THE COMPARATOR IS SWEPT, NOT CHOSEN
 ------------------------------------------------------------------------------
    unaided gain (pp)  P(target)   median gain   robust
-                0.00     96.40%        25.00       yes
-                1.10     71.92%        22.93        no
-                2.25     63.92%        21.78        no
-                3.40     55.12%        20.63        no
+                0.00     97.08%        25.00       yes
+                1.10     73.81%        23.36        no
+                2.25     65.98%        22.21        no
+                3.40     57.70%        21.06        no
 
   Robust at some comparators and not others. The design's status is
   conditional on a quantity that was never randomised, which is the point.
@@ -68,12 +104,12 @@ SENSITIVITY: THE COMPARATOR IS SWEPT, NOT CHOSEN
 DOES THE ENDPOINT STILL MEAN ANYTHING?
 ------------------------------------------------------------------------------
   endpoint                  STE      raw  corrected       link
-  all cause mortality      8.0   24.40     20.68     ABSENT
-  HF hospitalisation       2.0   24.40     20.68 established
+  all cause mortality      8.0   24.41     20.95     ABSENT
+  HF hospitalisation       2.0   24.41     20.95 established
 
   UNUSABLE COMPARISON, for a reason worth stating plainly:
-    the corrected median gain is ~20.6 pp,
-    which is 3.0x the largest LVEF gain
+    the corrected median gain is ~21.1 pp,
+    which is 3.1x the largest LVEF gain
     ANY remuscularisation approach has measured in a human (+6.9 pp,
     BioVAT-HF at a mean 17 months).
 

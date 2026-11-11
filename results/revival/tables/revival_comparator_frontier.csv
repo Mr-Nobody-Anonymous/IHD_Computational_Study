@@ -1,0 +1,4 @@
+natural_history_pp,best_label,best_mechanisms,best_doses,best_probability_of_target,best_risk_adjusted_probability,target_80_met,risk_adjusted_80_met,composition_dose_pairs_searched,draws_per_pair,status
+1.1,ATLAS-5F (simulation-only frugal variant),retry_redundancy|maturation,4,0.7391,0.6982148321875,False,False,256,20000,recombination_natural_history_corrected_unvalidated
+2.25,ATLAS-5F (simulation-only frugal variant),retry_redundancy|maturation,4,0.66085,0.624333266875,False,False,256,20000,recombination_natural_history_corrected_unvalidated
+3.4,ATLAS-5F (simulation-only frugal variant),retry_redundancy|maturation,4,0.5781,0.5461919965625001,False,False,256,20000,recombination_natural_history_corrected_unvalidated

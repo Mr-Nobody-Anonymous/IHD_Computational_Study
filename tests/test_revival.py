@@ -81,6 +81,16 @@ def test_correction_only_ever_lowers_the_estimate():
     assert all(value <= uncorrected.probability_of_target + 1e-12 for value in values)
 
 
+def test_corrected_risk_adjustment_uses_each_simulated_patients_dose_count():
+    draws, seed = 900, 123
+    gain, used = R.revival_draws(ATLAS5, draws, seed)
+    target = gain >= CRITERION_THRESHOLD * SCAR_RECOVERABLE_LVEF_PP
+    survival = (1.0 - ATLAS5.per_dose_risk) ** used
+    result = R.evaluate_revival(ATLAS5, draws, seed)
+    assert result.risk_adjusted_probability == pytest.approx(float(np.mean(target * survival)))
+    assert result.cumulative_adverse_risk == pytest.approx(float(np.mean(1.0 - survival)))
+
+
 def test_more_correction_never_yields_more_probability():
     values = [0.0, 1.1, 2.25, 3.4]
     probabilities = [
@@ -109,6 +119,102 @@ def test_comparator_is_signed_and_not_floored():
 def test_outcome_never_goes_negative():
     gain, _ = R.revival_draws(ATLAS5, 600)
     assert (gain >= 0.0).all()
+
+
+def test_hypothetical_uplift_crosses_threshold_only_as_an_explicit_assumption():
+    table = R.hypothetical_uniform_uplift_table(R.ATLAS5_FRUGAL, draws=5000)
+    current, target_only, risk_adjusted = table.itertuples(index=False)
+    assert current.uniform_additional_lvef_pp == 0.0
+    assert not current.target_80_met
+    assert target_only.target_80_met
+    assert not target_only.risk_adjusted_80_met
+    assert risk_adjusted.risk_adjusted_80_met
+    assert (table["evidence_status"].str.contains("no molecule or mechanism supports it")).all()
+    assert (table["status"] == "hypothetical_uniform_uplift_sensitivity_unvalidated").all()
+
+
+def test_uplift_evidence_gate_fails_closed_when_no_trial_record_is_supplied():
+    decision = R.adjudicate_lvef_uplift_evidence()
+    assert decision["evidence_eligible"] is False
+    assert decision["credited_mean_incremental_lvef_pp"] == 0.0
+    assert "randomized, concurrent controlled comparison" in decision["missing_requirements"]
+    assert "positive lower 95% confidence bound" in decision["missing_requirements"]
+    assert (
+        "independently validated patient-level response model" in decision["missing_requirements"]
+    )
+
+
+def test_evidence_gate_requires_validated_patient_level_effect_draws():
+    evidence = {
+        "candidate": "test candidate",
+        "randomized_controlled": True,
+        "same_population": True,
+        "same_intervention": True,
+        "lvef_endpoint": True,
+        "validated_response_model": True,
+        "source_id": "doi:10.test/example",
+        "lower_95_ci_pp": 1.0,
+        "patient_level_incremental_lvef_pp": [2.0, 4.0, -1.0],
+    }
+    decision = R.adjudicate_lvef_uplift_evidence(evidence, expected_draws=3)
+    assert decision["evidence_eligible"] is True
+    assert decision["credited_mean_incremental_lvef_pp"] == pytest.approx(5.0 / 3.0)
+    assert decision["missing_requirements"] == "none"
+    assert "independently verified" in decision["evidence_status"]
+    assert not R.adjudicate_lvef_uplift_evidence(evidence, expected_draws=4)["evidence_eligible"]
+
+
+def test_evidence_gate_rejects_class_analogy_and_nonpositive_confidence_bound():
+    evidence = {
+        "randomized_controlled": True,
+        "same_population": True,
+        "same_intervention": False,
+        "lvef_endpoint": True,
+        "validated_response_model": True,
+        "source_id": "doi:10.test/example",
+        "lower_95_ci_pp": 2.0,
+        "patient_level_incremental_lvef_pp": [2.0, 4.0, -1.0],
+    }
+    decision = R.adjudicate_lvef_uplift_evidence(evidence, expected_draws=3)
+    assert not decision["evidence_eligible"]
+    assert decision["credited_mean_incremental_lvef_pp"] == 0.0
+    evidence["same_intervention"] = True
+    evidence["lower_95_ci_pp"] = 0.0
+    assert (
+        R.adjudicate_lvef_uplift_evidence(evidence, expected_draws=3)[
+            "credited_mean_incremental_lvef_pp"
+        ]
+        == 0.0
+    )
+
+
+def test_evidence_gated_table_applies_only_aligned_validated_effect_draws():
+    draws = 5000
+    evidence = {
+        "candidate": "synthetic test fixture only",
+        "randomized_controlled": True,
+        "same_population": True,
+        "same_intervention": True,
+        "lvef_endpoint": True,
+        "validated_response_model": True,
+        "source_id": "doi:10.test/synthetic-fixture",
+        "lower_95_ci_pp": 1.0,
+        "patient_level_incremental_lvef_pp": np.full(draws, 5.0),
+    }
+    row = R.evidence_gated_uplift_table(draws=draws, evidence=evidence).iloc[0]
+    assert row["evidence_eligible"]
+    assert row["credited_mean_incremental_lvef_pp"] == 5.0
+    assert row["target_80_met"]
+    assert "independently verified" in row["evidence_status"]
+
+
+def test_evidence_gated_table_does_not_credit_the_counterfactual_uplift():
+    row = R.evidence_gated_uplift_table(draws=5000).iloc[0]
+    assert not row["evidence_eligible"]
+    assert row["credited_mean_incremental_lvef_pp"] == 0.0
+    assert not row["target_80_met"]
+    assert not row["risk_adjusted_80_met"]
+    assert row["additional_uplift_needed_for_80pct_target_pp"] > 0.0
 
 
 def test_zero_comparator_is_exactly_zero_not_noise():
@@ -159,6 +265,33 @@ def test_no_composition_is_robust_after_correction(search):
 def test_the_search_no_longer_selects_atlas5(search):
     _, selection = search
     assert selection["atlas5_still_selected"] is False
+
+
+def test_full_search_at_every_documented_comparator_still_fails_the_80pct_bar():
+    frontier = R.comparator_frontier(draws=2000)
+    assert list(frontier["natural_history_pp"]) == [1.1, 2.25, 3.4]
+    assert (frontier["composition_dose_pairs_searched"] == 256).all()
+    assert not frontier["target_80_met"].any()
+    assert not frontier["risk_adjusted_80_met"].any()
+    assert (
+        frontier.iloc[0]["best_probability_of_target"]
+        > frontier.iloc[-1]["best_probability_of_target"]
+    )
+
+
+def test_search_covers_every_precedented_dose_count(search):
+    frame, selection = search
+    maximum = R.max_precedented_doses()
+    assert selection["dose_counts_searched"] == list(range(1, maximum + 1))
+    assert len(frame) == 64 * maximum
+    assert set(frame["doses"]) == set(range(1, maximum + 1))
+
+
+def test_cross_dose_search_selects_the_highest_precedented_retry_budget(search):
+    _, selection = search
+    assert selection["best_corrected"]["doses"] == R.max_precedented_doses()
+    assert selection["best_corrected"]["mechanisms"] == "retry_redundancy|maturation"
+    assert selection["best_corrected"]["label"] == "ATLAS-5F (simulation-only frugal variant)"
 
 
 def test_raw_search_still_finds_a_high_number(search):
@@ -274,11 +407,11 @@ def test_report_never_claims_a_cure(ladder, sensitivity, search):
     assert "cure achieved" not in lowered
 
 
-def test_study_writes_nine_artefacts(tmp_path):
+def test_study_writes_twelve_artefacts(tmp_path):
     summary = R.run_revival_study(tmp_path / "revival", draws=FAST)
     files = sorted((tmp_path / "revival").rglob("*"))
     written = [path for path in files if path.is_file()]
-    assert len(written) == summary["artefacts"] == 9
+    assert len(written) == summary["artefacts"] == 12
     assert (tmp_path / "revival" / "DISCLAIMER.txt").exists()
 
 
@@ -287,6 +420,11 @@ def test_study_summary_reports_the_failure(tmp_path):
     assert summary["no_longer_robust"] is True
     assert summary["any_robust_after_correction"] is False
     assert summary["attribution_loss_pp"] > 20.0
+    assert summary["composition_dose_pairs_searched"] == 256
+    assert summary["draws_per_pair"] == 2000
+    assert summary["best_corrected_doses"] == 4
+    assert summary["any_robust_at_documented_comparator"] is False
+    assert summary["best_probability_at_any_documented_comparator"] < CRITERION_THRESHOLD
     assert summary["status"] == R.REVIVAL_TAG
 
 
@@ -294,15 +432,22 @@ def test_every_table_carries_the_tag(tmp_path):
     R.run_revival_study(tmp_path / "revival", draws=FAST)
     for path in (tmp_path / "revival" / "tables").glob("*.csv"):
         frame = pd.read_csv(path)
-        assert (frame["status"] == R.REVIVAL_TAG).all(), path.name
+        allowed_statuses = {
+            R.REVIVAL_TAG,
+            "hypothetical_uniform_uplift_sensitivity_unvalidated",
+            "evidence_gated_uplift_assessment_unvalidated",
+        }
+        assert frame["status"].isin(allowed_statuses).all(), path.name
 
 
 def test_cli_exposes_the_revival_command():
     from ihd_solutions.cli import build_parser
 
-    args = build_parser().parse_args(["revival", "--draws", "100"])
+    parser = build_parser()
+    args = parser.parse_args(["revival", "--draws", "100"])
     assert args.command == "revival"
     assert args.draws == 100
+    assert parser.parse_args(["revival"]).draws == 20_000
 
 
 # ------------------------------------------------------------------ structural guards
@@ -364,11 +509,8 @@ def test_report_branch_still_robust(search):
     assert "NO LONGER ROBUST" not in text
 
 
-def test_report_branch_atlas5_survives_reselection(search):
+def test_report_includes_the_expanded_search_result(search):
     frame, selection = search
-    surviving = dict(selection)
-    surviving["atlas5_still_selected"] = True
-    surviving["best_corrected"] = dict(selection["best_corrected"])
     ladder = R.correction_ladder(ATLAS5, 300)
     sensitivity = R.natural_history_sensitivity(ATLAS5, 300)
     text = R.revival_report(
@@ -377,10 +519,12 @@ def test_report_branch_atlas5_survives_reselection(search):
         R.surrogate_translation(600),
         R.transmurality_stratification(),
         frame,
-        surviving,
+        selection,
         cost_ledger(ATLAS5),
     )
-    assert "YES. Re-searching all 64 compositions" in text
+    assert "Search: 256 composition-dose pairs across" in text
+    assert "retry_redundancy|maturation at 4 doses" in text
+    assert "NO composition is robust after the correction" in text
 
 
 def test_report_branch_a_composition_survives(search):
@@ -390,6 +534,7 @@ def test_report_branch_a_composition_survives(search):
     robust["best_corrected"] = {
         "mechanisms": "retry_redundancy|maturation",
         "count": 2,
+        "doses": 4,
         "corrected_probability_of_target": 0.83,
         "corrected_risk_adjusted": 0.79,
     }
@@ -404,7 +549,7 @@ def test_report_branch_a_composition_survives(search):
         robust,
         cost_ledger(ATLAS5),
     )
-    assert "Best corrected admissible design" in text
+    assert "At least one design clears the model's robustness threshold." in text
 
 
 def test_report_branch_robust_at_every_comparator(search):

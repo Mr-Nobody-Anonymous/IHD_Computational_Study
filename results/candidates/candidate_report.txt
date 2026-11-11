@@ -98,7 +98,7 @@ THE RANKING
      trial    : none - never administered together in a controlled setting  (n=0)
      endpoint : surrogate
      effect   : not estimable - no controlled comparison  (none)
-     result   : no clinical data; this repository's own corrected estimate is 57.56% and not robust (robust_set_exists=False)
+     result   : no clinical data; corrected 20,000-draw estimates are 57.70% for ATLAS-5 and 57.81% for the re-optimized simulation-only ATLAS-5F; neither is robust
      licenses : a hypothesis, and an ordered experiment list
      does not : it cannot claim the sum of its parts. The repository measured 15 pairwise interactions and refused 14.08 pp of double-counted benefit, and the wider re-search found no robust composition
 

@@ -295,6 +295,13 @@ ATLAS5_MECHANISMS = frozenset(
 )
 ATLAS5 = Composite(enabled=ATLAS5_MECHANISMS, doses=max_precedented_doses())
 
+#: Corrected-search comparator: the lean composition selected after charging the
+#: unaided control-arm gain. This is a simulation design, not a validated therapy.
+ATLAS5_FRUGAL = Composite(
+    enabled=frozenset({"retry_redundancy", "maturation", *CONSTRAINT_MECHANISMS}),
+    doses=max_precedented_doses(),
+)
+
 #: ATLAS-4's best admissible design, from results/atlas4/tables at 4000 draws. Kept as a
 #: documented reference and pinned by a test against that committed table, so the
 #: comparison cannot drift into a flattering number.
@@ -310,6 +317,7 @@ class CompositeResult:
     saturated_fraction: float
     draws: int
     mechanisms: int
+    risk_adjusted_probability_estimate: float | None = None
 
     @property
     def robust(self) -> bool:
@@ -328,6 +336,14 @@ class CompositeResult:
 
     @property
     def risk_adjusted_probability(self) -> float:
+        """Target probability weighted by dose-linked survival on each draw.
+
+        This assumes independent per-dose adverse risk and treats an adverse event as
+        disqualifying. Evaluators provide the per-draw estimate. The fallback preserves the simple
+        aggregate interpretation for manually constructed results used by callers/tests.
+        """
+        if self.risk_adjusted_probability_estimate is not None:
+            return self.risk_adjusted_probability_estimate
         return self.probability_of_target * (1.0 - self.cumulative_adverse_risk)
 
     @property
@@ -426,15 +442,18 @@ def evaluate_composite(
 ) -> CompositeResult:
     gain, used = composite_draws(design, draws, seed)
     required = CRITERION_THRESHOLD * SCAR_RECOVERABLE_LVEF_PP
+    target = gain >= required
+    no_adverse_event = (1.0 - design.per_dose_risk) ** used
     mean_used = float(np.mean(used))
     return CompositeResult(
-        probability_of_target=float(np.mean(gain >= required)),
+        probability_of_target=float(np.mean(target)),
         median_gain_pp=float(np.median(gain)),
         mean_doses_used=mean_used,
-        cumulative_adverse_risk=float(1.0 - (1.0 - design.per_dose_risk) ** mean_used),
+        cumulative_adverse_risk=float(np.mean(1.0 - no_adverse_event)),
         saturated_fraction=float(np.mean(gain >= SCAR_RECOVERABLE_LVEF_PP - 1e-9)),
         draws=int(draws),
         mechanisms=len(design.enabled),
+        risk_adjusted_probability_estimate=float(np.mean(target * no_adverse_event)),
     )
 
 

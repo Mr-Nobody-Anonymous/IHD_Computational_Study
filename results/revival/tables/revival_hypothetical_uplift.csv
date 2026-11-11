@@ -1,0 +1,4 @@
+counterfactual,uniform_additional_lvef_pp,probability_of_target,risk_adjusted_probability,target_80_met,risk_adjusted_80_met,evidence_status,status
+current corrected model,0.0,0.5781,0.5461919965625001,False,False,hypothetical uplift; no molecule or mechanism supports it,hypothetical_uniform_uplift_sensitivity_unvalidated
+uniform uplift to 80% target probability,3.365983172343803,0.8,0.75574886875,True,False,hypothetical uplift; no molecule or mechanism supports it,hypothetical_uniform_uplift_sensitivity_unvalidated
+uniform uplift to 80% risk-adjusted probability,4.337834442472243,0.8469,0.800029105,True,True,hypothetical uplift; no molecule or mechanism supports it,hypothetical_uniform_uplift_sensitivity_unvalidated

@@ -40,7 +40,7 @@ critique's Problem 6 says ATLAS-5 assumes unproven additivity. That was addresse
 ago: 64 compositions enumerated with constraints held on, all 15 pairwise interactions
 measured, **14.08 pp of double-counted benefit refused**. Then `revival.py` found the larger
 problem — the whole design rests on an **uncontrolled** observation — and took it from
-97.92% to **57.56%**, concluding `robust_set_exists = False`. There is no ATLAS-5 to fix.
+97.08% to **57.70%** at 20,000 draws, concluding `robust_set_exists = False`. There is no ATLAS-5 to fix.
 
 **c) "Too many invented biological parameters" is right about the legacy scripts and
 partly wrong about the package.** The package's parameters are almost all *measured human

@@ -275,15 +275,27 @@ matters: **is the effect ATLAS-5 is built on actually there?** It is not. Every 
 on one **uncontrolled** observation - BioVAT-HF's +3.9 LVEF points in 16 patients, no
 control group. REVIVED-BCIS2's guideline-therapy arm gained **+3.4 points at six months
 unaided**, and a second iPSC patch trial (AATS LB8, n=8) was **null** (p=0.156).
-Subtracting the unaided gain costs **40.36 pp**: ATLAS-5 falls from 97.92% to **57.56%**,
-re-searching all 64 compositions selects the *frugal* design instead, and **no composition
-is robust**. Correcting the control arm also exposes a second deficiency - the corrected
-model still claims **3.0x the largest human LVEF gain ever measured**, so its
+At 20,000 draws, subtracting the unaided gain moves the target probability from **97.08%**
+to **57.70%**. The expanded search covers 256 composition-dose pairs (64 sets × 1–4
+precedented doses) and selects the simulation-only **ATLAS-5F** (frugal) design at **57.81%**, with a 0.09 pp modeled
+risk-adjusted edge over ATLAS-5—within Monte Carlo uncertainty. **No composition is robust.**
+A separately tagged what-if calculation says an unsupported uniform uplift of **3.37 LVEF
+points** would be needed for 80% target probability (4.34 points for 80% risk-adjusted);
+no molecule in the model is shown to supply it. The new fail-closed evidence gate credits
+zero without candidate-specific controlled evidence **and** an independently validated
+patient-level response model. It never treats an average effect as a uniform gain for all
+patients. The full 256-design search was repeated at every documented control-arm value;
+even its most favorable case reached only **73.91%** target probability. DREAM-HF reports
+a modest MPC signal but is a different cell product, had a neutral primary endpoint, and
+does not supply this model's required response distribution. Thus no supported path in the
+current evidence/model space crosses 80%. Correcting the control arm also exposes
+a second deficiency: the corrected model still
+claims **3.0× the largest human LVEF gain ever measured**, so its
 surrogate-threshold comparison is labelled unusable rather than passed. **There was nothing
 to add: what was missing was evidence, and evidence cannot be composed.**
 
 ```bash
-python run_solutions.py revival        # -> results/revival/ (9 artefacts)
+python run_solutions.py revival        # -> results/revival/ (12 artefacts)
 ```
 
 [`docs/scientific_audit.md`](docs/scientific_audit.md) answers an external critique of the
@@ -382,6 +394,7 @@ reduces events; it does not reverse disease.
 
 ```bash
 python run_solutions.py candidates       # -> results/candidates/ (6 artefacts)
+python run_solutions.py molecule-complementarity # separate-drug scenario; not a hybrid molecule
 ```
 
 - **Hazard ratio — solved as procurement.** All 19 populations close by exploratory credit.

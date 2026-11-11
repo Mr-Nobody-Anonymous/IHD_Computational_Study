@@ -1,5 +1,5 @@
 natural_history_pp,probability_of_target,median_gain_pp,robust,robust_with_margin,survives_correction,status
-0.0,0.964,25.0,True,True,True,recombination_natural_history_corrected_unvalidated
-1.1,0.7192,22.93147566319833,False,False,False,recombination_natural_history_corrected_unvalidated
-2.25,0.6392,21.78147566319833,False,False,False,recombination_natural_history_corrected_unvalidated
-3.4,0.5512,20.63147566319833,False,False,False,recombination_natural_history_corrected_unvalidated
+0.0,0.97075,25.0,True,True,True,recombination_natural_history_corrected_unvalidated
+1.1,0.7381,23.36453578180081,False,False,False,recombination_natural_history_corrected_unvalidated
+2.25,0.65985,22.214535781800812,False,False,False,recombination_natural_history_corrected_unvalidated
+3.4,0.57705,21.06453578180081,False,False,False,recombination_natural_history_corrected_unvalidated

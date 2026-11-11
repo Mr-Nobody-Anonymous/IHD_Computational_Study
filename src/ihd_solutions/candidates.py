@@ -334,8 +334,8 @@ CANDIDATES: tuple[Candidate, ...] = (
         n=0,
         endpoint="none",
         endpoint_class="surrogate",
-        result="no clinical data; this repository's own corrected estimate is 57.56% and "
-        "not robust (robust_set_exists=False)",
+        result="no clinical data; corrected 20,000-draw estimates are 57.70% for ATLAS-5 "
+        "and 57.81% for the re-optimized simulation-only ATLAS-5F; neither is robust",
         effect=None,
         effect_unit="not estimable - no controlled comparison",
         evidence_tier="tier_5_no_clinical_data",
