@@ -1,5 +1,5 @@
 rung,step,basis,probability_of_target,mean_gain_pp,fraction_of_original,status
-0,as published (no control group),"BioVAT-HF +3.9 pp at 3 months, 90% CI 0.9-6.8, n=16",0.9792,25.0,1.0,recombination_natural_history_corrected_unvalidated
-1,"minus unaided gain, upper range (+3.4 pp)","REVIVED-BCIS2 OMT arm, +3.4 pp, n=353",0.5756,21.02166719042788,0.5878267973856209,recombination_natural_history_corrected_unvalidated
-2,"minus unaided gain, lower range (+1.1 pp)","REVIVED-BCIS2 OMT arm, +1.1 pp, n=353",0.7332,23.32166719042788,0.7487745098039216,recombination_natural_history_corrected_unvalidated
+0,as published (no control group),"BioVAT-HF +3.9 pp at 3 months, 90% CI 0.9-6.8, n=16",0.97075,25.0,1.0,recombination_natural_history_corrected_unvalidated
+1,"minus unaided gain, upper range (+3.4 pp)","REVIVED-BCIS2 OMT arm, +3.4 pp, n=353",0.57705,21.06453578180081,0.5944372907545712,recombination_natural_history_corrected_unvalidated
+2,"minus unaided gain, lower range (+1.1 pp)","REVIVED-BCIS2 OMT arm, +1.1 pp, n=353",0.7381,23.36453578180081,0.7603399433427762,recombination_natural_history_corrected_unvalidated
 3,second uncontrolled patch trial,"AATS LB8 n=8, +4.3 pp at 52 weeks, p=0.156 - a null",,4.3,,recombination_natural_history_corrected_unvalidated

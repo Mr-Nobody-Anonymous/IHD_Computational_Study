@@ -46,7 +46,7 @@ Nothing here is tuned to reach a target. If the corrected design fails, it fails
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 import numpy as np
@@ -54,10 +54,12 @@ import pandas as pd
 
 from ihd_solutions.cure import CRITERION_THRESHOLD
 from ihd_solutions.gap_solver import SCAR_RECOVERABLE_LVEF_PP
+from ihd_solutions.precedent import max_precedented_doses
 from ihd_solutions.recombine import (
     ALL_MECHANISMS,
-    ATLAS4_BEST_ADMISSIBLE,
     ATLAS5,
+    ATLAS5_FRUGAL,
+    MIN_SPECIFICATION_DRAWS,
     Composite,
     CompositeResult,
     composite_draws,
@@ -256,15 +258,191 @@ def evaluate_revival(
     """Evaluate a design under the corrected accounting."""
     gain, used = revival_draws(design, draws, seed, natural_history_pp)
     required = CRITERION_THRESHOLD * SCAR_RECOVERABLE_LVEF_PP
+    target = gain >= required
+    no_adverse_event = (1.0 - design.per_dose_risk) ** used
     mean_used = float(np.mean(used))
     return CompositeResult(
-        probability_of_target=float(np.mean(gain >= required)),
+        probability_of_target=float(np.mean(target)),
         median_gain_pp=float(np.median(gain)),
         mean_doses_used=mean_used,
-        cumulative_adverse_risk=float(1.0 - (1.0 - design.per_dose_risk) ** mean_used),
+        cumulative_adverse_risk=float(np.mean(1.0 - no_adverse_event)),
         saturated_fraction=float(np.mean(gain >= SCAR_RECOVERABLE_LVEF_PP - 1e-9)),
         draws=int(draws),
         mechanisms=len(design.enabled),
+        risk_adjusted_probability_estimate=float(np.mean(target * no_adverse_event)),
+    )
+
+
+def hypothetical_uniform_uplift_table(
+    design: Composite = ATLAS5_FRUGAL,
+    draws: int = 20_000,
+    seed: int = 20261107,
+    natural_history_pp: float = NATURAL_HISTORY_PP,
+) -> pd.DataFrame:
+    """Counterfactual amount of extra LVEF gain needed to cross the 80% bar.
+
+    The uplift is deliberately hypothetical: it is not assigned to any molecule or
+    mechanism. The table answers the numerical threshold question only. It reports
+    both the probability-of-target threshold and the risk-adjusted threshold.
+    """
+    gain, used = revival_draws(design, draws, seed, natural_history_pp)
+    required_gain = CRITERION_THRESHOLD * SCAR_RECOVERABLE_LVEF_PP
+    survival = (1.0 - design.per_dose_risk) ** used
+    raw_count_required = int(np.ceil(CRITERION_THRESHOLD * len(gain)))
+    descending_gain = np.sort(gain)[::-1]
+    raw_shift = max(0.0, required_gain - float(descending_gain[raw_count_required - 1]))
+
+    order = np.argsort(gain)[::-1]
+    cumulative_survival = np.cumsum(survival[order])
+    required_weight = CRITERION_THRESHOLD * len(gain)
+    if cumulative_survival[-1] < required_weight:
+        risk_adjusted_shift = float("inf")
+    else:
+        risk_index = int(np.searchsorted(cumulative_survival, required_weight, side="left"))
+        risk_adjusted_shift = max(0.0, required_gain - float(gain[order[risk_index]]))
+
+    scenarios = (
+        ("current corrected model", 0.0),
+        ("uniform uplift to 80% target probability", raw_shift),
+        ("uniform uplift to 80% risk-adjusted probability", risk_adjusted_shift),
+    )
+    rows = []
+    for label, shift in scenarios:
+        target = gain + shift >= required_gain
+        raw_probability = float(np.mean(target))
+        risk_adjusted = float(np.mean(target * survival))
+        rows.append(
+            {
+                "counterfactual": label,
+                "uniform_additional_lvef_pp": shift,
+                "probability_of_target": raw_probability,
+                "risk_adjusted_probability": risk_adjusted,
+                "target_80_met": raw_probability >= CRITERION_THRESHOLD,
+                "risk_adjusted_80_met": risk_adjusted >= CRITERION_THRESHOLD,
+                "evidence_status": "hypothetical uplift; no molecule or mechanism supports it",
+                "status": "hypothetical_uniform_uplift_sensitivity_unvalidated",
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+EVIDENCE_GATE_REQUIREMENTS = {
+    "randomized_controlled": "randomized, concurrent controlled comparison",
+    "same_population": "direct evidence in the modeled ischemic-cardiomyopathy population",
+    "same_intervention": "candidate-specific intervention, not a class analogy",
+    "lvef_endpoint": "LVEF measured at a prespecified time point",
+    "source_id": "traceable publication DOI or trial-registry identifier",
+    "positive_lower_confidence_bound_pp": "positive lower 95% confidence bound for the between-arm LVEF effect",
+    "validated_response_model": "independently validated patient-level response model",
+    "effect_draws_pp": "finite patient-level incremental LVEF-effect draws aligned to this simulation",
+}
+
+
+def adjudicate_lvef_uplift_evidence(
+    evidence: dict[str, object] | None = None,
+    expected_draws: int | None = None,
+) -> dict[str, object]:
+    """Fail closed unless controlled evidence and a validated response model are supplied.
+
+    A trial's mean effect or confidence bound does not imply a uniform per-patient
+    uplift. The gate therefore requires patient-level predictive effect draws from an
+    independently validated model, aligned to the simulated cohort. This is an
+    admissibility check, not source verification; callers must independently verify the
+    study and model metadata. Missing or mismatched evidence receives zero model credit.
+    """
+    record = evidence or {}
+    required_true = (
+        "randomized_controlled",
+        "same_population",
+        "same_intervention",
+        "lvef_endpoint",
+        "validated_response_model",
+    )
+    missing = [
+        EVIDENCE_GATE_REQUIREMENTS[field]
+        for field in required_true
+        if record.get(field) is not True
+    ]
+    source_id = str(record.get("source_id", "")).strip()
+    if not source_id:
+        missing.append(EVIDENCE_GATE_REQUIREMENTS["source_id"])
+
+    lower_bound = record.get("lower_95_ci_pp")
+    try:
+        lower_bound_value = float(lower_bound)
+    except (TypeError, ValueError):
+        lower_bound_value = float("nan")
+    if not np.isfinite(lower_bound_value) or lower_bound_value <= 0.0:
+        missing.append(EVIDENCE_GATE_REQUIREMENTS["positive_lower_confidence_bound_pp"])
+
+    raw_effect_draws = record.get("patient_level_incremental_lvef_pp")
+    try:
+        effect_draws = np.asarray(raw_effect_draws, dtype=float)
+    except (TypeError, ValueError):
+        effect_draws = np.asarray([], dtype=float)
+    if (
+        effect_draws.ndim != 1
+        or effect_draws.size == 0
+        or not np.isfinite(effect_draws).all()
+        or (expected_draws is not None and effect_draws.size != expected_draws)
+    ):
+        missing.append(EVIDENCE_GATE_REQUIREMENTS["effect_draws_pp"])
+        effect_draws = np.zeros(expected_draws or 0, dtype=float)
+
+    eligible = not missing
+    if not eligible:
+        effect_draws = np.zeros(expected_draws or 0, dtype=float)
+    return {
+        "evidence_eligible": eligible,
+        "credited_mean_incremental_lvef_pp": float(np.mean(effect_draws))
+        if effect_draws.size
+        else 0.0,
+        "patient_level_effect_draws_pp": effect_draws,
+        "source_id": source_id or "not supplied",
+        "missing_requirements": "; ".join(missing) if missing else "none",
+        "evidence_status": (
+            "metadata-qualified; source and response model must be independently verified"
+            if eligible
+            else "no qualifying evidence; incremental-effect credit is zero"
+        ),
+    }
+
+
+def evidence_gated_uplift_table(
+    design: Composite = ATLAS5_FRUGAL,
+    draws: int = 20_000,
+    seed: int = 20261107,
+    natural_history_pp: float = NATURAL_HISTORY_PP,
+    evidence: dict[str, object] | None = None,
+) -> pd.DataFrame:
+    """Report the supported result after gating uplift on trial evidence and a validated response model."""
+    adjudication = adjudicate_lvef_uplift_evidence(evidence, expected_draws=draws)
+    gain, used = revival_draws(design, draws, seed, natural_history_pp)
+    evidence_effect = np.asarray(adjudication.pop("patient_level_effect_draws_pp"), dtype=float)
+    required_gain = CRITERION_THRESHOLD * SCAR_RECOVERABLE_LVEF_PP
+    target = gain + evidence_effect >= required_gain
+    survival = (1.0 - design.per_dose_risk) ** used
+    hypothetical = hypothetical_uniform_uplift_table(design, draws, seed, natural_history_pp)
+    return pd.DataFrame(
+        [
+            {
+                **adjudication,
+                "candidate": str(
+                    (evidence or {}).get("candidate", "no candidate evidence supplied")
+                ),
+                "credited_probability_of_target": float(np.mean(target)),
+                "credited_risk_adjusted_probability": float(np.mean(target * survival)),
+                "target_80_met": float(np.mean(target)) >= CRITERION_THRESHOLD,
+                "risk_adjusted_80_met": float(np.mean(target * survival)) >= CRITERION_THRESHOLD,
+                "additional_uplift_needed_for_80pct_target_pp": float(
+                    hypothetical.iloc[1]["uniform_additional_lvef_pp"]
+                ),
+                "additional_uplift_needed_for_80pct_risk_adjusted_pp": float(
+                    hypothetical.iloc[2]["uniform_additional_lvef_pp"]
+                ),
+                "status": "evidence_gated_uplift_assessment_unvalidated",
+            }
+        ]
     )
 
 
@@ -333,14 +511,17 @@ def composite_result_fields(
     gain, used = composite_draws(design, draws, seed)
     required = CRITERION_THRESHOLD * SCAR_RECOVERABLE_LVEF_PP
     mean_used = float(np.mean(used))
+    target = gain >= required
+    no_adverse_event = (1.0 - design.per_dose_risk) ** used
     return {
-        "probability_of_target": float(np.mean(gain >= required)),
+        "probability_of_target": float(np.mean(target)),
         "median_gain_pp": float(np.median(gain)),
         "mean_doses_used": mean_used,
-        "cumulative_adverse_risk": float(1.0 - (1.0 - design.per_dose_risk) ** mean_used),
+        "cumulative_adverse_risk": float(np.mean(1.0 - no_adverse_event)),
         "saturated_fraction": float(np.mean(gain >= SCAR_RECOVERABLE_LVEF_PP - 1e-9)),
         "draws": int(draws),
         "mechanisms": len(design.enabled),
+        "risk_adjusted_probability_estimate": float(np.mean(target * no_adverse_event)),
     }
 
 
@@ -459,62 +640,141 @@ def transmurality_stratification() -> pd.DataFrame:
 
 
 def revival_search(
-    draws: int = 2000, seed: int = 20261107
+    draws: int = 2000,
+    seed: int = 20261107,
+    natural_history_pp: float = NATURAL_HISTORY_PP,
 ) -> tuple[pd.DataFrame, dict[str, object]]:
-    """Re-run the composition search under the corrected accounting.
+    """Search every admissible composition and precedented dose count after correction.
 
-    If the same three mechanisms still win after the correction, that is evidence the
-    composition is doing real work rather than riding the uncontrolled baseline. If a
-    different set wins, ATLAS-5 was an artefact of the missing control.
+    The original search varied the 64 mechanism compositions but held dose count at
+    four. This version also searches one through the maximum dose count in the human
+    precedent registry and accepts an explicit natural-history comparator for sensitivity
+    analysis. It keeps the honesty constraints on, charges precedent breaches, and selects
+    on corrected risk-adjusted probability. It cannot create evidence or guarantee that
+    any composition is robust.
     """
-    grid = exhaustive_subsets(ATLAS5, draws, seed)
+    draws = max(int(draws), MIN_SPECIFICATION_DRAWS)
     rows = []
-    for record in grid.itertuples(index=False):
-        names = {name for name in str(record.mechanisms).split("|") if name in ALL_MECHANISMS}
-        design = Composite(enabled=frozenset(names), doses=ATLAS5.doses)
-        if not design.constraints_intact:
-            design = Composite(
-                enabled=design.enabled | frozenset(("headroom_gating", "human_tempering")),
-                doses=ATLAS5.doses,
+    for dose_count in range(1, max_precedented_doses() + 1):
+        base = replace(ATLAS5, doses=dose_count)
+        grid = exhaustive_subsets(base, draws, seed)
+        for record in grid.itertuples(index=False):
+            names = {name for name in str(record.mechanisms).split("|") if name in ALL_MECHANISMS}
+            design = Composite(enabled=frozenset(names), doses=dose_count)
+            if not design.constraints_intact:
+                design = Composite(
+                    enabled=design.enabled | frozenset(("headroom_gating", "human_tempering")),
+                    doses=dose_count,
+                )
+            corrected = evaluate_revival(design, draws, seed, natural_history_pp=natural_history_pp)
+            rows.append(
+                {
+                    "natural_history_pp": natural_history_pp,
+                    "mechanisms": record.mechanisms,
+                    "count": record.count,
+                    "doses": dose_count,
+                    "draws": draws,
+                    "admissible": str(record.precedent_breaches) == "none",
+                    "raw_probability_of_target": record.probability_of_target,
+                    "corrected_probability_of_target": corrected.probability_of_target,
+                    "corrected_risk_adjusted": corrected.risk_adjusted_probability,
+                    "corrected_median_gain_pp": corrected.median_gain_pp,
+                    "corrected_robust": corrected.robust,
+                    "corrected_robust_with_margin": corrected.robust_with_margin,
+                    "status": REVIVAL_TAG,
+                }
             )
-        corrected = evaluate_revival(design, draws, seed)
-        rows.append(
-            {
-                "mechanisms": record.mechanisms,
-                "count": record.count,
-                "admissible": str(record.precedent_breaches) == "none",
-                "raw_probability_of_target": record.probability_of_target,
-                "corrected_probability_of_target": corrected.probability_of_target,
-                "corrected_risk_adjusted": corrected.risk_adjusted_probability,
-                "corrected_median_gain_pp": corrected.median_gain_pp,
-                "corrected_robust": corrected.robust,
-                "corrected_robust_with_margin": corrected.robust_with_margin,
-                "status": REVIVAL_TAG,
-            }
-        )
     frame = (
         pd.DataFrame(rows)
-        .sort_values(["corrected_robust", "corrected_risk_adjusted"], ascending=False)
+        .sort_values(
+            ["corrected_robust", "corrected_risk_adjusted", "count", "doses"],
+            ascending=[False, False, True, True],
+        )
         .reset_index(drop=True)
     )
     admissible = frame.loc[frame["admissible"]].sort_values(
-        "corrected_risk_adjusted", ascending=False
+        ["corrected_robust", "corrected_risk_adjusted", "count", "doses"],
+        ascending=[False, False, True, True],
     )
     best = admissible.iloc[0] if not admissible.empty else frame.iloc[0]
+    selected_mechanisms = str(best["mechanisms"])
+    atlas5_mechanisms = "|".join(
+        name
+        for name in ALL_MECHANISMS
+        if name in ATLAS5.enabled and name not in ("headroom_gating", "human_tempering")
+    )
+    frugal_mechanisms = "|".join(
+        name
+        for name in ALL_MECHANISMS
+        if name in ATLAS5_FRUGAL.enabled and name not in ("headroom_gating", "human_tempering")
+    )
+    selected_label = (
+        "ATLAS-5F (simulation-only frugal variant)"
+        if selected_mechanisms == frugal_mechanisms and int(best["doses"]) == ATLAS5_FRUGAL.doses
+        else "ATLAS-5"
+        if selected_mechanisms == atlas5_mechanisms and int(best["doses"]) == ATLAS5.doses
+        else "search-selected composition"
+    )
+    atlas5_match = frame.loc[
+        frame["mechanisms"].eq(atlas5_mechanisms) & frame["doses"].eq(ATLAS5.doses)
+    ].iloc[0]
     selection = {
         "best_corrected": {
-            "mechanisms": best["mechanisms"],
+            "label": selected_label,
+            "mechanisms": selected_mechanisms,
             "count": int(best["count"]),
+            "doses": int(best["doses"]),
             "corrected_probability_of_target": float(best["corrected_probability_of_target"]),
             "corrected_risk_adjusted": float(best["corrected_risk_adjusted"]),
         },
-        "atlas5_still_selected": str(best["mechanisms"])
-        == "|".join(sorted(ATLAS5.enabled - {"headroom_gating", "human_tempering"})),
-        "any_robust": bool(frame["corrected_robust"].any()),
-        "best_raw_probability": float(frame["raw_probability_of_target"].max()),
-        "best_corrected_probability": float(frame["corrected_probability_of_target"].max()),
+        "atlas5_still_selected": selected_mechanisms == atlas5_mechanisms
+        and int(best["doses"]) == ATLAS5.doses,
+        "atlas5_corrected_probability": float(atlas5_match["corrected_probability_of_target"]),
+        "atlas5_corrected_risk_adjusted": float(atlas5_match["corrected_risk_adjusted"]),
+        "risk_adjusted_advantage_over_atlas5_pp": float(
+            100.0 * (best["corrected_risk_adjusted"] - atlas5_match["corrected_risk_adjusted"])
+        ),
+        "any_robust": bool(admissible["corrected_robust"].any()),
+        "best_raw_probability": float(admissible["raw_probability_of_target"].max()),
+        "best_corrected_probability": float(admissible["corrected_probability_of_target"].max()),
+        "dose_counts_searched": list(range(1, max_precedented_doses() + 1)),
+        "composition_count": int(len(frame)),
+        "draws_per_configuration": draws,
+        "natural_history_pp": float(natural_history_pp),
     }
     return frame, selection
+
+
+def comparator_frontier(
+    draws: int = 20_000,
+    seed: int = 20261107,
+    comparators: tuple[float, ...] = (1.1, 2.25, 3.4),
+) -> pd.DataFrame:
+    """Exhaustively re-select designs at each documented control-arm trajectory.
+
+    This reports conditional best cases, not one pooled winner. A pass at 1.1 pp does
+    not establish success at 3.4 pp; the full table makes that dependence visible.
+    """
+    rows = []
+    for comparator in comparators:
+        _, selection = revival_search(draws, seed, natural_history_pp=comparator)
+        best = selection["best_corrected"]
+        rows.append(
+            {
+                "natural_history_pp": comparator,
+                "best_label": best["label"],
+                "best_mechanisms": best["mechanisms"],
+                "best_doses": best["doses"],
+                "best_probability_of_target": best["corrected_probability_of_target"],
+                "best_risk_adjusted_probability": best["corrected_risk_adjusted"],
+                "target_80_met": best["corrected_probability_of_target"] >= CRITERION_THRESHOLD,
+                "risk_adjusted_80_met": best["corrected_risk_adjusted"] >= CRITERION_THRESHOLD,
+                "composition_dose_pairs_searched": selection["composition_count"],
+                "draws_per_pair": selection["draws_per_configuration"],
+                "status": REVIVAL_TAG,
+            }
+        )
+    return pd.DataFrame(rows)
 
 
 def revival_verdict(
@@ -530,12 +790,20 @@ def revival_verdict(
         "no_longer_robust": corrected < CRITERION_THRESHOLD,
         "atlas5_still_best_after_correction": bool(search["atlas5_still_selected"]),
         "any_composition_robust_after_correction": bool(search["any_robust"]),
+        "best_corrected_label": str(
+            search["best_corrected"].get("label", "search-selected composition")
+        ),
         "best_corrected_mechanisms": str(search["best_corrected"]["mechanisms"]),
+        "best_corrected_doses": int(search["best_corrected"]["doses"]),
         "best_corrected_probability": float(
             search["best_corrected"]["corrected_probability_of_target"]
         ),
-        "still_beats_atlas4": float(search["best_corrected"]["corrected_probability_of_target"])
-        > ATLAS4_BEST_ADMISSIBLE,
+        "best_corrected_risk_adjusted": float(search["best_corrected"]["corrected_risk_adjusted"]),
+        "risk_adjusted_advantage_over_atlas5_pp": float(
+            search["risk_adjusted_advantage_over_atlas5_pp"]
+        ),
+        "composition_count": int(search["composition_count"]),
+        "draws_per_configuration": int(search["draws_per_configuration"]),
         "comparator_range_pp": (
             float(sensitivity["natural_history_pp"].min()),
             float(sensitivity["natural_history_pp"].max()),
@@ -553,9 +821,13 @@ def revival_report(
     search_frame: pd.DataFrame,
     search: dict[str, object],
     ledger: pd.DataFrame,
+    comparator_frontier_frame: pd.DataFrame | None = None,
 ) -> str:
     """Compose the report. All numbers come from the frames passed in."""
     verdict = revival_verdict(search, ladder, sensitivity)
+    frontier = comparator_frontier_frame
+    if frontier is None:
+        frontier = comparator_frontier(draws=verdict["draws_per_configuration"])
     lines = [
         "CORRECTION FOR WHAT THE LITERATURE SAYS THE COMPOSITION IS MISSING",
         "=" * 78,
@@ -595,7 +867,7 @@ def revival_report(
         lines += [
             "",
             "  *** ATLAS-5 IS NO LONGER ROBUST ONCE THE CONTROL ARM IS SUBTRACTED. ***",
-            "  It does not clear the 80% bar. The reported 97.92% was carried by an",
+            "  It does not clear the 80% bar. The 97.08% no-control estimate was carried by an",
             "  uncontrolled baseline, not by the mechanisms.",
         ]
     else:
@@ -610,35 +882,85 @@ def revival_report(
         "IS THE COMPOSITION STILL THE RIGHT ONE?",
         "-" * 78,
     ]
-    if verdict["atlas5_still_best_after_correction"]:
-        lines += [
-            "  YES. Re-searching all 64 compositions under the corrected accounting",
-            "  selects the same mechanism set. The recombination survives; only its",
-            "  magnitude was inflated.",
-        ]
-    else:
-        lines += [
-            "  NO. Re-searching under the corrected accounting selects a DIFFERENT set:",
-            f"    {verdict['best_corrected_mechanisms']}",
-            "  ATLAS-5 was an artefact of the missing control arm.",
-        ]
-    if verdict["any_composition_robust_after_correction"]:
-        lines.append(
-            f"  Best corrected admissible design: "
-            f"{100 * verdict['best_corrected_probability']:.2f}%."
-        )
-    else:
-        lines += [
-            "  NO composition is robust after the correction. The correct report is the",
-            "  best available design with robust_set_exists = False.",
-        ]
-    beats = verdict["still_beats_atlas4"]
-    lines.append(
-        f"  Still beats ATLAS-4's {100 * ATLAS4_BEST_ADMISSIBLE:.2f}% best admissible: "
-        f"{'yes' if beats else 'no'}."
-    )
-
     lines += [
+        f"  Search: {verdict['composition_count']} composition-dose pairs across",
+        f"  {max_precedented_doses()} precedented dose counts, with "
+        f"{verdict['draws_per_configuration']:,} draws per pair.",
+        "  Prioritises the 80% threshold, then corrected risk-adjusted probability and parsimony:",
+        f"    {verdict['best_corrected_label']}: {verdict['best_corrected_mechanisms']} "
+        f"at {verdict['best_corrected_doses']} doses",
+        f"    P(target) {100 * verdict['best_corrected_probability']:.2f}%; "
+        f"risk-adjusted {100 * verdict['best_corrected_risk_adjusted']:.2f}%.",
+        f"  Versus ATLAS-5, selected design's risk-adjusted advantage is only "
+        f"{verdict['risk_adjusted_advantage_over_atlas5_pp']:.3f} pp.",
+    ]
+    if verdict["any_composition_robust_after_correction"]:
+        lines.append("  At least one design clears the model's robustness threshold.")
+    else:
+        lines += [
+            "  NO composition is robust after the correction. The point-estimate winner",
+            "  does not clear the 80% threshold; this is not a successful treatment result.",
+        ]
+    lines += [
+        "  ATLAS-4's 89.60% figure is uncorrected; comparing it directly with this",
+        "  corrected search is not an apples-to-apples performance comparison.",
+    ]
+
+    uplift = hypothetical_uniform_uplift_table(
+        ATLAS5_FRUGAL, draws=verdict["draws_per_configuration"]
+    )
+    lines += [
+        "",
+        "COUNTERFACTUAL: WHAT UNVALIDATED EXTRA LVEF GAIN WOULD CROSS 80%?",
+        "-" * 78,
+        "  This is a uniform mathematical uplift, not a molecule or evidence-backed effect.",
+        f"  {'scenario':48s} {'extra pp':>10s} {'P(target)':>10s} {'risk-adjusted':>14s}",
+    ]
+    for row in uplift.itertuples(index=False):
+        lines.append(
+            f"  {row.counterfactual:48s} {row.uniform_additional_lvef_pp:10.2f} "
+            f"{100 * row.probability_of_target:9.2f}% {100 * row.risk_adjusted_probability:13.2f}%"
+        )
+    lines += [
+        "  No known added molecule in this model supplies this extra LVEF effect.",
+        "  Adding the number as an assumption would make the simulation cross the bar,",
+        "  but would not improve the scientific evidence.",
+    ]
+
+    evidence_gate = evidence_gated_uplift_table(
+        ATLAS5_FRUGAL, draws=verdict["draws_per_configuration"]
+    ).iloc[0]
+    lines += [
+        "",
+        "EVIDENCE GATE: WHAT CAN BE CREDITED TODAY?",
+        "-" * 78,
+        "  A positive uplift is credited only from a randomized concurrent control,",
+        "  the same population and candidate intervention, a prespecified LVEF endpoint,",
+        "  a positive lower 95% confidence bound, plus an independently validated patient-level",
+        "  response model whose effect draws align with this simulated cohort.",
+        f"  Current status: {evidence_gate['evidence_status']}; mean effect credit "
+        f"{evidence_gate['credited_mean_incremental_lvef_pp']:.2f} pp.",
+        f"  Evidence gate result: P(target) "
+        f"{100 * evidence_gate['credited_probability_of_target']:.2f}%; "
+        f"risk-adjusted {100 * evidence_gate['credited_risk_adjusted_probability']:.2f}%.",
+        f"  Missing: {evidence_gate['missing_requirements']}.",
+        "  This gate identifies evidence needed; software cannot supply that evidence.",
+        "",
+        "BEST DESIGN AT EACH DOCUMENTED COMPARATOR (256 pairs re-searched each time)",
+        "-" * 78,
+        f"  {'unaided LVEF pp':>16s} {'best P(target)':>16s} {'risk-adjusted':>15s} {'80%?':>8s}",
+    ]
+    for row in frontier.itertuples(index=False):
+        lines.append(
+            f"  {row.natural_history_pp:16.2f} "
+            f"{100 * row.best_probability_of_target:15.2f}% "
+            f"{100 * row.best_risk_adjusted_probability:14.2f}% "
+            f"{'both' if row.target_80_met and row.risk_adjusted_80_met else 'no':>8s}"
+        )
+    lines += [
+        "  These are conditional sensitivities; only comparator-specific evidence can",
+        "  choose among them. A pass at a lower comparator is not robustness across",
+        "  the documented range.",
         "",
         "SENSITIVITY: THE COMPARATOR IS SWEPT, NOT CHOSEN",
         "-" * 78,
@@ -764,10 +1086,11 @@ def revival_report(
     return "\n".join(lines)
 
 
-def run_revival_study(output: Path, draws: int = 2500) -> dict[str, object]:
-    """Write the correction study. Returns the summary printed by the CLI."""
+def run_revival_study(output: Path, draws: int = 20_000) -> dict[str, object]:
+    """Write the correction study at one shared Monte Carlo budget."""
     from ihd_solutions.recombine import cost_ledger
 
+    draws = max(int(draws), MIN_SPECIFICATION_DRAWS)
     output = Path(output)
     tables = output / "tables"
     reports = output / "reports"
@@ -776,36 +1099,75 @@ def run_revival_study(output: Path, draws: int = 2500) -> dict[str, object]:
     (output / "DISCLAIMER.txt").write_text(DISCLAIMER + "\n")
 
     ladder = correction_ladder(ATLAS5, draws)
-    sensitivity = natural_history_sensitivity(ATLAS5, max(1200, draws // 2))
-    surrogate = surrogate_translation(max(1200, draws // 2))
+    sensitivity = natural_history_sensitivity(ATLAS5, draws)
+    surrogate = surrogate_translation(draws)
     transmurality = transmurality_stratification()
-    search_frame, search = revival_search(max(1500, draws // 2))
+    search_frame, search = revival_search(draws)
+    frontier = comparator_frontier(draws=draws)
+    uplift = hypothetical_uniform_uplift_table(ATLAS5_FRUGAL, draws)
+    evidence_gate = evidence_gated_uplift_table(ATLAS5_FRUGAL, draws)
     corrections = correction_table()
     ledger = cost_ledger(ATLAS5).assign(status=REVIVAL_TAG)
 
     ladder.to_csv(tables / "revival_correction_ladder.csv", index=False)
     sensitivity.to_csv(tables / "revival_natural_history_sensitivity.csv", index=False)
+    uplift.to_csv(tables / "revival_hypothetical_uplift.csv", index=False)
+    evidence_gate.to_csv(tables / "revival_evidence_gated_uplift.csv", index=False)
     surrogate.to_csv(tables / "revival_surrogate_translation.csv", index=False)
     transmurality.to_csv(tables / "revival_transmurality.csv", index=False)
     search_frame.to_csv(tables / "revival_search.csv", index=False)
+    frontier.to_csv(tables / "revival_comparator_frontier.csv", index=False)
     corrections.to_csv(tables / "revival_corrections.csv", index=False)
     ledger.to_csv(tables / "revival_cost_ledger.csv", index=False)
 
     report = revival_report(
-        ladder, sensitivity, surrogate, transmurality, search_frame, search, ledger
+        ladder,
+        sensitivity,
+        surrogate,
+        transmurality,
+        search_frame,
+        search,
+        ledger,
+        comparator_frontier_frame=frontier,
     )
     (reports / "revival_report.txt").write_text(report)
 
     verdict = revival_verdict(search, ladder, sensitivity)
     summary = {
-        "artefacts": 9,
+        "artefacts": 12,
         "as_published_probability": verdict["as_published_probability"],
         "corrected_probability": verdict["corrected_probability"],
         "attribution_loss_pp": verdict["attribution_loss_pp"],
         "no_longer_robust": verdict["no_longer_robust"],
         "atlas5_still_best": verdict["atlas5_still_best_after_correction"],
         "any_robust_after_correction": verdict["any_composition_robust_after_correction"],
-        "still_beats_atlas4": verdict["still_beats_atlas4"],
+        "best_corrected_label": verdict["best_corrected_label"],
+        "best_corrected_mechanisms": verdict["best_corrected_mechanisms"],
+        "best_corrected_doses": verdict["best_corrected_doses"],
+        "best_corrected_probability": verdict["best_corrected_probability"],
+        "best_corrected_risk_adjusted": verdict["best_corrected_risk_adjusted"],
+        "risk_adjusted_advantage_over_atlas5_pp": verdict["risk_adjusted_advantage_over_atlas5_pp"],
+        "composition_dose_pairs_searched": verdict["composition_count"],
+        "draws_per_pair": verdict["draws_per_configuration"],
+        "uniform_uplift_needed_for_80pct_target_pp": float(
+            uplift.iloc[1]["uniform_additional_lvef_pp"]
+        ),
+        "uniform_uplift_needed_for_80pct_risk_adjusted_pp": float(
+            uplift.iloc[2]["uniform_additional_lvef_pp"]
+        ),
+        "evidence_gated_mean_incremental_lvef_credit_pp": float(
+            evidence_gate.iloc[0]["credited_mean_incremental_lvef_pp"]
+        ),
+        "evidence_gated_target_probability": float(
+            evidence_gate.iloc[0]["credited_probability_of_target"]
+        ),
+        "evidence_gate_eligible": bool(evidence_gate.iloc[0]["evidence_eligible"]),
+        "best_probability_at_any_documented_comparator": float(
+            frontier["best_probability_of_target"].max()
+        ),
+        "any_robust_at_documented_comparator": bool(
+            (frontier["target_80_met"] & frontier["risk_adjusted_80_met"]).any()
+        ),
         "status": REVIVAL_TAG,
     }
     return summary

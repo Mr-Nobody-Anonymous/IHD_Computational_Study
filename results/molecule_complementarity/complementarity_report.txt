@@ -1,0 +1,26 @@
+COMPLEMENTARY IHD MEDICINES — MODEL TEST, NOT A NEW MOLECULE
+============================================================================
+SIMULATION ONLY. These are separate medicines in an untrialled regimen, not a new chemically fused molecule. Combination efficacy and safety are unproven; component evidence is not randomized proof for the combination. Results are population- and evidence-credit-mode dependent, and must not guide individual treatment.
+
+Scenario results by evidence-credit mode (events avoided per 1,000 over the
+configured horizon; deltas are versus the LDL-lowering backbone):
+
+scenario                               mode         avoided/1000     delta       NNT  warnings
+----------------------------------------------------------------------------------------------------------------------
+ldl_backbone                           strict              75.21      0.00     13.30  transported_population
+ldl_backbone                           surrogate           75.21      0.00     13.30  transported_population
+ldl_plus_colchicine                    strict             102.38     27.17      9.77  transported_population
+ldl_plus_colchicine                    surrogate          102.38     27.17      9.77  transported_population
+ldl_plus_enlicitide                    strict              75.21      0.00     13.30  no_anchor;transported_population
+ldl_plus_enlicitide                    surrogate           93.58     18.37     10.69  no_anchor;transported_population
+ldl_plus_colchicine_plus_enlicitide    strict             102.38     27.17      9.77  no_anchor;transported_population
+ldl_plus_colchicine_plus_enlicitide    surrogate          116.93     41.72      8.55  no_anchor;transported_population
+
+Interpretation:
+- Colchicine is the complementary anti-inflammatory add-on tested here; it is
+  a separate drug, not a fragment grafted into the statin. Trial results vary by
+  context (CLEAR SYNERGY was neutral in ACS), consistent with the transport warning.
+- Enlicitide is credited for LDL surrogate change in surrogate mode, but its
+  own hard-outcome benefit is not credited in strict mode without outcomes data.
+- No row is a tested fixed-dose combination; interaction, tolerability, and
+  combination-specific efficacy remain unknown.

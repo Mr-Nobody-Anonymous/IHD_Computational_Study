@@ -263,6 +263,17 @@ def test_risk_adjustment_never_raises_the_probability(full):
     assert full.risk_adjusted_probability <= full.probability_of_target + 1e-12
 
 
+def test_risk_adjustment_weights_each_simulated_patient_by_actual_doses():
+    design = R.ATLAS5
+    draws, seed = 900, 123
+    gain, used = R.composite_draws(design, draws, seed)
+    target = gain >= CRITERION_THRESHOLD * R.SCAR_RECOVERABLE_LVEF_PP
+    survival = (1.0 - design.per_dose_risk) ** used
+    result = R.evaluate_composite(design, draws, seed)
+    assert result.risk_adjusted_probability == pytest.approx(float(np.mean(target * survival)))
+    assert result.cumulative_adverse_risk == pytest.approx(float(np.mean(1.0 - survival)))
+
+
 def test_adverse_risk_grows_with_doses():
     one = R.evaluate_composite(R.ATLAS5.with_mechanism("retry_redundancy", False), 1200)
     four = R.evaluate_composite(R.ATLAS5, 1200)

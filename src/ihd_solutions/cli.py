@@ -157,7 +157,15 @@ def build_parser() -> argparse.ArgumentParser:
         help="charge the composition for its missing control arm and re-search",
     )
     revival.add_argument("--output-dir", type=Path, default=Path("results/revival"))
-    revival.add_argument("--draws", type=int, default=2500)
+    revival.add_argument("--draws", type=int, default=20_000)
+
+    complementarity = subparsers.add_parser(
+        "molecule-complementarity",
+        help="test complementary IHD medicines as a regimen; no covalent hybrid is claimed",
+    )
+    complementarity.add_argument(
+        "--output-dir", type=Path, default=Path("results/molecule_complementarity")
+    )
 
     audit_sci = subparsers.add_parser(
         "scientific-audit",
@@ -256,6 +264,17 @@ def _dispatch(args: argparse.Namespace) -> int:
         for key, value in summary.items():
             print(f"{key}: {value}")
         print((args.output_dir / "reports" / "revival_report.txt").read_text())
+        return 0
+
+    if args.command == "molecule-complementarity":
+        from ihd_solutions.molecule_complementarity import (
+            complementarity_report,
+            write_complementarity_report,
+        )
+
+        frame = write_complementarity_report(args.output_dir)
+        report = complementarity_report(frame)
+        print(report)
         return 0
 
     if args.command == "recombine":

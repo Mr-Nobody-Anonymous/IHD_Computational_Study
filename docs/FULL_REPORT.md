@@ -1309,7 +1309,7 @@ compositions. No cure is declared.
 ## F.13 What ATLAS-5 was missing — the control arm (`revival`)
 
 Full account: [`revival_correction.md`](revival_correction.md).
-Artefacts: `results/revival/` (9).
+Artefacts: `results/revival/` (12).
 
 A deep literature search was run to find what the composition lacks. **The deficiency is
 not a mechanism and cannot be composed in:** every part of ATLAS-5 rests on one
@@ -1328,17 +1328,35 @@ with no control group. Charging that correctly removes the design.
 
 | rung | step | P(target) | of original |
 |---|---|---|---|
-| 0 | as published | **97.92%** | 100.0% |
-| 1 | − unaided gain (+3.4 pp) | **57.56%** | 58.8% |
-| 2 | − unaided gain (+1.1 pp) | **73.32%** | 74.9% |
+| 0 | as published (20,000 draws) | **97.08%** | 100.0% |
+| 1 | − unaided gain (+3.4 pp) | **57.70%** | 59.4% |
+| 2 | − unaided gain (+1.1 pp) | **73.81%** | 76.0% |
 
-**Attribution loss: 40.36 pp.** Re-searching all 64 compositions under the correction does
-**not** select ATLAS-5 — it selects `retry_redundancy + maturation`, the frugal alternative,
-at **55.93%**. **No composition is robust.** The correct report is the best available
-design with `robust_set_exists = False`.
+**Attribution loss: 39.37 pp.** The expanded search covers 256 composition-dose pairs
+(64 mechanism sets × 1–4 precedented doses). It selects the simulation-only **ATLAS-5F** (`retry_redundancy + maturation`)
+at **57.81%** target probability and **54.62%** risk-adjusted at 20,000 draws. Its modeled
+edge over ATLAS-5 is only 0.09 pp risk-adjusted, within Monte Carlo uncertainty. **No
+composition is robust.** The correct report has `robust_set_exists = False`.
 
-The design is robust at exactly **one** comparator value: zero — the assumption under test.
-At 1.1, 2.25 and 3.4 pp it fails.
+The counterfactual table isolates the missing magnitude without attributing it to a
+molecule: an explicitly hypothetical uniform **+3.37 LVEF points** is needed for 80%
+target probability, or **+4.34 points** for 80% risk-adjusted probability. No molecule or
+mechanism in the study is evidenced to provide this; see
+`results/revival/tables/revival_hypothetical_uplift.csv`. An executable fail-closed gate
+now requires a matched randomized controlled study, positive lower 95% confidence
+bound, and independently validated patient-level effect draws before uplift is credited;
+it never applies an average treatment effect uniformly to every simulated patient. The
+current evidence record is empty, so credited uplift is 0 pp and the threshold remains
+unmet. DREAM-HF provides a modest randomized MPC LVEF signal, but it is not the modeled
+iPSC patch, missed its primary endpoint, and lacks the validated aligned response draws
+required here (Perin et al., JACC 2023; doi:10.1016/j.jacc.2022.11.061). The 256-pair
+search was also repeated at each nonzero documented control-arm value; the best target
+probability was 73.91% at 1.1 pp and fell to 57.81% at 3.4 pp. No tested comparator reached
+80%; see `results/revival/tables/revival_comparator_frontier.csv` and
+`results/revival/tables/revival_evidence_gated_uplift.csv`.
+
+At zero comparator the model clears its threshold; at documented unaided gains of 1.1,
+2.25 and 3.4 pp it fails. The full sensitivity sweep is in `docs/revival_correction.md`.
 
 ### The second deficiency, exposed by correcting the first
 
@@ -1655,7 +1673,7 @@ Two invariants are enforced in code, and both were violated by the first draft:
 | 4 | oral PCSK9 inhibitor (enlicitide) | CORALreef Lipids | 2,909 | surrogate | LDL-C -56%; approved 16 Jul 2026; outcomes trial n=14,500 pending |
 | 5 | base editing (VERVE-102) | Heart-2, open-label | 35 | surrogate | LDL-C -62% at 1.0 mg/kg |
 | 6 | iPSC cardiomyocyte patch | BioVAT-HF; AATS LB8 | 20 | surrogate | LVEF +3.9 pp, below the +6 pp threshold |
-| 7 | **this repository's combined architecture** | none | **0** | surrogate | own corrected estimate 57.56%, `robust_set_exists=False` |
+| 7 | **this repository's combined architecture** | none | **0** | surrogate | own corrected estimate 57.70%, `robust_set_exists=False` |
 
 ### The two results that cost this repository something
 
@@ -1718,7 +1736,7 @@ exists because a report that only shows final numbers hides how they were reache
 | 24 | Composing every mechanism is the best composite | A negative-effect part drags the stack down | Selection beats stacking by **3.52 pp** |
 | 25 | The strongest composite needs an unprecedented modification | Conflated the price of admissibility with the price of cheapness | It needed **none**; admissibility costs 0.05 pp (noise) |
 | 26 | Dose escalation is a construct-scale projection | Pre-dated BioVAT-HF's reported maximum dose | **800M cells given to 16 of 20 patients**; the 1.75x above it stays unvalidated |
-| 27 | BioVAT's +3.9 pp is the graft's effect | Single-arm study; REVIVED's OMT arm gained +3.4 pp unaided at 6 months | **Attribution loss 40.36 pp**; ATLAS-5 falls 97.92% -> 57.56% |
+| 27 | BioVAT's +3.9 pp is the graft's effect | Single-arm study; REVIVED's OMT arm gained +3.4 pp unaided at 6 months | **Attribution loss 39.37 pp**; ATLAS-5 falls 97.08% -> 57.70% (20,000-draw estimate) |
 | 28 | ATLAS-5 is the best composition | Selected on an uncontrolled baseline | Re-search under correction selects the **frugal** design; **no composition robust** |
 | 29 | The corrected gain still clears the surrogate threshold | The model claims 3.0x the largest human LVEF gain ever measured | Comparison **unusable**, labelled not passed |
 | 30 | Stratifying to no-scar patients improves the result | Raises the conditional rate to 91% and excludes everyone else | **Zero** population-level gain, enforced by test |

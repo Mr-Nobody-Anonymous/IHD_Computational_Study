@@ -117,7 +117,7 @@ trial now says the CRP fall was not sufficient.
 ### 7 — This repository's combined architecture (cell patch + base editing + OMT)
 
 - **Evidence:** **none.** It has never been administered together in a controlled setting.
-- **Own corrected estimate:** 57.56%, with `robust_set_exists=False`.
+- **Own corrected 20,000-draw estimates:** 57.70% for ATLAS-5 and 57.81% for the re-optimized, simulation-only ATLAS-5F (`retry_redundancy + maturation`, four-dose ceiling). The 0.09 pp risk-adjusted edge is within Monte Carlo uncertainty; neither is robust.
 - **What it licenses:** a hypothesis and an ordered experiment list.
 - **What it does not license:** the arithmetic of its parts. The repository measured 15
   pairwise interactions and refused 14.08 pp of double-counted benefit; the wider re-search
