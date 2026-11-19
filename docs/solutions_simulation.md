@@ -21,7 +21,9 @@ by this test suite.
 python -m venv .venv && . .venv/bin/activate
 pip install -r requirements-dev.txt
 
-python run_solutions.py validate                 # schema + consistency checks
+python run_solutions.py validate                 # catalogues + estimand/data-intake checks
+python run_solutions.py estimands                # proposed endpoints and explicit blockers
+python run_solutions.py endgame                  # staged status report, default results/endgame/
 python run_solutions.py therapies                # catalogue with mechanisms
 python run_solutions.py anchors                  # every effect estimate + URL
 python run_solutions.py populations              # 13 scenario populations

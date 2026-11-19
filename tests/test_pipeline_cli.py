@@ -184,7 +184,18 @@ def test_cli_validate_succeeds(capsys):
     assert "Validated" in capsys.readouterr().out
 
 
-@pytest.mark.parametrize("command", ["therapies", "anchors", "populations"])
+def test_cli_endgame_writes_report_and_human_review_queue(tmp_path, capsys):
+    report_path = tmp_path / "status.md"
+    assert main(["endgame", "--output", str(report_path)]) == 0
+    output = capsys.readouterr().out
+    queue_path = tmp_path / "status_evidence_review_queue.csv"
+    assert report_path.is_file()
+    assert queue_path.is_file()
+    assert "pending source-review queue" in output
+    assert "datasets accessed: 0" in report_path.read_text()
+
+
+@pytest.mark.parametrize("command", ["therapies", "anchors", "populations", "estimands"])
 def test_cli_listing_commands(command, capsys):
     assert main([command]) == 0
     output = capsys.readouterr().out

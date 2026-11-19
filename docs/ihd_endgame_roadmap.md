@@ -19,6 +19,26 @@ Results below are model outputs with the status and limitations documented in th
 
 Read together: the immediate computational task is not to raise a score. It is to establish which model outputs are calibrated against independent data, identify the smallest decisive unknowns, and translate those unknowns into safe, falsifiable experiments.
 
+## Execution status on the current branch
+
+This is a staged programme. The first computational prerequisites have now been started; downstream validation is explicitly blocked until the required data and experiments exist.
+
+| Plan phase | Status now | Completed here | Still required / blocker |
+|---|---|---|---|
+| 0 — estimands | **Partly implemented** | `data/solutions/estimands.csv` defines nine planning estimands; `run_solutions.py estimands` lists them and `validate` checks population, endpoint class, measure, and horizon. Acute MI is deliberately marked blocked because no acute-MI population/protocol is registered. | Domain review is needed before these planning definitions become trial protocols; HF-composite and remodeling models remain uncalibrated. |
+| 1 — evidence ledger | **Registry links audited; human source audit still open** | Validation checks source URL syntax and therapy/population/transport cross-references for all 48 anchor rows. It checks schema and references for the estimand and data-intake registries. `run_solutions.py endgame` exports a 48-row pending review queue at `results/endgame/endgame_report_evidence_review_queue.csv`. | URL syntax is not source verification. Each of the 48 sources still needs human review/version/date, study-design details, risk-of-bias and data-sharing metadata; no efficacy credit was upgraded. |
+| 2 — external validation | **Blocked: no data accessed** | `data/solutions/validation_data_inventory.csv` records four candidate datasets and labels the possible use, overlap, access status, and what each cannot validate. | DREAM-HF lists an IPD-sharing plan, but actual release/criteria have not been verified; REVIVED's data-sharing supplement must be reviewed. No dataset has been requested, downloaded, approved, or used for held-out validation. |
+| 3 — mechanistic model repair | **Partial / not externally validated** | Existing modules and audits remain available; evidence-gated uplift refuses to turn a mean treatment effect into uniform individual gain. | Integrated PK/PD, validated response heterogeneity, spatial mechanics, scar biology, and product-specific safety data are absent. |
+| 4 — scenario search | **Specific subproblem done; global programme partial** | The revival search covers all 256 composition-dose pairs at three documented nonzero comparators. | This is not a fully calibrated optimizer across every disease stage, safety/cost/access objective, or validated interaction. |
+| 5 — value of information | **Partial** | Existing discovery and gap analyses rank assumed capability uncertainties and calculate some sample-size/experiment requirements. | Priors, costs, and empirical variance inputs need independent review and real data; there is no approved experiment plan or budget. |
+| 6 — lab/preclinical | **Not executable in this environment** | Requirements and kill criteria are specified in the roadmap and domain plans. | Product, tissue, animal/lab facilities, safety assays, ethics approvals, and independent replication are required. |
+| 7 — clinical evidence | **Not simulatable** | Trial-design considerations and current evidence gaps are documented. | Sponsor, regulatory/ethics approval, trial sites, participants, randomization, outcome follow-up, and replication are indispensable. |
+| 8 — governance | **Partly documented** | Provenance, correction ledgers, tests, and evidence tiers exist. | Continue independent source review, data-use governance, conflict disclosures, and versioned revalidation as new evidence appears. |
+
+The data inventory is a **lead register**, not data access. ClinicalTrials.gov's DREAM-HF record reports completed phase 3 randomization, actual enrollment 565, posted results, and an IPD-sharing plan marked “Yes”; this is a plan, not evidence that files are released or a request will be approved. The current record/API should be rechecked before any application. REVIVED has already supplied aggregate inputs to the revival correction, so it cannot be a held-out validation set for that specific component; its data-sharing statement and any later investigator-request route still require formal review. The single-arm BioVAT-HF and AATS LB8 cohorts can inform feasibility/safety or exploratory response characterization, but cannot provide a randomized treatment contrast. Data-lead desk review was refreshed on 2026-11-06 for DREAM-HF and REVIVED-BCIS2; see the exact source URLs in `data/solutions/validation_data_inventory.csv`. This is not the pending human source review of the 48 evidence anchors.
+
+The integrated status can be regenerated with `python run_solutions.py endgame`; the current snapshot is `results/endgame/endgame_report.md`, accompanied by a 48-anchor human-review queue. That report only certifies schema and cross-reference checks, not source truth or biological validity. Draft, unsent data-access requests and their mandatory governance checklist are in `docs/data_access_request_templates.md`.
+
 ## What is still missing
 
 | Missing item | Why it matters | Can this workspace settle it? | Evidence or deliverable needed |
@@ -149,8 +169,8 @@ For plaque-clearing designs, measure human plaque explant penetration, lipid/cry
 | 4 | Connect uncertainty and sensitivity modules to scenario orchestration | `uncertainty.py`, `simulation_frontier.py`, `revival.py` | every run exports seeds, draw counts, assumptions, intervals, and Pareto/frontier tables |
 | 5 | Add PK/PD, delivery, spatial plaque, and scar-response models only as data permits | `pharmacology.py`, `plaque.py`, `regeneration.py`, legacy structural models | identifiability plus held-out validation precedes efficacy credit |
 | 6 | Add experiment/sample-size decision outputs | `discovery.py`, `gap_solutions.py`, `docs/gap_closure_attempt.md`, CLI `unanswered` command | each experiment targets a ranked unknown and states a falsification boundary |
-| 7 | Generate a consolidated `endgame` report/CLI command | `cli.py`, `pipeline.py`, existing report modules | one command reproduces all open gaps without mixing evidence tiers |
-| 8 | Create controlled lab/trial handoff, not simulated efficacy | `docs/`, output schemas | protocol/checklist can be reviewed by domain, safety, ethics, and trial experts |
+| 7 | Generate a consolidated `endgame` report/CLI command | `cli.py`, `roadmap.py`, current registries | **Implemented (initial)**: `python run_solutions.py endgame`; emits explicit data-access, source-review, scope, and lab/clinical blockers without mixing evidence tiers |
+| 8 | Create controlled lab/trial handoff, not simulated efficacy | `docs/`, output schemas | **Not complete**: roadmap checklists exist, but a product-specific protocol package requires independent scientific, safety, ethics, and trial-expert review |
 
 Do these in sequence. Do not start Phase 5 optimization before Phase 1 evidence reconciliation and Phase 2 validation; otherwise the optimizer will confidently search an uncalibrated model.
 

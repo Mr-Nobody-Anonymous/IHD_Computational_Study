@@ -22,9 +22,11 @@ pathway** — 47 therapies, 19 populations, 48 published trial anchors — lives
 
 ```bash
 pip install -r requirements-dev.txt
-python run_solutions.py validate      # registry checks
+python run_solutions.py validate      # registry + estimand + data-intake schema/cross-reference checks
+python run_solutions.py estimands     # list proposed outcome definitions and blocked scopes
+python run_solutions.py endgame       # generate roadmap status and evidence blockers
 python run_solutions.py simulate      # 6 populations x 337 regimens x 3 modes -> results/solutions/
-pytest -q                             # 783 tests, ~99% coverage of ihd_solutions
+pytest -q                             # full automated test suite (currently 1,393 tests on this branch)
 ```
 
 Pathways covered: LDL/ApoB lowering (statins, ezetimibe, bempedoic acid, PCSK9
