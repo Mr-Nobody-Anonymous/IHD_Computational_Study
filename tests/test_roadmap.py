@@ -271,6 +271,8 @@ def test_endgame_report_states_blockers_and_does_not_claim_evidence(tmp_path):
     assert "held-out external validation completed: false" in report
     assert "source contents human-verified: false" in report
     assert "acute_mi_reperfusion" in report
+    assert "565 actual enrollment" in report
+    assert "version 39" in report and "shows 566" in report
     assert "not acquired or approved" in report
     assert "No cure or 80% target is established" in report
 

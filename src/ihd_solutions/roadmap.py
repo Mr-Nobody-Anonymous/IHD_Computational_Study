@@ -59,6 +59,7 @@ DATA_INVENTORY_COLUMNS = (
     "not_licensed_to_validate",
     "source_url",
     "blocking_action",
+    "source_notes",
 )
 VALID_IPD_STATUSES = {"yes", "no", "unknown", "no documented plan found"}
 
@@ -188,6 +189,7 @@ def load_validation_inventory(path: str | Path | None = None) -> pd.DataFrame:
             "not_licensed_to_validate",
             "source_url",
             "blocking_action",
+            "source_notes",
         ):
             if not row[required].strip():
                 raise ValueError(f"{dataset_id}: {required} cannot be blank")
@@ -310,15 +312,16 @@ def build_endgame_report(
             "",
             "## Candidate data leads (not acquired or approved)",
             "",
-            "| Dataset | Design | Access status | Permitted near-term use / limitation |",
-            "|---|---|---|---|",
+            "| Dataset | Design | Access status | Permitted near-term use / limitation | Lead/source review note |",
+            "|---|---|---|---|---|",
         ]
     )
     for row in inventory.to_dict(orient="records"):
         limitation = row["not_licensed_to_validate"].replace("|", "/")
+        source_note = row["source_notes"].replace("|", "/")
         lines.append(
             f"| {row['dataset_id']} ({row['trial_id']}) | {row['design']} | "
-            f"{row['access_status']} | {limitation} |"
+            f"{row['access_status']} | {limitation} | {source_note} |"
         )
 
     lines.extend(
