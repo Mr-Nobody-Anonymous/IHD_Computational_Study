@@ -43,6 +43,13 @@ mortality endpoints are never relabelled as MACE; neutral trials (ZEUS, CIRT,
 CLEAR SYNERGY, ISCHEMIA) are held at HR = 1.0. Every credit decision is written to
 `results/solutions/tables/credit_decisions.csv` with its reason.
 
+### What remains before IHD can be solved?
+
+[`docs/ihd_endgame_roadmap.md`](docs/ihd_endgame_roadmap.md) consolidates the missing
+evidence, measurements, model capabilities, laboratory work, and clinical proof into a
+staged plan with acceptance gates. It distinguishes what this repository can simulate
+from what requires data, experiments, or randomized human outcomes.
+
 ### Is any of it a cure?
 
 `cure.py` states five explicit cure criteria (durable driver control, burden
