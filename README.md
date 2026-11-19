@@ -22,9 +22,11 @@ pathway** — 47 therapies, 19 populations, 48 published trial anchors — lives
 
 ```bash
 pip install -r requirements-dev.txt
-python run_solutions.py validate      # registry checks
+python run_solutions.py validate      # registry + estimand + data-intake schema/cross-reference checks
+python run_solutions.py estimands     # list proposed outcome definitions and blocked scopes
+python run_solutions.py endgame       # generate roadmap status and evidence blockers
 python run_solutions.py simulate      # 6 populations x 337 regimens x 3 modes -> results/solutions/
-pytest -q                             # 783 tests, ~99% coverage of ihd_solutions
+pytest -q                             # full automated test suite (currently 1,393 tests on this branch)
 ```
 
 Pathways covered: LDL/ApoB lowering (statins, ezetimibe, bempedoic acid, PCSK9
@@ -42,6 +44,13 @@ improvements **never** create event credit; heart-failure, functional and
 mortality endpoints are never relabelled as MACE; neutral trials (ZEUS, CIRT,
 CLEAR SYNERGY, ISCHEMIA) are held at HR = 1.0. Every credit decision is written to
 `results/solutions/tables/credit_decisions.csv` with its reason.
+
+### What remains before IHD can be solved?
+
+[`docs/ihd_endgame_roadmap.md`](docs/ihd_endgame_roadmap.md) consolidates the missing
+evidence, measurements, model capabilities, laboratory work, and clinical proof into a
+staged plan with acceptance gates. It distinguishes what this repository can simulate
+from what requires data, experiments, or randomized human outcomes.
 
 ### Is any of it a cure?
 

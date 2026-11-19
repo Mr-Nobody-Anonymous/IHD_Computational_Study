@@ -197,6 +197,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     candidates.add_argument("--output-dir", type=Path, default=Path("results/candidates"))
 
+    subparsers.add_parser(
+        "estimands", help="list registered planning estimands and explicit blockers"
+    )
+    endgame = subparsers.add_parser(
+        "endgame", help="write the staged IHD roadmap status and evidence blockers"
+    )
+    endgame.add_argument("--output", type=Path, default=Path("results/endgame/endgame_report.md"))
     subparsers.add_parser("validate", help="validate all input registries and exit")
     return parser
 
@@ -511,6 +518,26 @@ def _dispatch(args: argparse.Namespace) -> int:
         summary = run(config)
         print(json.dumps(summary, indent=2, sort_keys=True))
         return 0
+    if args.command == "estimands":
+        from ihd_solutions.roadmap import load_estimands
+
+        print(load_estimands().to_string(index=False))
+        return 0
+    if args.command == "endgame":
+        from ihd_solutions.roadmap import write_endgame_report, write_evidence_review_queue
+
+        anchors = load_anchors()
+        report_path = write_endgame_report(
+            args.output,
+            anchors,
+            set(load_catalog()),
+            set(load_populations()),
+        )
+        queue_path = report_path.with_name(f"{report_path.stem}_evidence_review_queue.csv")
+        write_evidence_review_queue(queue_path, anchors)
+        print(f"Wrote roadmap status report: {report_path}")
+        print(f"Wrote pending source-review queue: {queue_path}")
+        return 0
     if args.command == "validate":
         catalog = load_catalog()
         anchors = load_anchors()
@@ -523,9 +550,15 @@ def _dispatch(args: argparse.Namespace) -> int:
         )
         if unknown_populations:
             raise ValueError(f"anchors reference unknown populations: {unknown_populations}")
+        from ihd_solutions.roadmap import roadmap_input_audit
+
+        audit = roadmap_input_audit(anchors, set(catalog), set(populations))
         print(
             f"Validated {len(catalog)} therapies, {len(anchors)} anchors, "
-            f"{len(populations)} populations."
+            f"{len(populations)} populations, {audit['estimands_registered']} estimands, "
+            f"and {audit['external_dataset_leads']} external-data leads. "
+            "Source links and registry cross-references checked; source content and data access "
+            "not verified."
         )
         return 0
     raise ValueError(f"unsupported command: {args.command}")
